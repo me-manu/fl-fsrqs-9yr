@@ -5,4 +5,5 @@ for file in "${files[@]}"
     do
         rsync $ANALYSISDIR/plots/$file*.pdf ./
     done
+ls *.pdf | xargs -I@ pdfcrop @ @
 git add *.pdf
