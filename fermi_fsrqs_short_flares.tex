@@ -345,7 +345,7 @@ Several strong flares exceeding the average flux level are easily identified fro
 %%% Full light curve %%%
 \begin{figure*}
     \centering
-    \includegraphics[width = .9\linewidth]{fig}
+    \includegraphics[width = .9\linewidth]{figures/lc_weekly_tsmin4.pdf}
     \caption{\gray light curves with weekly binning for the considered FSRQs. Open symbols denote upper limits at the $2\,\sigma$ confidence level.}
     \label{fig:weekly}
 \end{figure*}
@@ -445,14 +445,16 @@ GTI & 1 & 2 & 31\\
 We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales.
 
 \subsection{Global \gray light curves properties}
-We first investigate the global light curve properties such as the distribution of fluxes and the the power spectral densities (PSDs). 
-Figure~\ref{fig:fluxpdf}
-%%% Orbital light curve and fits
-%%% result plots: asymmetry vs T90, peak flux vs T90, integrated flux vs T90? Distributions of rise and decay times?
-%%% spectral variation of orbital light curves
-%%% energy dependent light curves (selection)
-%%% shortest variability times scales
+From the weekly light curves in Fig.~\ref{fig:weekly} it is qualitatively evident that the FSRQs show strong flares that exceed average flux by a factor of a few while the quiescent level is relatively stable. 
+Such behavior is typical for FSRQs~\citet{}.
+In order to quantify this behaviour we calculate probability distribution functions (PDF) of the fluxes by forming the histogram of the weekly fluxes per flux bin. 
+The results are shown in Fig.~\ref{fig:fluxpdf}. The bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated 
 
+
+\begin{figure}
+    \includegraphics[width = .99\linewidth]{figures/fluxdist_weekly_tsmin9.pdf}
+    \caption{\label{fig:fluxpdf}}
+\end{figure}
 
 \bibliography{mainbib}
 
