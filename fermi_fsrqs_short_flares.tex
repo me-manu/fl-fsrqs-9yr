@@ -391,8 +391,6 @@ GTI & 1 & 2 & 31\\
 \item move on to results
 \item result section: divide into results of full time range with flux distribution, PSD, LCCF (I would leave that for the discussion part); GTI light curves with fitted light curve profiles and study of flare duration and symmetries -- energy dependent light curves? Or in discussion?; short time variability below orbital time scales; fits to the SEDs
     \item work extends previous works e.g. Naweljajko 2014 paper -- put in discussion?
-    \item Describe data analysis
-    \item finish table with sources listing Name, 3FGL name, RA, DEC, z, black hole mass, gravitational radius, Luminosity of Hbeta
 \end{enumerate}
 }
 %%% Daily light curves %%%%%%%%%
@@ -445,16 +443,48 @@ GTI & 1 & 2 & 31\\
 We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales.
 
 \subsection{Global \gray light curves properties}
-From the weekly light curves in Fig.~\ref{fig:weekly} it is qualitatively evident that the FSRQs show strong flares that exceed average flux by a factor of a few while the quiescent level is relatively stable. 
-Such behavior is typical for FSRQs~\citet{}.
-In order to quantify this behaviour we calculate probability distribution functions (PDF) of the fluxes by forming the histogram of the weekly fluxes per flux bin. 
-The results are shown in Fig.~\ref{fig:fluxpdf}. The bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated 
+From the weekly light curves in Fig.~\ref{fig:weekly} it is evident that the FSRQs show strong flares that exceed the average flux by a factor of a few, while the quiescent level is relatively stable. 
+Such behavior is typical for FSRQs~\citet{} and we 
+further quantify it by calculating the probability distribution functions (PDF) of the fluxes for bins with $\mathrm{TS} > 9$. 
+The results are shown in Fig.~\ref{fig:fluxpdf}. The flux bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated under the assumption that the flux values of each data point $f_i$, $i = 1,\ldots,N$ are Gaussian distributed numbers with standard deviation equal to the measurement uncertainty $\sigma_i$.\footnote{
+With this assumption, the uncertainty to find $x$ entries in the $j$-th flux bin of width $\Delta F_j = F_{\mathrm{hi},j} - F_{\mathrm{lo},j}$ is given by the sum of Bernoulli probabilities $p_i$, $\sum_{i = 1}^N p_i(1-p_i)$, where $p_i =  [\mathrm{erf}((F_{\mathrm{hi},j} - f_i) / \sqrt{2\sigma_i^2}) - \mathrm{erf}((F_{\mathrm{lo},j} - f_i) / \sqrt{2\sigma_i^2})]/2$, and $\mathrm{erf}$ is the error function.
+}
+We fit the flux distribution $dN/dF$ with a smoothly broken power law of the form 
+\begin{equation}
+    \frac{dN}{dF} = N_0 \left( \frac{F}{F_0}\right)^{\alpha_\mathrm{low}}
+        \left( 1 - \left(\frac{F}{F_\mathrm{br}}\right)^s \right)^{\frac{\alpha_\mathrm{high} - \alpha_\mathrm{low}}{s}},
+\end{equation}
+with the smoothing factor $s$ fixed to 3. 
+The results of a $\chi^2$ minimazation are summarized in Tab.~\ref{tab:global}.
+Generally, below the break flux, all FSRQs show a flat distribution.
+Above $F_\mathrm{br}$ which lies between $\sim2\times10^{-7}$ and $\sim2\times10^{-6}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}$, $dN/dF$ declines exponentially with power-law indices $\alpha_\mathrm{high} \lesssim -2.2$, making the brightest flares rare events.
+Furthermore, it is clear that the flux distribution is very different from Gaussian behavior. 
+This is also a well known property of FSRQs over all wavelengths~\citet[][]{}. \todo{CHECK!}
 
-
+We further characterize the global \gray light curves in terms of their PSD,
+which usually can be described with simple power laws in frequency,  $\mathrm{PSD} \propto 1 / \nu^\beta$~\citep{}.
+An analysis of the first 11~months of LAT data from 106 blazars revealed that 
+these objects have $\beta$ values between 1 and 2, the intermittent regime between flicker noise ($\beta = 1$) and Brownian motion ($\beta = 2)$~\citep{2010ApJ...722..520A}. 
+In addition to the noise behavior, 
+we will further use the derived PSDs in Sec.~\ref{} to simulate \gray light curves in order to estimate the significance of a correlation between radio and \gray emission. 
 \begin{figure}
     \includegraphics[width = .99\linewidth]{figures/fluxdist_weekly_tsmin9.pdf}
     \caption{\label{fig:fluxpdf}}
 \end{figure}
+
+\begin{deluxetable}{lccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:global}Global \gray light curve properties. }
+\tablehead{Source name & $\alpha_\mathrm{low}$ & $\alpha_\mathrm{high}$ & $F_\mathrm{br} [10^{-6}\mathrm{cm}^{-2}\mathrm{s}^{-1}]$ }
+\startdata
+3C273 & $0.70^{+0.40}_{-0.54}$ & $-2.77^{+0.24}_{-0.27}$ & $0.23^{+0.07}_{0.07}$ \\
+PKSB1222+216 & $-0.24^{+0.41}_{-0.27}$ & $-2.70^{+0.33}_{-0.43}$ & $0.42^{+0.28}_{0.15}$ \\
+3C279 & $0.68^{+0.27}_{-0.40}$ & $-2.80^{+0.21}_{-0.23}$ & $0.40^{+0.10}_{0.10}$ \\
+PKS1510-089 & $0.84^{+0.72}_{-0.48}$ & $-2.21^{+0.23}_{-0.26}$ & $0.40^{+0.16}_{0.12}$ \\
+CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26}$ \\
+3C454.3 & $-0.20^{+0.17}_{-0.13}$ & $-3.00^{+0.13}_{-0.14}$ & $2.19^{+0.39}_{0.32}$ \\
+\enddata
+\end{deluxetable}
 
 \bibliography{mainbib}
 
