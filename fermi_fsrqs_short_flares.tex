@@ -288,12 +288,12 @@ Furthermore, PKS\,B1222+216, 3C\,279, and PKS\,1510-089  are among the 7 FSRQs a
 \tablecaption{ \label{tab:src-select}Blazars selected for this study. }
 \tablehead{Source name & 3FGL name & R.A. & DEC & Redshift & $\log_{10}(M_\bullet / M_\odot)$\tablenotemark{a} & $L_\mathrm{disk} [10^{46} \mathrm{ergs}\,\mathrm{s}^{-1}]$\tablenotemark{a} & $L(\mathrm{H}\beta) [10^{43} \mathrm{ergs}\,\mathrm{s}^{-1}]$\tablenotemark{b}}
 \startdata
-PKS\,B1222+216 & 3FGL\,J1224.9+2122 & RA & DEC & 0.432 & 8.87\tablenotemark{c} & $1.612$ &  $2.788 \pm 0.561$\tablenotemark{d}\\
-3C\,273 &	3FGL\,J1229.1+0202 & RA & DEC & 0.158 & 	8.92 &	6.114 & 	15.40 \\
-3C\,279 & 3FGL\,J1256.1-0547 & RA & DEC & 0.5362 	&	8.28 &	1.110 &	1.728\\
-PKS\,1510-089 &	3FGL\,J1512.8-0906 & RA & DEC & 0.360 & 8.20 & 1.130 & 1.768\\
-CTA\,102 & 3FGL\,J2232.5+1143 & RA & DEC & 1.037 & 8.93\tablenotemark{c} & 3.996  &	8.929 $\pm$  6.000\tablenotemark{e}\\
-3C\,454.3 & 3FGL\,J2254.0+1608 & RA & DEC & 0.859 & 	8.83 &	7.186 & 	18.95 \\
+PKS\,B1222+216 & 3FGL\,J1224.9+2122 & 186.226  & 21.382 & 0.432 & 8.87\tablenotemark{c} & $1.612$ &  $2.788 \pm 0.561$\tablenotemark{d}\\
+3C\,273 &	3FGL\,J1229.1+0202 & 187.266  & 2.051 & 0.158 & 	8.92 &	6.114 & 	15.40 \\
+3C\,279 & 3FGL\,J1256.1-0547 & 194.045  & -5.786 & 0.5362 	&	8.28 &	1.110 &	1.728\\
+PKS\,1510-089 &	3FGL\,J1512.8-0906 & 228.210  & -9.106 & 0.360 & 8.20 & 1.130 & 1.768\\
+CTA\,102 & 3FGL\,J2232.5+1143 & 338.158  & 11.728 & 1.037 & 8.93\tablenotemark{c} & 3.996  &	8.929 $\pm$  6.000\tablenotemark{e}\\
+3C\,454.3 & 3FGL\,J2254.0+1608 & 343.493  & 16.149 & 0.859 & 	8.83 &	7.186 & 	18.95 \\
 \enddata
 \tablenotetext{a}{Taken from \citet{2006ApJ...637..669L} if not noted otherwise.}
 \tablenotetext{b}{Calculated from $L_\mathrm{disk}$ using Eq.~7 in \citet{2006ApJ...637..669L}.}
@@ -396,22 +396,8 @@ GTI & 1 & 2 & 31\\
 %%% Daily light curves %%%%%%%%%
 \begin{figure*}
     \centering
-    \includegraphics[width = .45\linewidth]{figures/lc_3C273_daily.pdf}
-    \includegraphics[width = .45\linewidth]{figures/lc_PKSB1222+216_daily.pdf}
-    \caption{\label{fig:daily-3c273-pks1222}}
-\end{figure*}
-
-\begin{figure*}
-    \centering
-    \includegraphics[width = .45\linewidth]{figures/lc_3C279_daily.pdf}
-    \includegraphics[width = .45\linewidth]{figures/lc_PKS1510-089_daily.pdf}
-    \caption{\label{fig:daily-3c279-pks1510}}
-\end{figure*}
-
-\begin{figure*}
-    \includegraphics[width = .45\linewidth]{figures/lc_CTA102_daily.pdf}
-    \includegraphics[width = .45\linewidth]{figures/lc_3C454p3_daily.pdf}
-    \caption{\label{fig:daily-cta102-3c454}}
+    \includegraphics[width = .95\linewidth]{figures/lc_daily.pdf}
+    \caption{\label{fig:daily}}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -449,7 +435,7 @@ further quantify it by calculating the probability distribution functions (PDF) 
 The results are shown in Fig.~\ref{fig:fluxpdf}. The flux bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated under the assumption that the flux values of each data point $f_i$, $i = 1,\ldots,N$ are Gaussian distributed numbers with standard deviation equal to the measurement uncertainty $\sigma_i$.\footnote{
 With this assumption, the uncertainty to find $x$ entries in the $j$-th flux bin of width $\Delta F_j = F_{\mathrm{hi},j} - F_{\mathrm{lo},j}$ is given by the sum of Bernoulli probabilities $p_i$, $\sum_{i = 1}^N p_i(1-p_i)$, where $p_i =  [\mathrm{erf}((F_{\mathrm{hi},j} - f_i) / \sqrt{2\sigma_i^2}) - \mathrm{erf}((F_{\mathrm{lo},j} - f_i) / \sqrt{2\sigma_i^2})]/2$, and $\mathrm{erf}$ is the error function.
 }
-We fit the flux distribution $dN/dF$ with a smoothly broken power law of the form 
+We fit the flux distribution $dN/dF$ with a smoothly broken power law (BPL) of the form 
 \begin{equation}
     \frac{dN}{dF} = N_0 \left( \frac{F}{F_0}\right)^{\alpha_\mathrm{low}}
         \left( 1 - \left(\frac{F}{F_\mathrm{br}}\right)^s \right)^{\frac{\alpha_\mathrm{high} - \alpha_\mathrm{low}}{s}},
@@ -461,16 +447,58 @@ Above $F_\mathrm{br}$ which lies between $\sim2\times10^{-7}$ and $\sim2\times10
 Furthermore, it is clear that the flux distribution is very different from Gaussian behavior. 
 This is also a well known property of FSRQs over all wavelengths~\citet[][]{}. \todo{CHECK!}
 
+\begin{figure}
+    \includegraphics[width = .99\linewidth]{figures/fluxdist_weekly_tsmin9.pdf}
+    \caption{\label{fig:fluxpdf} Distribution of the fluxes of the weekly 9.5 year \gray light curves. The BPL fit is shown as a black line with $1\,\sigma$ uncertainties shown as the shaded bands.}
+\end{figure}
+
 We further characterize the global \gray light curves in terms of their PSD,
 which usually can be described with simple power laws in frequency,  $\mathrm{PSD} \propto 1 / \nu^\beta$~\citep{}.
 An analysis of the first 11~months of LAT data from 106 blazars revealed that 
 these objects have $\beta$ values between 1 and 2, the intermittent regime between flicker noise ($\beta = 1$) and Brownian motion ($\beta = 2)$~\citep{2010ApJ...722..520A}. 
 In addition to the noise behavior, 
 we will further use the derived PSDs in Sec.~\ref{} to simulate \gray light curves in order to estimate the significance of a correlation between radio and \gray emission. 
-\begin{figure}
-    \includegraphics[width = .99\linewidth]{figures/fluxdist_weekly_tsmin9.pdf}
-    \caption{\label{fig:fluxpdf}}
-\end{figure}
+The PSDs are estimated from the periodograms and simulated light curves following the method described in detail in \citet{2014MNRAS.445..437M} and \citet{2013MNRAS.433..907E}.
+For the observed periodogram, we include all light curve data points detected with $\mathrm{TS} \geqslant 9$ and perform a linear interpolation between gaps in the light curve. Since we are using weekly binned light curves and bright FSRQs that gaps are small and at most 5 consecutive data points (35\,days) long in the case of 3C\,273. The number of non-detected bins is less than X\,\% for all sources.
+The interpolated flux is re-binned into bins of lengths of 7 days by taking the geometrical mean of the flux. 
+In contrast to~\citet{2014MNRAS.445..437M}, we do not apply a window function (see the discussion below). 
+
+We simulate light curves using the method of \citet{1995A&A...300..707T} with a time steps equal to 0.7\,days for values $0 \leqslant \beta \leqslant 3$ in steps of $\Delta\beta = 0.05$. For each $\beta$ value 100 light curves are generated, each one a 100 times longer than the actual observation to account for possible red-noise leakage. Splitting the simulated light curves (without overlap) leaves us with $10^4$ realizations. 
+The light curves are then re-binned into 7-day light curves through averaging and the same observational gaps as in the observed light curves are applied. 
+The periodograms are then calculated for light curve in the same way for the observed light curve.
+To fix the normalization of the PSD model, \citet{2014MNRAS.445..437M} use variance matching, i.e., they rescale the simulated flux data points with $A^{-1}$, where $A^2 = \sigma_\mathrm{sim}^2 / (\sigma_\mathrm{obs}^2 - \bar{\sigma_i^2})$, where $\sigma_\mathrm{sim}^2$ ($\sigma_\mathrm{data}^2$) is the variance of the simulated (observed) light curve and $\bar{\sigma_i^2}$ is the variance of the observational noise with $\sigma_i$ the 1$\,\sigma$ flux uncertainties.
+For the \gray light curves, we choose to follow \citet{2013MNRAS.433..907E} instead and iteratively match the PDF of the simulated fluxes to the observed PDFs shown in Fig.~\ref{fig:fluxpdf}. 
+The reason is twofold: on the one hand, the algorithm of \citet{1995A&A...300..707T} produces light curves with Gaussian distributed fluxes, which is clearly not observed at \gray energies. On the other hand, the variance matching relies on Parseval's theorem from which it follows that the variance is equal to the integrated PSD. However, Parseval's theorem is only valid for square-integrable functions, i.e. $\beta \geqslant 2$ and thus not strictly applicable for smaller values of $\beta$ commonly observed at \gray energies.
+In a final step, we add uncertainties to the light curves by randomly drawing with replacement from the observed uncertainties $\sigma_i$ and adding a Gaussian random number $\mathcal{N}(0,\sigma_i)$ to the simulated flux values.
+
+The peridograms of the simulated light curves, ${P}_\mathrm{sim}$, are re-binned into logarithmic bins, averaged, and subsequently compared to the observed re-binned periodogram, $P_\mathrm{obs}$, by means of a $\chi^2$ test~\citep{2014MNRAS.445..437M},
+\begin{equation}
+    \chi^2(\beta) = \sum_{\nu_\mathrm{min}}^{\nu_\mathrm{max}}\frac{(P_\mathrm{obs}(\nu) - \overline{P}_\mathrm{sim}(\nu,\beta))^2}{\Delta\overline{P}_\mathrm{sim}(\nu,\beta)^2},\label{eq:chi2psd}
+\end{equation}
+where $\Delta\overline{P}_\mathrm{sim}(\nu)^2$ is the variance of the observed light curves. The quality of the the best-fit value $\hat\beta$ with corresponding $\chi^2$ value $\hat\chi^2\equiv\chi^2(\hat\beta)$, is evaluated from the light curves simulated with $\beta = \hat\beta$ in the following way. We form the distributions of simulated $\chi^2$ values, $\chi^2_\mathrm{sim}$, by replacing $P_\mathrm{obs}(\nu)$ with $P_\mathrm{sim}(\nu,\beta)$ in Eq.~(\ref{eq:chi2psd}),
+\begin{equation}
+    \chi^2_\mathrm{sim}(\beta,\beta') = \sum_{\nu_\mathrm{min}}^{\nu_\mathrm{max}}\frac{(P_\mathrm{sim}(\nu,\beta) - \overline{P}_\mathrm{sim}(\nu,\beta'))^2}{\Delta\overline{P}_\mathrm{sim}(\nu,\beta')^2},\label{eq:chi2psd_sim}
+\end{equation}
+and calculate the $p$-value as the  fraction of simulations that result in $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$.
+Similarly, the confidence interval for $\hat\beta$ is derived by selecting the $\beta$ interval for which the $p$-value of $\chi^2_\mathrm{sim}(\beta,\hat\beta)$ is less than 95\,\%. 
+The results of our PSD analysis are summarized in Tab.~\ref{tab:global} where we also quote the value of $\beta$ obtained from a linear regression in log-log space. 
+In general, the periodograms are well fit by our method, as indicated by the $p$-values. The only exception is 3C\,279 where only 12 of the $10^4$ simulated light curves result in a $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$, which also explains the large error bars on the reconstructed value of $\beta$.
+The reason might be a more complex underlying PSD or the specific 7 day binning we have chosen here. 
+\todo{mention bumps / QPOs?}
+\todo{add beta and $p$ values to table}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_PKSB1222+216_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_rms.pdf}
+    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_3C273_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_rms.pdf}
+    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_3C279_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_rms.pdf}
+    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_PKS1510-089_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_rms.pdf}
+    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_CTA102_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_rms.pdf}
+    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_3C454p3_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_rms.pdf}
+    \caption{Caption}
+    \label{fig:periodograms}
+\end{figure*}
+
 
 \begin{deluxetable}{lccc}
 \tablewidth{0pt}
