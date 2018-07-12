@@ -364,7 +364,7 @@ For the identified time span, we re-optimize the spectral model of the ROI in th
 The choices of time binnings and values for $f_\mathrm{max}$ and $f_\mathrm{min}$ are summarized in Table~\ref{tab:zoom} together with the number of identified high \gray activity states (which might consists of several flares as indicated by the HOP groups).
 The values of the threshold fluxes $f_\mathrm{max}, f_\mathrm{min}$ is somewhat arbitrary and are a compromise between including as many flares as possible but keeping the overall number of flares manageable. Note, that the sole purpose of this exercise is to select the brightest flares for  further analysis. 
 The resulting time ranges for the weekly light curves are plotted as green shaded areas in Fig.~\ref{fig:weekly}.
-The intermittent daily light curves are provided in Figs.~\ref{fig:daily-3c273-pks1222}-\ref{fig:daily-cta102-3c454} and  Figs.~\ref{fig:gti-3c273-pks1222}-\ref{fig:gti-cta102-3c454} show the GTI light curves. 
+The intermittent daily light curves are provided in Fig.~\ref{fig:daily} and  Fig.~\ref{fig:gti} shows the GTI light curves. 
 The source exposure can vary significantly between two adjacent orbits, as the satellite rocks between the celestial north and south pole in between orbits. This explains the large error bars on some of the time bins of the GTI light curves.
 
 In a last step, we derive light curves on sub-GTI time scales. 
@@ -396,7 +396,7 @@ GTI & 1 & 2 & 31\\
 %%% Daily light curves %%%%%%%%%
 \begin{figure*}
     \centering
-    \includegraphics[width = .95\linewidth]{figures/lc_daily_tsmin4.pdf}
+    \includegraphics[width = .99\linewidth]{figures/lc_daily_tsmin4.pdf}
     \caption{\label{fig:daily}}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -405,7 +405,7 @@ GTI & 1 & 2 & 31\\
 %%% GTI light curves %%%%%%%%%
 \begin{figure*}
     \centering
-    \includegraphics{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
+    \includegraphics[width = .99\linewidth]{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
     \caption{Caption}
     \label{fig:gti}
 \end{figure*}
@@ -415,28 +415,29 @@ GTI & 1 & 2 & 31\\
 \label{sec:results}
 We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales.
 
-\subsection{Global \gray light curves properties}
+\subsection{Global \gray light curve properties}
 From the weekly light curves in Fig.~\ref{fig:weekly} it is evident that the FSRQs show strong flares that exceed the average flux by a factor of a few, while the quiescent level is relatively stable. 
 Such behavior is typical for FSRQs~\citet{} and we 
-further quantify it by calculating the probability distribution functions (PDF) of the fluxes for bins with $\mathrm{TS} > 9$. 
-The results are shown in Fig.~\ref{fig:fluxpdf}. The flux bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated under the assumption that the flux values of each data point $f_i$, $i = 1,\ldots,N$ are Gaussian distributed numbers with standard deviation equal to the measurement uncertainty $\sigma_i$.\footnote{
+further quantify it by calculating the flux distribution, $dN/dF$, of the weekly fluxes for bins with $\mathrm{TS} > 9$. 
+The results are shown in Fig.~\ref{fig:fluxpdf}. The flux bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated under the assumption that the observed weekly fluxes, $f_i$, $i = 1,\ldots,N$, are Gaussian distributed numbers with standard deviation equal to the measurement uncertainty $\sigma_i$.\footnote{
 With this assumption, the uncertainty to find $x$ entries in the $j$-th flux bin of width $\Delta F_j = F_{\mathrm{hi},j} - F_{\mathrm{lo},j}$ is given by the sum of Bernoulli probabilities $p_i$, $\sum_{i = 1}^N p_i(1-p_i)$, where $p_i =  [\mathrm{erf}((F_{\mathrm{hi},j} - f_i) / \sqrt{2\sigma_i^2}) - \mathrm{erf}((F_{\mathrm{lo},j} - f_i) / \sqrt{2\sigma_i^2})]/2$, and $\mathrm{erf}$ is the error function.
 }
-We fit the flux distribution $dN/dF$ with a smoothly broken power law (BPL) of the form 
+We fit the flux distribution with a smoothly broken power law (BPL) of the form 
 \begin{equation}
     \frac{dN}{dF} = N_0 \left( \frac{F}{F_0}\right)^{\alpha_\mathrm{low}}
         \left( 1 - \left(\frac{F}{F_\mathrm{br}}\right)^s \right)^{\frac{\alpha_\mathrm{high} - \alpha_\mathrm{low}}{s}},
+        \label{eq:dndf}
 \end{equation}
 with the smoothing factor $s$ fixed to 3. 
 The results of a $\chi^2$ minimazation are summarized in Tab.~\ref{tab:global}.
-Generally, below the break flux, all FSRQs show a flat distribution.
+Generally, below the break flux $F_\mathrm{br}$, the flux distribution is flat, $\alpha_\mathrm{low}\sim 0$.
 Above $F_\mathrm{br}$ which lies between $\sim2\times10^{-7}$ and $\sim2\times10^{-6}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}$, $dN/dF$ declines exponentially with power-law indices $\alpha_\mathrm{high} \lesssim -2.2$, making the brightest flares rare events.
 Furthermore, it is clear that the flux distribution is very different from Gaussian behavior. 
 This is also a well known property of FSRQs over all wavelengths~\citet[][]{}. \todo{CHECK!}
 
 \begin{figure}
     \includegraphics[width = .99\linewidth]{figures/fluxdist_weekly_tsmin9.pdf}
-    \caption{\label{fig:fluxpdf} Distribution of the fluxes of the weekly 9.5 year \gray light curves. The BPL fit is shown as a black line with $1\,\sigma$ uncertainties shown as the shaded bands.}
+    \caption{\label{fig:fluxpdf} Distribution of the fluxes of the weekly 9.5 year \gray light curves. The BPL fit is shown as a black line with $1\,\sigma$ uncertainties shown as shaded bands.}
 \end{figure}
 
 We further characterize the global \gray light curves in terms of their PSD,
@@ -444,70 +445,119 @@ which usually can be described with simple power laws in frequency,  $\mathrm{PS
 An analysis of the first 11~months of LAT data from 106 blazars revealed that 
 these objects have $\beta$ values between 1 and 2, the intermittent regime between flicker noise ($\beta = 1$) and Brownian motion ($\beta = 2)$~\citep{2010ApJ...722..520A}. 
 In addition to the noise behavior, 
-we will further use the derived PSDs in Sec.~\ref{} to simulate \gray light curves in order to estimate the significance of a correlation between radio and \gray emission. 
-The PSDs are estimated from the periodograms and simulated light curves following the method described in detail in \citet{2014MNRAS.445..437M} and \citet{2013MNRAS.433..907E}.
-For the observed periodogram, we include all light curve data points detected with $\mathrm{TS} \geqslant 9$ and perform a linear interpolation between gaps in the light curve. Since we are using weekly binned light curves and bright FSRQs that gaps are small and at most 5 consecutive data points (35\,days) long in the case of 3C\,273. The number of non-detected bins is less than X\,\% for all sources.
-The interpolated flux is re-binned into bins of lengths of 7 days by taking the geometrical mean of the flux. 
+we further use the derived PSDs in Sec.~\ref{} to simulate \gray light curves in order to calculate the significance of a correlation between radio and \gray emission. 
+
+The best-fit PSDs are estimated from the periodograms and simulated light curves following the method described in detail in \citet{2014MNRAS.445..437M} and \citet{2013MNRAS.433..907E} and summarized briefly below.
+The observed periodograms are calculated with Eq.~(3) of \citet{2014MNRAS.445..437M} including all 
+data points detected with $\mathrm{TS} \geqslant 9$ and performing a linear interpolation between gaps in the light curve. Since we are using weekly binned light curves and bright FSRQs the gaps are small and at most 5 consecutive data points long (35\,days) in the case of 3C\,273. The number of non-detected bins is less than X\,\% for all sources.
+The interpolation is done in time steps of $\Delta t=0.7\,$days and 
+ re-binned into bins of lengths of 7 days by taking the geometrical mean of the flux.
 In contrast to~\citet{2014MNRAS.445..437M}, we do not apply a window function (see the discussion below). 
 
 We simulate light curves using the method of \citet{1995A&A...300..707T} with a time steps equal to 0.7\,days for values $0 \leqslant \beta \leqslant 3$ in steps of $\Delta\beta = 0.05$. For each $\beta$ value 100 light curves are generated, each one a 100 times longer than the actual observation to account for possible red-noise leakage. Splitting the simulated light curves (without overlap) leaves us with $10^4$ realizations. 
-The light curves are then re-binned into 7-day light curves through averaging and the same observational gaps as in the observed light curves are applied. 
+The light curves are then re-binned into 7-day light curves through averaging. The same observational gaps and interpolation as in the observed light curves are applied. 
 The periodograms are then calculated for light curve in the same way for the observed light curve.
-To fix the normalization of the PSD model, \citet{2014MNRAS.445..437M} use variance matching, i.e., they rescale the simulated flux data points with $A^{-1}$, where $A^2 = \sigma_\mathrm{sim}^2 / (\sigma_\mathrm{obs}^2 - \bar{\sigma_i^2})$, where $\sigma_\mathrm{sim}^2$ ($\sigma_\mathrm{data}^2$) is the variance of the simulated (observed) light curve and $\bar{\sigma_i^2}$ is the variance of the observational noise with $\sigma_i$ the 1$\,\sigma$ flux uncertainties.
-For the \gray light curves, we choose to follow \citet{2013MNRAS.433..907E} instead and iteratively match the PDF of the simulated fluxes to the observed PDFs shown in Fig.~\ref{fig:fluxpdf}. 
-The reason is twofold: on the one hand, the algorithm of \citet{1995A&A...300..707T} produces light curves with Gaussian distributed fluxes, which is clearly not observed at \gray energies. On the other hand, the variance matching relies on Parseval's theorem from which it follows that the variance is equal to the integrated PSD. However, Parseval's theorem is only valid for square-integrable functions, i.e. $\beta \geqslant 2$ and thus not strictly applicable for smaller values of $\beta$ commonly observed at \gray energies.
+To fix the normalization of the PSD model, \citet{2014MNRAS.445..437M} use variance matching, i.e., they rescale the simulated flux data points with a factor $A^{-1}$, where $A^2 = \sigma_\mathrm{sim}^2 / (\sigma_\mathrm{obs}^2 - \bar{\sigma_i^2})$, with $\sigma_\mathrm{sim}^2$ ($\sigma_\mathrm{data}^2$) the variance of the simulated (observed) light curve and $\bar{\sigma_i^2}$ the variance of the observational noise.
+For the \gray light curves, we choose to follow \citet{2013MNRAS.433..907E} instead and iteratively match the probability distribution of the simulated fluxes to the observed ones, given by the $dN/dF$ distrutions shown in Fig.~\ref{fig:fluxpdf}. 
+The reason is twofold: on the one hand, the algorithm of \citet{1995A&A...300..707T} produces light curves with Gaussian distributed fluxes, which is clearly not observed at \gray energies. On the other hand, the variance matching relies on Parseval's theorem from which it follows that the light curve variance is equal to the integrated PSD. However, Parseval's theorem is only valid for square-integrable functions, i.e. $\beta \geqslant 2$ and thus not strictly applicable for smaller values of $\beta$ commonly observed at \gray energies.
 In a final step, we add uncertainties to the light curves by randomly drawing with replacement from the observed uncertainties $\sigma_i$ and adding a Gaussian random number $\mathcal{N}(0,\sigma_i)$ to the simulated flux values.
 
 The peridograms of the simulated light curves, ${P}_\mathrm{sim}$, are re-binned into logarithmic bins, averaged, and subsequently compared to the observed re-binned periodogram, $P_\mathrm{obs}$, by means of a $\chi^2$ test~\citep{2014MNRAS.445..437M},
 \begin{equation}
     \chi^2(\beta) = \sum_{\nu_\mathrm{min}}^{\nu_\mathrm{max}}\frac{(P_\mathrm{obs}(\nu) - \overline{P}_\mathrm{sim}(\nu,\beta))^2}{\Delta\overline{P}_\mathrm{sim}(\nu,\beta)^2},\label{eq:chi2psd}
 \end{equation}
-where $\Delta\overline{P}_\mathrm{sim}(\nu)^2$ is the variance of the observed light curves. The quality of the the best-fit value $\hat\beta$ with corresponding $\chi^2$ value $\hat\chi^2\equiv\chi^2(\hat\beta)$, is evaluated from the light curves simulated with $\beta = \hat\beta$ in the following way. We form the distributions of simulated $\chi^2$ values, $\chi^2_\mathrm{sim}$, by replacing $P_\mathrm{obs}(\nu)$ with $P_\mathrm{sim}(\nu,\beta)$ in Eq.~(\ref{eq:chi2psd}),
+where $\Delta\overline{P}_\mathrm{sim}(\nu)^2$ is the variance of the simulated light curves.
+The averaged periodograms of the simulated light curves and the observed ones are shown in Fig.~\ref{fig:periodograms} and the best fit average periodogram is shown as a thick solid line. 
+The quality of the the best-fit value $\hat\beta$ with corresponding minimum $\chi^2$ value $\hat\chi^2\equiv\chi^2(\hat\beta)$, is evaluated from the light curves simulated with $\beta = \hat\beta$ in the following way. We form the distributions of simulated $\chi^2$ values, $\chi^2_\mathrm{sim}$, by replacing $P_\mathrm{obs}(\nu)$ with $P_\mathrm{sim}(\nu,\beta)$ in Eq.~(\ref{eq:chi2psd}),
 \begin{equation}
     \chi^2_\mathrm{sim}(\beta,\beta') = \sum_{\nu_\mathrm{min}}^{\nu_\mathrm{max}}\frac{(P_\mathrm{sim}(\nu,\beta) - \overline{P}_\mathrm{sim}(\nu,\beta'))^2}{\Delta\overline{P}_\mathrm{sim}(\nu,\beta')^2},\label{eq:chi2psd_sim}
 \end{equation}
 and calculate the $p$-value as the  fraction of simulations that result in $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$.
 Similarly, the confidence interval for $\hat\beta$ is derived by selecting the $\beta$ interval for which the $p$-value of $\chi^2_\mathrm{sim}(\beta,\hat\beta)$ is less than 95\,\%. 
-The results of our PSD analysis are summarized in Tab.~\ref{tab:global} where we also quote the value of $\beta$ obtained from a linear regression in log-log space. 
-In general, the periodograms are well fit by our method, as indicated by the $p$-values. The only exception is 3C\,279 where only 12 of the $10^4$ simulated light curves result in a $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$, which also explains the large error bars on the reconstructed value of $\beta$.
+The results of our PSD analysis are summarized in Tab.~\ref{tab:global} where we also report the value of $\beta$ obtained from a linear regression in log-log space. 
+In general, the periodograms are well fit by our method, as indicated by the $p$-values and observed in Fig.~\ref{fig:periodograms}. 
+The only exception is 3C\,279 where only 12 of the $10^4$ simulated light curves result in a $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$, which also explains the large error bars on the reconstructed value of $\beta$.
 The reason might be a more complex underlying PSD or the specific 7 day binning we have chosen here. 
 \todo{mention bumps / QPOs?}
 \todo{add beta and $p$ values to table}
 
 \begin{figure*}
     \centering
-    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_PKSB1222+216_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
-    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_3C273_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
-    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_3C279_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
-    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_PKS1510-089_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
-    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_CTA102_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
-    \includegraphics[width = 0.45\linewidth]{figures/periodogram_fermi_3C454p3_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
-    \caption{Caption}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_PKSB1222+216_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_3C273_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_3C279_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_PKS1510-089_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_CTA102_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_3C454p3_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var.pdf}
+    \caption{Periodograms of the observed and simulated light curves.}
     \label{fig:periodograms}
 \end{figure*}
 
-\begin{figure}
-    \centering
-    \includegraphics{fi}
-    \caption{Caption}
-    \label{fig:my_label}
-\end{figure}
 
-
-\begin{deluxetable}{lccc}
+\begin{deluxetable*}{lcccccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:global}Global \gray light curve properties. }
-\tablehead{Source name & $\alpha_\mathrm{low}$ & $\alpha_\mathrm{high}$ & $F_\mathrm{br} [10^{-6}\mathrm{cm}^{-2}\mathrm{s}^{-1}]$ }
+\tablecaption{ \label{tab:global}Global \gray light curve properties. Columns 2-4 indicate the best-fit values for the BPL fit [Eq.~(\ref{eq:dndf})] to the $dN/dF$ distributions, whereas columns 5-7 show the best-fit results for the PSD. $\beta_\mathrm{slope}$ gives the result for a linear regression of the periodograms and $\hat\beta$ is the best-fit value of the $\chi^2$ minimazation with corresponding $p$-value. The interval around $\hat\beta$ is at 95\,\% confidence.}
+\tablehead{Source name & $\alpha_\mathrm{low}$ & $\alpha_\mathrm{high}$ & $F_\mathrm{br} [10^{-6}\mathrm{cm}^{-2}\mathrm{s}^{-1}]$ 
+& $\beta_\mathrm{slope}$ & $\hat\beta$ & $p$-value
+}
 \startdata
-3C273 & $0.70^{+0.40}_{-0.54}$ & $-2.77^{+0.24}_{-0.27}$ & $0.23^{+0.07}_{0.07}$ \\
-PKSB1222+216 & $-0.24^{+0.41}_{-0.27}$ & $-2.70^{+0.33}_{-0.43}$ & $0.42^{+0.28}_{0.15}$ \\
-3C279 & $0.68^{+0.27}_{-0.40}$ & $-2.80^{+0.21}_{-0.23}$ & $0.40^{+0.10}_{0.10}$ \\
-PKS1510-089 & $0.84^{+0.72}_{-0.48}$ & $-2.21^{+0.23}_{-0.26}$ & $0.40^{+0.16}_{0.12}$ \\
-CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26}$ \\
-3C454.3 & $-0.20^{+0.17}_{-0.13}$ & $-3.00^{+0.13}_{-0.14}$ & $2.19^{+0.39}_{0.32}$ \\
+PKSB1222+216 & $-0.24^{+0.41}_{-0.27}$ & $-2.70^{+0.33}_{-0.43}$ & $0.42^{+0.28}_{0.15}$ & 1.13 & $1.15^{+0.17}_{-0.32}$ & 0.611 \\
+3C273 & $0.70^{+0.40}_{-0.54}$ & $-2.77^{+0.24}_{-0.27}$ & $0.23^{+0.07}_{0.07}$  & 1.02 & $1.09^{+0.29}_{-0.38}$ & 0.403\\
+3C279 & $0.68^{+0.27}_{-0.40}$ & $-2.80^{+0.21}_{-0.23}$ & $0.40^{+0.10}_{0.10}$ & 0.59 & $0.61^{+0.61}_{-0.55}$ & 0.001 \\
+PKS1510-089 & $0.84^{+0.72}_{-0.48}$ & $-2.21^{+0.23}_{-0.26}$ & $0.40^{+0.16}_{0.12}$ & 0.76 & $0.97^{+0.31}_{-0.38}$ & 0.125\\
+CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26}$ & 1.13 & $1.18^{+0.36}_{-0.47}$ & 0.195\\
+3C454.3 & $-0.20^{+0.17}_{-0.13}$ & $-3.00^{+0.13}_{-0.14}$ & $2.19^{+0.39}_{0.32}$ & 0.97 & $1.21^{+0.59}_{-0.52}$ & 0.228 \\
 \enddata
-\end{deluxetable}
+\end{deluxetable*}
 
+\subsection{Local light curve properties}
+We derive local properties of the \gray flares from the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
+To this end, 
+we fit each flare $i$ identified with the HOP algorithm (shaded regions in each panel of Fig.~\ref{fig:gti}) with a $\chi^2$ minimazation as a sum of exponential profiles, 
+\begin{eqnarray}
+    F_{\mathrm{flare},i}(t) &=& 
+    \sum\limits_{j = 1}^{N_i} F_{0,ij}\nonumber\\
+    &\times&\left[\exp\left(\frac{t - t_{0,ij}}{\tau_{\mathrm{rise},ij}}\right) + \exp
+    \left(\frac{t_{0,ij} - t}{\tau_{\mathrm{decay},ij}}\right)\right]^{-1}\!\!\!,&
+    \label{eq:flareHOP}
+\end{eqnarray}
+where $t_{0,j}$ are the flare peak times, and $\tau_{\mathrm{rise},ij}$, $\tau_{\mathrm{decay},ij}$ are the flare rise and decay times, respectively.
+All light curve points with $\mathrm{TS}\geqslant9$ are included fulfill the criterion $F_i \geqslant 3\sigma_i/2 $.
+The number of flare profiles per HOP shed, $N_i$, is either 1 or 2 and determined during the fit, using the Bayesian information criterion (BIC), defined as $\mathrm{BIC} = n_\mathrm{par}\ln(N) + \chi^2$, where $n_\mathrm{par}$ is the number of fit paramteres ($n_\mathrm{par} = 4$ for $N_i = 1$), $N$ is the number of data points within HOP shed $i$ and $\chi^2$ is the $\chi^2$ value of the fit in HOP $i$. Two flare profiles are selected if the difference between the two BIC values is $\Delta\mathrm{BIC} = \mathrm{BIC}(N_i = 2) - \mathrm{BIC}(N_i = 1) < 0$.
+The reason for allowing $N_i > 1$ is that the flare profile in Eq.~(\ref{eq:flareHOP}) does not capture long-lasting plateaus of a flare present in mutltiple flares in Fig.~\ref{fig:gti} (see, e.g., all flares of 3C\,279 or the last panel with a flare of 3C\,454.3 starting at 55551.65\,MJD).
+
+After each HOP shed is fitted individually and $N_i$ is determined for each shed, 
+we re-fit the entire light curve, which consists of $N_\mathrm{HOP}$ sheds, with the function 
+\begin{equation}
+    F_\mathrm{flare}(t) = \sum\limits_{i = 1}^{N_\mathrm{HOP}}F_{\mathrm{flare},i}(t) + F_\mathrm{bkg}(t),
+\end{equation}
+where $f_\mathrm{bkg}(t)$ is a order-2 polynomial to describe a slow  varying background.
+The fit results are shown as black solid lines in Fig.~\ref{fig:gti}.
+In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Fig.~\ref{fig:gti}). Given the large values of dof, the fit qualities are usually poor. This is not unexpected, as we only allow up to two flare profiles per HOP and not arbitrary functions. Already with this chocice, there are probably some spurios flares identified, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
+Nevertheless, the overall light curve evolution is well captured allowing us to describe the local flare properties from the ensembles of flare profiles, keeping the above caveats in mind. 
+
+\todo{show results: bar histograms of decay and rise times, asymmetry vs peak, integrated and T90 flux}
+
+\section{Discussion}
+\subsection{Search for correlation at radio wavelengths}
+\todo{
+Things done differently with respect to Fermi periodograms:
+\begin{itemize}
+    \item Used variance matching instead of EM13 algorithm as it did not reprocude the observed periodograms, however the variance matching did. Also, PSDs generally closer or above two, Parseval's theorem applies
+    \item no uncertainties of light curve applied, generally led to a strong flattening of simulated PSDs for high beta values, not observed in observed PSD. Selection of errors not perfect / too high, that's why white noise at high frequencies, also correlation between errors and fluxes observed, not taken into account when drawing randomly
+    \item Radio light curves show large gaps, light curve is split when gap is larger than 20 times the median gap between observations. Compromise between too many splits and too short individual light curves and interpolating over too large gaps. Interpolation step chosen to be 80\,\% quantile of the gaps in the split light curves, again as compromise between inventing data points and being able to sample a broad frequency range
+    \item individual light curves log averaged follwing the 1993 paper.
+\end{itemize}
+}
+
+\subsection{Comparison to theory}
+\todo{
+\begin{itemize}
+    \item see if radio delay, limits on emission region, and shortest variability time scale fit together
+    \item discuss time evolution of flares with Petropoulous' paper
+    \item also discuss magnetic islands, geometric jet variations,...
+\end{itemize}
+}
 \bibliography{mainbib}
 
 %% This command is needed to show the entire author+affilation list when
