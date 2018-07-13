@@ -485,15 +485,15 @@ The reason might be a more complex underlying PSD or the specific 7 day binning 
     \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_3C279_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
     \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_PKS1510-089_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
     \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_CTA102_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_3C273_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \caption{Periodograms of the observed and simulated light curves.}
+    \includegraphics[width = 0.32\linewidth]{figures/periodogram_fermi_3C454p3_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \caption{Periodograms of the observed (markers) and simulated light curves (colored lines). The simulated periodograms follow power-law PSDs between $\beta = 0$ (purple line) to $\beta = 3$ (red line) in steps of $\Delta\beta = 0.05$. The bottom panels show the residuals with respect to the best fit which is indicated in the legend and as a thick solid line in the upper panels.}
     \label{fig:periodograms}
 \end{figure*}
 
 
 \begin{deluxetable*}{lcccccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:global}Global \gray light curve properties. Columns 2-4 indicate the best-fit values for the BPL fit [Eq.~(\ref{eq:dndf})] to the $dN/dF$ distributions, whereas columns 5-7 show the best-fit results for the PSD. $\beta_\mathrm{slope}$ gives the result for a linear regression of the periodograms and $\hat\beta$ is the best-fit value of the $\chi^2$ minimazation with corresponding $p$-value. The interval around $\hat\beta$ is at 95\,\% confidence.}
+\tablecaption{ \label{tab:global}Global \gray light curve properties. Columns 2-4 indicate the best-fit values for the BPL fit [Eq.~(\ref{eq:dndf})] to the $dN/dF$ distributions, whereas columns 5-7 show the best-fit results for the PSD. $\beta_\mathrm{slope}$ gives the result for a linear regression of the periodograms and $\hat\beta$ is the best-fit value of the $\chi^2$ minimization with corresponding $p$-value. The interval around $\hat\beta$ is at 95\,\% confidence.}
 \tablehead{Source name & $\alpha_\mathrm{low}$ & $\alpha_\mathrm{high}$ & $F_\mathrm{br} [10^{-6}\mathrm{cm}^{-2}\mathrm{s}^{-1}]$ 
 & $\beta_\mathrm{slope}$ & $\hat\beta$ & $p$-value
 }
@@ -512,7 +512,7 @@ CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26
 
 We derive local properties of the \gray flares from the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
 To this end, 
-we fit each flare $i$ identified with the HOP algorithm (shaded regions in each panel of Fig.~\ref{fig:gti}) with a $\chi^2$ minimazation as a sum of exponential profiles, 
+we fit each HOP group $i$ with a $\chi^2$ minimization as a sum of exponential profiles, 
 \begin{eqnarray}
     F_{\mathrm{flare},i}(t) &=& 
     \sum\limits_{j = 1}^{N_i} F_{0,ij}\nonumber\\
@@ -521,21 +521,23 @@ we fit each flare $i$ identified with the HOP algorithm (shaded regions in each 
     \label{eq:flareHOP}
 \end{eqnarray}
 where $t_{0,j}$ are the flare peak times, and $\tau_{\mathrm{rise},ij}$, $\tau_{\mathrm{decay},ij}$ are the flare rise and decay times, respectively.
-All light curve points with $\mathrm{TS}\geqslant9$ are included fulfill the criterion $F_i \geqslant 3\sigma_i/2 $.
-The number of flare profiles per HOP shed, $N_i$, is either 1 or 2 and determined during the fit, using the Bayesian information criterion (BIC), defined as $\mathrm{BIC} = n_\mathrm{par}\ln(N) + \chi^2$, where $n_\mathrm{par}$ is the number of fit paramteres ($n_\mathrm{par} = 4$ for $N_i = 1$), $N$ is the number of data points within HOP shed $i$ and $\chi^2$ is the $\chi^2$ value of the fit in HOP $i$. Two flare profiles are selected if the difference between the two BIC values is $\Delta\mathrm{BIC} = \mathrm{BIC}(N_i = 2) - \mathrm{BIC}(N_i = 1) < 0$.
-The reason for allowing $N_i > 1$ is that the flare profile in Eq.~(\ref{eq:flareHOP}) does not capture long-lasting plateaus of a flare present in mutltiple flares in Fig.~\ref{fig:gti} (see, e.g., all flares of 3C\,279 or the last panel with a flare of 3C\,454.3 starting at 55551.65\,MJD).
+All light curve points are included that fulfill $\mathrm{TS}\geqslant9$ and $F_i \geqslant 3\sigma_i/2 $.
+The number of flare profiles per HOP shed, $N_i$, is either 1 or 2 and determined during the fit using the Bayesian information criterion (BIC), defined as $\mathrm{BIC} = n_\mathrm{par}\ln(n) + \chi^2$, where $n_\mathrm{par}$ is the number of fit paramteres ($n_\mathrm{par} = 4$ for $N_i = 1$), $n$ is the number of data points within one HOP group $i$. Two flare profiles are selected if the difference between the two BIC values is $\Delta\mathrm{BIC} = \mathrm{BIC}(N_i = 2) - \mathrm{BIC}(N_i = 1) < 0$.
+The reason for allowing $N_i > 1$ is that the flare profile in Eq.~(\ref{eq:flareHOP}) does not capture long-lasting plateaus of a flare present in multiple flares in Fig.~\ref{fig:gti} (see, e.g., all flares of 3C\,279 or the panel with a flare of 3C\,454.3 starting at 55551.65\,MJD).
 
-After each HOP shed is fitted individually and $N_i$ is determined for each shed, 
-we re-fit the entire light curve, which consists of $N_\mathrm{HOP}$ sheds, with the function 
+After each HOP group is fitted individually and $N_i$ is determined, 
+we re-fit the entire light curve, which consists of $N_\mathrm{HOP}$ groups, with the function 
 \begin{equation}
     F_\mathrm{flare}(t) = \sum\limits_{i = 1}^{N_\mathrm{HOP}}F_{\mathrm{flare},i}(t) + F_\mathrm{bkg}(t),
 \end{equation}
-where $f_\mathrm{bkg}(t)$ is a order-2 polynomial to describe a slow  varying background.
+where $F_\mathrm{bkg}(t)$ is a order-2 polynomial to describe a slow  varying background.
 The fit results are shown as black solid lines in Fig.~\ref{fig:gti}.
-In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Fig.~\ref{fig:gti}). Given the large values of dof, the fit qualities are usually poor. This is not unexpected, as we only allow up to two flare profiles per HOP and not arbitrary functions. Already with this chocice, there are probably some spurios flares identified, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
-Nevertheless, the overall light curve evolution is well captured allowing us to describe the local flare properties from the ensembles of flare profiles, keeping the above caveats in mind. 
+In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Fig.~\ref{fig:gti}). Given the large values of dof, the fit qualities are usually poor. This is not unexpected, as we only allow up to two flare profiles per HOP group and not arbitrary functions. Already with this choice, there are probably some spurious flares identified, see, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
+Nevertheless, the overall light curve evolution is well captured, which allows us to describe the local flare properties from the ensembles of flare profiles, keeping the above caveats in mind. 
 
 \todo{show results: bar histograms of decay and rise times, asymmetry vs peak, integrated and T90 flux}
+
+\todo{Do the sub GTI light curves}
 
 \section{Discussion}
 \subsection{Search for correlation at radio wavelengths}
