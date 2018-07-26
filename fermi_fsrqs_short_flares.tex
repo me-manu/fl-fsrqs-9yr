@@ -182,6 +182,12 @@
 \author[0000-0002-0738-7581]{Manuel Meyer}
 \affil{Kavli}
 
+\author{Jeffrey Scargle}
+\affil{NASA Ames}
+
+\author{Roger Blandford}
+\affil{Kavli}
+
 \author{The \emph{Fermi}-LAT Collaboration}
 \affiliation{Flying from a low Earth orbit}
 
@@ -535,16 +541,52 @@ The fit results are shown as black solid lines in Fig.~\ref{fig:gti}.
 In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Fig.~\ref{fig:gti}). Given the large values of dof, the fit qualities are usually poor. This is not unexpected, as we only allow up to two flare profiles per HOP group and not arbitrary functions. Already with this choice, there are probably some spurious flares identified, see, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
 Nevertheless, the overall light curve evolution is well captured, which allows us to describe the local flare properties from the ensembles of flare profiles, keeping the above caveats in mind. 
 
+We show the distribution of rise and decay times in the histograms of Fig.~\ref{fig:times-hist} for flares with a time integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
+Remarkably, all sources show values of either $\tau_\mathrm{rise}$ or $\tau_\mathrm{decay}$ or both that are below the horizon crossing time scale of the central super massive black hole in the observer's frame, $t_g = r_g / c$, with $r_g = 2 G M_\bullet / c^2 $ the gravitational radius, $G$ the gravitational constant, black hole mass $M_\bullet$ (taken from Tab.~\ref{tab:src-select}), and $c$ the speed of light.
+Most flares rise and decay within 2 hours or less. 
 \begin{figure}
     \centering
-    \includegraphics{figures/lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
-    \caption{Caption}
+    \includegraphics[width = .8\linewidth]{figures/lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
+    \caption{Stacked bar graphs for  rise (top) and decay times (bottom) for the individual flares fitted in Fig.~\ref{fig:gti}. The legend gives the horizon crossing time scales $t_g$ in the observer's frame.}
     \label{fig:times-hist}
 \end{figure}
 
-\todo{show results: bar histograms of decay and rise times, asymmetry vs peak, integrated and T90 flux}
+From the rise and decay times, we can calculate the flare asymmetry as
+\begin{equation}
+    A = \frac{\tau_\mathrm{rise}-\tau_\mathrm{decay}}
+    {\tau_\mathrm{rise}+\tau_\mathrm{decay}},
+\end{equation}
+so that $A < 0$ for fast-rise-exponential-decay (FRED) type flares, as expected from an injection of energetic particles that subsequently cool through radiative processes such as inverse Compton scattering or synchrotron emission.
+The asymmtry is shown versus integrated flux, the peak flux, and the flare duration $T_{90}$, defined in the time around the flare peak that contains 90\,\% of the integrated flux, in Fig.~\ref{fig:asym}.
+The peak flux for each flare of each HOP group is derived from the maximum of  Eq.~(\ref{eq:flareHOP}) with respect to time (suppressing indeces),
+\begin{equation}
+    F_{\mathrm{peak}} = \frac{F_{0} \tau_\mathrm{rise}}{\tau_\mathrm{rise} + \tau_\mathrm{decay}}\exp\left(\ln\left(\frac{\tau_\mathrm{decay}}{\tau_\mathrm{rise}}\right)\frac{\tau_\mathrm{decay}}{\tau_\mathrm{rise} + \tau_\mathrm{decay}}\right)
+\end{equation}
+The error bars on the peak flux and asymmetry are derived from standard Gaussian error propagation from the fit uncertainties.
+\begin{figure*}
+    \centering
+    \includegraphics[width = .8\linewidth]{figures/lcfithop_results_asym_vs_all_orbit_maxiter2_fsys0p00_addcomp0.pdf}
+    \caption{Flare asymmetry versus integrated flux (left), peak flux (center), and flare duration $T_{90}$ (right) for the fitted flare profiles shown in Fig.~\ref{fig:gti}.}
+    \label{fig:asym}
+\end{figure*}
 
+The median of the asymmetry is found to be $-0.195$, i.e., FRED-type flares are more common than the opposite. In general, the flares show a versatile behaviour and clear trends are seen from Fig.~\ref{fig:asym}. This is also reflected in the fact that we do not find any significant correlation between the asymmetry and the other quantities using Kendall's $\tau$.
+The most significant correlation we find is between $F_\mathrm{peak}$ and $\tau_\mathrm{decay}$ with Kendall's $\tau = -0.263$ and a $p$-value of $0.005\,(2.6\,\sigma)$ suggesting that flares with higher peak fluxes have shorter decay times. However, with the number of tested correlations (seven) the significance is too low to draw any firm conclusions (post-trial significance is 0.03 or $1.8\,\sigma$). 
+
+We also investigate whether subsequent flares in each panel of Fig.~\ref{fig:gti} show a trend with time in integrated flux, peak flux, or duration. 
+For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a Binomial distribution of finding the observed number positive values of the differences for a probability of 50\,\% of finding either positive or negative values, which constitutes the random case.
+For 32 values of differences the $p$-values for the integrated and peak flux, as well as for the flare duration are close to 0.1 (14, 13, and 13 positive values for 32 trials, respectively) indicating no particular evolution of these quantities with time. 
+
+
+\todo{Do the energy dependent light curves and evolution of the spectral indices?}
+
+\subsection{Distance of $\gamma$-ray emitting region to central engine from spectral fitting}
+
+\todo{do BLR fits}
+
+\subsection{Sub-GTI light curves}
 \todo{Do the sub GTI light curves}
+
 
 \section{Discussion}
 \subsection{Search for correlation at radio wavelengths}
