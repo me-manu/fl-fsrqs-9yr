@@ -499,7 +499,7 @@ The reason might be a more complex underlying PSD or the specific 7 day binning 
 
 \begin{deluxetable*}{lcccccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:global}Global \gray light curve properties. Columns 2-4 indicate the best-fit values for the BPL fit [Eq.~(\ref{eq:dndf})] to the $dN/dF$ distributions, whereas columns 5-7 show the best-fit results for the PSD. $\beta_\mathrm{slope}$ gives the result for a linear regression of the periodograms and $\hat\beta$ is the best-fit value of the $\chi^2$ minimization with corresponding $p$-value. The interval around $\hat\beta$ is at 95\,\% confidence.}
+\tablecaption{ \label{tab:global}Global \gray light curve properties.}
 \tablehead{Source name & $\alpha_\mathrm{low}$ & $\alpha_\mathrm{high}$ & $F_\mathrm{br} [10^{-6}\mathrm{cm}^{-2}\mathrm{s}^{-1}]$ 
 & $\beta_\mathrm{slope}$ & $\hat\beta$ & $p$-value
 }
@@ -511,7 +511,11 @@ PKS1510-089 & $0.84^{+0.72}_{-0.48}$ & $-2.21^{+0.23}_{-0.26}$ & $0.40^{+0.16}_{
 CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26}$ & 1.21 & $1.18^{+0.16}_{-0.32}$ & 0.138 \\
 3C454.3 & $-0.20^{+0.17}_{-0.13}$ & $-3.00^{+0.13}_{-0.14}$ & $2.19^{+0.39}_{0.32}$ & 1.05 & $1.15^{+0.32}_{-0.28}$ & 0.274 \\
 \enddata
+{
+\tablecomments{Columns 2-4 indicate the best-fit values for the BPL fit [Eq.~(\ref{eq:dndf})] to the $dN/dF$ distributions, whereas columns 5-7 show the best-fit results for the PSD. $\beta_\mathrm{slope}$ gives the result for a linear regression of the periodograms and $\hat\beta$ is the best-fit value of the $\chi^2$ minimization with corresponding $p$-value. The interval around $\hat\beta$ is at 95\,\% confidence.}
+}
 \end{deluxetable*}
+
 
 \subsection{Local light curve properties}
 \label{sec:hop-fit}
@@ -595,13 +599,86 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
 \end{figure*}
 
 
+\begin{figure*}
+    \centering
+    \includegraphics[width = .9 \linewidth]{figures/lc_specvar_flare_int.pdf}
+    \caption{Caption}
+    \label{fig:specvar}
+\end{figure*}
+
 \subsection{Distance of $\gamma$-ray emitting region to central engine from spectral fitting}
 
 \todo{do BLR fits}
 
+\begin{deluxetable*}{ccccccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:blrabs}Results from BLR absorption fits to \gray spectra.}
+\tablehead{$t_0$ [MJD] & $\Delta t$ [days] & $r_\mathrm{limit}$ $[10^{17}\mathrm{cm}]$ & 
+$r_\mathrm{limit}$ $[R_{\mathrm{Ly}\alpha}]$ & $r_\mathrm{limit}$ $[r_g]$ & $E_\mathrm{HEP}$ [GeV] & $E(\tau_{\gamma\gamma} = 1; r = r_\mathrm{limit})$ [GeV]
+}
+\startdata
+\hline
+\multicolumn{7}{c}{PKSB1222+216}\\
+\hline
+55364.68 & 3.42 & 0.81 & 0.85 & 367.74 & 75.39 & 72.12\\
+\hline
+\multicolumn{7}{c}{3C279}\\
+\hline
+57188.07 & 1.87 & 0.17 & 0.23 & 307.31 & 56.03 & 46.20\\
+58133.34 & 5.32 & 0.92 & 1.20 & 1627.73 & 92.56 & 92.54\\
+\hline
+\multicolumn{7}{c}{PKS1510-089}\\
+\hline
+57114.16 & 1.42 & 0.29 & 0.38 & 620.96 & 66.54 & 61.03\\
+57243.84 & 4.53 & 0.48 & 0.62 & 1022.22 & 75.93 & 73.27\\
+\hline
+\multicolumn{7}{c}{CTA102}\\
+\hline
+57749.10 & 4.99 & 1.82 & 1.10 & 723.31 & 73.80 & 48.67\\
+57757.55 & 4.66 & 0.57 & 0.34 & 224.78 & 39.19 & 34.27\\
+57861.71 & 2.42 & 0.42 & 0.26 & 169.07 & 34.73 & 33.13\\
+\hline
+\multicolumn{7}{c}{3C454.3}\\
+\hline
+55516.55 & 8.93 & 0.58 & 0.25 & 290.36 & 41.19 & 32.77\\
+\enddata
+{
+\tablecomments{Comment.}
+}
+\end{deluxetable*}
+
 \subsection{Sub-GTI light curves}
 \todo{Do the sub GTI light curves}
 
+\begin{deluxetable*}{ccccccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:blrabs}Results from sub-GTI light curves on minutes-scale variability.}
+\tablehead{$t_0$ [MJD] & $\Delta t$ [minutes] & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value (post trial)& $\mathrm{min}(t_{var})$ [minutes] & $\mathrm{min}(t_{double})$ [minutes]}
+\startdata
+\hline
+\multicolumn{7}{c}{3C279}\\
+\hline
+57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & 5.65 & 3.82 \\
+57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & 3.59 & 2.34 \\
+57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & 3.66 & 2.39 \\
+\hline
+\multicolumn{7}{c}{PKS1510-089}\\
+\hline
+55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & 7.87 & 5.18 \\
+\hline
+\multicolumn{7}{c}{CTA102}\\
+\hline
+57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & 2.83 & 1.76 \\
+57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & 7.75 & 5.09 \\
+\hline
+\multicolumn{7}{c}{3C454.3}\\
+\hline
+55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.19 & 2.04 \\
+\enddata
+{
+\tablecomments{A comment}
+}
+\end{deluxetable*}
 
 \section{Discussion}
 \subsection{Search for correlation at radio wavelengths}
