@@ -594,7 +594,7 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
 \begin{figure*}
     \centering
     \includegraphics[width = .9 \linewidth]{figures/zdcf_ebins.pdf}
-    \caption{Caption}
+    \caption{\todo{If $\tau > 0$: second (high energy) LC lags behind first (low energy) curve. If $\tau < 0$, high energy curve (second LC) is leading}}
     \label{fig:zdcf}
 \end{figure*}
 
@@ -602,13 +602,27 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
 \begin{figure*}
     \centering
     \includegraphics[width = .9 \linewidth]{figures/lc_specvar_flare_int.pdf}
-    \caption{Caption}
+    \caption{}
     \label{fig:specvar}
 \end{figure*}
 
 \subsection{Distance of $\gamma$-ray emitting region to central engine from spectral fitting}
 
 \todo{do BLR fits}
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.32\linewidth]{figures/sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t001_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t003_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t005_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t006_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure*}
+
 
 \begin{deluxetable*}{ccccccc}
 \tablewidth{0pt}
@@ -687,10 +701,34 @@ Things done differently with respect to Fermi periodograms:
 \begin{itemize}
     \item Used variance matching instead of EM13 algorithm as it did not reprocude the observed periodograms, however the variance matching did. Also, PSDs generally closer or above two, Parseval's theorem applies
     \item no uncertainties of light curve applied, generally led to a strong flattening of simulated PSDs for high beta values, not observed in observed PSD. Selection of errors not perfect / too high, that's why white noise at high frequencies, also correlation between errors and fluxes observed, not taken into account when drawing randomly
-    \item Radio light curves show large gaps, light curve is split when gap is larger than 20 times the median gap between observations. Compromise between too many splits and too short individual light curves and interpolating over too large gaps. Interpolation step chosen to be 80\,\% quantile of the gaps in the split light curves, again as compromise between inventing data points and being able to sample a broad frequency range
-    \item individual light curves log averaged follwing the 1993 paper.
+    \item Radio light curves show large gaps, light curve is split when gap is larger than 20 times the median gap (for OVRO and SMA) and 4.5 times (for ALMA Band 3) between observations. Compromise between too many splits and too short individual light curves and interpolating over too large gaps. Interpolation step chosen to be 80\,\% quantile of the gaps in the split light curves, again as compromise between inventing data points and being able to sample a broad frequency range
+    \item individual light curves log averaged following \citet{1993MNRAS.261..612P} paper.
 \end{itemize}
 }
+\todo{Computing LCCF and time delay between radio and \gray light curves:
+\begin{itemize}
+    \item Followed \citet{2014MNRAS.445..437M,2014MNRAS.445..428M} to compute LCCF
+    \item did so for OVRO at 15\,GHz, ALMA Band 3 (3.6-2.6mm or 84-116 GHz) and SMA 1.3 mm (350 GHz)
+    \item Used PSDs determined for radio and \gray data to calculate significance of LCCF
+    \item bins of time lags: minimum and maximum of tested time lags chosen to be half the length of the shortest light curve
+    \item For binning used maximum of half the median of time separations of data points in light curve
+    \item LCCF curves are shown in Fig.
+    \item determined peak of time lag $\tau_\mathrm{peak}$, and give its significance if $p$-value $<0.05$, if $\tau < 0$, it means that \gray light curve is leading the radio light curve
+    \item Uncertainty of $\tau_\mathrm{peak}$ calculated with flux randomization and random subsample selection following \citet{1998PASP..110..660P} as suggested by \citet{2014MNRAS.445..437M}
+    \item distance between \gray and radio emitting region determined through
+    \begin{equation}
+        d_{\gamma,r} = \frac{\Gamma\delta\beta c\tau_\mathrm{peak}}{1 + z}
+    \end{equation},
+    where $\Gamma$ is the Lorentz factor, $\delta$ the Doppler-boost factor, and $\beta = \sqrt{1 - \Gamma^{-2}}$ the velocity of the flow. 
+    \item We use the average Doppler-boost and Lorentz factor and their uncertainties as determined from VLBA observations from 2007 to 2013 at 43\,GHz~\citep{2017ApJ...846...98J}
+\end{itemize}
+}
+\begin{figure}
+    \centering
+    \includegraphics{}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
 
 \subsection{Comparison to theory}
 \todo{
