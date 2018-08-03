@@ -706,23 +706,32 @@ Things done differently with respect to Fermi periodograms:
 \end{itemize}
 }
 \todo{Computing LCCF and time delay between radio and \gray light curves:
+}
 \begin{itemize}
     \item Followed \citet{2014MNRAS.445..437M,2014MNRAS.445..428M} to compute LCCF
     \item did so for OVRO at 15\,GHz, ALMA Band 3 (3.6-2.6mm or 84-116 GHz) and SMA 1.3 mm (350 GHz)
-    \item Used PSDs determined for radio and \gray data to calculate significance of LCCF
+    \item Used PSDs determined for radio and \gray data to calculate significance of LCCF: We use 5000 pairs of simulated light curves to calculate confidence bands on LCCF of 68\,\%, 95\,\%, and 99\,\% confidence level. 
     \item bins of time lags: minimum and maximum of tested time lags chosen to be half the length of the shortest light curve
     \item For binning used maximum of half the median of time separations of data points in light curve
     \item LCCF curves are shown in Fig.
-    \item determined peak of time lag $\tau_\mathrm{peak}$, and give its significance if $p$-value $<0.05$, if $\tau < 0$, it means that \gray light curve is leading the radio light curve
-    \item Uncertainty of $\tau_\mathrm{peak}$ calculated with flux randomization and random subsample selection following \citet{1998PASP..110..660P} as suggested by \citet{2014MNRAS.445..437M}
+    \item determined peak of time lag $\tau_\mathrm{peak}$, and give its significance if $p_\tau$-value $<0.05$, if $\tau < 0$, it means that \gray light curve is leading the radio light curve, considered only peaks with a delay $\tau < 100$ days as we expect the \gray emission to lead radio emission, as found in, e.g.,~\citet{2014MNRAS.441.1899F}
+    \item Uncertainty of $\tau_\mathrm{peak}$ calculated with flux randomization and random subsample selection (drawing 1000 samples) following \citet{1998PASP..110..660P} as suggested by \citet{2014MNRAS.445..437M}
     \item distance between \gray and radio emitting region determined through
     \begin{equation}
         d_{\gamma,r} = \frac{\Gamma\delta\beta c\tau_\mathrm{peak}}{1 + z}
     \end{equation},
     where $\Gamma$ is the Lorentz factor, $\delta$ the Doppler-boost factor, and $\beta = \sqrt{1 - \Gamma^{-2}}$ the velocity of the flow. 
     \item We use the average Doppler-boost and Lorentz factor and their uncertainties as determined from VLBA observations from 2007 to 2013 at 43\,GHz~\citep{2017ApJ...846...98J}
+    \item discussion: 3C454.3: ALMA and SMA data consistent with now time delay taking uncertainties into account. Delay for 15 GHz, expected since core further downstream in jet. Most significant detection in SMA 1.3mm data with significance $2\times10^{-4}$ ($3.72\sigma$); 3C279: radio light curves either do not correlate (OVRO) or have poor sampling during the major outbreaks. Hence, to correlation is observed. Similarly for PKS1510-089. 
+    \item Following \citet{2014MNRAS.441.1899F}, we can use VLBI data to determine the position of the radio core and hence the position of the \gray core using the core shift technique: \todo{short description}
+    From the MOJAVE blazar monitoring program the \citep{2012A&A...545A.113P}, the following distances $d_\mathrm{core,~15GHz}$ were determined at a frequency of 15 GHz under the assumption that $k_r = 1$: PKSB1222+216: 23.41 pc, 3C279: $<7.88$ pc, PKS1510-089: 17.71 pc,
+    CTA102: 46.7 pc, and 3C454.3: 20.36 pc. Dedicated analysis have also been carried out and found for 3C454.3 $k_r = 0.6-0.8$ and $d_\mathrm{core,~15GHz} \sim 38$pc and, since $d_{\mathrm{core},\nu}\propto\nu^{-1/k_r}$,  $d_\mathrm{core,~43GHz} \sim 9$pc~\citep{2014MNRAS.437.3396K}. 3C273: \citet{2013ARep...57...34V} find $k_r = 1.4$ and $d_{\mathrm{core},\nu} = 134\nu^{-1/1.4}$ using radio observations at frequencies between 4.8 and 362 GHz.
+    CTA102: \citet{2015A&A...576A..43F} conducted VLBA observations ranging from 5 GHz to 86 GHz and find $k_r = 1.0$ as a best fit value and find $d_{\mathrm{core,~86GHz}}\sim7$pc.
+    \item radio/radio correlation: 3C279 in ALMA/OVRO: correlation found, however, uncertainties on peak large and LCCF $\gtrsim 0.7$ for $\tau < 0$, can be explained by ALMA light curve that only starts in 2012. Other results with small $p_\tau$ values given in Table~\ref{tab:lccf-radio}
+    \item calculation of $d_{\mathrm{core},r_1}$ follows \citet{2014MNRAS.441.1899F}, using radio/radio correlations and  proper motion $\mu$ taken from 15\,GHz VLBI observations \citep{2016AJ....152...12L}, so that $\Delta r_\mathrm{mas} = \mu \tau_\mathrm{peak}$, from which we calculate $\Omega_r$ and $r_\mathrm{core}$ \citep{1998A&A...330...79L} with observation angle from \citet{2017ApJ...846...98J}, Values of $k$ taken from citations above, for $3C279$ we take $k = 1$. Obtained values for 3C273 and 3C454.3 are compatible with Kutkin and Vol'vach. 
+    \item Add more discussion on results. Basic findings: \Grays produced co-spatially with mm emisison, especially interesting for 3C454.3 with 0.8 pc from radio and 0.2 pc from \gray data.
 \end{itemize}
-}
+
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lccf__nsim5000_fermi_EM13gaps-data_ovro_MM14gaps-none_lccf.pdf}
@@ -730,18 +739,18 @@ Things done differently with respect to Fermi periodograms:
     \label{fig:lccf-ovro}
 \end{figure*}
 
-\begin{figure*}
+\begin{figure}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/lccf__nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .99\linewidth]{figures/lccf__nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
     \caption{Caption}
-    \label{fig:lccf-ovro}
-\end{figure*}
+    \label{fig:lccf-alma}
+\end{figure}
 
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lccf__nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
     \caption{Caption}
-    \label{fig:lccf-ovro}
+    \label{fig:lccf-sma}
 \end{figure*}
 
 \subsection{Comparison to theory}
@@ -752,6 +761,71 @@ Things done differently with respect to Fermi periodograms:
     \item also discuss magnetic islands, geometric jet variations,...
 \end{itemize}
 }
+\begin{deluxetable}{lccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:lccf-radio}Time lags from radio/radio LCCF analysis.}
+\tablehead{Source & $\tau_{r_1,r_2}$ [days] & $p_{\tau~{r_1,r_2}}$  & $d_{\mathrm{core},r_1}$ [pc]  }
+\startdata
+\hline
+\multicolumn{4}{c}{ALMA Band 3 \& OVRO}\\
+\hline
+3C273 & $-161^{+72}_{-36}$ & 0.0222 & $1.5~[0.8,1.8]~\pm0.6$ \\
+3C279 & $-622^{+154}_{-168}$ & 0.0036 & $8.1~[6.1,10.3]~\pm2.6$ \\
+CTA102 & --- & --- & --- \\
+3C454.3 & $-667^{+100}_{-30}$ & 0.0782 & $4.6~[3.9,4.8]~\pm2.6$ \\
+\hline
+\multicolumn{4}{c}{SMA 1.3mm \& OVRO}\\
+\hline
+3C273 & $-427^{+293}_{-87}$ & 0.0256 & $4.0~[1.2,4.8]~\pm1.5$ \\
+3C279 & $-165^{+12}_{-125}$ & 0.0152 & $2.2~[2.0,3.8]~\pm0.7$ \\
+3C454.3 & $-110^{+14}_{-0}$ & 0.0924 & $0.8~[0.7,0.8]~\pm0.4$ \\
+\hline
+\multicolumn{4}{c}{SMA 1.3mm \& ALMA Band 3}\\
+\hline
+3C273 & $1^{+9}_{-36}$ & 0.0000 & --- \\
+3C279 & $-188^{+175}_{-119}$ & 0.0002 & --- \\
+3C454.3 & $3^{+10}_{-20}$ & 0.0004 & --- \\
+\enddata
+{
+\tablecomments{A comment}
+}
+\end{deluxetable}
+
+\begin{deluxetable*}{lccccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:lccf}Results from PSD analysis of radio and \gray and radio LCCF analysis.}
+\tablehead{Source & $\hat{\beta}$ & $p_\beta$ & $\tau_\mathrm{peak}$ [days] & $p_\tau$ & $d_{\gamma, r}$ [pc]}
+\startdata
+\hline
+\multicolumn{6}{c}{OVRO}\\
+\hline
+PKSB1222+216 & $1.92^{+0.39}_{-0.59}$ & 0.59 & --- & --- & ---\\
+3C273 & $2.38^{+0.30}_{-0.97}$ & 0.94 & $-416.5^{+217.0}_{-140.0}$ & 0.0068 & $10.96~[5.2,14.6]~\pm4.4$\\
+3C279 & $2.29^{+0.32}_{-0.94}$ & 0.71 & --- & --- & ---\\
+PKS1510-089 & $1.89^{+0.45}_{-0.84}$ & 0.34 & --- & --- & ---\\
+CTA102 & $2.23^{+0.26}_{-0.92}$ & 0.84 & --- & --- & ---\\
+3C454.3 & $2.20^{+0.36}_{-2.20}$ & 0.40 & $-101.5^{+49.0}_{-112.0}$ & 0.0156 & $15.39~[8.0,32.4]~\pm2.8$\\
+\hline
+\multicolumn{6}{c}{ALMA Band 3}\\
+\hline
+3C273 & $2.12^{+0.40}_{-2.12}$ & 0.73 & --- & --- & ---\\
+3C279 & $1.82^{+0.38}_{-0.45}$ & 0.89 & --- & --- & ---\\
+CTA102 & $1.94^{+0.42}_{-1.33}$ & 0.45 & $-216.0^{+209.0}_{-11.0}$ & 0.0092 & $58.85~[1.9,61.8]~\pm7.3$\\
+3C454.3 & $1.73^{+0.36}_{-0.30}$ & 0.25 & $-27.0^{+30.0}_{-30.0}$ & 0.0164 & $4.09~[-0.5,8.6]~\pm0.7$\\
+\hline
+\multicolumn{6}{c}{SMA 1.3mm}\\
+\hline
+3C273 & $1.48^{+0.40}_{-0.33}$ & 0.17 & $-122.5^{+84.0}_{-7.0}$ & 0.0088 & $3.22~[1.0,3.4]~\pm1.3$\\
+3C279 & $1.61^{+0.16}_{-0.28}$ & 0.97 & --- & --- & ---\\
+3C454.3 & $1.64^{+0.31}_{-1.64}$ & 0.21 & $10.5^{+21.0}_{-28.0}$ & 0.0002 & $-1.59~[-4.8,2.7]~\pm0.3$\\
+\enddata
+{
+\tablecomments{A comment}
+}
+\end{deluxetable*}
+
+
+
 \bibliography{mainbib}
 
 %% This command is needed to show the entire author+affilation list when
