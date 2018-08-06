@@ -624,40 +624,42 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
 \end{figure*}
 
 
-\begin{deluxetable*}{ccccccc}
+\begin{deluxetable*}{ccccccc|ccc}
 \tablewidth{0pt}
 \tablecaption{ \label{tab:blrabs}Results from BLR absorption fits to \gray spectra.}
-\tablehead{$t_0$ [MJD] & $\Delta t$ [days] & $r_\mathrm{limit}$ $[10^{17}\mathrm{cm}]$ & 
-$r_\mathrm{limit}$ $[R_{\mathrm{Ly}\alpha}]$ & $r_\mathrm{limit}$ $[r_g]$ & $E_\mathrm{HEP}$ [GeV] & $E(\tau_{\gamma\gamma} = 1; r = r_\mathrm{limit})$ [GeV]
+\tablehead{$t_0$ & $\Delta t$  & $r_\mathrm{limit}$ & 
+$r_\mathrm{limit}$ & $r_\mathrm{limit}$  & $E_\mathrm{HEP}$  & $E_{\tau_{\gamma\gamma} = 1}$ & $t_\mathrm{cool,~BLR}$  &
+$t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
+{} [MJD] & [days] & $[10^{17}\mathrm{cm}]$ & $[R_{\mathrm{Ly}\alpha}]$ & $[r_g]$ & [GeV] & [GeV] &  [mins] & [hours] & [mins]
 }
 \startdata
 \hline
-\multicolumn{7}{c}{PKSB1222+216}\\
+\multicolumn{10}{c}{PKSB1222+216}\\
 \hline
-55364.68 & 3.42 & 0.81 & 0.85 & 367.74 & 75.39 & 72.12\\
+55364.68 & 3.42 & 0.81 & 0.85 & 367.74 & 75.39 & 72.12 & 6.0 & 39.6 & 81.6\\
 \hline
-\multicolumn{7}{c}{3C279}\\
+\multicolumn{10}{c}{3C279}\\
 \hline
-57188.07 & 1.87 & 0.17 & 0.23 & 307.31 & 56.03 & 46.20\\
-58133.34 & 5.32 & 0.92 & 1.20 & 1627.73 & 92.56 & 92.54\\
+57188.07 & 1.87 & 0.17 & 0.23 & 307.31 & 56.03 & 46.20 & 4.3 & 44.7 & 33.6\\
+58133.34 & 5.32 & 0.92 & 1.20 & 1627.73 & 92.56 & 92.54 & 9.9 & 44.7 & 76.9\\
 \hline
-\multicolumn{7}{c}{PKS1510-089}\\
+\multicolumn{10}{c}{PKS1510-089}\\
 \hline
-57114.16 & 1.42 & 0.29 & 0.38 & 620.96 & 66.54 & 61.03\\
-57243.84 & 4.53 & 0.48 & 0.62 & 1022.22 & 75.93 & 73.27\\
+57114.16 & 1.42 & 0.29 & 0.38 & 620.96 & 66.54 & 61.03& 1.5 & 14.7 & 17.9\\
+57243.84 & 4.53 & 0.48 & 0.62 & 1022.22 & 75.93 & 73.27& 1.8 & 14.7 & 140.8\\
 \hline
-\multicolumn{7}{c}{CTA102}\\
+\multicolumn{10}{c}{CTA102}\\
 \hline
-57749.10 & 4.99 & 1.82 & 1.10 & 723.31 & 73.80 & 48.67\\
-57757.55 & 4.66 & 0.57 & 0.34 & 224.78 & 39.19 & 34.27\\
-57861.71 & 2.42 & 0.42 & 0.26 & 169.07 & 34.73 & 33.13\\
+57749.10 & 4.99 & 1.82 & 1.10 & 723.31 & 73.80 & 48.67& 3.5 & 19.4 & 169.2\\
+57757.55 & 4.66 & 0.57 & 0.34 & 224.78 & 39.19 & 34.27 & 1.8 & 19.4 & 122.2\\
+57861.71 & 2.42 & 0.42 & 0.26 & 169.07 & 34.73 & 33.13& 1.7 & 19.4 & 50.0\\
 \hline
-\multicolumn{7}{c}{3C454.3}\\
+\multicolumn{10}{c}{3C454.3}\\
 \hline
-55516.55 & 8.93 & 0.58 & 0.25 & 290.36 & 41.19 & 32.77\\
+55516.55 & 8.93 & 0.58 & 0.25 & 290.36 & 41.19 & 32.77& 3.8 & 45.7 & 20.7\\
 \enddata
 {
-\tablecomments{Comment.}
+\tablecomments{Highest energy photons are given for source probabilities $> 0.99$. Decay time given for flare component with highest peak flux.}
 }
 \end{deluxetable*}
 
@@ -672,22 +674,22 @@ $r_\mathrm{limit}$ $[R_{\mathrm{Ly}\alpha}]$ & $r_\mathrm{limit}$ $[r_g]$ & $E_\
 \hline
 \multicolumn{7}{c}{3C279}\\
 \hline
-57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & 5.65 & 3.82 \\
-57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & 3.59 & 2.34 \\
-57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & 3.66 & 2.39 \\
+57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & 5.6 & 3.8 \\
+57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & 3.6 & 2.3 \\
+57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & 3.7 & 2.4 \\
 \hline
 \multicolumn{7}{c}{PKS1510-089}\\
 \hline
-55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & 7.87 & 5.18 \\
+55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & 7.9 & 5.2 \\
 \hline
 \multicolumn{7}{c}{CTA102}\\
 \hline
-57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & 2.83 & 1.76 \\
-57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & 7.75 & 5.09 \\
+57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & 2.8 & 1.8 \\
+57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & 7.8 & 5.1 \\
 \hline
 \multicolumn{7}{c}{3C454.3}\\
 \hline
-55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.19 & 2.04 \\
+55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.2 & 2.0 \\
 \enddata
 {
 \tablecomments{A comment}
@@ -707,7 +709,17 @@ Things done differently with respect to Fermi periodograms:
 }
 \todo{Computing LCCF and time delay between radio and \gray light curves:
 }
+
+\begin{figure*}
+    \centering
+    \includegraphics[width = .9\linewidth]{figures/lc_gamma_radio_tsmin9.pdf}
+    \caption{Radio light curves}
+    \label{fig:lc-radio}
+\end{figure*}
+
+
 \begin{itemize}
+    \item short intro on radio data and that we use OVRO, ALMA, SMA. Light curves in Fig.~\ref{fig:lc-radio}
     \item Followed \citet{2014MNRAS.445..437M,2014MNRAS.445..428M} to compute LCCF
     \item did so for OVRO at 15\,GHz, ALMA Band 3 (3.6-2.6mm or 84-116 GHz) and SMA 1.3 mm (350 GHz)
     \item Used PSDs determined for radio and \gray data to calculate significance of LCCF: We use 5000 pairs of simulated light curves to calculate confidence bands on LCCF of 68\,\%, 95\,\%, and 99\,\% confidence level. 
