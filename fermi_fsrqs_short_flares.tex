@@ -1,4 +1,4 @@
-\documentclass[twocolumn]{aastex62}
+d\documentclass[twocolumn]{aastex62}
 \usepackage{xspace}
 
 %% The default is a single spaced, 10 point font, single spaced article.
@@ -390,12 +390,7 @@ GTI & $\overline{F}$ & $2\times\overline{F},~\mathrm{TS} \geqslant 150$\tablenot
 \tablenotetext{b}{Motivated from the high $\mathrm{TS}$ found for the flare of 3C\,279~\citep{TheFermi-LAT:2016dss}, we also demand that at least one GTI of each HOP group is detected with $\mathrm{TS} \geqslant 150$ in order to ensure enough statistics to search for variability on time scales of minutes.}
 \end{deluxetable}
 
-\todo{
-\begin{enumerate}
-\item result section: divide into results of full time range with flux distribution, PSD, LCCF (I would leave that for the discussion part); GTI light curves with fitted light curve profiles and study of flare duration and symmetries -- energy dependent light curves? Or in discussion?; short time variability below orbital time scales; fits to the SEDs
-    \item work extends previous works e.g. Naweljajko 2014 paper -- put in discussion?
-\end{enumerate}
-}
+
 %%% Daily light curves %%%%%%%%%
 \begin{figure*}
     \centering
@@ -414,11 +409,10 @@ GTI & $\overline{F}$ & $2\times\overline{F},~\mathrm{TS} \geqslant 150$\tablenot
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Results}
-\label{sec:results}
-We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales.
+\section{Results for global light curve properties}
+\label{sec:results-global}
+We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales in Sec.~\ref{sec:results-local}.
 
-\subsection{Global \gray light curve properties}
 From the weekly light curves in Fig.~\ref{fig:weekly} it is evident that the FSRQs show strong flares that exceed the average flux by a factor of a few, while the quiescent level is relatively stable. 
 Such behavior is typical for FSRQs~\citet{} and we 
 further quantify it by calculating the flux distribution, $dN/dF$, of the weekly fluxes for bins with $\mathrm{TS} > 9$ and $F_i > \sigma_i$. 
@@ -516,12 +510,14 @@ CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26
 }
 \end{deluxetable*}
 
+\section{Results for local light curve properties}
+\label{sec:results-local}
+%\subsection{Local light curve properties}
+%\label{sec:hop-fit}
 
-\subsection{Local light curve properties}
-\label{sec:hop-fit}
+We proceed with deriving local properties of the \gray flares from the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
 
-We derive local properties of the \gray flares from the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
-To this end, 
+To assess the time profile of the flares,
 we fit each HOP group $i$ with a $\chi^2$ minimization as a sum of exponential profiles, 
 \begin{eqnarray}
     F_{\mathrm{flare},i}(t) &=& 
@@ -581,8 +577,7 @@ We also investigate whether subsequent flares in each panel of Fig.~\ref{fig:gti
 For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a Binomial distribution of finding the observed number positive values of the differences for a probability of 50\,\% of finding either positive or negative values, which constitutes the random case.
 For 32 values of differences the $p$-values for the integrated and peak flux, as well as for the flare duration are close to 0.1 (14, 13, and 13 positive values for 32 trials, respectively) indicating no particular evolution of these quantities with time. 
 
-
-\todo{Do the energy dependent light curves and evolution of the spectral indices?}
+\subsection{Energy dependent light curves}
 
 \begin{figure*}
     \centering
@@ -606,7 +601,51 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
     \label{fig:specvar}
 \end{figure*}
 
-\subsection{Distance of $\gamma$-ray emitting region to central engine from spectral fitting}
+\subsection{Sub-GTI light curves}
+\todo{Do the sub GTI light curves}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
+    \caption{Sub-GTI light curves}
+    \label{fig:lc_minutes}
+\end{figure*}
+
+\begin{deluxetable*}{ccccccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:blrabs}Results from sub-GTI light curves on minutes-scale variability.}
+\tablehead{$t_0$ & $\Delta t$  & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value& $\mathrm{min}(t_{var})$ & $\mathrm{min}(t_{double})$  \\ 
+{} [MJD] & [mins] & {} & {} & (post trial) & [mins] & [mins]}
+\startdata
+\hline
+\multicolumn{7}{c}{3C279}\\
+\hline
+57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & 5.6 & 3.8 \\
+57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & 3.6 & 2.3 \\
+57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & 3.7 & 2.4 \\
+\hline
+\multicolumn{7}{c}{PKS1510-089}\\
+\hline
+55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & 7.9 & 5.2 \\
+\hline
+\multicolumn{7}{c}{CTA102}\\
+\hline
+57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & 2.8 & 1.8 \\
+57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & 7.8 & 5.1 \\
+\hline
+\multicolumn{7}{c}{3C454.3}\\
+\hline
+55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.2 & 2.0 \\
+\enddata
+{
+\tablecomments{A comment}
+}
+\end{deluxetable*}
+
+
+\section{Location of the $\gamma$-ray emitting region}
+
+\subsection{Results from spectral fits to \gray data}
 
 \todo{do BLR fits}
 \begin{figure*}
@@ -622,6 +661,26 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
     \caption{Caption}
     \label{fig:my_label}
 \end{figure*}
+\begin{itemize}
+    \item calculating cooling time from limit on distance: first calculate photon density in stationary frame of the source, where we assume it is isotropic~\citep{finke2016}:
+    \begin{equation}
+        u_\mathrm{BLR/dt,ring} = \frac{\xi_\mathrm{li}L_\mathrm{disk}}{4\pi c(R_\mathrm{li}^2 + r^2)} 
+    \end{equation}
+    In the co-moving  frame of the source, this becomes (using $\Gamma\to1$:~\citep{2002ApJ...575..667D}
+    \begin{equation}
+        u'_\mathrm{BLR/dt,ring} = \frac{4}{3}\Gamma^2 u_\mathrm{BLR/dt,ring}
+    \end{equation} 
+    The Lorentz factor of the electrons in the co-moving can be approximated with~\citep[e.g.,][]{2009herb.book.....D,finke2016}
+        \begin{equation}
+        \gamma'_\mathrm{BLR/dt} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{\epsilon^\mathrm{obs}_s(1+z)}{2\epsilon_{\mathrm{BLR/dt},0}}},
+        \end{equation}
+        where $\delta_\mathrm{D}$ is the Doppler boost, $\epsilon_\mathrm^{obs}_s$
+        is the scattered observed photon energy and $\epsilon_0$ is the mean energy of the target photon field. We take the line energies for $\epsilon_0$ for the BLR and a temperature of 1000\,K in case of the dusty torus. 
+    \item The cooling time in the observer's frame is then calculated to be 
+    \begin{equation}
+        t_\mathrm{cool,BLR/dt} = \frac{1+z}{\delta_D}\frac{3m_ec^2}{4c\sigma_\mathrm{T}u_\mathrm{BLR/dt}'\gamma_\mathrm{BLR/dt}'}
+    \end{equation}
+\end{itemize}
 
 
 \begin{deluxetable*}{ccccccc|ccc}
@@ -663,41 +722,8 @@ $t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
 }
 \end{deluxetable*}
 
-\subsection{Sub-GTI light curves}
-\todo{Do the sub GTI light curves}
+\subsection{Results from radio-\gray correlation analysis}
 
-\begin{deluxetable*}{ccccccc}
-\tablewidth{0pt}
-\tablecaption{ \label{tab:blrabs}Results from sub-GTI light curves on minutes-scale variability.}
-\tablehead{$t_0$ [MJD] & $\Delta t$ [minutes] & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value (post trial)& $\mathrm{min}(t_{var})$ [minutes] & $\mathrm{min}(t_{double})$ [minutes]}
-\startdata
-\hline
-\multicolumn{7}{c}{3C279}\\
-\hline
-57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & 5.6 & 3.8 \\
-57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & 3.6 & 2.3 \\
-57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & 3.7 & 2.4 \\
-\hline
-\multicolumn{7}{c}{PKS1510-089}\\
-\hline
-55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & 7.9 & 5.2 \\
-\hline
-\multicolumn{7}{c}{CTA102}\\
-\hline
-57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & 2.8 & 1.8 \\
-57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & 7.8 & 5.1 \\
-\hline
-\multicolumn{7}{c}{3C454.3}\\
-\hline
-55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.2 & 2.0 \\
-\enddata
-{
-\tablecomments{A comment}
-}
-\end{deluxetable*}
-
-\section{Discussion}
-\subsection{Search for correlation at radio wavelengths}
 \todo{
 Things done differently with respect to Fermi periodograms:
 \begin{itemize}
@@ -764,6 +790,8 @@ Things done differently with respect to Fermi periodograms:
     \caption{Caption}
     \label{fig:lccf-sma}
 \end{figure*}
+
+\section{Discussion}
 
 \subsection{Comparison to theory}
 \todo{
