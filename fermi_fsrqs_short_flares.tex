@@ -1,4 +1,4 @@
-d\documentclass[twocolumn]{aastex62}
+\documentclass[twocolumn]{aastex62}
 \usepackage{xspace}
 
 %% The default is a single spaced, 10 point font, single spaced article.
@@ -523,7 +523,7 @@ we fit each HOP group $i$ with a $\chi^2$ minimization as a sum of exponential p
     F_{\mathrm{flare},i}(t) &=& 
     \sum\limits_{j = 1}^{N_i} F_{0,ij}\nonumber\\
     &\times&\left[\exp\left(\frac{t - t_{0,ij}}{\tau_{\mathrm{rise},ij}}\right) + \exp
-    \left(\frac{t_{0,ij} - t}{\tau_{\mathrm{decay},ij}}\right)\right]^{-1}\!\!\!,&
+    \left(\frac{t_{0,ij} - t}{\tau_{\mathrm{decay},ij}}\right)\right]^{-1}\!\!\!,
     \label{eq:flareHOP}
 \end{eqnarray}
 where $t_{0,j}$ are the flare peak times, and $\tau_{\mathrm{rise},ij}$, $\tau_{\mathrm{decay},ij}$ are the flare rise and decay times, respectively.
@@ -570,14 +570,27 @@ The error bars on the peak flux and asymmetry are derived from standard Gaussian
     \label{fig:asym}
 \end{figure*}
 
-The median of the asymmetry is found to be $-0.195$, i.e., FRED-type flares are more common than the opposite. In general, the flares show a versatile behaviour and clear trends are seen from Fig.~\ref{fig:asym}. This is also reflected in the fact that we do not find any significant correlation between the asymmetry and the other quantities using Kendall's $\tau$.
-The most significant correlation we find is between $F_\mathrm{peak}$ and $\tau_\mathrm{decay}$ with Kendall's $\tau = -0.263$ and a $p$-value of $0.005\,(2.6\,\sigma)$ suggesting that flares with higher peak fluxes have shorter decay times. However, with the number of tested correlations (seven) the significance is too low to draw any firm conclusions (post-trial significance is 0.03 or $1.8\,\sigma$). 
+The median of the asymmetry is found to be $-0.195$, i.e., FRED-type flares are more common than the opposite. In general, the flares show a versatile behaviour and no clear trends are seen from Fig.~\ref{fig:asym}. This is also reflected in the fact that we do not find any significant correlation between the asymmetry, integrated and peak flux, rise and decay times as well as flare duration using Kendall's $\tau$.
+The most significant correlation is between $F_\mathrm{peak}$ and $\tau_\mathrm{decay}$ with Kendall's $\tau = -0.263$ and a $p$-value of $0.005\,(2.6\,\sigma)$ suggesting that flares with higher peak fluxes have shorter decay times. However, with the number of tested correlations (seven) the significance is too low to draw any firm conclusions (post-trial significance is 0.03 or $1.8\,\sigma$). 
 
 We also investigate whether subsequent flares in each panel of Fig.~\ref{fig:gti} show a trend with time in integrated flux, peak flux, or duration. 
-For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a Binomial distribution of finding the observed number positive values of the differences for a probability of 50\,\% of finding either positive or negative values, which constitutes the random case.
+\todo{what about assymmetry?}
+For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a Binomial distribution assuming an equal probability of finding negative and positive differences.
 For 32 values of differences the $p$-values for the integrated and peak flux, as well as for the flare duration are close to 0.1 (14, 13, and 13 positive values for 32 trials, respectively) indicating no particular evolution of these quantities with time. 
 
+We also find complex behavior of the spectral evolution during the flares. The often observed trend ``harder-when-brighter'' is found  for some sources but not in a strict manner. 
+We therefore cannot draw any firm conclusions from the spectral evolution, which we show for reference in Fig.~\ref{fig:specvar} in  Appendix~\ref{sec:specvar}. 
+
+
 \subsection{Energy dependent light curves}
+We split the data into three energy bins, from 100\,MeV-300\,MeV, 300\,MeV-1\,GeV, and 1\,GeV-100\,GeV and recompute the orbital light curves in Fig.~\ref{fig:gti}. 
+The energy bins are chosen as a compromise between number of bins and sufficient photon statistics in each bin. 
+The light curves for which at least 2 BBs are identified in each energy bin are shown in Fig.~\ref{fig:lcebins}.
+\todo{try to fit the specific flares with profiles. Would really be interesting in terms of Dotson paper if we see constant decay times or faster decay times. The latter would rather fit with Thomson regime, the format with KN regime. Plot with decay times vs energy bin. 
+Also discuss ZDCF. If we find something interesting in the fit, this could be the third way to say something about the location of the \gray emitting region. 
+}
+
+\todo{compare $m_ec^2$ against $\tilde\epsilon'_\mathrm{BLR} \leqslant 2\gamma'_\mathrm{BLR}\epsilon'_\mathrm{BLR}$ to see if we are in Thomson or KN regime, where quantity with tilde is in electron rest frame. Ly$\alpha$ photons have energy 10.2\,eV. Should be already quite deep in KN regime, need different expression for cooling time, see B\&G 1970}
 
 \begin{figure*}
     \centering
@@ -594,27 +607,45 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
 \end{figure*}
 
 
-\begin{figure*}
-    \centering
-    \includegraphics[width = .9 \linewidth]{figures/lc_specvar_flare_int.pdf}
-    \caption{}
-    \label{fig:specvar}
-\end{figure*}
+
 
 \subsection{Sub-GTI light curves}
-\todo{Do the sub GTI light curves}
+As described in Sec.~\ref{sec:zoom}, we search for sub-orbital variability in the subset of orbital light curves. 
+We choose only those light curves where at least one orbital light curve bin is detected with $\mathrm{TS} \geqslant 150$. 
+This is motivated by the evidence for minute-scale variability in 3C279. For the bin where \citet{ackermann2015} found evidence for the short-time variability, we find \todo{$\mathrm{TS} = XXX$}. 
+With our $\mathrm{TS}$ cut, we ensure similarly high photon statistics in reduce the number of trials when searching for minute scale variability. 
+The selected time regions are indicated with the green shaded regions in Fig.~\ref{fig:gti}, whereas the blue shaded regions indicate the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
 
+The resulting light curves, binned such that the uncertainty in each bin is of the order of $\sim20\,\%$ \citep[using the adaptive binning introduced by][]{lott2012}, are shown in Fig.~\ref{fig:lc_minutes}. 
+In order to make an unbiased selection of GTIs that we want to test against the hypothesis of a constant flux, we consider only those GTIs, where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Fig.~\ref{fig:lc_minutes}.
+Naively, one would think that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{Scargle2012}. However, the BBs take also data  before and after this GTI into account and only provide qualitative evidence for minute-scale variability. 
+Therefore, we test each bin selected in this way against the hypothesis of constant flux, using a simple $\chi^2$ test. 
+The best-fit constant flux is given by \todo{$X$}. 
+The pre- and post-trial $p$-values of the $\chi^2$ fits are provided in Tab.~\ref{tab:minute}, where we count each tested GTI for each flare as one trial. 
+We also provide the minimum values for the variability times, given by~\citep{zhang1999}
+\begin{equation}
+t_\mathrm{var} = 
+\end{equation}
+and flux doubling / halfing times~\citep[e.g.,][]{shukla2018}
+\begin{equation}
+t_\mathrm{double} = .
+\end{equation}
+The pre-trial $p$-values for rejecting the constant-flux hypothesis are all close to $2\,\sigma$, except for PKS1510-089, where the tested GTIs are compatible with a constant flux. 
+The trial correction leaves only one GTI of 3C279 and two GTIs for CTA102 close or above a $2\,\sigma$ evidence for a variable flux. 
+For these GTIs the suggested variability times scales are between 3 and 8\,minutes.
+
+\todo{Comparison to previous results: lower significance, due to trial correction, different analysis: searched for additional point source (where do find them), different exposure due to binning in $\phi$ direction, different light curve binning (additonal binnings would increase number of trials). Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale variability for 3C454.3 and PKS1510-089 and stronger evidence for 3C279 and CTA102.}
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
-    \caption{Sub-GTI light curves}
+    \caption{Sub-GTI light curves for the HOP groups of the orbital light curves which contain one bin with $\mathrm{TS} \geqslant 150$. The green shaded regions indicate GTIs that encompass a significant flux change found by the BB algorithm. The dark grey curves show the relative exposure at 1\,GeV \todo{check}. The ToO campaigns for 3C279 (upper left panel) and CTA102 (upper right panel) are clearly visible as the exposure is constant over several GTIs. }
     \label{fig:lc_minutes}
 \end{figure*}
 
 \begin{deluxetable*}{ccccccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:blrabs}Results from sub-GTI light curves on minutes-scale variability.}
-\tablehead{$t_0$ & $\Delta t$  & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value& $\mathrm{min}(t_{var})$ & $\mathrm{min}(t_{double})$  \\ 
+\tablecaption{ \label{tab:minute}Results from sub-GTI light curves on minutes-scale variability.}
+\tablehead{$t_0$ & $\Delta t$  & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value& $\mathrm{min}(t_\mathrm{var})$ & $\mathrm{min}(t_\mathrm{double})$  \\ 
 {} [MJD] & [mins] & {} & {} & (post trial) & [mins] & [mins]}
 \startdata
 \hline
@@ -638,12 +669,14 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
 55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.2 & 2.0 \\
 \enddata
 {
-\tablecomments{A comment}
+\tablecomments{The number of trials is counted for each flare individually and given by the number of green shaded areas in each panel of Fig.~\ref{fig:lc_minutes}.}
 }
 \end{deluxetable*}
 
 
 \section{Location of the $\gamma$-ray emitting region}
+
+\todo{Do the generic stuff from the variability time scale, see Saito 2013. Then say we do three different methods: fit to \gray spectrum, energy dependent \gray light curves, and cross correlation with radio.}
 
 \subsection{Results from spectral fits to \gray data}
 
@@ -674,7 +707,7 @@ For 32 values of differences the $p$-values for the integrated and peak flux, as
         \begin{equation}
         \gamma'_\mathrm{BLR/dt} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{\epsilon^\mathrm{obs}_s(1+z)}{2\epsilon_{\mathrm{BLR/dt},0}}},
         \end{equation}
-        where $\delta_\mathrm{D}$ is the Doppler boost, $\epsilon_\mathrm^{obs}_s$
+%        where $\delta_\mathrm{D}$ is the Doppler boost, $\epsilon_\mathrm^{obs}_s$
         is the scattered observed photon energy and $\epsilon_0$ is the mean energy of the target photon field. We take the line energies for $\epsilon_0$ for the BLR and a temperature of 1000\,K in case of the dusty torus. 
     \item The cooling time in the observer's frame is then calculated to be 
     \begin{equation}
@@ -865,6 +898,19 @@ CTA102 & $1.94^{+0.42}_{-1.33}$ & 0.45 & $-216.0^{+209.0}_{-11.0}$ & 0.0092 & $5
 \end{deluxetable*}
 
 
+\begin{appendix}
+\section{Spectral evolution of orbital light curves}
+\label{sec:specvar}
+The spectral evolution of the orbital light curves for each source is shown in Fig.~\ref{fig:specvar}. In each time bin, a power-law spectrum with index $\Gamma$ and integrated flux $F$ is assumed. 
+
+
+\begin{figure*}
+    \centering
+    \includegraphics[width = .9 \linewidth]{figures/lc_specvar_flare_int.pdf}
+    \caption{Spectral variations of the brightest flares on orbital time scales. Light colors refer to earlier times, dark colors to later times.}
+    \label{fig:specvar}
+\end{figure*}
+\end{appendix}
 
 \bibliography{mainbib}
 
