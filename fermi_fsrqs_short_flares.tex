@@ -610,15 +610,14 @@ Also discuss ZDCF. If we find something interesting in the fit, this could be th
 
 
 \subsection{Sub-GTI light curves}
-As described in Sec.~\ref{sec:zoom}, we search for sub-orbital variability in the subset of orbital light curves. 
-We choose only those light curves where at least one orbital light curve bin is detected with $\mathrm{TS} \geqslant 150$. 
-This is motivated by the evidence for minute-scale variability in 3C279. For the bin where \citet{ackermann2015} found evidence for the short-time variability, we find \todo{$\mathrm{TS} = XXX$}. 
-With our $\mathrm{TS}$ cut, we ensure similarly high photon statistics in reduce the number of trials when searching for minute scale variability. 
-The selected time regions are indicated with the green shaded regions in Fig.~\ref{fig:gti}, whereas the blue shaded regions indicate the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
+As described in Sec.~\ref{sec:zoom}, we search for sub-orbital variability in a subset of orbital light curves. 
+We choose only those light curves where at least one orbital bin is detected with $\mathrm{TS} \geqslant 150$. 
+In this way we ensure similarly high photon statistics and reduce the number of trials when searching for minute scale variability (for comparison, the orbital light curve bin for which \citet{ackermann2015} measured minute scale variability is detected with \todo{$TS = XXX$}). 
+The selected time regions are indicated with the green shaded regions in Fig.~\ref{fig:gti}, whereas the blue shaded regions show the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
 
 The resulting light curves, binned such that the uncertainty in each bin is of the order of $\sim20\,\%$ \citep[using the adaptive binning introduced by][]{lott2012}, are shown in Fig.~\ref{fig:lc_minutes}. 
 In order to make an unbiased selection of GTIs that we want to test against the hypothesis of a constant flux, we consider only those GTIs, where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Fig.~\ref{fig:lc_minutes}.
-Naively, one would think that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{Scargle2012}. However, the BBs take also data  before and after this GTI into account and only provide qualitative evidence for minute-scale variability. 
+Naively, one would think that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{Scargle2012}. However, the BBs take also data  before and after the particular GTI into account and only provide qualitative evidence for minute-scale variability. 
 Therefore, we test each bin selected in this way against the hypothesis of constant flux, using a simple $\chi^2$ test. 
 The best-fit constant flux is given by \todo{$X$}. 
 The pre- and post-trial $p$-values of the $\chi^2$ fits are provided in Tab.~\ref{tab:minute}, where we count each tested GTI for each flare as one trial. 
@@ -634,7 +633,12 @@ The pre-trial $p$-values for rejecting the constant-flux hypothesis are all clos
 The trial correction leaves only one GTI of 3C279 and two GTIs for CTA102 close or above a $2\,\sigma$ evidence for a variable flux. 
 For these GTIs the suggested variability times scales are between 3 and 8\,minutes.
 
-\todo{Comparison to previous results: lower significance, due to trial correction, different analysis: searched for additional point source (where do find them), different exposure due to binning in $\phi$ direction, different light curve binning (additonal binnings would increase number of trials). Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale variability for 3C454.3 and PKS1510-089 and stronger evidence for 3C279 and CTA102.}
+In comparison to previous results for 3C279 and CTA102, our method results in lower significance detection of minute-scale variability. 
+This is due to trial correction but probably also due to differences in the analysis. For example, we use a finer binning for the exposure in the azimuthal direction to take this dependence for such short observations into account. 
+The change in exposure is, however, below 10\,\%.
+More importantly, we use a different binning within one GTI, which can also change the significance. 
+\todo{Check other results. Can we say that we cannot confirm the high significance of Shukla et al? Their bin included?} 
+Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale variability for 3C454.3 and PKS1510-089 and stronger evidence for 3C279 and CTA102.
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
@@ -679,8 +683,22 @@ For these GTIs the suggested variability times scales are between 3 and 8\,minut
 \todo{Do the generic stuff from the variability time scale, see Saito 2013. Then say we do three different methods: fit to \gray spectrum, energy dependent \gray light curves, and cross correlation with radio.}
 
 \subsection{Results from spectral fits to \gray data}
+The attenuation due to pair production should manifest itself as a cut-off feature in the \gray spectrum in the case that \gray emission region deep within the BLR.
+We search for such absorption features with a fit of the observed  \gray spectra during the brightest flares. The fitting function is of the form $f_\mathrm{int} \exp\left[-\left(\tau_{\gamma\gamma}^\mathrm{BLR} +\tau_{\gamma\gamma}^\mathrm{EBL} \right)  \right] $, where $f_\mathrm{int}$ describes the intrinsic spectrum emitted by the source and $\tau_{\gamma\gamma}^\mathrm{BLR / EBL}$ is the optical depth due to interactions of \Grays with BLR and EBL photons, respectively. 
+For the EBL optical depth, we use the EBL model of \citet{Dominguez2011}.
+The BLR optical depth will depend on the \gray energy, the location of the \gray emission zone, and the BLR geometry. 
+Here, we follow the stratified BLR model introduced by \citet{finke2016}, who models the BLR either a collection of shells or rings perpendicular to the jet axis to emulate a flattened BLR. 
+Each shell or ring is assumed to have infinitesimal thickness and to emit a monochromatic UV or optical emission line. 
+The relative radii of the shells and rings as well as the relative luminosities of each line are taken from templates derived from average spectra obtained in reverberation mapping campaigns~\citep[see][for further details]{finke2016}.
+We use the luminosity of the H$\beta$ line listed in Tab.~\ref{tab:src-select} to fix the absolute luminosities.  
+Together with the masses of the super-massive black holes, we can then calculate $\tau_{\gamma\gamma}^\mathrm{BLR}$ for both geometries as a function of the distance $r$ of the \gray emission region to the black hole.
+\todo{Ly alpha dominates, estimate BLR photon density with Ly alpha}
+For the intrinsic spectra, we test a log-parabola or a power law with super-exponential cut-off. 
+We derive the best-fit values for the spectral parameters and $r$ with a likelihood maximization, of the bin-by-bin likelihood curves, which we extract with \textsc{fermipy} and that are shown as gray shaded bands in the panels of Fig.~\ref{fig:seds}. 
 
-\todo{do BLR fits}
+We limit the fit range to energies above 1\,GeV.
+
+\todo{do BLR fits; describe spectral varaibility and selected time range. If hardening is present, likely that it isn't given the spectral variation plots, then this should bias our results to larger distances, but harder when brighter, we should be ore likely to see the absorption... Need to think about it more}
 \begin{figure*}
     \centering
     \includegraphics[width=0.32\linewidth]{figures/sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf}
@@ -692,7 +710,7 @@ For these GTIs the suggested variability times scales are between 3 and 8\,minut
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf}
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}
     \caption{Caption}
-    \label{fig:my_label}
+    \label{fig:seds}
 \end{figure*}
 \begin{itemize}
     \item calculating cooling time from limit on distance: first calculate photon density in stationary frame of the source, where we assume it is isotropic~\citep{finke2016}:
@@ -701,15 +719,19 @@ For these GTIs the suggested variability times scales are between 3 and 8\,minut
     \end{equation}
     In the co-moving  frame of the source, this becomes (using $\Gamma\to1$:~\citep{2002ApJ...575..667D}
     \begin{equation}
-        u'_\mathrm{BLR/dt,ring} = \frac{4}{3}\Gamma^2 u_\mathrm{BLR/dt,ring}
+        u'_\mathrm{BLR/dt,ring} = \frac{4}{3}\Gamma^2 u_\mathrm{BLR/dt,ring},
     \end{equation} 
+    or for photons coming from behind (cite Dermer \& Schlickeiser 1994),
+       \begin{equation}
+        u'_\mathrm{BLR/dt,ring} = \frac{3}{4}\Gamma^{-2} u_\mathrm{BLR/dt,ring},
+    \end{equation}  
     The Lorentz factor of the electrons in the co-moving can be approximated with~\citep[e.g.,][]{2009herb.book.....D,finke2016}
         \begin{equation}
         \gamma'_\mathrm{BLR/dt} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{\epsilon^\mathrm{obs}_s(1+z)}{2\epsilon_{\mathrm{BLR/dt},0}}},
         \end{equation}
 %        where $\delta_\mathrm{D}$ is the Doppler boost, $\epsilon_\mathrm^{obs}_s$
         is the scattered observed photon energy and $\epsilon_0$ is the mean energy of the target photon field. We take the line energies for $\epsilon_0$ for the BLR and a temperature of 1000\,K in case of the dusty torus. 
-    \item The cooling time in the observer's frame is then calculated to be 
+    \item The cooling time in the observer's frame is then calculated to be (for Thomson scattering). Use numerical integration (see e.g. Dotson 2012) for full expression including KN effects which are important for BLR photons at 10.2 eV
     \begin{equation}
         t_\mathrm{cool,BLR/dt} = \frac{1+z}{\delta_D}\frac{3m_ec^2}{4c\sigma_\mathrm{T}u_\mathrm{BLR/dt}'\gamma_\mathrm{BLR/dt}'}
     \end{equation}
