@@ -290,7 +290,7 @@ Furthermore, PKS\,B1222+216, 3C\,279, and PKS\,1510-089  are among the 7 FSRQs a
 
 \begin{deluxetable*}{llcccccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:src-select}Blazars selected for this study. }
+\tablecaption{ \label{tab:src-select}Blazars selected for this study. \todo{add Doppler, Gamma, obs angle from \citet{2017ApJ...846...98J}}}
 \tablehead{Source name & 3FGL name & R.A. & DEC & Redshift & $\log_{10}(M_\bullet / M_\odot)$\tablenotemark{a} & $L_\mathrm{disk} [10^{46} \mathrm{ergs}\,\mathrm{s}^{-1}]$\tablenotemark{a} & $L(\mathrm{H}\beta) [10^{43} \mathrm{ergs}\,\mathrm{s}^{-1}]$\tablenotemark{b}}
 \startdata
 PKS\,B1222+216 & 3FGL\,J1224.9+2122 & 186.226  & 21.382 & 0.432 & 8.87\tablenotemark{c} & $1.612$ &  $2.788 \pm 0.561$\tablenotemark{d}\\
@@ -571,63 +571,31 @@ The error bars on the peak flux and asymmetry are derived from standard Gaussian
 \end{figure*}
 
 The median of the asymmetry is found to be $-0.195$, i.e., FRED-type flares are more common than the opposite. In general, the flares show a versatile behaviour and no clear trends are seen from Fig.~\ref{fig:asym}. This is also reflected in the fact that we do not find any significant correlation between the asymmetry, integrated and peak flux, rise and decay times as well as flare duration using Kendall's $\tau$.
-The most significant correlation is between $F_\mathrm{peak}$ and $\tau_\mathrm{decay}$ with Kendall's $\tau = -0.263$ and a $p$-value of $0.005\,(2.6\,\sigma)$ suggesting that flares with higher peak fluxes have shorter decay times. However, with the number of tested correlations (seven) the significance is too low to draw any firm conclusions (post-trial significance is 0.03 or $1.8\,\sigma$). 
 
-We also investigate whether subsequent flares in each panel of Fig.~\ref{fig:gti} show a trend with time in integrated flux, peak flux, or duration. 
-\todo{what about assymmetry?}
+We also investigate whether subsequent flares in each panel of Fig.~\ref{fig:gti} show a trend with time in peak flux, asymmetry, or duration. 
 For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a Binomial distribution assuming an equal probability of finding negative and positive differences.
-For 32 values of differences the $p$-values for the integrated and peak flux, as well as for the flare duration are close to 0.1 (14, 13, and 13 positive values for 32 trials, respectively) indicating no particular evolution of these quantities with time. 
+For 32 values of differences the $p$-values for the peak flux, asymmetry, as well as for the flare duration are close to 0.1 (14, 13, and 13 positive values for 32 trials, respectively) indicating no particular evolution of these quantities with time. 
 
 We also find complex behavior of the spectral evolution during the flares. The often observed trend ``harder-when-brighter'' is found  for some sources but not in a strict manner. 
 We therefore cannot draw any firm conclusions from the spectral evolution, which we show for reference in Fig.~\ref{fig:specvar} in  Appendix~\ref{sec:specvar}. 
-
-
-\subsection{Energy dependent light curves}
-We split the data into three energy bins, from 100\,MeV-300\,MeV, 300\,MeV-1\,GeV, and 1\,GeV-100\,GeV and recompute the orbital light curves in Fig.~\ref{fig:gti}. 
-The energy bins are chosen as a compromise between number of bins and sufficient photon statistics in each bin. 
-The light curves for which at least 2 BBs are identified in each energy bin are shown in Fig.~\ref{fig:lcebins}.
-\todo{try to fit the specific flares with profiles. Would really be interesting in terms of Dotson paper if we see constant decay times or faster decay times. The latter would rather fit with Thomson regime, the format with KN regime. Plot with decay times vs energy bin. 
-Also discuss ZDCF. If we find something interesting in the fit, this could be the third way to say something about the location of the \gray emitting region. 
-}
-
-\todo{compare $m_ec^2$ against $\tilde\epsilon'_\mathrm{BLR} \leqslant 2\gamma'_\mathrm{BLR}\epsilon'_\mathrm{BLR}$ to see if we are in Thomson or KN regime, where quantity with tilde is in electron rest frame. Ly$\alpha$ photons have energy 10.2\,eV. Should be already quite deep in KN regime, need different expression for cooling time, see B\&G 1970}
-
-\begin{figure*}
-    \centering
-    \includegraphics[width = .9 \linewidth]{figures/lc_ebins.pdf}
-    \caption{Caption}
-    \label{fig:lcebins}
-\end{figure*}
-
-\begin{figure*}
-    \centering
-    \includegraphics[width = .9 \linewidth]{figures/zdcf_ebins.pdf}
-    \caption{\todo{If $\tau > 0$: second (high energy) LC lags behind first (low energy) curve. If $\tau < 0$, high energy curve (second LC) is leading}}
-    \label{fig:zdcf}
-\end{figure*}
-
 
 
 
 \subsection{Sub-GTI light curves}
 As described in Sec.~\ref{sec:zoom}, we search for sub-orbital variability in a subset of orbital light curves. 
 We choose only those light curves where at least one orbital bin is detected with $\mathrm{TS} \geqslant 150$. 
-In this way we ensure similarly high photon statistics and reduce the number of trials when searching for minute scale variability (for comparison, the orbital light curve bin for which \citet{ackermann2015} measured minute scale variability is detected with \todo{$TS = XXX$}). 
+In this way we ensure similarly high photon statistics and reduce the number of trials when searching for minute scale variability (for comparison, the orbital light curve bin for which \citet{TheFermi-LAT:2016dss} measured minute scale variability is detected with \todo{$TS = XXX$}). 
 The selected time regions are indicated with the green shaded regions in Fig.~\ref{fig:gti}, whereas the blue shaded regions show the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
 
 The resulting light curves, binned such that the uncertainty in each bin is of the order of $\sim20\,\%$ \citep[using the adaptive binning introduced by][]{lott2012}, are shown in Fig.~\ref{fig:lc_minutes}. 
 In order to make an unbiased selection of GTIs that we want to test against the hypothesis of a constant flux, we consider only those GTIs, where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Fig.~\ref{fig:lc_minutes}.
-Naively, one would think that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{Scargle2012}. However, the BBs take also data  before and after the particular GTI into account and only provide qualitative evidence for minute-scale variability. 
+Naively, one would think that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{2013ApJ...764..167S}. However, the BBs take also data  before and after the particular GTI into account and only provide qualitative evidence for minute-scale variability. 
 Therefore, we test each bin selected in this way against the hypothesis of constant flux, using a simple $\chi^2$ test. 
 The best-fit constant flux is given by \todo{$X$}. 
 The pre- and post-trial $p$-values of the $\chi^2$ fits are provided in Tab.~\ref{tab:minute}, where we count each tested GTI for each flare as one trial. 
-We also provide the minimum values for the variability times, given by~\citep{zhang1999}
+We also provide the minimum values for the variability times, given by~\citep{1999ApJ...527..719Z}
 \begin{equation}
-t_\mathrm{var} = 
-\end{equation}
-and flux doubling / halfing times~\citep[e.g.,][]{shukla2018}
-\begin{equation}
-t_\mathrm{double} = .
+t_\mathrm{var} = \frac{F_i + F_j}{2}\left|\frac{t_i - t_j}{F_i - F_j}\right|.
 \end{equation}
 The pre-trial $p$-values for rejecting the constant-flux hypothesis are all close to $2\,\sigma$, except for PKS1510-089, where the tested GTIs are compatible with a constant flux. 
 The trial correction leaves only one GTI of 3C279 and two GTIs for CTA102 close or above a $2\,\sigma$ evidence for a variable flux. 
@@ -646,36 +614,37 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
     \label{fig:lc_minutes}
 \end{figure*}
 
-\begin{deluxetable*}{ccccccc}
+\begin{deluxetable}{cccccc}
 \tablewidth{0pt}
+\tabletypesize{\scriptsize}
 \tablecaption{ \label{tab:minute}Results from sub-GTI light curves on minutes-scale variability.}
-\tablehead{$t_0$ & $\Delta t$  & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value& $\mathrm{min}(t_\mathrm{var})$ & $\mathrm{min}(t_\mathrm{double})$  \\ 
-{} [MJD] & [mins] & {} & {} & (post trial) & [mins] & [mins]}
+\tablehead{$t_0$ & $\Delta t$  & $\chi^2 / \mathrm{d.o.f.}$ & $p$-value & $p$-value& $\mathrm{min}(t_\mathrm{var})$  \\ 
+{} [MJD] & [mins] & {} & {} & (post trial) & [mins]}
 \startdata
 \hline
-\multicolumn{7}{c}{3C279}\\
+\multicolumn{6}{c}{3C279}\\
 \hline
-57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & 5.6 & 3.8 \\
-57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & 3.6 & 2.3 \\
-57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & 3.7 & 2.4 \\
+57189.07 & 30.72 & 1.93 & 0.051 (1.95$\sigma$) & 0.188 (1.32$\sigma$) & $5.6\pm2.8$ \\
+57189.14 & 35.13 & 1.68 & 0.071 (1.81$\sigma$) & 0.254 (1.14$\sigma$) & $3.6\pm1.4$ \\
+57189.47 & 53.08 & 1.94 & 0.015 (2.42$\sigma$) & 0.060 (1.88$\sigma$) & $3.7\pm1.4$ \\
 \hline
-\multicolumn{7}{c}{PKS1510-089}\\
+\multicolumn{6}{c}{PKS1510-089}\\
 \hline
-55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & 7.9 & 5.2 \\
+55854.07 & 50.80 & 2.01 & 0.091 (1.69$\sigma$) & 0.173 (1.36$\sigma$) & $7.9\pm5.0$ \\
 \hline
-\multicolumn{7}{c}{CTA102}\\
+\multicolumn{6}{c}{CTA102}\\
 \hline
-57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & 2.8 & 1.8 \\
-57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & 7.8 & 5.1 \\
+57738.07 & 37.04 & 2.30 & 0.011 (2.55$\sigma$) & 0.032 (2.14$\sigma$) & $2.8\pm1.0$ \\
+57758.86 & 78.00 & 2.62 & 0.049 (1.97$\sigma$) & 0.049 (1.97$\sigma$) & $7.8\pm3.7$ \\
 \hline
-\multicolumn{7}{c}{3C454.3}\\
+\multicolumn{6}{c}{3C454.3}\\
 \hline
-55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & 3.2 & 2.0 \\
+55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & $3.2\pm1.6$ \\
 \enddata
 {
 \tablecomments{The number of trials is counted for each flare individually and given by the number of green shaded areas in each panel of Fig.~\ref{fig:lc_minutes}.}
 }
-\end{deluxetable*}
+\end{deluxetable}
 
 
 \section{Location of the $\gamma$-ray emitting region}
@@ -692,13 +661,14 @@ Each shell or ring is assumed to have infinitesimal thickness and to emit a mono
 The relative radii of the shells and rings as well as the relative luminosities of each line are taken from templates derived from average spectra obtained in reverberation mapping campaigns~\citep[see][for further details]{finke2016}.
 We use the luminosity of the H$\beta$ line listed in Tab.~\ref{tab:src-select} to fix the absolute luminosities.  
 Together with the masses of the super-massive black holes, we can then calculate $\tau_{\gamma\gamma}^\mathrm{BLR}$ for both geometries as a function of the distance $r$ of the \gray emission region to the black hole.
-\todo{Ly alpha dominates, estimate BLR photon density with Ly alpha}
+\todo{Ly alpha dominates, estimate BLR photon density with Ly alpha, compare to the estimates in Dotson, see my notebook. In general, energy density the same but radius smaller.}
 For the intrinsic spectra, we test a log-parabola or a power law with super-exponential cut-off. 
 We derive the best-fit values for the spectral parameters and $r$ with a likelihood maximization, of the bin-by-bin likelihood curves, which we extract with \textsc{fermipy} and that are shown as gray shaded bands in the panels of Fig.~\ref{fig:seds}. 
 
 We limit the fit range to energies above 1\,GeV.
 
 \todo{do BLR fits; describe spectral varaibility and selected time range. If hardening is present, likely that it isn't given the spectral variation plots, then this should bias our results to larger distances, but harder when brighter, we should be ore likely to see the absorption... Need to think about it more}
+
 \begin{figure*}
     \centering
     \includegraphics[width=0.32\linewidth]{figures/sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf}
@@ -709,10 +679,29 @@ We limit the fit range to energies above 1\,GeV.
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf}
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf}
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}}
     \caption{Caption}
     \label{fig:seds}
 \end{figure*}
 \begin{itemize}
+    \item Resulting limits shown in Fig.~\ref{fig:blr_limits} for different BLR geometries and assumption on the intrinsic spectra. Limits also summarized in Tab.~\ref{tab:blrabs}.
+    \item Fig.~\ref{fig:blr_limits} also shows results from distance from following consideration. From causality arguments, a lower limit on the size of the emitting region in the co-moving frame is provided through 
+    \begin{equation}
+    R'_\mathrm{blob} \leqslant \frac{ct_\mathrm{var}\delta}{1+z},  
+    \end{equation}
+    where $t_\mathrm{var}$ is the variability time scale and $\delta = \Gamma^{-1}(1 + \beta\cos\theta_\mathrm{obs})^{-1}$ is the Doppler boost factor with the bulk Lorentz factor of the flow, $\Gamma$ and $\beta = \sqrt{1 - \Gamma^{-2}}$ the associated velocity. Under the assumption of a conical jet with jet opening angle $\theta_\mathrm{j} \sim \Gamma^{-1}$ we obtain an upper limit on the distance to the black hole, $r \leqslant R'_\mathrm{blob}\Gamma$.
+    The values are plotted in Fig.~\ref{fig:blr_limits} for the minimum of the rise and decay times of the brightest flares found in Fig.~\ref{fig:gti}.
+    The average values for $\delta$ and $\Gamma$ from \citet{2017ApJ...846...98J} are used and the total  uncertainty is obtained by summing the uncertainties on $\delta$, $\Gamma$, and the fit uncertainty of $t_\mathrm{var}$ in quadrature.
+    \end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width = .9\linewidth]{figures/limits.pdf}
+    \caption{Cooling times}
+    \label{fig:blr_limits}
+\end{figure}
+
+\subsection{Considerations from radiative cooling}
+    \begin{itemize}
     \item calculating cooling time from limit on distance: first calculate photon density in stationary frame of the source, where we assume it is isotropic~\citep{finke2016}:
     \begin{equation}
         u_\mathrm{BLR/dt,ring} = \frac{\xi_\mathrm{li}L_\mathrm{disk}}{4\pi c(R_\mathrm{li}^2 + r^2)} 
@@ -735,8 +724,39 @@ We limit the fit range to energies above 1\,GeV.
     \begin{equation}
         t_\mathrm{cool,BLR/dt} = \frac{1+z}{\delta_D}\frac{3m_ec^2}{4c\sigma_\mathrm{T}u_\mathrm{BLR/dt}'\gamma_\mathrm{BLR/dt}'}
     \end{equation}
+    \item Results are shown as an example for one flare of CTA102 in Fig.~\ref{fig:tcool}, discuss figure
+    \item Now discuss energy dependent light curves, see my notebook (on source by source basis, see also below), then discuss data points in figure
 \end{itemize}
 
+\begin{figure}
+    \centering
+    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t003.pdf}}
+    \caption{Limits on the distance of the \gray emission zone to the central black hole.}
+    \label{fig:tcool}
+\end{figure}
+
+We split the data into three energy bins, from 100\,MeV-300\,MeV, 300\,MeV-1\,GeV, and 1\,GeV-100\,GeV and recompute the orbital light curves in Fig.~\ref{fig:gti}. 
+The energy bins are chosen as a compromise between number of bins and sufficient photon statistics in each bin. 
+The light curves for which at least 2 BBs are identified in each energy bin are shown in Fig.~\ref{fig:lcebins}.
+\todo{try to fit the specific flares with profiles. Would really be interesting in terms of Dotson paper if we see constant decay times or faster decay times. The latter would rather fit with Thomson regime, the format with KN regime. Plot with decay times vs energy bin. 
+Also discuss ZDCF. If we find something interesting in the fit, this could be the third way to say something about the location of the \gray emitting region. 
+}
+
+\todo{compare $m_ec^2$ against $\tilde\epsilon'_\mathrm{BLR} \leqslant 2\gamma'_\mathrm{BLR}\epsilon'_\mathrm{BLR}$ to see if we are in Thomson or KN regime, where quantity with tilde is in electron rest frame. Ly$\alpha$ photons have energy 10.2\,eV. Should be already quite deep in KN regime, need different expression for cooling time, see B\&G 1970}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width = .9 \linewidth]{figures/lc_ebins_ts9.pdf}
+    \caption{Caption}
+    \label{fig:lcebins}
+\end{figure*}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width = .9 \linewidth]{figures/zdcf_ebins.pdf}
+    \caption{\todo{If $\tau > 0$: second (high energy) LC lags behind first (low energy) curve. If $\tau < 0$, high energy curve (second LC) is leading}}
+    \label{fig:zdcf}
+\end{figure*}
 
 \begin{deluxetable*}{ccccccc|ccc}
 \tablewidth{0pt}
@@ -750,27 +770,27 @@ $t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
 \hline
 \multicolumn{10}{c}{PKSB1222+216}\\
 \hline
-55364.68 & 3.42 & 0.81 & 0.85 & 367.74 & 75.39 & 72.12 & 6.0 & 39.6 & 81.6\\
+55364.68 & 3.42 & 0.81 & 0.85 & 367.74 & 75.39 & 72.12 &  4.8 & 26.8 & $47.4\pm8.3$ \\
 \hline
 \multicolumn{10}{c}{3C279}\\
 \hline
-57188.07 & 1.87 & 0.17 & 0.23 & 307.31 & 56.03 & 46.20 & 4.3 & 44.7 & 33.6\\
-58133.34 & 5.32 & 0.92 & 1.20 & 1627.73 & 92.56 & 92.54 & 9.9 & 44.7 & 76.9\\
+57188.07 & 1.87 & 0.17 & 0.23 & 307.31 & 56.03 & 46.20 & 2.0 & 19.0 & $0.5\pm0.9$ \\
+58133.34 & 5.32 & 0.92 & 1.20 & 1627.73 & 92.56 & 92.54 & 4.7 & 19.0 & $8.2\pm6.3$\\
 \hline
 \multicolumn{10}{c}{PKS1510-089}\\
 \hline
-57114.16 & 1.42 & 0.29 & 0.38 & 620.96 & 66.54 & 61.03& 1.5 & 14.7 & 17.9\\
-57243.84 & 4.53 & 0.48 & 0.62 & 1022.22 & 75.93 & 73.27& 1.8 & 14.7 & 140.8\\
+57114.16 & 1.42 & 0.29 & 0.38 & 620.96 & 66.54 & 61.03& 0.5 & 4.5 & $0.4\pm0.3$\\
+57243.84 & 4.53 & 0.48 & 0.62 & 1022.22 & 75.93 & 73.27& 0.6 & 4.5 & $44.4\pm9.4$\\
 \hline
 \multicolumn{10}{c}{CTA102}\\
 \hline
-57749.10 & 4.99 & 1.82 & 1.10 & 723.31 & 73.80 & 48.67& 3.5 & 19.4 & 169.2\\
-57757.55 & 4.66 & 0.57 & 0.34 & 224.78 & 39.19 & 34.27 & 1.8 & 19.4 & 122.2\\
-57861.71 & 2.42 & 0.42 & 0.26 & 169.07 & 34.73 & 33.13& 1.7 & 19.4 & 50.0\\
+57749.10 & 4.99 & 1.82 & 1.10 & 723.31 & 73.80 & 48.67& 1.3 & 6.4 & $8.7\pm1.2$ \\
+57757.55 & 4.66 & 0.57 & 0.34 & 224.78 & 39.19 & 34.27 & 0.6 & 6.4 & $24.6\pm2.3$\\
+57861.71 & 2.42 & 0.42 & 0.26 & 169.07 & 34.73 & 33.13& 0.6 & 6.4 & $1.2\pm0.7$ \\
 \hline
 \multicolumn{10}{c}{3C454.3}\\
 \hline
-55516.55 & 8.93 & 0.58 & 0.25 & 290.36 & 41.19 & 32.77& 3.8 & 45.7 & 20.7\\
+55516.55 & 8.93 & 0.58 & 0.25 & 290.36 & 41.19 & 32.77& 1.6 & 16.8 & $2.6\pm1.0$\\
 \enddata
 {
 \tablecomments{Highest energy photons are given for source probabilities $> 0.99$. Decay time given for flare component with highest peak flux.}
@@ -794,7 +814,7 @@ Things done differently with respect to Fermi periodograms:
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_gamma_radio_tsmin9.pdf}
-    \caption{Radio light curves}
+    \caption{Radio light curves \todo{update figure: normalize to max flux in each band and check that time span is the same}}
     \label{fig:lc-radio}
 \end{figure*}
 
@@ -808,6 +828,7 @@ Things done differently with respect to Fermi periodograms:
     \item For binning used maximum of half the median of time separations of data points in light curve
     \item LCCF curves are shown in Fig.
     \item determined peak of time lag $\tau_\mathrm{peak}$, and give its significance if $p_\tau$-value $<0.05$, if $\tau < 0$, it means that \gray light curve is leading the radio light curve, considered only peaks with a delay $\tau < 100$ days as we expect the \gray emission to lead radio emission, as found in, e.g.,~\citet{2014MNRAS.441.1899F}
+    \item Compare to 2018 paper of Max-Moerbeck et al. who also studied optical!
     \item Uncertainty of $\tau_\mathrm{peak}$ calculated with flux randomization and random subsample selection (drawing 1000 samples) following \citet{1998PASP..110..660P} as suggested by \citet{2014MNRAS.445..437M}
     \item distance between \gray and radio emitting region determined through
     \begin{equation}
