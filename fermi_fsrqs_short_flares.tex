@@ -591,13 +591,13 @@ The resulting light curves, binned such that the uncertainty in each bin is of t
 In order to make an unbiased selection of GTIs that we want to test against the hypothesis of a constant flux, we consider only those GTIs, where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Fig.~\ref{fig:lc_minutes}.
 Naively, one would think that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{2013ApJ...764..167S}. However, the BBs take also data  before and after the particular GTI into account and only provide qualitative evidence for minute-scale variability. 
 Therefore, we test each bin selected in this way against the hypothesis of constant flux, using a simple $\chi^2$ test. 
-The best-fit constant flux is given by \todo{$X$}. 
-The pre- and post-trial $p$-values of the $\chi^2$ fits are provided in Tab.~\ref{tab:minute}, where we count each tested GTI for each flare as one trial. 
-We also provide the minimum values for the variability times, given by~\citep{1999ApJ...527..719Z}
+The best-fit constant flux is given by $\hat{F} = (\sum (F_i / \sigma_i^2))(\sum F_i^{-2})^{-1}$. 
+The pre- and post-trial $p$-values of the $\chi^2$ fits are provided in Tab.~\ref{tab:minute} which have a pre-trial probability of less than 0.1 for a constant flux. We count each tested GTI for each flare as one trial. 
+We also provide the minimum values for the variability times for pairs of fluxes $F_i$ and $F_j$ measured at $t_i$ and $t_j$, respectively, given by~\citet{1999ApJ...527..719Z},
 \begin{equation}
-t_\mathrm{var} = \frac{F_i + F_j}{2}\left|\frac{t_i - t_j}{F_i - F_j}\right|.
+t_{\mathrm{var},ij} = \frac{F_i + F_j}{2}\left|\frac{t_i - t_j}{F_i - F_j}\right|.
 \end{equation}
-The pre-trial $p$-values for rejecting the constant-flux hypothesis are all close to $2\,\sigma$, except for PKS1510-089, where the tested GTIs are compatible with a constant flux. 
+The pre-trial $p$-values for rejecting the constant-flux hypothesis are all around to $2\,\sigma$. 
 The trial correction leaves only one GTI of 3C279 and two GTIs for CTA102 close or above a $2\,\sigma$ evidence for a variable flux. 
 For these GTIs the suggested variability times scales are between 3 and 8\,minutes.
 
@@ -648,21 +648,46 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 
 
 \section{Location of the $\gamma$-ray emitting region}
-
-\todo{Do the generic stuff from the variability time scale, see Saito 2013. Then say we do three different methods: fit to \gray spectrum, energy dependent \gray light curves, and cross correlation with radio.}
+The location of the \gray emission region in blazar jets remains unknown. 
+From the rich data set of six FSRQs studied here, we attempt to constrain the position of the emitting region using two independent approaches. 
+First, in Sec.~\ref{sec:blrabs}, we search for absorption signatures in the LAT spectra caused by pair production of \Grays with photons of external photon fields. We use spectra during the brightest flares identified in the orbital light curves in Fig.~\ref{fig:gti}.
+The derived constraints are used to calculate energy dependent cooling times in Sec.~\ref{sec:tcool}, which will be compared against our results for the decay times for the whole energy range (see Sec.~\ref{sec:results-local}) and for energy dependent light curves.
+As shown by~\citet{2012ApJ...758L..15D}, if the flux decay is dominated by radiative cooling in external radiation fields, the energy dependence of the decay times can be used to distinguish inverse-Compton cooling in the radiation fields of the BLR or the dust torus.
+This provides additional information about the position of the \gray emission region.
+Second, in Sec.~\ref{sec:gammaradio}, we search for time lags between \gray and radio emission. 
+In the scenario where the non-thermal emission is triggered by, e.g., shocks propagating downstream through the jet, a time lag can be translated into the spatial separation between the radio and \gray emitting regions~\citep{2014MNRAS.445..428M}. 
+With information about the location of the radio core, the position of the \gray emitting region can be constrained as well~\citep[e.g.,][]{2014MNRAS.441.1899F}. 
 
 \subsection{Results from spectral fits to \gray data}
-The attenuation due to pair production should manifest itself as a cut-off feature in the \gray spectrum in the case that \gray emission region deep within the BLR.
-We search for such absorption features with a fit of the observed  \gray spectra during the brightest flares. The fitting function is of the form $f_\mathrm{int} \exp\left[-\left(\tau_{\gamma\gamma}^\mathrm{BLR} +\tau_{\gamma\gamma}^\mathrm{EBL} \right)  \right] $, where $f_\mathrm{int}$ describes the intrinsic spectrum emitted by the source and $\tau_{\gamma\gamma}^\mathrm{BLR / EBL}$ is the optical depth due to interactions of \Grays with BLR and EBL photons, respectively. 
-For the EBL optical depth, we use the EBL model of \citet{Dominguez2011}.
+\label{sec:blrabs}
+The attenuation due to pair production on a radiation field of soft photons should manifest itself as a cut-off feature in the \gray spectrum. 
+The cut-off energy depends on the distance of the \gray emitting region to the central black hole, $r$, and the photon density of the considered photon field.
+For FSRQs, photon densities of external radiation fields of the accretion disk, the BLR, and the extended dust torus usually dominate the one of internal synchrotron emission~\citep[see,e.g.,][]{2012ApJ...758L..15D}.
+The most relevant external photon field for the \gray energies which can be probed with \FermiLAT is the BLR. 
+Pair production on photons from the dust torus or the accretion disk only becomes important at energies beyond 1\,TeV, even when the \Grays are produced closed to the central black hole~\citep{finke2016}.
+
+We therefore search for BLR absorption features by fitting the observed \gray spectra during the brightest flares with functions the form 
+\begin{eqnarray}
+    f(E,\vec{\pi},r,z) &=& f_\mathrm{int}(E,\vec{\pi}) \times \nonumber \\ &{}& \exp\left[-\left(\tau_{\gamma\gamma}^\mathrm{BLR}(E,r) +\tau_{\gamma\gamma}^\mathrm{EBL}(E,z) \right)  \right],
+\end{eqnarray} 
+where $f_\mathrm{int}(E, \vec{\pi})$ describes the intrinsic spectrum at \gray energy $E$ emitted by the source, which depends on spectral parameters, $\vec{\pi}$, and $\tau_{\gamma\gamma}^\mathrm{BLR / EBL}$ is the optical depth due to interactions of \Grays with BLR and EBL photons, respectively. 
+For the EBL optical depth, which depends on $E$ and the source redshift, $z$, we use the EBL model of \citet{2011MNRAS.410.2556D}.
 The BLR optical depth will depend on the \gray energy, the location of the \gray emission zone, and the BLR geometry. 
-Here, we follow the stratified BLR model introduced by \citet{finke2016}, who models the BLR either a collection of shells or rings perpendicular to the jet axis to emulate a flattened BLR. 
+Here, we follow the stratified BLR model introduced by \citet{finke2016}, who models the BLR either as a collection of shells or rings perpendicular to the jet axis, in order to emulate a flattened BLR. 
 Each shell or ring is assumed to have infinitesimal thickness and to emit a monochromatic UV or optical emission line. 
-The relative radii of the shells and rings as well as the relative luminosities of each line are taken from templates derived from average spectra obtained in reverberation mapping campaigns~\citep[see][for further details]{finke2016}.
-We use the luminosity of the H$\beta$ line listed in Tab.~\ref{tab:src-select} to fix the absolute luminosities.  
-Together with the masses of the super-massive black holes, we can then calculate $\tau_{\gamma\gamma}^\mathrm{BLR}$ for both geometries as a function of the distance $r$ of the \gray emission region to the black hole.
-\todo{Ly alpha dominates, estimate BLR photon density with Ly alpha, compare to the estimates in Dotson, see my notebook. In general, energy density the same but radius smaller.}
-For the intrinsic spectra, we test a log-parabola or a power law with super-exponential cut-off. 
+The radii $R_\mathrm{li}$ of the shells and rings as well as the line luminosities $L_\mathrm{li} = \xi_\mathrm{li}L_\mathrm{disk}$ are taken from templates of average spectra obtained in reverberation mapping campaigns relative to the radius and luminosity of the H$\beta$ line~\citep[see][for further details]{finke2016}.
+With the H$\beta$ luminosities listed in Tab.~\ref{tab:src-select}, we fix the absolute luminosities (or conversely $\xi_{\mathrm{H}\beta}$) and radii of all lines included in the model.  
+Together with the masses of the super-massive black holes, we can then calculate $\tau_{\gamma\gamma}^\mathrm{BLR}$ for both geometries as a function of $r$ and observed \gray energy $E$.
+In the BLR model, the absorption is dominated by pair production with Ly$\alpha$ photons at rest-frame energy of $\sim10.2\,$eV emitted at radii between $\sim 8\times10^{16}$ and $2\times10^{17}$\,cm. 
+In the ring geometry, the corresponding energy density, which is assumed to be isotropic in the stationary frame of the galaxy, becomes~\citep{finke2016}
+    \begin{equation}
+        u_\mathrm{BLR} \approx u_{\mathrm{Ly}\alpha}= \frac{\xi_{\mathrm{Ly}\alpha}L_\mathrm{disk}}{4\pi c(R_{\mathrm{Ly}\alpha}^2 + r^2)},
+    \end{equation}
+and takes values $\sim 5\times10^{-2}\,\mathrm{erg}\,\mathrm{cm}^{-3}$ regardless of the source for $r = R_{\mathrm{Ly}\alpha}$.
+These numbers can be compared against typical values for the BLR radius, $R_\mathrm{BLR} \sim 10^{17}\,\mathrm{cm}\, (L_\mathrm{disk} / 10^{45} \mathrm{erg}\,\mathrm{s}^{-1})^{1/2}$ \citep[e.g.][]{2007ApJ...659..997K,2009ApJ...697..160B} and energy density $u_\mathrm{BLR} \sim 10^{-2}\,\mathrm{erg}\,\mathrm{cm}^{-3} $ (again in the stationary galaxy frame) assuming  $L_\mathrm{BLR} = \xi_\mathrm{BLR} L_\mathrm{disk}$ with $\xi_\mathrm{BLR}\sim 0.1$. 
+The chosen BLR model gives values broadly consistent with typical values within a factor of a few.
+
+Typically, FSRQ spectra show intrinsinc curvature, even below energies at which BLR absorption becomes important (see, e.g. the 3FGL). Therefore we chose a log-parabola for the intrinsic spectral function and also test a power law with super-exponential cut-off. 
 We derive the best-fit values for the spectral parameters and $r$ with a likelihood maximization, of the bin-by-bin likelihood curves, which we extract with \textsc{fermipy} and that are shown as gray shaded bands in the panels of Fig.~\ref{fig:seds}. 
 
 We limit the fit range to energies above 1\,GeV.
@@ -701,6 +726,7 @@ We limit the fit range to energies above 1\,GeV.
 \end{figure}
 
 \subsection{Considerations from radiative cooling}
+\label{sec:tcool}
     \begin{itemize}
     \item calculating cooling time from limit on distance: first calculate photon density in stationary frame of the source, where we assume it is isotropic~\citep{finke2016}:
     \begin{equation}
@@ -730,7 +756,7 @@ We limit the fit range to energies above 1\,GeV.
 
 \begin{figure}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t003.pdf}}
+    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t003_LogParabola_ring.pdf}}
     \caption{Limits on the distance of the \gray emission zone to the central black hole.}
     \label{fig:tcool}
 \end{figure}
@@ -770,27 +796,28 @@ $t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
 \hline
 \multicolumn{10}{c}{PKSB1222+216}\\
 \hline
-55364.68 & 3.42 & 0.81 & 0.85 & 367.74 & 75.39 & 72.12 &  4.8 & 26.8 & $47.4\pm8.3$ \\
+55364.68 & 3.42 & 1.33 & 1.40 & 609 & 75.39 & 69.69\\
 \hline
 \multicolumn{10}{c}{3C279}\\
 \hline
-57188.07 & 1.87 & 0.17 & 0.23 & 307.31 & 56.03 & 46.20 & 2.0 & 19.0 & $0.5\pm0.9$ \\
-58133.34 & 5.32 & 0.92 & 1.20 & 1627.73 & 92.56 & 92.54 & 4.7 & 19.0 & $8.2\pm6.3$\\
+57188.07 & 1.87 & 0.49 & 0.64 & 867 & 56.03 & 42.91\\
+58133.34 & 5.32 & 1.45 & 1.91 & 2580 & 92.56 & 107.91\\
 \hline
 \multicolumn{10}{c}{PKS1510-089}\\
 \hline
-57114.16 & 1.42 & 0.29 & 0.38 & 620.96 & 66.54 & 61.03& 0.5 & 4.5 & $0.4\pm0.3$\\
-57243.84 & 4.53 & 0.48 & 0.62 & 1022.22 & 75.93 & 73.27& 0.6 & 4.5 & $44.4\pm9.4$\\
+57114.16 & 1.42 & 0.51 & 0.66 & 1088 & 66.54 & 54.99\\
+57243.84 & 4.53 & 0.74 & 0.97 & 1591 & 75.93 & 65.39\\
 \hline
 \multicolumn{10}{c}{CTA102}\\
 \hline
-57749.10 & 4.99 & 1.82 & 1.10 & 723.31 & 73.80 & 48.67& 1.3 & 6.4 & $8.7\pm1.2$ \\
-57757.55 & 4.66 & 0.57 & 0.34 & 224.78 & 39.19 & 34.27 & 0.6 & 6.4 & $24.6\pm2.3$\\
-57861.71 & 2.42 & 0.42 & 0.26 & 169.07 & 34.73 & 33.13& 0.6 & 6.4 & $1.2\pm0.7$ \\
+57737.41 & 1.67 & 1.41 & 0.86 & 562 & 36.25 & 21.23\\
+57749.10 & 4.99 & 3.20 & 1.95 & 1275 & 73.80 & 37.94\\
+57757.55 & 4.66 & 2.76 & 1.67 & 1096 & 39.19 & 32.38\\
+57861.71 & 2.42 & 1.95 & 1.18 & 776 & 34.73 & 24.94\\
 \hline
 \multicolumn{10}{c}{3C454.3}\\
 \hline
-55516.55 & 8.93 & 0.58 & 0.25 & 290.36 & 41.19 & 32.77& 1.6 & 16.8 & $2.6\pm1.0$\\
+55516.55 & 8.93 & 3.19 & 1.36 & 1598 & 41.19 & 28.73\\
 \enddata
 {
 \tablecomments{Highest energy photons are given for source probabilities $> 0.99$. Decay time given for flare component with highest peak flux.}
@@ -798,6 +825,7 @@ $t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
 \end{deluxetable*}
 
 \subsection{Results from radio-\gray correlation analysis}
+\label{sec:gammaradio}
 
 \todo{
 Things done differently with respect to Fermi periodograms:
