@@ -678,97 +678,168 @@ Each shell or ring is assumed to have infinitesimal thickness and to emit a mono
 The radii $R_\mathrm{li}$ of the shells and rings as well as the line luminosities $L_\mathrm{li} = \xi_\mathrm{li}L_\mathrm{disk}$ are taken from templates of average spectra obtained in reverberation mapping campaigns relative to the radius and luminosity of the H$\beta$ line~\citep[see][for further details]{finke2016}.
 With the H$\beta$ luminosities listed in Tab.~\ref{tab:src-select}, we fix the absolute luminosities (or conversely $\xi_{\mathrm{H}\beta}$) and radii of all lines included in the model.  
 Together with the masses of the super-massive black holes, we can then calculate $\tau_{\gamma\gamma}^\mathrm{BLR}$ for both geometries as a function of $r$ and observed \gray energy $E$.
-In the BLR model, the absorption is dominated by pair production with Ly$\alpha$ photons at rest-frame energy of $\sim10.2\,$eV emitted at radii between $\sim 8\times10^{16}$ and $2\times10^{17}$\,cm. 
+In the BLR model, the absorption is dominated by pair production with Ly$\alpha$ photons at rest-frame energy of $\epsilon_{\mathrm{Ly}\alpha}\sim10.2\,$eV emitted at radii between $\sim 8\times10^{16}$ and $2\times10^{17}$\,cm. 
 In the ring geometry, the corresponding energy density, which is assumed to be isotropic in the stationary frame of the galaxy, becomes~\citep{finke2016}
     \begin{equation}
         u_\mathrm{BLR} \approx u_{\mathrm{Ly}\alpha}= \frac{\xi_{\mathrm{Ly}\alpha}L_\mathrm{disk}}{4\pi c(R_{\mathrm{Ly}\alpha}^2 + r^2)},
+        \label{eq:u-blr}
     \end{equation}
 and takes values $\sim 5\times10^{-2}\,\mathrm{erg}\,\mathrm{cm}^{-3}$ regardless of the source for $r = R_{\mathrm{Ly}\alpha}$.
 These numbers can be compared against typical values for the BLR radius, $R_\mathrm{BLR} \sim 10^{17}\,\mathrm{cm}\, (L_\mathrm{disk} / 10^{45} \mathrm{erg}\,\mathrm{s}^{-1})^{1/2}$ \citep[e.g.][]{2007ApJ...659..997K,2009ApJ...697..160B} and energy density $u_\mathrm{BLR} \sim 10^{-2}\,\mathrm{erg}\,\mathrm{cm}^{-3} $ (again in the stationary galaxy frame) assuming  $L_\mathrm{BLR} = \xi_\mathrm{BLR} L_\mathrm{disk}$ with $\xi_\mathrm{BLR}\sim 0.1$. 
 The chosen BLR model gives values broadly consistent with typical values within a factor of a few.
 
-Typically, FSRQ spectra show intrinsinc curvature, even below energies at which BLR absorption becomes important (see, e.g. the 3FGL). Therefore we chose a log-parabola for the intrinsic spectral function and also test a power law with super-exponential cut-off. 
-We derive the best-fit values for the spectral parameters and $r$ with a likelihood maximization, of the bin-by-bin likelihood curves, which we extract with \textsc{fermipy} and that are shown as gray shaded bands in the panels of Fig.~\ref{fig:seds}. 
+Typically, FSRQ spectra show intrinsinc curvature, even below energies at which BLR absorption becomes important (see, e.g., the 3FGL). Therefore we chose a log-parabola for the intrinsic spectral function and also test a power law with super-exponential cut-off. 
+In the fit, we only include energy bins above 1\,GeV, as we expect the BLR cut-off at energies $\gtrsim 10\,$GeV. In this way, we avoid that the best fit is determined mainly by the high photon statistics below 1\,GeV.
+Additionally, we select narrow time intervals around the brightest flares (see Sec.~\ref{sec:zoom} and Fig.~\ref{fig:gti}).
+This is a compromise between sufficient photon statistics to probe energies above 10\,GeV and avoiding the mixing of different activity states with potentially different spectral states. 
+From Fig.~\ref{fig:specvar} we see that for the highest fluxes only marginal spectral variability is present, which should render our results robust against potential variations of the intrinsic spectra. 
+Also, we only include flares which have energy bins detected with $\mathrm{TS} > 0$ where the absorption exceeds 80\,\% for the smallest BLR distance tested ($r = 10^{-2}R_{\mathrm{Ly}\alpha})$. 
+We skip a flare if this is not the case since no strong limits on $r$ can be derived in this case.
+This excludes all flaring periods from 3C273, for which we cannot obtain any limits from the \gray spectra.
 
-We limit the fit range to energies above 1\,GeV.
+We derive the best-fit values for the spectral parameters $\vec{\pi}$ and the distance $r$ with a likelihood maximization of the bin-by-bin likelihood curves using \textsc{Minuit} \citep{},\footnote{The bin-by-bin likelihoods are derived by fixing the spectral shape in each bin to a power law and mapping the likelihood as a function of the normalization. In the process, the spectral parameters of the neighbouring point sources and diffuse backgrounds are fixed to their broad band best-fit values.} which we extract with \textsc{fermipy} and that are shown as gray shaded bands in the panels of Fig.~\ref{fig:seds}. 
+The flux points in the figure coincide with the maximum likelihood. 
+Also shown are the best-fit spectra and BLR attenuation for different distances $r$ (colored curves). 
+We only include energy bins and their likelihoods if the bin-by-bin fit converged and if the source is detected with $\mathrm{TS} > 0$.\footnote{We do not have to limit ourselves to bins with even larger $\mathrm{TS}$, since our bin-by-bin likelihood approach takes full Poisson statistics into account. \todo{formulate a bit clerarer.}}
 
-\todo{do BLR fits; describe spectral varaibility and selected time range. If hardening is present, likely that it isn't given the spectral variation plots, then this should bias our results to larger distances, but harder when brighter, we should be ore likely to see the absorption... Need to think about it more}
 
 \begin{figure*}
     \centering
-    \includegraphics[width=0.32\linewidth]{figures/sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t001_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t003_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t005_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t006_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}}
-    \caption{Caption}
+    \begin{tabular}{ccc}
+    \includegraphics[width=0.32\linewidth]{figures/sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf} &
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t001_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t003_LogParabola_3min_ring_emin1000.pdf}\\
+    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t005_LogParabola_3min_ring_emin1000.pdf} &
+    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t006_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}}\\
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}\\
+    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t001_LogParabola_3min_ring_emin1000.pdf}
+    \end{tabular}
+
+    \caption{Log-parabola fits above 1\,GeV to bright \gray flares detected at energies that correspond to a attenuation in the BLR of at least 20\,\% (for $r = 10^{-2}R_{\mathrm{Ly}\alpha}$). The attenuation due to the interactions with BLR photons (assuming the ring geometry) is shown as colored lines. The best fit (95\,\% lower limit on $r$) is shown as a black dashed (dash-dotted) line. 
+    The fit uses the bin-by-bin likelihood curves shown as gray bands. The numbers below and above the flux points show the \mathrm{TS} values  with which each bin is detected and the number of \Grays associated with the source at a probability $>85\,\%$, respectively.}
     \label{fig:seds}
 \end{figure*}
-\begin{itemize}
-    \item Resulting limits shown in Fig.~\ref{fig:blr_limits} for different BLR geometries and assumption on the intrinsic spectra. Limits also summarized in Tab.~\ref{tab:blrabs}.
-    \item Fig.~\ref{fig:blr_limits} also shows results from distance from following consideration. From causality arguments, a lower limit on the size of the emitting region in the co-moving frame is provided through 
-    \begin{equation}
-    R'_\mathrm{blob} \leqslant \frac{ct_\mathrm{var}\delta}{1+z},  
-    \end{equation}
-    where $t_\mathrm{var}$ is the variability time scale and $\delta = \Gamma^{-1}(1 + \beta\cos\theta_\mathrm{obs})^{-1}$ is the Doppler boost factor with the bulk Lorentz factor of the flow, $\Gamma$ and $\beta = \sqrt{1 - \Gamma^{-2}}$ the associated velocity. Under the assumption of a conical jet with jet opening angle $\theta_\mathrm{j} \sim \Gamma^{-1}$ we obtain an upper limit on the distance to the black hole, $r \leqslant R'_\mathrm{blob}\Gamma$.
-    The values are plotted in Fig.~\ref{fig:blr_limits} for the minimum of the rise and decay times of the brightest flares found in Fig.~\ref{fig:gti}.
-    The average values for $\delta$ and $\Gamma$ from \citet{2017ApJ...846...98J} are used and the total  uncertainty is obtained by summing the uncertainties on $\delta$, $\Gamma$, and the fit uncertainty of $t_\mathrm{var}$ in quadrature.
-    \end{itemize}
+
+For both tested BLR geometries, the best-fit value of $r$ is always close to or coincides with the maximum tested value, $r = 10R_{\mathrm{Ly}\alpha}$, and hence no significant absorption is found. found (dashed black lines in Fig.~\ref{fig:seds}). Consequently,  we use \textsc{Minos} to derive the profile likelihood as a function of $r$ from which we determine the 95\,\% lower limit on $r$ (dash-dotted black lines). 
+The limit values are reported for each flare in Fig.~\ref{fig:blr_limits} and  summarized in Tab.~\ref{tab:blrabs} for the ring BLR geometry and log-parabola spectrum.
+Assuming instead a power law with super-exponential cut-off yields consistent results. 
+For the BLR shell geometry the lower limits are a factor of $\sim2$-$3$ higher because this geometry predicts stronger absorption~\citep{finke2016}. The ring geometry is therefore the conservative choice. 
+
+As can be seen from Tab.~\ref{tab:blrabs} and Fig.~\ref{fig:blr_limits} the limits are of the order of $r_\mathrm{lim}\sim10^{17}$cm which translates to a distance close to or even beyond the Ly$\alpha$ emitting ring and consequently the BLR itself. In terms of gravitational radii, the emission regions should be located at distances of at least $\sim10^3r_g$. 
+Table~\ref{tab:blrabs} also reports the energy of the highest energy photon (HEP) associated with the FSRQ with at least $99\,\%$ probability. For all but one source, this energy is larger than the energy where the optical depth due to absorption in the BLR exceeds $t_{\gamma\gamm}^\mathrm{BLR} > 1$ (assuming $r = r_\mathrm{lim}$). 
+
+The limits depend sensitively on the detection of the source at energies as large as possible. To ensure that the detections are indeed not spuriuos, we also report the detection significance and the number of detected \Grays (associated with the source with a probability $>85\,\%$) for each energy bin below and above the flux points in Fig.~\ref{fig:seds}, respectively. The highest energy bins only contain a handful of source photons (1-4), which underlines the necessity to use the full Poisson likelihood information. 
+Nevertheless, the source detections in these energy bins correspond to significances (approximated with  $\sqrt{\mathrm{TS}}$) $\gtrsim 4\,\sigma$.
+The reason is that in the considered energies and short time spans (see Tab.~\ref{tab:blrabs}) the number of expected background events is small. 
+\todo{comparison with costamante and others?}
+
 \begin{figure}
     \centering
     \includegraphics[width = .9\linewidth]{figures/limits.pdf}
-    \caption{Cooling times}
+    \caption{Lower limits on the distance $r$ of the \gray emitting region to the central black hole. Limits from fits to \gray spectra are shown as diamonds, values derived from variability considerations are shown as bullets. }
     \label{fig:blr_limits}
 \end{figure}
 
+\begin{deluxetable*}{ccccccc|ccc}
+\tablewidth{0pt}
+\tablecaption{ \label{tab:blrabs}Results from BLR absorption fits to \gray spectra.}
+\tablehead{$t_0$ & $\Delta t$  & $r_\mathrm{limit}$ & 
+$r_\mathrm{limit}$ & $r_\mathrm{limit}$  & $E_\mathrm{HEP}$  & $E_{\tau_{\gamma\gamma} = 1}$ & $t_\mathrm{cool,~BLR}$  &
+$t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
+{} [MJD] & [days] & $[10^{17}\mathrm{cm}]$ & $[R_{\mathrm{Ly}\alpha}]$ & $[r_g]$ & [GeV] & [GeV] &  [mins] & [hours] & [hours]
+}
+\startdata
+\hline
+\multicolumn{10}{c}{PKSB1222+216}\\
+\hline
+55364.68 & 3.42 & 1.33 & 1.40 & 609 & 75.39 & 69.69 & 8.2 & 26.8 & $47.4\pm8.3$\\
+\hline
+\multicolumn{10}{c}{3C279}\\
+\hline
+57188.07 & 1.87 & 0.49 & 0.64 & 867 & 56.03 & 42.91 &  2.7 & 19.0 & $0.5\pm0.9$\\
+58133.34 & 5.32 & 1.45 & 1.91 & 2580 & 92.56 & 107.91& 9.0 & 19.0 & $8.2\pm6.3$\\
+\hline
+\multicolumn{10}{c}{PKS1510-089}\\
+\hline
+57114.16 & 1.42 & 0.51 & 0.66 & 1088 & 66.54 & 54.99 & 0.6 & 4.5 & $0.4\pm0.3$\\
+57243.84 & 4.53 & 0.74 & 0.97 & 1591 & 75.93 & 65.39 & 0.8 & 4.5 & $44.4\pm9.4$\\
+\hline
+\multicolumn{10}{c}{CTA102}\\
+\hline
+57737.41 & 1.67 & 1.41 & 0.86 & 562 & 36.25 & 21.23 & 1.0 & 6.4 & $0.3\pm0.5$\\
+57749.10 & 4.99 & 3.20 & 1.95 & 1275 & 73.80 & 37.94& 2.8 & 6.4 & $8.7\pm1.2$ \\
+57757.55 & 4.66 & 2.76 & 1.67 & 1096 & 39.19 & 32.38& 2.2 & 6.4 & $24.6\pm2.3$ \\
+57861.71 & 2.42 & 1.95 & 1.18 & 776 & 34.73 & 24.94& 1.4 & 6.4 & $1.2\pm0.7$ \\
+\hline
+\multicolumn{10}{c}{3C454.3}\\
+\hline
+55516.55 & 8.93 & 3.19 & 1.36 & 1598 & 41.19 & 28.73& 4.2 & 16.8 & $2.6\pm1.0$ \\
+\enddata
+{
+\tablecomments{Highest energy photons are given for source probabilities $> 0.99$. Decay time given for flare component with highest peak flux.}
+}
+\end{deluxetable*}
+
+We also compare the limits from fits to \gray spectra to considerations from variability arguments in Fig.~\ref{fig:blr_limits}.
+If the emission region $R'_\mathrm{blob}$ (the prime denotes the co-moving frame) is causally connected during the flare, the shortest variability time $t_\mathrm{var}$ set a lower limit on its size \citep[e.g.,][]{2008MNRAS.384L..19B}:
+\begin{equation}
+    R'_\mathrm{blob} \leqslant \frac{ct_\mathrm{var}\delta_\mathrm{D}}{1+z},  
+\end{equation}
+where $\delta_\mathrm{D} = \Gamma^{-1}(1 + \beta\cos\theta_\mathrm{obs})^{-1}$ is the Doppler boost factor with the bulk Lorentz factor of the flow, $\Gamma$, $\beta = \sqrt{1 - \Gamma^{-2}}$ the associated velocity, and $\theta_\mathrm{obs} $ is the angle between the line of sight and the jet axis.
+Under the assumption of a conical jet with opening angle $\theta_\mathrm{j} \sim \Gamma^{-1}$, we obtain an upper limit on the distance to the black hole, $r \sim R'_\mathrm{blob}\Gamma \equiv r_\mathrm{j}$.
+The values are plotted in Fig.~\ref{fig:blr_limits} for the minimum of the rise and decay times of the brightest flares found in Fig.~\ref{fig:gti}.
+The average values for $\delta_\mathrm{D}$ and $\Gamma$ obtained from Very Long Baseline Array monitoring observations are used \citep{2017ApJ...846...98J}  and the total  uncertainty is obtained by summing the uncertainties on $\delta_\mathrm{D}$, $\Gamma$, and the fit uncertainty of $t_\mathrm{var}$ in quadrature.
+In general, we find that $r_\mathrm{lim} \gtrsim r_\mathrm{j}$ indicating that the emission regions are at larger distances to the black hole than than predicted from the conical jet scenario.  
+
 \subsection{Considerations from radiative cooling}
-\label{sec:tcool}
-    \begin{itemize}
-    \item calculating cooling time from limit on distance: first calculate photon density in stationary frame of the source, where we assume it is isotropic~\citep{finke2016}:
-    \begin{equation}
-        u_\mathrm{BLR/dt,ring} = \frac{\xi_\mathrm{li}L_\mathrm{disk}}{4\pi c(R_\mathrm{li}^2 + r^2)} 
-    \end{equation}
-    In the co-moving  frame of the source, this becomes (using $\Gamma\to1$:~\citep{2002ApJ...575..667D}
-    \begin{equation}
-        u'_\mathrm{BLR/dt,ring} = \frac{4}{3}\Gamma^2 u_\mathrm{BLR/dt,ring},
-    \end{equation} 
-    or for photons coming from behind (cite Dermer \& Schlickeiser 1994),
-       \begin{equation}
-        u'_\mathrm{BLR/dt,ring} = \frac{1}{4\Gamma^2} u_\mathrm{BLR/dt,ring},
-    \end{equation}  
-    The Lorentz factor of the electrons in the co-moving can be approximated with~\citep[e.g.,][]{2009herb.book.....D,finke2016}
-        \begin{equation}
-        \gamma'_\mathrm{BLR/dt} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{\epsilon^\mathrm{obs}_s(1+z)}{2\epsilon_{\mathrm{BLR/dt},0}}},
-        \end{equation}
-%        where $\delta_\mathrm{D}$ is the Doppler boost, $\epsilon_\mathrm^{obs}_s$
-        is the scattered observed photon energy and $\epsilon_0$ is the mean energy of the target photon field. We take the line energies for $\epsilon_0$ for the BLR and a temperature of 1000\,K in case of the dusty torus. 
-    \item The cooling time in the observer's frame is then calculated to be (for Thomson scattering). Use numerical integration (see e.g. Dotson 2012) for full expression including KN effects which are important for BLR photons at 10.2 eV
-    \begin{equation}
-        t_\mathrm{cool,BLR/dt} = \frac{1+z}{\delta_D}\frac{3m_ec^2}{4c\sigma_\mathrm{T}u_\mathrm{BLR/dt}'\gamma_\mathrm{BLR/dt}'}
-    \end{equation}
-    \item Results are shown as an example for one flare of CTA102 in Fig.~\ref{fig:tcool}, discuss figure
-    \item Now discuss energy dependent light curves, see my notebook (on source by source basis, see also below), then discuss data points in figure
-\end{itemize}
+With the limits on $r$ it is now possible to derive the energy density of the external photon field in the co-moving frame, which could be responsible for the \gray emission due to inverse-Compton (IC) scattering with relativistic electrons in the emission region. 
+This further enables us to compare the predicted IC cooling times with the observed decay times. 
+In the galaxy frame, the energy density of the BLR in the ring geometry is approximately given by Eq.~\ref{eq:u-blr}, and hence the photon number density is $n_\mathrm{BLR} \approx u_\mathrm{BLR} / \epsilon_{\mathrm{Ly}\alpha}$.
+Assuming that the BLR photon field is isotropic and in the limit $\Gamma \gg 1$, the energy density in the co-moving frame becomes:
+$u'_\mathrm{BLR} = (4/3)\Gamma^2 u_\mathrm{BLR}$~\citep{1994ApJS...90..945D,2002ApJ...575..667D}.
+We calculate the energy loss of the electrons, $\dot{\gamma}_\mathrm{BLR}'$, due to IC scattering in the co-moving frame numerically, in order to incorporate Klein-Nishina   effects following \citet{1970RvMP...42..237B}.
+The observed cooling time is then given by
+\begin{equation}
+    t_\mathrm{cool,BLR} = \frac{1 + z}{\delta_\mathrm{D}} \frac{\gamma'}{\dot{\gamma}'_\mathrm{BLR}}.
+\end{equation}
+In the Thomson regime, this becomes
+\begin{equation}
+    t_\mathrm{cool,BLR} = \frac{1+z}{\delta_\mathrm{D}}\frac{3m_ec^2}{4c\sigma_\mathrm{T}u_\mathrm{BLR}'\gamma_\mathrm{BLR}'},
+    \label{eq:tcool-thomson}
+\end{equation}
+where $m_e$ is the electron mass and $\sigma_\mathrm{T}$ the Thomson cross section. 
+In what follows, we approximate the electron Lorentz factor with~\citep[e.g.,][]{2009herb.book.....D,finke2016}
+\begin{equation}
+    \gamma'_\mathrm{BLR/dt} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{E(1+z)}{2\epsilon_{\mathrm{Ly}\alpha}}},
+\end{equation}
+where $E$ is the observed \gray energy. 
+From Eq.~\ref{eq:tcool-thomson} and \ref{eq:u-blr} it becomes clear that the cooling time scales as $t_\mathrm{cool, BLR}\propto r^2 \Gamma^{-2}$, i.e., the cooling becomes less efficient for large distances. 
+Furthermore, if the \gray emission is produced very far away from the BLR, the external photons will appear as a point source illuminating the emission region from behind, so that $u'_\mathrm{BLR} = (1/4)\Gamma^{-2} u_\mathrm{BLR}$,~\citep{1994ApJS...90..945D} leading to an additional decrease of the cooling time with $\Gamma^2$.
+
+As an example, we compare the predicted cooling times against the observed cooling time from the fit to the orbital light curve in Fig.~\ref{fig:tcool}.
 
 \begin{figure}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t003_LogParabola_ring.pdf}}
-    \caption{Limits on the distance of the \gray emission zone to the central black hole.}
+    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t003_LogParabola_ring.pdf}
+    \caption{Cooling times for IC scattering with BLR photons and photons from the dust torus. Also shown are observed decay times for the full energy range, energy dependent light curves, and sub-orbital light curves. \todo{formulate better, add description of second x-axis}}
     \label{fig:tcool}
 \end{figure}
+
+\label{sec:tcool}
+    \begin{itemize}
+  \item 
+As noted by \citet{2012ApJ...758L..15D}, the energy dependence of the cooling times could reveal the dominant photon field responsible for IC scattering:  Now discuss energy dependent light curves, see my notebook (on source by source basis, see also below), then discuss data points in figure
+\end{itemize}
+
+
 
 We split the data into three energy bins, from 100\,MeV-300\,MeV, 300\,MeV-1\,GeV, and 1\,GeV-100\,GeV and recompute the orbital light curves in Fig.~\ref{fig:gti}. 
 The energy bins are chosen as a compromise between number of bins and sufficient photon statistics in each bin. 
 The light curves for which at least 2 BBs are identified in each energy bin are shown in Fig.~\ref{fig:lcebins}.
-\todo{try to fit the specific flares with profiles. Would really be interesting in terms of Dotson paper if we see constant decay times or faster decay times. The latter would rather fit with Thomson regime, the format with KN regime. Plot with decay times vs energy bin. 
-Also discuss ZDCF. If we find something interesting in the fit, this could be the third way to say something about the location of the \gray emitting region. 
-}
 
-\todo{compare $m_ec^2$ against $\tilde\epsilon'_\mathrm{BLR} \leqslant 2\gamma'_\mathrm{BLR}\epsilon'_\mathrm{BLR}$ to see if we are in Thomson or KN regime, where quantity with tilde is in electron rest frame. Ly$\alpha$ photons have energy 10.2\,eV. Should be already quite deep in KN regime, need different expression for cooling time, see B\&G 1970}
 
 \begin{figure*}
     \centering
@@ -784,45 +855,7 @@ Also discuss ZDCF. If we find something interesting in the fit, this could be th
     \label{fig:zdcf}
 \end{figure*}
 
-\begin{deluxetable*}{ccccccc|ccc}
-\tablewidth{0pt}
-\tablecaption{ \label{tab:blrabs}Results from BLR absorption fits to \gray spectra.}
-\tablehead{$t_0$ & $\Delta t$  & $r_\mathrm{limit}$ & 
-$r_\mathrm{limit}$ & $r_\mathrm{limit}$  & $E_\mathrm{HEP}$  & $E_{\tau_{\gamma\gamma} = 1}$ & $t_\mathrm{cool,~BLR}$  &
-$t_\mathrm{cool,~dt}$  & $\tau_\mathrm{decay}$\\
-{} [MJD] & [days] & $[10^{17}\mathrm{cm}]$ & $[R_{\mathrm{Ly}\alpha}]$ & $[r_g]$ & [GeV] & [GeV] &  [mins] & [hours] & [mins]
-}
-\startdata
-\hline
-\multicolumn{10}{c}{PKSB1222+216}\\
-\hline
-55364.68 & 3.42 & 1.33 & 1.40 & 609 & 75.39 & 69.69\\
-\hline
-\multicolumn{10}{c}{3C279}\\
-\hline
-57188.07 & 1.87 & 0.49 & 0.64 & 867 & 56.03 & 42.91\\
-58133.34 & 5.32 & 1.45 & 1.91 & 2580 & 92.56 & 107.91\\
-\hline
-\multicolumn{10}{c}{PKS1510-089}\\
-\hline
-57114.16 & 1.42 & 0.51 & 0.66 & 1088 & 66.54 & 54.99\\
-57243.84 & 4.53 & 0.74 & 0.97 & 1591 & 75.93 & 65.39\\
-\hline
-\multicolumn{10}{c}{CTA102}\\
-\hline
-57737.41 & 1.67 & 1.41 & 0.86 & 562 & 36.25 & 21.23\\
-57749.10 & 4.99 & 3.20 & 1.95 & 1275 & 73.80 & 37.94\\
-57757.55 & 4.66 & 2.76 & 1.67 & 1096 & 39.19 & 32.38\\
-57861.71 & 2.42 & 1.95 & 1.18 & 776 & 34.73 & 24.94\\
-\hline
-\multicolumn{10}{c}{3C454.3}\\
-\hline
-55516.55 & 8.93 & 3.19 & 1.36 & 1598 & 41.19 & 28.73\\
-\enddata
-{
-\tablecomments{Highest energy photons are given for source probabilities $> 0.99$. Decay time given for flare component with highest peak flux.}
-}
-\end{deluxetable*}
+
 
 \subsection{Results from radio-\gray correlation analysis}
 \label{sec:gammaradio}
