@@ -796,7 +796,7 @@ In general, we find that $r_\mathrm{lim} \gtrsim r_\mathrm{j}$ indicating that t
 
 \subsection{Considerations from radiative cooling}
 With the limits on $r$ it is now possible to derive the energy density of the external photon field in the co-moving frame, which could be responsible for the \gray emission due to inverse-Compton (IC) scattering with relativistic electrons in the emission region. 
-Because the cooling time depends on the energy density and in turn on $r$, a comparison between the predicted IC cooling times with the observed decay times could provide further information on where \Grays are emitted.
+Because the cooling time depends on the energy density and in turn on $r$, a comparison between the predicted IC cooling times with the observed decay times could provide further information on where the \Grays are emitted.
 
 In the galaxy frame, the energy density of the BLR in the ring geometry is approximately given by Eq.~\ref{eq:u-blr}, and hence the photon number density is $n_\mathrm{BLR} \approx u_\mathrm{BLR} / \epsilon_{\mathrm{Ly}\alpha}$.
 Assuming that the BLR photon field is isotropic and in the limit $\Gamma \gg 1$, the energy density in the co-moving frame becomes:
@@ -814,17 +814,21 @@ In the Thomson regime, this becomes
 where $m_e$ is the electron mass and $\sigma_\mathrm{T}$ the Thomson cross section. 
 In what follows, we approximate the electron Lorentz factor with~\citep[e.g.,][]{2009herb.book.....D,finke2016}
 \begin{equation}
-    \gamma'_\mathrm{BLR/dt} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{E(1+z)}{2\epsilon_{\mathrm{Ly}\alpha}}},
+    \gamma'_\mathrm{BLR} = \frac{1}{ \delta_\mathrm{D}}\sqrt{\frac{E_\mathrm{obs,BLR}(1+z)}{2\epsilon_{\mathrm{Ly}\alpha}}},
 \end{equation}
-where $E$ is the observed \gray energy. 
+where $E_\mathrm{obs,BLR}$ is the observed \gray energy of IC scattered BLR photons. 
 From Eq.~\ref{eq:tcool-thomson} and \ref{eq:u-blr} it becomes clear that the cooling time scales as $t_\mathrm{cool, BLR}\propto r^2 \Gamma^{-2}$, i.e., the cooling becomes less efficient for large distances. 
 Furthermore, if the \gray emission is produced very far away from the BLR, the external photons will appear as a point source illuminating the emission region from behind, so that $u'_\mathrm{BLR} = (1/4)\Gamma^{-2} u_\mathrm{BLR}$,~\citep{1994ApJS...90..945D} leading to an additional decrease of the cooling time with $\Gamma^2$.
 
-As an example, we compare the predicted cooling times against the observed cooling time from the fit to the orbital light curve in Fig.~\ref{fig:tcool}.
+The BLR cooling time for one flare of CTA102 is shown for $r=r_\mathrm{lim}$ and $r = 1\,$pc as a function of $\gamma'$ and $E_\mathrm{obs,BLR}$ in Fig.~\ref{fig:tcool} (black solid and dash-dotted lines, respectively). 
+Klein-Nishina effects become important for $\gamma'_\mathrm{BLR} \gtrsim 2\times10^3$ or $E_\mathrm{obs,BLR}\gtrsim1\,$GeV. 
+In this regime, the cooling time stops falling with $\sqrt{\gamma_\mathrm{BLR}'}$ (dashed and dotted black lines) and instead becomes constant before increasing again.  
+
+
 
 \begin{figure}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t003_LogParabola_ring.pdf}
+    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t001_LogParabola_ring.pdf}
     \caption{Cooling times for IC scattering with BLR photons and photons from the dust torus. Also shown are observed decay times for the full energy range, energy dependent light curves, and sub-orbital light curves. \todo{formulate better, add description of second x-axis}}
     \label{fig:tcool}
 \end{figure}
