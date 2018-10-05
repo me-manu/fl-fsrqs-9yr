@@ -306,7 +306,7 @@ Furthermore, PKSB1222+216, 3C279, and PKS1510-089  are among the 7 FSRQs also de
 \colhead{$\log_{10}(M_\bullet / M_\odot)$\tablenotemark{a}} &
 \colhead{$L_\mathrm{disk}$\tablenotemark{a}} & \colhead{$L(\mathrm{H}\beta)$\tablenotemark{a}} &
 \colhead{$\delta_\mathrm{D}$\tablenotemark{b}} &
-\colhead{$\Gamma$\tablenotemark{b}} &
+\colhead{$\Gamma_\mathrm{L}$\tablenotemark{b}} &
 \colhead{$\theta_\mathrm{obs}$\tablenotemark{b}}\\
 {} & {} & \colhead{[deg]} & \colhead{[deg]} & {} & {} & \colhead{$[10^{46} \mathrm{ergs}\,\mathrm{s}^{-1}]$} & \colhead{$[10^{43} \mathrm{ergs}\,\mathrm{s}^{-1}]$} &
 {} & {} & \colhead{[deg]} 
@@ -324,8 +324,8 @@ CTA\,102 & 3FGL\,J2232.5+1143 & 338.158  & 11.728 & 1.037 & 8.93\tablenotemark{c
 \tablenotetext{c}{From \citet{2014Natur.510..126Z}.}
 \tablenotetext{d}{From \citet{2012RMxAA..48....9T}.}
 \tablenotetext{e}{\citet{2012RMxAA..48....9T} give the $L$(CIV) with $(255.7 \pm 17.2)\times10^{43}\mathrm{ergs}\,\mathrm{s}^{-1}$ and Eq.~7 from \citet{2006ApJ...637..669L} is used to convert this to $L$(H$\beta$).}
-\tablecomments{The reportet source positions are derived from 
-our \gray analysis.}
+\tablecomments{The reported source positions are derived from 
+our \gray analysis. $M_\bullet$ denotes the black hole mass, $L_\mathrm{disk}$ the accretion disk luminosity, $L(\mathrm{H}\beta)$ is the luminosity of the $\mathrm{H}\beta$ emission line, $\delta_\mathrm{D}$ denotes the relativistic Doppler boost factor, $\Gamma_\mathrm{L}$ is the bulk Lorentz factor, and $\theta_\mathrm{obs}$ is the angle between the jet axis and the line of sight. }
 
 \end{deluxetable*}
 
@@ -334,13 +334,13 @@ our \gray analysis.}
 Our goal is characterize both the long term \gray behavior of the selected FSRQs as well as the brightest flares.
 To this end, we select \Grays that have been measured with the \FermiLAT between August 4, 2008, and January 30, 2018, yielding a total data set of almost 9.5\,years or 114\,months.
 The \FermiLAT is a pair conversion telescope designed to measure \Grays with energies between 20\,MeV to above 300\,GeV~\citep{2009ApJ...697.1071A}.
- we restrict ourselves to \Grays in the energy range between 100\,MeV and 316\,GeV. 
+ We restrict ourselves to \Grays in the energy range between 100\,MeV and 316\,GeV. 
 Below 100\,MeV the effective area of the LAT quickly decreases and the point spread function increases to above $\sim 6^\circ$\footnote{See, e.g., \url{http://www.slac.stanford.edu/exp/glast/groups/canda/lat_Performance.htm}} making a point source analysis challenging. 
 Since FSRQs usually have curved \gray spectra, we do not expect significant detection of these sources above our chosen maximum energy.
-To mitigate contamination of \Grays originating from the Earth Limb, we limit the sample to events that have arrived at a zenith angle less than $90^\circ$ and we excise periods of bright GRBs and solar flares that have been detected with a test statistic $\mathrm{TS} > 100$.
-The test statisitic is defined as $\mathrm{TS} = -2\ln(\mathcal{L}_1 / \mathcal{L}_0)$, i.e., the log-likelihood ratio between the the maximized likelihoods $\mathcal{L}_1$ and $\mathcal{L}_0$ for the hypotheses with and without an additional source, respectively~\citep{mattox1996}.
-We use the latest \texttt{Pass 8} instrumental response functions and Monte Carlo simulations~\citep{pass8} and select \gray events that pass the \texttt{P8R2 SOURCE} event selection. 
-For each source we analyze $10^\circ \times 10^\circ$ regions of interest (ROIs) centered on the position of each source as provided in the third \fermiLAT point source catalog \citep[3FGL,][]{3fgl}.
+To mitigate contamination of \Grays originating from the Earth Limb, we further limit the sample to events that have arrived at a zenith angle less than $90^\circ$ and we excise periods of bright GRBs and solar flares that have been detected with a test statistic $\mathrm{TS} > 100$.
+The test statistic is defined as $\mathrm{TS} = -2\ln(\mathcal{L}_1 / \mathcal{L}_0)$, i.e., the log-likelihood ratio between the the maximized likelihoods $\mathcal{L}_1$ and $\mathcal{L}_0$ for the hypotheses with and without an additional source, respectively~\citep{mattox1996}.
+We use the latest \texttt{Pass 8} instrumental response functions and Monte Carlo simulations~\citep{pass8} and select \Grays that pass the \texttt{P8R2 SOURCE} event selection. 
+For each source we analyze a $10^\circ \times 10^\circ$ region of interest (ROI) centered on the position of each source as provided in the third \fermiLAT point source catalog \citep[3FGL,][]{3fgl}.
 We choose a spatial binning of $0.1^\circ$ per pixel and 8 energy bins per decade. 
 
 \subsection{ROI optimization}
@@ -354,7 +354,7 @@ The spectral shape parameters such as power-law indices, curvature, or cut-off e
 We freeze all spectral source parameters for sources detected with $\mathrm{TS} < 1$ or if the number of predicted photons is less than $10^{-3}$.
 The normalizations of the diffuse backgrounds are also left free during the fit, together with the spectral index of the Galactic diffuse background template.
 After the fit has converged successfully, 
-we relocalize the central \gray source and re-fit all spectral model parameters. The relocalized source positions are provided in Table~\ref{tab:src-select}.
+we relocalize the central \gray source and re-fit all spectral model parameters. The relocalized source positions are provided in Tab.~\ref{tab:src-select}.
 After this step, we generate a $\mathrm{TS}$ map to search for additional point sources. For each pixel in the ROI, we add a putative point source with a power-law spectrum with index $\Gamma = 2$ and calculate its $\mathrm{TS}$. If  $\sqrt{\mathrm{TS}} \geqslant 5$, we permanently add the source at the position of the highest $\mathrm{TS}$ value and re-optimize the spectral parameters for the whole ROI. This step is repeated until no further sources are found.
 
 With the best-fit model for each ROI, we compute the \gray light curves for the FSRQs with an initial binning of 7~days. 
@@ -372,34 +372,33 @@ Several strong flares exceeding the average flux level are easily identified fro
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_weekly_tsmin9.pdf}
-    \caption{\gray light curves with weekly binning for the considered FSRQs. Open symbols denote upper limits at the $2\,\sigma$ confidence level. The orange lines show the BBs and the shaded regions represent the identified HOP groups. The green shaded regions denote the time itnervals identified as large flares for which the zoomed-in analysis is performed.}
+    \caption{\gray light curves with weekly binning for the considered FSRQs. Open symbols denote upper limits at the $2\,\sigma$ confidence level. The orange lines show the BBs and the hatched regions represent the identified HOP groups. The green shaded regions denote the time intervals identified as bright flares for which we derive light curves with finer binning.}
     \label{fig:weekly}
 \end{figure*}
 
 There is no generally accepted consensus to determine the data points that belong to a flaring state and which characterize the quiescent level. \citet{2013MNRAS.430.1324N} suggests a simple definition that a flare is a continuous time interval associated with a flux peak in which the flux is larger than half the peak flux value. 
-This definition is intuitive, however, it is unclear how to treat overlapping flares and identify flux peaks in an unbiased way. To mitigate these problems, we have implemented one dimensional implementation of the HOP algorithm~\citep{1998ApJ...498..137E}.
+This definition is intuitive, however, it is unclear how to treat overlapping flares and identify flux peaks in an unbiased way. 
+To mitigate these problems, we have implemented a one dimensional hill-climbing algorithm based on   HOP algorithm~\citep{1998ApJ...498..137E}.
 The algorithm associates data points to their nearest neighbor weighted by flux.
 We feed the BB representation of the light curve to the HOP algorithm and the resulting groups of data points are shown 
-Fig.~\ref{fig:weekly} as left and right hatched areas. \todo{some more details}
+Fig.~\ref{fig:weekly} as left and right hatched areas. \todo{Jeff, do you want to provide some more details here?}
 The combination of BBs and the HOP algorithm represents an unbiased way to split a light curve into groups of quiescent and flaring episodes; we will refer to one connected flare episode as a \emph{HOP group} of consecutive BBs.
 
-We iteratively zoom in on time ranges with bright \gray activity by identifying HOP groups where one BB fulfills the condition $F_{BB} \geqslant F_\mathrm{max} =  5\times\overline{F}$ and including adjacent blocks with $F_{BB} \geqslant F_\mathrm{min} = \overline{F}$. We prefer this minimum flux criterion over including the full HOP group as it might extend over long time ranges of a quiescent state.
-Overlapping time ranges are combined into one time range and the ranges are extended by one time bin on each side. Each time range is extended by one time bin on either side.
+We iteratively zoom in on time ranges with bright \gray activity by identifying HOP groups where one BB fulfills the condition $F_{BB} \geqslant F_\mathrm{max} =  5\times\overline{F}$ and including adjacent blocks within the group with $F_{BB} \geqslant F_\mathrm{min} = \overline{F}$. We prefer this minimum flux criterion over including the full HOP group as it might extend over long time ranges of a quiescent state.
+Overlapping time ranges are combined into one time range and the ranges are extended by one time bin on either side.
 For the identified time span, we re-optimize the spectral model of the ROI in the same way as described in Sec.~\ref{sec:roi} but without re-localizing the central FSRQ or adding new point sources. Subsequently, we calculate a light curve with finer binning and again select the time ranges of the highest \gray activity. We repeat this procedure twice, down to a binning equal to the Good Time Intervals (GTIs), of the \Fermi satellite, which correspond to one passage of the source through the field of view of the satellite during one $\sim$ 95 minute orbit.
-The choices of time binnings and values for $F_\mathrm{max}$ and $F_\mathrm{min}$ are summarized in Table~\ref{tab:zoom} together with the number of identified high \gray activity states (which might consists of several flares as indicated by the HOP groups).
+The choices of time binnings and values for $F_\mathrm{max}$ and $F_\mathrm{min}$ are summarized in Tab.~\ref{tab:zoom} together with the number of identified high \gray activity states (which might consists of several flares as indicated by the HOP groups).
 The values of the threshold fluxes $F_\mathrm{max}, F_\mathrm{min}$ is somewhat arbitrary and are a compromise between including as many flares as possible but keeping the overall number of flares manageable. Note, that the sole purpose of this exercise is to select the brightest flares for  further analysis. 
 The resulting time ranges for the weekly light curves are plotted as green shaded areas in Fig.~\ref{fig:weekly}.
-The intermittent daily light curves are provided in Fig.~\ref{fig:daily} and  Fig.~\ref{fig:gti} shows the GTI light curves. 
-The source exposure can vary significantly between two adjacent orbits, as the satellite rocks between the celestial north and south pole in between orbits. This explains the large error bars on some of the time bins of the GTI light curves.
-
-In a last step, we derive light curves on sub-GTI time scales. 
-The time bin size is calculated from the adaptive binning method of \citet{lott2012}, where we choose bins of constant flux uncertainty of $\sim20\,\%$. 
-In this step, we use the space craft information in time steps of 1\,s instead of 30\,s. Additionally, we compute the effective area in 5 bins of the azimuthal spacecraft coordinates since on such short time scales the exposure dependence on the azimuth cannot be averaged over.
+The intermittent daily light curves are provided in Fig.~\ref{fig:daily}.
+Figure~\ref{fig:gti} shows the GTI (or orbital) light curves with exponential fits of flare profiles that we will discuss in Sec.~\ref{sec:results-local}. 
+The source exposure can vary significantly between two adjacent orbits of the orbital light curve, as the satellite rocks between the celestial north and south pole in between orbits. 
+This explains the large error bars on some of the time bins of the GTI light curves.
 
 \begin{deluxetable}{cccc}
 \tablewidth{1\linewidth}
 \tablecaption{ \label{tab:zoom} Thresholds for BB fluxes in one HOP group to select time ranges of \gray activity together with selected time binning and number of selected time ranges.
-If no interval fulfills the $F_\mathrm{BB} \geqslant F_\mathrm{max}$ criterion but flux points exceed $5\times10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$ we change $F_\mathrm{max}$ to the maximum value $F_\mathrm{BB}$.}
+}
 \tablehead{Binning & $F_\mathrm{min}$ & $F_\mathrm{max}$ & $N_\mathrm{time~ranges}$}
 \startdata
 7 days & $\overline{F}$ & $5\times\overline{F}$ & 20\\
@@ -409,28 +408,23 @@ GTI & $\overline{F}$ & $2\times\overline{F},~\mathrm{TS} \geqslant 150$\tablenot
 \enddata
 \tablenotetext{a}{We choose here the absolute flux (rather than the flux relative to the average) as a threshold in order to be consistent with our initial source selection. However, because of the high avergage flux of 3C454.3, we also include the max argument. If $F_\mathrm{max} = 1.5 \times \overline{F}$ we set $F_\mathrm{min} = 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. }
 \tablenotetext{b}{Motivated from the high $\mathrm{TS}$ found for the flare of 3C\,279~\citep{TheFermi-LAT:2016dss}, we also demand that at least one GTI of each HOP group is detected with $\mathrm{TS} \geqslant 150$ in order to ensure enough statistics to search for variability on time scales of minutes.}
+\tablecomments{If no interval fulfills the $F_\mathrm{BB} \geqslant F_\mathrm{max}$ criterion for the weekly or daily light curves, we include the HOP group of the maximum flux if that flux exceeds $5\times10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$, i.e., we change $F_\mathrm{max}$ to the maximum value $F_\mathrm{BB}$.}
 \end{deluxetable}
+
+In a last step, we derive light curves on sub-GTI time scales. 
+The time bin size is calculated from the adaptive binning method of \citet{lott2012}, where we choose bins of constant flux uncertainty of $\sim20\,\%$. 
+In this step, we use the space craft information in time steps of 1\,s instead of 30\,s. Additionally, we compute the effective area in 5 bins of the azimuthal spacecraft coordinates since on such short time scales the exposure dependence on the azimuth should not be averaged over.\footnote{See \url{https://fermi.gsfc.nasa.gov/ssc/data/analysis/scitools/help/gtltcube.txt}}
+We discuss these light curves in Sec.~\ref{sec:sub-gti}.
 
 
 %%% Daily light curves %%%%%%%%%
 \begin{figure*}
     \centering
     \includegraphics[width = .99\linewidth]{figures/lc_daily_tsmin9.pdf}
-    \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (green shaded regions in Fig.~\ref{fig:weekly}). Symbols and lines are the same as in Fig.~\ref{fig:weekly}.}
+    \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (green shaded regions in Fig.~\ref{fig:weekly}). Symbols and lines are the same as in Fig.~\ref{fig:weekly}. 
+    As stated in Tab.~\ref{tab:zoom}, if all BB fluxes fail the criterion $F_{BB} \gtrsim \mathrm{max}(10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}, 1.5 \bar{F})$, we include the HOP group with the maximum flux of the interval if that flux is above $5\times 10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. This is the case, e.g., for last two intervals of PKSB1222+216 and the first interval of 3C273 (last three panels of the top row).}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%% GTI light curves %%%%%%%%%
-\begin{figure*}
-    \centering
-    \includegraphics[width = .99\linewidth]{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
-    \caption{ Light curves with one bin per GTI for the selected time ranges (green shaded regions in Fig.~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Sec.~\ref{sec:hop-fit}. Other symbols and lines are the same as in Fig.~\ref{fig:weekly} and ~\ref{fig:daily}.
-    \todo{blue colors are missing!}
-    }
-    \label{fig:gti}
-\end{figure*}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Results for global light curve properties}
 \label{sec:results-global}
@@ -539,6 +533,17 @@ CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26
 %\label{sec:hop-fit}
 
 We proceed with deriving local properties of the \gray flares from the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
+
+%%% GTI light curves %%%%%%%%%
+\begin{figure*}
+    \centering
+    \includegraphics[width = .99\linewidth]{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
+    \caption{ Light curves with one bin per GTI for the selected time ranges (green shaded regions in Fig.~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Sec.~\ref{sec:results-local}. Other symbols and lines are the same as in Fig.~\ref{fig:weekly} and ~\ref{fig:daily}.
+    \todo{blue colors are missing!}
+    }
+    \label{fig:gti}
+\end{figure*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 To assess the time profile of the flares,
 we fit each HOP group $i$ with a $\chi^2$ minimization as a sum of exponential profiles, 
