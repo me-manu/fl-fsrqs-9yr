@@ -1,4 +1,5 @@
-\documentclass[twocolumn]{aastex62}
+\documentclass[twocolumn,linenumbers]{aastex62}
+%\documentclass{aastex62}
 \usepackage{xspace}
 
 %% The default is a single spaced, 10 point font, single spaced article.
@@ -206,7 +207,16 @@
 %% Mark off the abstract in the ``abstract'' environment. 
 \begin{abstract}
 
-Abstract
+Almost 10 years of $\gamma$-ray observations with the \emph{Fermi} Large Area Terlescope (LAT) have revealed extreme  $\gamma$-ray outbursts from flat spectrum radio quasars (FSRQs), temporarily making these objects the brightest $\gamma$-ray emitters in sky. 
+Yet, the location and mechanisms of the $\gamma$-ray emission remain elusive. 
+To gain further insight into these questions, we characterize long-term variability and brightest flares of six FSRQs observed with the LAT.
+Consecutively zooming in on the brightest flares, which we identify in an unbiased way through Bayesian Blocks and a hill-climbing algorithm, 
+we find evidence for variability on timescales as short as minutes in four sources (3C279, PKS1510-089, CTA102, 3C454.3), which suggests extremely compact emission regions in the jet.
+We do not find any signs for $\gamma$-ray absorption in the broad line region, which indicates that the $\gamma$-rays are produced away from the black hole by hundreds of gravitational radii. 
+This is further supported by a cross-correlation analysis between $\gamma$-ray and radio light curves, which is compatible with a co-spatial production of $\gamma$~rays and radio emission at mm wavelengths in 3C454.3 and CTA102, located at distances $\gtrsim 1\,$pc from the central black hole. 
+These distances are still consistent with the observed decay times of the brightest flares if the decay is caused by radiative cooling in external radiation fields.
+However, the minute-scale variability is challenging to explain in such scenarios.
+%The gamma-ray light curves of these sources on different temporal scales provide us with a rich data set that can be compared to theoretical models of emission and particle cooling scenarios.
 
 \end{abstract}
 
@@ -246,65 +256,76 @@ A common assumption is that the radiation is emitted by freshly accelerated   pa
 Yet, the origin and location of such plasmoids remain unknown. 
 
 Blazars also display variable emission at all observationally accessible time scales, limited only by signal-to-noise.
-Surprisingly, at \gray energies, flux doubling times as low as minutes have been observed both in BL Lac-type objects and flat spectrum radio quasars (FSRQs) with ground-based Cherenkov telescopes and the \FermiLAT~\cite[e.g.][]{pks2155hess2007,pks1222magic2011,TheFermi-LAT:2016dss}.
+Surprisingly, at \gray energies, flux doubling times as low as minutes have been observed both in BL Lac-type objects and flat spectrum radio quasars (FSRQs) with ground-based Cherenkov telescopes and the \FermiLAT~\cite[e.g.][]{pks2155hess2007,pks1222magic2011,TheFermi-LAT:2016dss,2018ApJ...854L..26S}.
 In these cases, causality arguments suggest extremely compact emission regions realized in, e.g., magnetic reconnection events or recollimation shocks~\cite[e.g.][]{Petropoulou:2016xat,Bodo:2017qqn}.
 In particular for FSRQs, the observation of \Grays beyond 10\,GeV suggests that these compact dissipation sites are located at distances of hundreds of Schwarzschild  radii from the central super massive black hole. 
 Otherwise, the \gray emission would be strongly attenuated in the interaction with UV and optical photons that are emitted from fast rotating clouds of ionized gas of the broad line region (BLR). 
 Meeting these constraints is challenging for standard emission scenarios as extreme relativistic bulk motions of the plasma have to be invoked~\cite[e.g.,][]{TheFermi-LAT:2016dss}. 
 
 After almost one decade of continuous all-sky observations, the \FermiLAT has accumulated a large sample of flares from many FSRQs.
-Our goal is to characterize the flares and long-term behaviour of the FSRQs that have shown the brightest \gray flares over the course of the \Fermi mission. 
-The brightest flares enable us to perform a comprehensive search for \gray variability on time scales as short as minutes in order to investigate if such short variability -- and conversely compact emission sites -- is a common phenomenon 
-in FSRQ flares. 
-Such short variability has already been discovered in 3C\,279~\citep{TheFermi-LAT:2016dss} and recently in CTA\,102~\citep{2018ApJ...854L..26S}, but searches in other sources have been unsuccessfull~\citep{2017Galax...5..100N}.
-The plethora of observed flares also allows us to perform a systematic study of the local temporal flare profiles, which could be connected to particle injection or particle propagation.
+Our goal is to characterize flares and long-term behaviour of those FSRQs that have shown the brightest \gray flares over the course of the \Fermi mission. 
+The most extreme flaring states enable us to perform a comprehensive search for \gray variability on time scales as short as minutes in order to investigate if such short variability -- and conversely compact emission sites -- is a common phenomenon in FSRQ flares. 
+Evidence for minute-scale variability has already been discovered in LAT observations of 3C\,279~\citep{TheFermi-LAT:2016dss} and recently in CTA\,102~\citep{2018ApJ...854L..26S}, but searches in other sources have been unsuccessfully~\citep{2017Galax...5..100N}.
+The plethora of observed flares also enables us to perform a systematic study of the local temporal flare profiles, which could be connected to particle injection or particle propagation.
 \citet{2013MNRAS.430.1324N} investigated the brightest \gray flares blazar in the first 4 years of LAT data.
 The author found that, on average, flares have a slight tendency towards rise times being shorter than decay times, however, no flare showed extreme asymmetry. 
-\citet{2010ApJ...722..520A} characterized the blazars in terms of their power spectral density (PSD) using 11 months of data and found that bright blazars mostly fall in an intermittent regime between red noise (flickering) and Brownian noise. 
+\citet{2010ApJ...722..520A} characterized the blazars in terms of their power spectral density (PSD) on longer timescales using 11 months of data and found that bright blazars mostly fall in an intermittent regime between red noise (flickering) and Brownian noise. 
 These analyses can be significantly extended with almost one decade of continuous \fermiLAT observations.
-
 
 Additionally, the high signal-to-noise spectra during flaring states enable the search for spectral absorption features due to the interaction of \Grays with BLR photons.
 The detection of such features would locate the \gray emission region inside the BLR with important implications where particles dissipate their energy. 
-Indeed, evidence for such absorption was reported in early  \fermiLAT observations~\citep{2010ApJ...717L.118P}, but a recent analysis of a large sample of 100 FSRQs and over 7\,years of observations could not confirm this result~\citep{2018MNRAS.477.4749C}.
+Indeed, evidence for such absorption was reported in early  \fermiLAT observations~\citep{2010ApJ...717L.118P,2014ApJ...794....8S}, but a recent analysis of a large sample of over 100 FSRQs and more than 7\,years of \fermiLAT observations could not confirm this result~\citep{2018MNRAS.477.4749C}.
 The absence of the absorption features can in turn be used to derive lower limits on the distance of the \gray emitting region to the central super-massive black hole. 
 
 The article is organized as follows. 
 In Sec.~\ref{sec:data} we present the source selection and \FermiLAT data analysis. 
-We investigate the source behaviour on different time scales in Sec.~\ref{}, starting from light curves over the whole mission lifetime on consecutively zooming-in on \gray flares which we investigate on shorter time scales. 
-For the first time, we use an unbiased method based on Bayesian blocks (BBs)~\citep{2013ApJ...764..167S} and one-dimensional group finding algorithms based on~\citet{1998ApJ...498..137E} to identify flares on shorter and shorter timescales.  
-We discuss our findings in Sec.~\ref{}
-before concluding in Sec.~\ref{}.
+We investigate the global light curve properties in Sec.~\ref{sec:results-global}, before characterizing the temporal properties of the brightest flares in Sec.~\ref{sec:results-local}, which we identify, using an unbiased method based on Bayesian blocks (BBs)~\citep{2013ApJ...764..167S} and one-dimensional group finding algorithms based on~\citet{1998ApJ...498..137E}.
+We investigate the location of the \gray emitting region through searches for BLR absorption, comparison of radiative cooling time scales and cross-correlations between long-term \gray and radio light curves in Sec.~\ref{sec:location}. 
+We summarize our findings and conclude in Sec.~\ref{sec:conclusion}.
 
 \section{Source selection and data analysis}
 \label{sec:data}
 
-We search for the brightest \gray flares among the sources included in the monitored source list\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/msl_lc/}}. 
-Selecting blazars that have shown average daily fluxes $F \geqslant 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$ within ($1\,\sigma$ statistical uncertainties) above 100\,MeV,
-we are left with a selection of 6 FSRQs, listed in Tab.~\ref{tab:src-select}, together with their coordinates, redshift, as well as black hole mass and luminosity of the $\mathrm{H}\beta$ line taken from the literature~\citep{2006ApJ...637..669L,2012RMxAA..48....9T}.  
-The black hole mass and $\mathrm{H}\beta$ luminosity will be used in Sec.~\ref{} to model the optical line emission from the BLR.
+For our analysis, we select the FSRQs that have shown the brightest \gray flares as reported in the monitored source list.\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/msl_lc/}}
+From the list, we select FSRQs that have shown average daily fluxes $F \geqslant 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$ within ($1\,\sigma$ statistical uncertainties) above 100\,MeV, which leaves us with sources, listed in Tab.~\ref{tab:src-select}, together with their coordinates, redshift, and additional parameters taken from the literature such as black hole mass and luminosity of the $\mathrm{H}\beta$, a measure for the BLR luminosity.  
 With the chosen flux threshold we ensure that we have at least one flare of each source in the sample that is suitable to search for intra-orbit variability and to derive high signal-to-noise spectra. 
-All of the selected FSRQs are well known \gray emitters and individual flares from these objects have been studied in great detail~\citep[e.g.,][]{}. 
-As noted in the Introduction, two of the sources (3C\,279, CTA\,102) have already been shown to be variable on extremely short timescales~\citep{TheFermi-LAT:2016dss,2018ApJ...854L..26S}. 
-Furthermore, PKS\,B1222+216, 3C\,279, and PKS\,1510-089  are among the 7 FSRQs also detected above 100\,GeV with imaging air Cherenkov Telescopes~\citep{}. 
+All of the selected FSRQs are well known \gray emitters and individual flares from these objects have been studied in great detail~\citep[e.g.,][]{2010ApJ...714L..73A,2011ApJ...733...19T,2015ApJ...808L..48P,TheFermi-LAT:2016dss,2013ApJ...766L..11S,2015ApJ...809..164D,2018ApJ...854L..26S,2011ApJ...733L..26A}. 
+As noted in the Introduction, two of the sources (3C279, CTA102) have already been shown to be variable on extremely short timescales~\citep{TheFermi-LAT:2016dss,2018ApJ...854L..26S}. 
+Furthermore, PKSB1222+216, 3C279, and PKS1510-089  are among the 7 FSRQs also detected above 100\,GeV with imaging air Cherenkov Telescopes~\citep{2011ApJ...730L...8A,2013A&A...554A.107H,2014A&A...569A..46A,2008Sci...320.1752M}. 
 
-\begin{deluxetable*}{llcccccc}
+\begin{deluxetable*}{llccccccccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:src-select}Blazars selected for this study. \todo{add Doppler, Gamma, obs angle from \citet{2017ApJ...846...98J}}}
-\tablehead{Source name & 3FGL name & R.A. & DEC & Redshift & $\log_{10}(M_\bullet / M_\odot)$\tablenotemark{a} & $L_\mathrm{disk} [10^{46} \mathrm{ergs}\,\mathrm{s}^{-1}]$\tablenotemark{a} & $L(\mathrm{H}\beta) [10^{43} \mathrm{ergs}\,\mathrm{s}^{-1}]$\tablenotemark{b}}
+\tabletypesize{\scriptsize}
+\tablecaption{ \label{tab:src-select}FSRQs selected for this study. }
+\tablehead{
+\colhead{Source name} &
+\colhead{3FGL name} & 
+\colhead{R.A.} & 
+\colhead{DEC} & 
+\colhead{Redshift} & 
+\colhead{$\log_{10}(M_\bullet / M_\odot)$\tablenotemark{a}} &
+\colhead{$L_\mathrm{disk}$\tablenotemark{a}} & \colhead{$L(\mathrm{H}\beta)$\tablenotemark{a}} &
+\colhead{$\delta_\mathrm{D}$\tablenotemark{b}} &
+\colhead{$\Gamma$\tablenotemark{b}} &
+\colhead{$\theta_\mathrm{obs}$\tablenotemark{b}}\\
+{} & {} & \colhead{[deg]} & \colhead{[deg]} & {} & {} & \colhead{$[10^{46} \mathrm{ergs}\,\mathrm{s}^{-1}]$} & \colhead{$[10^{43} \mathrm{ergs}\,\mathrm{s}^{-1}]$} &
+{} & {} & \colhead{[deg]} 
+}
 \startdata
-PKS\,B1222+216 & 3FGL\,J1224.9+2122 & 186.226  & 21.382 & 0.432 & 8.87\tablenotemark{c} & $1.612$ &  $2.788 \pm 0.561$\tablenotemark{d}\\
-3C\,273 &	3FGL\,J1229.1+0202 & 187.266  & 2.051 & 0.158 & 	8.92 &	6.114 & 	15.40 \\
-3C\,279 & 3FGL\,J1256.1-0547 & 194.045  & -5.786 & 0.5362 	&	8.28 &	1.110 &	1.728\\
-PKS\,1510-089 &	3FGL\,J1512.8-0906 & 228.210  & -9.106 & 0.360 & 8.20 & 1.130 & 1.768\\
-CTA\,102 & 3FGL\,J2232.5+1143 & 338.158  & 11.728 & 1.037 & 8.93\tablenotemark{c} & 3.996  &	8.929 $\pm$  6.000\tablenotemark{e}\\
-3C\,454.3 & 3FGL\,J2254.0+1608 & 343.493  & 16.149 & 0.859 & 	8.83 &	7.186 & 	18.95 \\
+PKS\,B1222+216 & 3FGL\,J1224.9+2122 & 186.226  & 21.382 & 0.432 & 8.87\tablenotemark{c} & $1.61$ &  $2.79 \pm 0.56$\tablenotemark{d} & $7.4 \pm 2.1$ & $13.9\pm2.1$ & $5.6\pm1.0$\\
+3C\,273 &	3FGL\,J1229.1+0202 & 187.266  & 2.051 & 0.158 & 	8.92 &	6.11 & 	15.40 & $4.3\pm1.3$ & $8.5\pm2.2$ & $6.4\pm2.4$ \\
+3C\,279 & 3FGL\,J1256.1-0547 & 194.045  & -5.786 & 0.5362 	&	8.28 &	1.11 &	1.73 & $18.3\pm1.9$ & $13.3\pm0.6$ & $1.9\pm0.6$\\
+PKS\,1510-089 &	3FGL\,J1512.8-0906 & 228.210  & -9.106 & 0.360 & 8.20 & 1.13 & 1.77 & $35.3\pm 4.6$ & $22.5\pm3.3$ & $1.2\pm0.3$\\
+CTA\,102 & 3FGL\,J2232.5+1143 & 338.158  & 11.728 & 1.037 & 8.93\tablenotemark{c} & 4.00  &	8.93 $\pm$  6.00\tablenotemark{e} & $30.5\pm3.3$ & $21.7\pm1.3$ & $1.6\pm0.4$\\
+3C\,454.3 & 3FGL\,J2254.0+1608 & 343.493  & 16.149 & 0.859 & 	8.83 &	7.19 & 	19.00 & $24.4\pm3.7$ & $13.8\pm1.4$ & $0.7\pm0.4$\\
 \enddata
 \tablenotetext{a}{Taken from \citet{2006ApJ...637..669L} if not noted otherwise.}
-\tablenotetext{b}{Calculated from $L_\mathrm{disk}$ using Eq.~7 in \citet{2006ApJ...637..669L}.}
+\tablenotetext{b}{Average jet values taken from \citet{2017ApJ...846...98J}.}
 \tablenotetext{c}{From \citet{2014Natur.510..126Z}.}
 \tablenotetext{d}{From \citet{2012RMxAA..48....9T}.}
-\tablenotetext{e}{\citet{2012RMxAA..48....9T} give the $L$(CIV) with $(255.71 \pm 17.18)\times10^{43}\mathrm{ergs}\,\mathrm{s}^{-1}$ and Eq.~7 from \citet{2006ApJ...637..669L} is used to convert this to $L$(H$\beta$).}
+\tablenotetext{e}{\citet{2012RMxAA..48....9T} give the $L$(CIV) with $(255.7 \pm 17.2)\times10^{43}\mathrm{ergs}\,\mathrm{s}^{-1}$ and Eq.~7 from \citet{2006ApJ...637..669L} is used to convert this to $L$(H$\beta$).}
+\tablecomments{The reportet source positions are derived from 
+our \gray analysis.}
 
 \end{deluxetable*}
 
@@ -651,6 +672,8 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 
 
 \section{Location of the $\gamma$-ray emitting region}
+\label{sec:location}
+
 The location of the \gray emission region in blazar jets remains unknown. 
 From the rich data set of six FSRQs studied here, we attempt to constrain the position of the emitting region using two independent approaches. 
 First, in Sec.~\ref{sec:blrabs}, we search for absorption signatures in the LAT spectra caused by pair production of \Grays with photons of external photon fields. We use spectra during the brightest flares identified in the orbital light curves in Fig.~\ref{fig:gti}.
@@ -903,7 +926,8 @@ radio core, where synchrotron-self-absorption becomes negligible~\citep[][]{1981
 can be estimated from the time lag of the light curves.
 The time lag, associated with a peak in the cross-correlation function between the \gray light curve and radio light curve obtained at frequency $\nu$, $\tau_{\mathrm{peak},r\nu}$, can be connected to the distance between the emission sites:
 \begin{equation}
-    d_{\gamma,r\nu} = \frac{\Gamma\delta_\mathrm{D}\beta c\tau_{\mathrm{peak},r\nu}}{1 + z}.
+    d_{\gamma,r\nu} = \frac{\Gamma\delta_\mathrm{D}\beta c\tau_{\mathrm{peak},\gamma,r\nu}}{1 + z}.
+    \label{eq:dgamma-r}
 \end{equation}
 Under the assumption that the radio emission lags the \Grays~\citep{}, the distance of the \gray emission region to the central black hole is thus $d_\gamma = d_{\mathrm{core},r\nu} - d_{\gamma,r\nu}$, where $d_{\mathrm{core},r\nu}$ is the position of the radio core at frequency $\nu$.
 The core position itself is frequency dependent~\citep[the core shift effect, see, e.g.,][]{1998A&A...330...79L},
@@ -917,10 +941,10 @@ where $k_r$ depends on the electron energy spectrum and the magnetic field in th
     \label{eq:core-shift2}
 \end{equation}
 where $d_\mathrm{L}$ is the luminosity distance and $\Delta r_\mathrm{mas}$ is the offset between the radio cores in milliarcseconds between the $\nu$ and a reference frequency $\nu_0$. 
-The latter is related to the time lag between two radio light curves $\tau_{\mathrm{peak},r\nu_1r\nu_2}$ through 
+The latter is related to the time lag between two radio light curves $\tau_{\mathrm{peak},r\nu_1,r\nu_2}$ through 
 $\Delta r_\mathrm{mas} = \mu \tau_{\mathrm{peak},r\nu_1r\nu_2}$, where $\mu$ is the jet proper motion. 
 The proper motion along with the core position at 15\,GHz has been measured by the 
-MOJAVE blazar monitoring program along using very large baseline interferometry (VLBI) \citep{2012A&A...545A.113P}.
+MOJAVE blazar monitoring program along using very large baseline interferometry (VLBI) \citep{2012A&A...545A.113P,2016AJ....152...12L}.
 The following distances $d_\mathrm{core,~15GHz}$ were determined  under the assumption that $k_r = 1$: for PKSB1222+216 $d_\mathrm{core,~15GHz}= 23.41\,$pc; for 3C279: $d_\mathrm{core,~15GHz}<7.88$\,pc; for PKS1510-089 $d_\mathrm{core,~15GHz} = 17.71\,$pc; for 
 CTA102 $d_\mathrm{core,~15GHz} =46.7\,$pc; and for 3C454.3 $d_\mathrm{core,~15GHz} = 20.36\,$pc.
 Dedicated analyses have also been carried out and found for 3C454.3 $k_r = 0.6$-$0.8$ and $d_\mathrm{core,~15GHz} \sim 38\,$pc and, since $d_{\mathrm{core},\nu}\propto\nu^{-1/k_r}$,  $d_\mathrm{core,~43GHz} \sim 9\,$pc~\citep{2014MNRAS.437.3396K}. 
@@ -984,9 +1008,9 @@ We can compare our results for the OVRO light curves to previous analyses of \ci
 Having determined the best-fit PSD, we use it to create artificial light curves in the same way as for fitting the periodogram using the best-fit PSD slope as an input.
 We then calculate the LCCF between 5000 pairs of un-correlated simulated light curves to derive confidence bands on the LCCF and to determine the $p_\tau$-value, which gives the probability to find an LCCF value at given $\tau$ greater or equal to the observed value under the assumption that the light curves are un-correlated. 
 
-\begin{deluxetable*}{lccccc}
+\begin{deluxetable*}{l|cc|ccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:lccf}Results from PSD analysis of radio and \gray and radio LCCF analysis.}
+\tablecaption{ \label{tab:lccf}Results from PSD analysis of radio light curves as well as \gray and radio LCCF results.}
 \tablehead{Source & $\hat{\beta}$ & $p_\beta$ & $\tau_\mathrm{peak}$ [days] & $p_\tau$ & $d_{\gamma, r}$ [pc]}
 \startdata
 \hline
@@ -1013,32 +1037,21 @@ CTA102 & $1.94^{+0.42}_{-1.33}$ & 0.45 & $-216.0^{+209.0}_{-11.0}$ & 0.0092 & $5
 3C454.3 & $1.64^{+0.31}_{-1.64}$ & 0.21 & $10.5^{+21.0}_{-28.0}$ & 0.0002 & $-1.59~[-4.8,2.7]~\pm0.3$\\
 \enddata
 {
-\tablecomments{A comment}
+\tablecomments{For the LCCF analysis we only report time lags $< 0 $ and with a significance $p_\tau < 0.05$. The range of $d_{\gamma r}$ reported in square brackets are due to the uncertainty on $\tau_\mathrm{peak}$, the remaining uncertainties are the propagated errors on $\Gamma$ and $\delta_\mathrm{D}$.}
 }
 \end{deluxetable*}
 
-We show the LCCF between \gray and radio light curves in Fig. \todo{X} for the cases where we find a peak in the LCCF at a significance $p_\tau$-value $<0.05$. Time lags $\tau < 0$ mean that the \gray light curve leads the radio light curve. 
+We show the LCCF between \gray and radio light curves in Fig.~\ref{fig:lccf} for the cases where we find a peak in the LCCF at a significance $p_\tau$-value $<0.05$. Time lags $\tau < 0$ mean that the \gray light curve leads the radio light curve. 
 We estimate the uncertainty on the peak time using flux randomization and random subsample selection (drawing 1000 samples) following \citet{1998PASP..110..660P} as suggested by \citet{2014MNRAS.445..437M}.
-The peak and the uncertainties are marked by a 
-
-
-
-\todo{Computing LCCF and time delay between radio and \gray light curves:
-}
-
-
-
-\begin{itemize}
-    \item Used PSDs determined for radio and \gray data to calculate significance of LCCF: We use 5000 pairs of simulated light curves to calculate confidence bands on LCCF of 68\,\%, 95\,\%, and 99\,\% confidence level. 
-
-    \item LCCF curves are shown in Fig.
-
-    \item Compare to 2018 paper of Max-Moerbeck et al. who also studied optical!
-    \item discussion: 3C454.3: ALMA and SMA data consistent with now time delay taking uncertainties into account. Delay for 15 GHz, expected since core further downstream in jet. Most significant detection in SMA 1.3mm data with significance $2\times10^{-4}$ ($3.72\sigma$); 3C279: radio light curves either do not correlate (OVRO) or have poor sampling during the major outbreaks. Hence, to correlation is observed. Similarly for PKS1510-089. 
-    \item radio/radio correlation: 3C279 in ALMA/OVRO: correlation found, however, uncertainties on peak large and LCCF $\gtrsim 0.7$ for $\tau < 0$, can be explained by ALMA light curve that only starts in 2012. Other results with small $p_\tau$ values given in Table~\ref{tab:lccf-radio}
-    \item calculation of $d_{\mathrm{core},r_1}$ follows \citet{2014MNRAS.441.1899F}, using radio/radio correlations and  proper motion $\mu$ taken from 15\,GHz VLBI observations \citep{2016AJ....152...12L}, so that $\Delta r_\mathrm{mas} = \mu \tau_\mathrm{peak}$, from which we calculate $\Omega_r$ and $r_\mathrm{core}$ \citep{1998A&A...330...79L} with observation angle from \citet{2017ApJ...846...98J}, Values of $k$ taken from citations above, for $3C279$ we take $k = 1$. Obtained values for 3C273 and 3C454.3 are compatible with Kutkin and Vol'vach. 
-    \item Add more discussion on results. Basic findings: \Grays produced co-spatially with mm emisison, especially interesting for 3C454.3 with 0.8 pc from radio and 0.2 pc from \gray data.
-\end{itemize}
+The peak and the uncertainties are marked by a dotted line and shaded region. 
+They are also summarized together with the $p_\tau$ values in Tab.~\ref{tab:lccf}.
+We only consider peaks with $\tau < 0$, however, 
+for 3C273 and 3C454.3 peaks with $\tau > 0$ are also visible. 
+For 3C454.3 these peaks occur at large values of $\tau$ that might be due to the several small flares observed at \gray energies. Since the overlap between the light curves is smaller for larger values of $|\tau|$ we deem this peaks less credible. 
+For 3C273 the situation is less clear. 
+The SMA light curve shows two prominent flares around the 
+\gray flare they give rise to the two peaks. 
+The low state of the source in recent years and the less dense sampling of the SMA light curve render it difficult to draw firm conclusions. As we see below, even the peak at $\tau < 0$ does not lead to constraints on the position of the \gray emitting region. \todo{CHECK!}.
 
 \begin{figure*}
     \centering
@@ -1048,24 +1061,45 @@ The peak and the uncertainties are marked by a
     \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_ovro_MM14gaps-none_lccf.pdf}
     \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
     \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
-    \caption{Caption}
-    \label{fig:lccf-sma}
+    \caption{LCCF between \gray and radio light curves for the cases where a significant time lag, $p_\tau < 0.05$ is found. The vertical dotted line and shaded regions show the time lag peaks (for $\tau < 0$) and their uncertainty. 
+    The green, dark yellow, and bright yellow colored regions denote the 68\,\%, 95\,\%, and 99\,\% envelopes derived from simulated un-correlated light curve pairs. 
+    The grey histograms show the number of $\tau_\mathrm{peak}$ values obtained from flux randomization and random subsample selection to estimate the uncertainty on $\tau_\mathrm{peak}$.}
+    \label{fig:lccf}
 \end{figure*}
 
-\section{Discussion}
+Using Eq.~\ref{eq:dgamma-r} and the peak identified in the LCCF, we can now derive the distance between the \gray and radio emitting region. 
+The most significant lag is found for SMA and \gray light curves of 3C454.3 with $p_\tau = 2\times10^{-4}$ ($3.72\sigma$). 
+Taking the uncertainties on $\tau_{\mathrm{peak},\gamma,230\mathrm{GHz}}$ into account, 
+the time lag, and hence $d_{\gamma,r}$, is consistent with zero.
+A similar conclusion is reached for the ALMA light curve even though it does not cover the major outbreak in 2010. 
+For the correlation with the OVRO light curve, a longer time lag $\tau_{\mathrm{peak},\gamma,15\mathrm{GHz}} = -102$ days is found, placing $d_{\gamma,r}$ between $\sim 5$ and 35\,pc.
+This time lag is consistent with the recent DCF analysis carried out by \citet{2018MNRAS.480.5517L} who found a time lag of $(115\pm6)$\,days at $2.5\,\sigma$ significance using 8\,years of OVRO data and the \fermiLAT weekly monitored light curve. 
 
-\subsection{Comparison to theory}
-\todo{
-\begin{itemize}
-    \item see if radio delay, limits on emission region, and shortest variability time scale fit together
-    \item discuss time evolution of flares with Petropoulous' paper
-    \item also discuss magnetic islands, geometric jet variations,...
-\end{itemize}
-}
+For CTA102, we only find a significant LCCF between the ALMA and \gray light curve. 
+The time lag translates into $d_{\gamma,r} \sim [-5;69]\,$pc taking uncertainties on $\tau_{\mathrm{peak},\gamma,100\mathrm{GHz}}$ as well as $\Gamma$ and $\delta_\mathrm{D}$ into account.
+Hence, the distance is also consistent with zero. 
+
+We find significant correlation between the \gray light curve of 3C273 and both light curves of SMA and OVRO. 
+For the 15\,GHz OVRO light curve $d_{\gamma,r}$ is found between 0.8 and 19\,pc whereas for 230\,GHz the distance falls between $-0.7$ and 4.7\,pc and is consistent with zero. 
+
+Lastly, we determine the position for the $\sim100$\,GHz (ALMA) and $230\,$GHz core (SMA) using a cross-correlation between the radio light curves to derive $\tau_{\mathrm{peak},15\mathrm{GHz},r\nu}$.
+Using Eqs.~\ref{eq:core-shift1} and \ref{eq:core-shift2} we arrive at the new core position, where we use the average values of the measured jet proper motion~\citep[see Table 4 in][]{2016AJ....152...12L}, the observation angle $\theta_\mathrm{obs}$ reported in \citet{2017ApJ...846...98J},
+and values $k_r$ found in the dedicated analyses discussed above. 
+The results and their uncertainties are summarized in Tab.~\ref{tab:lccf-radio}.
+For 3C273 and 3C454.3 we find that our core positions are consistent with values calculated from the $d_\mathrm{core}\propto\nu^{-1/k_r}$ relation obtained by \citet{2013ARep...57...34V} and \citet{2014MNRAS.437.3396K}, respctively. 
+This is a non-trivial results since we have combined our time lags with jet proper motions from MOJAVE and jet properties from VLBA observations. 
+
+Combining the core positions and $d_{\gamma,r}$ we find that for 3C454.3 the \gray emitting region is consistent with the position of SMA mm core at $\sim 0.8^{+0.4}{-0.5}$\,pc, also in agreement with the LCCF from ALMA. The OVRO result is only marginal in agreement with this result, suggesting instead that $d_\gamma \gtrsim 3\,$pc.
+Given the larger uncertainty on the time lag and lower significance of the correlation, we deem the results at mm wavelegnths as more robust. 
+They also nicely agree with the findings of \citet{2014MNRAS.441.1899F}.
+To our knowledge, we can report for the first time 
+the position of the \gray emitting region from the LCCF from ALMA, placing the emission region at position of the 86\,GHz radio core, i.e. 7\,pc~\citep{2015A&A...576A..43F}.
+The 15 and 230\,GHz core positions for 3C273 together with $d_{\gamma,r}$ suggest that the \gray emitting region is located at $d_\gamma~1\,$pc. However, for the SMA light curve, $d_\gamma$ is also consistent with zero, and hence no lower bound on $d_\gamma$ can be obtained. 
+
 \begin{deluxetable}{lccc}
 \tablewidth{0pt}
-\tablecaption{ \label{tab:lccf-radio}Time lags from radio/radio LCCF analysis.}
-\tablehead{Source & $\tau_{r_1,r_2}$ [days] & $p_{\tau~{r_1,r_2}}$  & $d_{\mathrm{core},r_1}$ [pc]  }
+\tablecaption{ \label{tab:lccf-radio}Results for time lags and core positions from a radio/radio LCCF analysis.}
+\tablehead{Source & $\tau_{\mathrm{peak},r\nu_1,r\nu_2}$ [days] & $p_{\tau}$  & $d_{\mathrm{core},r\nu_1}$ [pc]  }
 \startdata
 \hline
 \multicolumn{4}{c}{ALMA Band 3 \& OVRO}\\
@@ -1088,15 +1122,53 @@ CTA102 & --- & --- & --- \\
 3C454.3 & $3^{+10}_{-20}$ & 0.0004 & --- \\
 \enddata
 {
-\tablecomments{A comment}
+\tablecomments{For the LCCF analysis we only report time lags and with a significance $p_\tau < 0.1$. The range of core position  in square brackets are due to the uncertainty on $\tau_\mathrm{peak}$, whereas the remaining uncertainties are the propagated errors on $\theta_\mathrm{obs}$ and the jet proper motion $\mu$.}
 }
 \end{deluxetable}
 
+\section{Summary and Conclusion}
+\label{sec:conclusion}
 
-\acknowlegements
+result summary and some discussion points:
+\begin{itemize}
+\item analyzed the 6 FSRQs that showed the brightest \gray flares within 9.5 years of \fermiLAT observations
+\item Used a novel combination of BBs and hill-climbing algorithm for an unbiased identification of flaring periods in \gray light curve
+\item subsequently zoomed in on brightest flares from weekly to sub-orbital time periods. 
+\item from weekly \gray light curve, we derive flux distribution which can be valuable for planning of future flare programs with e.g. CTA
+\item also derived PSD using method of \citet{2014MNRAS.445..437M}, all FSRQs show flicker noise behaviour
+\item fit of exponential profiles to orbital light curves during bright flares to characterize local flare properties. Reveals rise and decay times of time scale of hours and shorter (shorter than horizon crossing time). 
+Also, no clear trends in flare assymetry seen, slight preference for FREDs, but nothing significant. Flares very different from each other, could also be connected to chosen fit algorithm.
+\item We find evidence for minute scale variability from BB and fits of constant flux hypothesis for all but two sources. 
+When trials are taken into account, 2 sigma discrepancy between constant flux hypothesis and observations found for 3C279 and CTA102. 
+\item location of \gray emitting region addressed through three approaches: search for spectral cut-off, investigation of cooling times, and correlation with radio light curves. 
+\item spectral fits with assumption of BLR model of \citet{finke2016}: no sign for absorption, placing \gray emission region outside or on the edge of the BLR, $r \gtrsim R_{\mathrm{Ly}\alpha}$ or $\gtrsim 10^3r_g$. 
+\item from radiative cooling: cooling times of brightest flares consistent with distance up to $\sim 1\,$pc with cooling on BLR photons. However, for minute scale variability, distance should be close to derived limits from \gray spectra. 
+\item fits of exponential profiles to energy dependent light curves inconclusive: statistics not sufficient to distinguish between cooling in KN or Thomson regime as suggested by \citet{2012ApJ...758L..15D}. 
+Also reduces the emission expected from IC scattering, scales as $\delta_\mathrm{D}^3 / x^2$, where $x^2 = R_\mathrm{li}^2 + r^2$ \citep[see,e.g., Eq. 87 in]{finke2016}. Needs to be compensated by Doppler factor or electron distribution in the blob. 
+\item correlation with radio light curves: significant correlations found for 3C454.3, CTA102, and 3C273. 
+For first two, time lags in light curves with 100 and 230 GHz consistent with zero. This places position of \gray emitting region at same distance of mm core at parsec scale distance
+\item three independent pieces that suggest large distances, however might become problematic if short cooling times on the order of minutes are confirmed. Might be due to advection of particles (particles escaping emission region?) 
+Multiwavelength observations could confirm fast particle injection, should also be present at lower wavelenghts?
+\item mechanisms that produce \gray emission that far out: re-collimation, magnetic reconnection (also explains variety of decay times due to doppler boosting and different lines of sight). But fast cooling times could still be a problem. Other possibilities? Roger's idea?
+\item no sign of absorption: promising to detect FSRQs with IACTs, already happened, for HESS: preliminary results using same BLR model for 3C279 suggest distance a factor of \todo{X} larger. 
+Similar findings to Costamante, promising to see these sources with CTA. 
+\end{itemize}
+\todo{
+\begin{itemize}
+    \item see if radio delay, limits on emission region, and shortest variability time scale fit together
+    \item discuss time evolution of flares with Petropoulous' paper
+    \item also discuss magnetic islands, geometric jet variations,...
+\end{itemize}
+}
+
+
+
+\begin{acknowledgments}
 The Submillimeter Array is a joint project between the Smithsonian Astrophysical Observatory and the Academia Sinica Institute of Astronomy and Astrophysics and is funded by the Smithsonian Institution and the Academia Sinica.
 
 This research has made use of data from the OVRO 40-m monitoring program~\citep{2011ApJS..194...29R} which is supported in part by NASA grants NNX08AW31G, NNX11A043G, and NNX14AQ89G and NSF grants AST-0808050 and AST-1109911.
+\end{acknowledgments}
+
 \begin{appendix}
 \section{Spectral evolution of orbital light curves}
 \label{sec:specvar}
