@@ -287,7 +287,7 @@ We summarize our findings and conclude in Sec.~\ref{sec:conclusion}.
 \label{sec:data}
 
 For our analysis, we select the FSRQs that have shown the brightest \gray flares as reported in the monitored source list.\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/msl_lc/}}
-From the list, we select FSRQs that have shown average daily fluxes $F \geqslant 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$ within ($1\,\sigma$ statistical uncertainties) above 100\,MeV, which leaves us with sources, listed in Tab.~\ref{tab:src-select}, together with their coordinates, redshift, and additional parameters taken from the literature such as black hole mass and luminosity of the $\mathrm{H}\beta$, a measure for the BLR luminosity.  
+From the list, we select FSRQs that have shown average daily fluxes $F \geqslant 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$ within ($1\,\sigma$ statistical uncertainties) above 100\,MeV, which leaves us with sources, listed in Tab.~\ref{tab:src-select}, together with their coordinates, redshift, and additional parameters taken from the literature such as black hole mass and luminosity of the $\mathrm{H}\beta$ line, a measure for the BLR luminosity.  
 With the chosen flux threshold we ensure that we have at least one flare of each source in the sample that is suitable to search for intra-orbit variability and to derive high signal-to-noise spectra. 
 All of the selected FSRQs are well known \gray emitters and individual flares from these objects have been studied in great detail~\citep[e.g.,][]{2010ApJ...714L..73A,2011ApJ...733...19T,2015ApJ...808L..48P,TheFermi-LAT:2016dss,2013ApJ...766L..11S,2015ApJ...809..164D,2018ApJ...854L..26S,2011ApJ...733L..26A}. 
 As noted in the Introduction, two of the sources (3C279, CTA102) have already been shown to be variable on extremely short timescales~\citep{TheFermi-LAT:2016dss,2018ApJ...854L..26S}. 
@@ -331,13 +331,13 @@ our \gray analysis.}
 
 \subsection{Data selection}
 
-Our goal is characterize both the long term \gray behaviour of the selected FSRQs as well as the brightest flares.
-We therefore select \Grays that have been measured with the \FermiLAT between August 4, 2008, and January 30, 2018, yielding a total data set of almost 9.5\,years or 114\,months.
-The \FermiLAT is a pair conversion telescope designed to measure \Grays with energies between 20\,MeV to above 300\,GeV~\citep{2009ApJ...697.1071A} and we 
- use \Grays within the energy range of 100\,MeV and 316\,GeV. 
+Our goal is characterize both the long term \gray behavior of the selected FSRQs as well as the brightest flares.
+To this end, we select \Grays that have been measured with the \FermiLAT between August 4, 2008, and January 30, 2018, yielding a total data set of almost 9.5\,years or 114\,months.
+The \FermiLAT is a pair conversion telescope designed to measure \Grays with energies between 20\,MeV to above 300\,GeV~\citep{2009ApJ...697.1071A}.
+ we restrict ourselves to \Grays in the energy range between 100\,MeV and 316\,GeV. 
 Below 100\,MeV the effective area of the LAT quickly decreases and the point spread function increases to above $\sim 6^\circ$\footnote{See, e.g., \url{http://www.slac.stanford.edu/exp/glast/groups/canda/lat_Performance.htm}} making a point source analysis challenging. 
 Since FSRQs usually have curved \gray spectra, we do not expect significant detection of these sources above our chosen maximum energy.
-To mitigate contamination of \Grays of the Earth Limb, we limit the sample to events that have arrived at a zenith angle less than $90^\circ$ and we excise periods of bright GRBs and solar flares that have been detected with a test statistic $\mathrm{TS} > 100$.
+To mitigate contamination of \Grays originating from the Earth Limb, we limit the sample to events that have arrived at a zenith angle less than $90^\circ$ and we excise periods of bright GRBs and solar flares that have been detected with a test statistic $\mathrm{TS} > 100$.
 The test statisitic is defined as $\mathrm{TS} = -2\ln(\mathcal{L}_1 / \mathcal{L}_0)$, i.e., the log-likelihood ratio between the the maximized likelihoods $\mathcal{L}_1$ and $\mathcal{L}_0$ for the hypotheses with and without an additional source, respectively~\citep{mattox1996}.
 We use the latest \texttt{Pass 8} instrumental response functions and Monte Carlo simulations~\citep{pass8} and select \gray events that pass the \texttt{P8R2 SOURCE} event selection. 
 For each source we analyze $10^\circ \times 10^\circ$ regions of interest (ROIs) centered on the position of each source as provided in the third \fermiLAT point source catalog \citep[3FGL,][]{3fgl}.
@@ -737,7 +737,7 @@ We only include energy bins and their likelihoods if the bin-by-bin fit converge
     \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t003_LogParabola_3min_ring_emin1000.pdf}\\
     \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t005_LogParabola_3min_ring_emin1000.pdf} &
     \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t006_LogParabola_3min_ring_emin1000.pdf} & 
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}}\\
+    \includegraphics[width=0.32\linewidth]{figures/sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}\\
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf} & 
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf} & 
     \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}\\
@@ -745,7 +745,7 @@ We only include energy bins and their likelihoods if the bin-by-bin fit converge
     \end{tabular}
 
     \caption{Log-parabola fits above 1\,GeV to bright \gray flares detected at energies that correspond to a attenuation in the BLR of at least 20\,\% (for $r = 10^{-2}R_{\mathrm{Ly}\alpha}$). The attenuation due to the interactions with BLR photons (assuming the ring geometry) is shown as colored lines. The best fit (95\,\% lower limit on $r$) is shown as a black dashed (dash-dotted) line. 
-    The fit uses the bin-by-bin likelihood curves shown as gray bands. The numbers below and above the flux points show the \mathrm{TS} values  with which each bin is detected and the number of \Grays associated with the source at a probability $>85\,\%$, respectively.}
+    The fit uses the bin-by-bin likelihood curves shown as gray bands. The numbers below and above the flux points show the $\mathrm{TS}$ values  with which each bin is detected and the number of \Grays associated with the source at a probability $>85\,\%$, respectively.}
     \label{fig:seds}
 \end{figure*}
 
@@ -755,7 +755,7 @@ Assuming instead a power law with super-exponential cut-off yields consistent re
 For the BLR shell geometry the lower limits are a factor of $\sim2$-$3$ higher because this geometry predicts stronger absorption~\citep{finke2016}. The ring geometry is therefore the conservative choice. 
 
 As can be seen from Tab.~\ref{tab:blrabs} and Fig.~\ref{fig:blr_limits} the limits are of the order of $r_\mathrm{lim}\sim10^{17}$cm which translates to a distance close to or even beyond the Ly$\alpha$ emitting ring and consequently the BLR itself. In terms of gravitational radii, the emission regions should be located at distances of at least $\sim10^3r_g$. 
-Table~\ref{tab:blrabs} also reports the energy of the highest energy photon (HEP) associated with the FSRQ with at least $99\,\%$ probability. For all but one source, this energy is larger than the energy where the optical depth due to absorption in the BLR exceeds $t_{\gamma\gamm}^\mathrm{BLR} > 1$ (assuming $r = r_\mathrm{lim}$). 
+Table~\ref{tab:blrabs} also reports the energy of the highest energy photon (HEP) associated with the FSRQ with at least $99\,\%$ probability. For all but one source, this energy is larger than the energy where the optical depth due to absorption in the BLR exceeds $t_{\gamma\gamma}^\mathrm{BLR} > 1$ (assuming $r = r_\mathrm{lim}$). 
 
 The limits depend sensitively on the detection of the source at energies as large as possible. To ensure that the detections are indeed not spuriuos, we also report the detection significance and the number of detected \Grays (associated with the source with a probability $>85\,\%$) for each energy bin below and above the flux points in Fig.~\ref{fig:seds}, respectively. The highest energy bins only contain a handful of source photons (1-4), which underlines the necessity to use the full Poisson likelihood information. 
 Nevertheless, the source detections in these energy bins correspond to significances (approximated with  $\sqrt{\mathrm{TS}}$) $\gtrsim 4\,\sigma$.
