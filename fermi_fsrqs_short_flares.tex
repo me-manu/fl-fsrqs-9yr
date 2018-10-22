@@ -604,14 +604,20 @@ The fit results are shown as black solid lines in Fig.~\ref{fig:gti}.
 In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Fig.~\ref{fig:gti}). Given the large values of dof, the fit qualities are generally poor. This is not unexpected, as we only allow up to two flare profiles per HOP group and not arbitrary functions. Already with this choice, there are probably some spurious flares identified, see, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
 Nevertheless, the overall light curve evolution is well captured, which allows us to describe the local flare properties from the ensembles of flare profiles. %, keeping the above caveats in mind. 
 
-We show the distribution of rise and decay times in the histograms of Fig.~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
+%We show the distribution of rise and decay times in the histograms of Fig.~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
+We show the distribution of rise and decay times in  Fig.~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
 Remarkably, all sources show values of $\tau_\mathrm{rise}$ and $\tau_\mathrm{decay}$ that are close or below the horizon crossing time scale of the central super massive black hole,
 $t_g = r_g / c$, with $r_g = 2 G M_\bullet / c^2 $ the gravitational radius, $G$ the gravitational constant, black hole mass $M_\bullet$ (taken from Tab.~\ref{tab:src-select}), and $c$ the speed of light.
+This results in values between $\sim0.5$ and $\sim2.5$ hours using the black hole masses listed in Tab.~\ref{tab:src-select}.
 
 \begin{figure}
     \centering
-    \includegraphics[width = .7\linewidth]{figures/lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
-    \caption{Stacked bar graphs for  rise (top) and decay times (bottom) for the individual flares fitted in Fig.~\ref{fig:gti}. The legend gives the horizon crossing time scales $t_g$ in the observer's frame.}
+%    \includegraphics[width = .7\linewidth]{figures/lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
+    \includegraphics[width = .9\linewidth]{figures/lcfithop_results_trise_vs_tdecay_orbit_maxiter2_fsys0p00_addcomp0.pdf}
+    \caption{
+    %Stacked bar graphs for  rise (top) and decay times (bottom) for the individual flares fitted in Fig.~\ref{fig:gti}. The legend gives the horizon crossing time scales $t_g$ in the observer's frame.
+    Distribution of rise and decay times for the flare profiles fitted to data. 
+    }
     \label{fig:times-hist}
 \end{figure}
 
@@ -658,7 +664,7 @@ In order to make an objective selection of GTIs that we test against the hypothe
 Naively, one could expect that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{2013ApJ...764..167S}. However, the BB algorithm also takes data before and after the particular GTI into account and only provides qualitative evidence for minute-scale variability. 
 Therefore, we test each bin selected in this way against the hypothesis of constant flux, using a simple $\chi^2$ test. 
 The best-fit constant flux is given by $\hat{F} = (\sum (F_i / \sigma_i^2))(\sum F_i^{-2})^{-1}$. 
-For the GTIs where the constant fit results in a pre-trial $p$-value of less than 0.1, we report the pre- and post-trial fit probabilities in Tab.~\ref{tab:minute}.
+For the GTIs where the constant fit results in a pre-trial $p$-value of less than 0.1, we show the sub-GTI light curves in Fig.~\ref{fig:singel-gtis} and report the pre- and post-trial fit probabilities in Tab.~\ref{tab:minute}.
 We count each tested GTI as one trial. 
 We also provide the minimum values for the variability times for pairs of fluxes $F_i$ and $F_j$ measured at $t_i$ and $t_j$, respectively, given by~\citet{1999ApJ...527..719Z},
 \begin{equation}
@@ -666,7 +672,8 @@ t_{\mathrm{var},ij} = \frac{F_i + F_j}{2}\left|\frac{t_i - t_j}{F_i - F_j}\right
 \end{equation}
 The pre-trial $p$-values for rejecting the constant-flux hypothesis are all around to $2\,\sigma$. 
 The trial correction leaves only one GTI of 3C279 and two GTIs for CTA102 close to or above a $2\,\sigma$ evidence for a variable flux. 
-For these GTIs the suggested variability times scales are between 3 and 8\,minutes.
+However, inspecting the light curve the second GTI of CTA102 (starting at MJD\,57758.86, see Fig.~\ref{fig:singel-gtis}), the high $\chi^2$ value might be the result of our chosen binning; the first bin actually spans a long time range for which the exposure is mostly zero.  
+For the other two GTIs the suggested variability times scales are between 3 and 4\,minutes.
 
 In comparison to previous results for 3C279 and CTA102, our method results in lower significance detections of minute-scale variability.
 In comparison to~\citet{2018ApJ...854L..26S}, we also find evidence for minutes scale variability in different GTIs. 
@@ -680,6 +687,13 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
     \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
     \caption{Sub-GTI light curves for the HOP groups of the orbital light curves which contain one bin with $\mathrm{TS} \geqslant 150$. The green shaded regions indicate GTIs that encompass a significant flux change found by the BB algorithm. The dark grey curves show the relative exposure at 1\,GeV. The ToO campaigns for 3C279 (upper left panel) and CTA102 (upper right panel) are clearly visible as the exposure is constant over several GTIs. }
     \label{fig:lc_minutes}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\includegraphics[width = .95\linewidth]{figures/minute_lc_adaptive20.pdf}
+\caption{Light curves of single GTIs for which the BBs for the full time interval indicate a flux change within the GTI (green shaded regions in Fig.~\ref{fig:lc_minutes}) and for which a fit with a constant flux results in a fit significance of less than 0.1. The orange lines indicate BBs if only the data within the GTI is taken into account. The black dashed line is the best-fit value of the constant flux. The grey histograms show the number of counts in each bin and the dark grey lines indicate the relative source exposure as a function of time. }
+\label{fig:singel-gtis}
 \end{figure*}
 
 \begin{deluxetable}{cccccc}
