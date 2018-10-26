@@ -376,36 +376,68 @@ In each light curve bin, we leave spectral parameters free during the fit for so
 \subsection{Zooming in on bright flares using an objective method to identify different activity states}
 \label{sec:zoom}
 
-The 9.5 year light curves for all considered FSRQs are shown in Fig.~\ref{fig:weekly}. If the source is detected with $\mathrm{TS} < 9$ within one time bin or the flux in one bin is equal or smaller than its statistical uncertainty $F_i \leqslant \sigma_i$, we show upper limits at the $2\,\sigma$ confidence level instead (open symbols). The average source fluxes with their 1$\,\sigma$ statistical uncertainties, $\overline{F} \pm \sigma_{\overline{F}}$, derived from the likelihood maximazation of the full time range are shown as gray bands. 
-The flux measurements and uncertainties are used to derive the Bayesian block (BB) representations of the light curves with the \textit{point measurement} algorithm of~\citet[][]{2013ApJ...764..167S}, which are shown as orange lines. 
-The BBs provide an objective way to detect significant local variations in the light curve.
-Several strong flares exceeding the average flux level are easily identified from the BBs. 
+The 9.5 year light curves for all considered FSRQs are shown in Fig.~\ref{fig:weekly}. If the source is detected with $\mathrm{TS} < 9$ within one time bin or the flux in one bin is equal or smaller than its statistical uncertainty $F_i \leqslant \sigma_i$, we show upper limits\footnote{We avoid 
+problems with incorporating upper limits by simply ignoring them, because the BB algorithm does not require evenly spaced data. At these gaps there
+are just two possibilities:
+(1) a single block spans the gap,
+or 
+(2) one block stops at the beginning of
+the gap and another starts at the end.
+The former indicates that the flux levels
+before and after the gap are the same,
+the latter that they are not.
+In neither case is there definitive 
+information about the level in the
+gap itself.}
+at the $2\,\sigma$ confidence level instead (open symbols).
+
+The average source fluxes with their 1$\,\sigma$ statistical uncertainties, $\overline{F} \pm \sigma_{\overline{F}}$, derived from the likelihood maximization over the full 9.5\,years are shown as gray bands. 
+These flux measurements and uncertainties determine the optimal step-function representations of the light curves (shown as orange lines) using the Bayesian block (BB) 
+algorithm ~\citep[][]{2013ApJ...764..167S} maximizing the overall fitness function appropriate to \textit{point measurements}.
+From all possible partitions of the data into blocks this algorithm finds the unique one maximizing the total fitness of the resulting step-function model.
+
+
+These blocks provide an objective way to detect significant local variations in the light curve.
+Several strong flares exceeding the average flux level are easily identified from this block representation. 
 
 %%% Full light curve %%%
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_weekly_tsmin9.pdf}
-    \caption{\gray light curves with weekly binning for the considered FSRQs. Open symbols denote upper limits at the $2\,\sigma$ confidence level. The orange lines show the BBs and the hatched regions represent the identified HOP groups. The green shaded regions denote the time intervals identified as bright flares for which we derive light curves with finer binning.}
+    \caption{\gray light curves with weekly binning for the considered FSRQs. Open symbols denote upper limits at the $2\,\sigma$ confidence level. The solid lines show the BBs and the shaded regions represent the identified HOP groups. The horizontal lines denote the time intervals identified as bright flares for which we derive light curves with finer binning.}
     \label{fig:weekly}
 \end{figure*}
 
-There is no generally accepted consensus to determine the data points that belong to a flaring state and which characterize the quiescent level. \citet{2013MNRAS.430.1324N} suggests a simple definition that a flare is a continuous time interval associated with a flux peak in which the flux is larger than half the peak flux value. 
-This definition is intuitive, however, it is unclear how to treat overlapping flares and identify flux peaks in an objective way. 
-To mitigate these problems, we have implemented a one dimensional hill-climbing algorithm based on   HOP algorithm~\citep{1998ApJ...498..137E}.
-The algorithm associates data points to their nearest neighbor weighted by flux.
-We feed the BB representation of the light curve to the HOP algorithm and the resulting groups of data points are shown 
-Fig.~\ref{fig:weekly} as left and right hatched areas. \todo{Jeff, do you want to provide some more details here?}
-The combination of BBs and the HOP algorithm provides an objective way to split a light curve into groups of quiescent and flaring episodes; we will refer to one connected flare episode as a \emph{HOP group} of consecutive BBs.
+There is no generally accepted consensus on the best way to determine which data points belong to a flaring state and which characterize the quiescent level. \citet{2013MNRAS.430.1324N} suggests a simple definition that a flare is a continuous time interval associated with a flux peak in which the flux is larger than half the peak flux value. 
+This definition is intuitive, however, and it is unclear how to treat overlapping flares and identify flux peaks in an objective way. 
+Here we use a simple two step procedure tailored to the block representation: (1) identify a block that is higher than both the previous and subsequent blocks as a \textit{peak}; (2) proceed downward from the peak in both directions as long as the blocks are successively lower.
+The two resulting monotonically decreasing sets of adjacent blocks are analogous to the \textit{watershed} concept of topological data analysis.
+In fact this approach was suggested by the 
+HOP algorithm~\citep{1998ApJ...498..137E}, which is based on a bottom-up hill climbing concept of great use in higher dimensions \citep[e.g.,][]{2011ApJ...727...48W}.
 
-We iteratively zoom in on time ranges with bright \gray activity by identifying HOP groups where one BB fulfills the condition $F_{BB} \geqslant F_\mathrm{max} =  5\times\overline{F}$ and including adjacent blocks within the group with $F_{BB} \geqslant F_\mathrm{min} = \overline{F}$. We prefer this minimum flux criterion over including the full HOP group as it might extend over long time ranges of a quiescent state.
-Furthermore, we prefer a criterion based on peak flux rather than, for instance, integrated flare luminosity, because this approach promises the most straight forward way to find those time ranges with sufficient photon statistics to search for suborbital flux variations and exponential cut-offs due to \gray absorption. 
-Overlapping time ranges are combined into one time range and the ranges are extended by one time bin on either side.
+The time series segments shown in 
+Fig.~\ref{fig:weekly} as dark and light shaded  areas are the result of feeding
+the block representations of the light curves to the HOP algorithm.
+The combination of BB and the HOP algorithm provides an objective way to split a light curve into groups of quiescent and flaring episodes; we will refer to one connected flare episode as a \emph{HOP group} of consecutive BBs.
+
+We iteratively zoom in on time ranges with bright \gray activity by identifying HOP groups where the peak BB fulfills the condition $F_{BB} \geqslant F_\mathrm{max} =  5\times\overline{F}$ and include adjacent blocks within the group with $F_{BB} \geqslant F_\mathrm{min} = \overline{F}$. 
+This relatively conservative definition 
+gives reliable group shape information 
+at the cost of 
+slightly underestimating the extent of the
+groups and overestimates that of the quiescent 
+intervals.
+Furthermore, we prefer a criterion based on peak flux rather than, for instance, integrated flare luminosity, because this approach promises the most straightforward way to find those time ranges with sufficient photon statistics to search for short timescale flux variations and exponential cut-offs due to \gray absorption. 
+% Overlapping -- why overlapping?
+The indicated adjacent time intervals are combined into one time range and then extended by one time bin on either side.
 For the identified time span, we re-optimize the spectral model of the ROI in the same way as described in Sec.~\ref{sec:roi} but without re-localizing the central FSRQ or adding new point sources. 
 The results of the best-fit spectra for the different time ranges are provided in Appendix~\ref{sec:avg-spec}.
 Subsequently, we calculate a light curve with finer binning and again select the time ranges of the highest \gray activity. We repeat this procedure twice, down to a binning equal to the Good Time Intervals (GTIs), of the \Fermi satellite, which correspond to one passage of the source through the field of view of the satellite during one $\sim$ 95 minute orbit.
 The choices of time binnings and values for $F_\mathrm{max}$ and $F_\mathrm{min}$ are summarized in Tab.~\ref{tab:zoom} together with the number of identified high \gray activity states (which might consists of several flares as indicated by the HOP groups).
 
-The values of the threshold fluxes $F_\mathrm{max}, F_\mathrm{min}$ is somewhat arbitrary and are a compromise between including as many flares as possible but keeping the overall number of flares manageable. Note, that the sole purpose of this exercise is to select the brightest flares for further analysis. 
+The values of the threshold fluxes $F_\mathrm{max}, F_\mathrm{min}$ is somewhat arbitrary and are a compromise between including as many flares as possible but keeping the overall number of flares manageable. Note, that the sole purpose of this exercise is to select the brightest flares for further analysis; consideration of a more
+complete statistical sample is postponed to 
+the future.
 
 The identified time ranges for the weekly light curves are plotted as green shaded areas in Fig.~\ref{fig:weekly}.
 The intermediate daily light curves are provided in Fig.~\ref{fig:daily}.
@@ -415,7 +447,7 @@ This explains the large error bars on some of the time bins of the GTI light cur
 
 \begin{deluxetable}{cccc}
 \tablewidth{1\linewidth}
-\tablecaption{ \label{tab:zoom} Thresholds for BB fluxes in one HOP group to select time ranges of \gray activity together with selected time binning and number of selected time ranges.
+\tablecaption{ \label{tab:zoom} Thresholds for BB fluxes in one HOP group to select time ranges of high \gray activity together with selected time binning and number of selected time ranges.
 }
 \tablehead{\colhead{Binning} & \colhead{$F_\mathrm{min}$} & \colhead{$F_\mathrm{max}$} & \colhead{$N_\mathrm{time~ranges}$}}
 \startdata
@@ -426,7 +458,7 @@ GTI & $\overline{F}$ & $2\times\overline{F},~\mathrm{TS} \geqslant 150$\tablenot
 \enddata
 \tablenotetext{a}{We choose here the absolute flux (rather than the flux relative to the average) as a threshold in order to be consistent with our initial source selection. However, because of the high avergage flux of 3C454.3, we also include the max argument. If $F_\mathrm{max} = 1.5 \times \overline{F}$ we set $F_\mathrm{min} = 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. }
 \tablenotetext{b}{Motivated from the high $\mathrm{TS}$ found for the flare of 3C\,279~\citep{TheFermi-LAT:2016dss}, we also demand that at least one GTI of each HOP group is detected with $\mathrm{TS} \geqslant 150$ in order to ensure enough statistics to search for variability on time scales of minutes.}
-\tablecomments{If no interval fulfills the $F_\mathrm{BB} \geqslant F_\mathrm{max}$ criterion for the weekly or daily light curves, we include the HOP group of the maximum flux if that flux exceeds $5\times10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$, i.e., we change $F_\mathrm{max}$ to the maximum value $F_\mathrm{BB}$.}
+\tablecomments{The criteria are applied to all sources. Furthermore, if no interval fulfills the $F_\mathrm{BB} \geqslant F_\mathrm{max}$ criterion for the weekly or daily light curves, we include the HOP group of the maximum flux if that flux exceeds $5\times10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$, i.e., we change $F_\mathrm{max}$ to the maximum value $F_\mathrm{BB}$.}
 \end{deluxetable}
 
 In a last step, we derive light curves on sub-GTI time scales. 
