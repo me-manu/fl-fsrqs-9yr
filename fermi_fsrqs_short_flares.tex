@@ -415,6 +415,8 @@ The two resulting monotonically decreasing sets of adjacent blocks are analogous
 In fact this approach was suggested by the 
 HOP algorithm~\citep{1998ApJ...498..137E}, which is based on a bottom-up hill climbing concept of great use in higher dimensions \citep[e.g.,][]{2011ApJ...727...48W}.
 
+A related question is 
+
 The time series segments shown in 
 Fig.~\ref{fig:weekly} as dark and light shaded  areas are the result of feeding
 the block representations of the light curves to the HOP algorithm.
@@ -439,7 +441,7 @@ The values of the threshold fluxes $F_\mathrm{max}, F_\mathrm{min}$ is somewhat 
 complete statistical sample is postponed to 
 the future.
 
-The identified time ranges for the weekly light curves are plotted as green shaded areas in Fig.~\ref{fig:weekly}.
+The identified time ranges for the weekly light curves are plotted as colored horizontal solid lines in Fig.~\ref{fig:weekly}.
 The intermediate daily light curves are provided in Fig.~\ref{fig:daily}.
 Figure~\ref{fig:gti} shows the GTI (equivalent to orbital) light curves with exponential fits of flare profiles that we will discuss in Sec.~\ref{sec:results-local}. 
 The source exposure can vary significantly between two adjacent orbits, as the satellite rocks between the celestial north and south pole between orbits. 
@@ -471,7 +473,7 @@ We discuss these light curves in Sec.~\ref{sec:sub-gti}.
 \begin{figure*}
     \centering
     \includegraphics[width = .99\linewidth]{figures/lc_daily_tsmin9.pdf}
-    \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (green shaded regions in Fig.~\ref{fig:weekly}). Symbols and lines are the same as in Fig.~\ref{fig:weekly}. 
+    \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (horizontal lines in Fig.~\ref{fig:weekly}). Symbols and lines are the same as in Fig.~\ref{fig:weekly}. 
     As stated in Tab.~\ref{tab:zoom}, if all BB fluxes fail the criterion $F_{BB} \geqslant \mathrm{max}(10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}, 1.5 \bar{F})$, we include the HOP group with the maximum flux of the interval if that flux is above $5\times 10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. This is the case, e.g., for last two intervals of PKSB1222+216 and the first interval of 3C273 (last three panels of the top row).}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -594,15 +596,15 @@ CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{0.26
 %\label{sec:hop-fit}
 
 We proceed with deriving local properties of the \gray flares, focusing first on the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
-The average best-fit spectral parameters for the entire time spans of the daily, orbital, and sub-orbital light curves (the time ranges for the sub-orbital light curves are indicated as shaded bands in Fig.~\ref{fig:gti}) are summarized in Tab.~\ref{tab:avg-spec} in Appendix~\ref{sec:avg-spec}. 
+The average best-fit spectral parameters for the entire time spans of the daily, orbital, and sub-orbital light curves (the time ranges for the sub-orbital light curves are indicated as solid horizontal bars in Fig.~\ref{fig:gti}) are summarized in Tab.~\ref{tab:avg-spec} in Appendix~\ref{sec:avg-spec}. 
 
 %%% GTI light curves %%%%%%%%%
 \begin{figure*}
     \centering
     \includegraphics[width = .99\linewidth]{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
-    \caption{ Light curves with one bin per GTI for the selected time ranges (green shaded regions in Fig.~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Sec.~\ref{sec:results-local}. Other symbols and lines are the same as in Fig.~\ref{fig:weekly} and ~\ref{fig:daily}.
-    The sub-GTI light curves are derived for the time intervals shaded in green, where at least one orbital bin shows $\mathrm{TS}\geqslant 150$ (see Sec.~\ref{sec:sub-gti}). 
-    Average spectra to search for a cut-off due to \gray absorption in the BLR are derived from the time intervals shaded in either blue or green (see Sec.~\ref{sec:blrabs}).
+    \caption{ Light curves with one bin per GTI for the selected time ranges (solid horizontal lines in Fig.~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Sec.~\ref{sec:results-local}. Other symbols and lines are the same as in Fig.~\ref{fig:weekly} and ~\ref{fig:daily}.
+    The sub-GTI light curves are derived for the time intervals indicated as solid horizontal lines, where at least one orbital bin shows $\mathrm{TS}\geqslant 150$ (see Sec.~\ref{sec:sub-gti}). 
+    Average spectra to search for a cut-off due to \gray absorption in the BLR are derived from the time intervals indicated either as solid or dashed horizontal lines (see Sec.~\ref{sec:blrabs}).
     }
     \label{fig:gti}
 \end{figure*}
@@ -689,7 +691,7 @@ We therefore cannot draw any firm conclusions from the spectral evolution, which
 \label{sec:sub-gti}
 We search for sub-orbital variability in a subset of orbital light curves, namely in those where at least one orbital bin is detected with $\mathrm{TS} \geqslant 150$. 
 In this way we ensure high photon statistics and reduce the number of trials when searching for minute scale variability (for comparison, the orbital light curve bin for which \citet{TheFermi-LAT:2016dss} measured minute scale variability in 3C279 is detected in our analysis with $\mathrm{TS} \sim 400$). 
-The selected time regions are indicated with the green shaded regions in Fig.~\ref{fig:gti}, whereas the blue shaded regions show the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
+The selected time regions are indicated with solid horizontal lines regions in Fig.~\ref{fig:gti}, whereas the dashed lines show the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
 
 The resulting light curves, binned such that the uncertainty in each bin is of the order of $\sim20\,\%$ \citep[using the adaptive binning introduced by][]{lott2012}, are shown in Fig.~\ref{fig:lc_minutes}. 
 In order to make an objective selection of GTIs that we test against the hypothesis of a constant flux, we consider only those where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Fig.~\ref{fig:lc_minutes}).
@@ -717,14 +719,14 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
-    \caption{Sub-GTI light curves for the HOP groups of the orbital light curves which contain one bin with $\mathrm{TS} \geqslant 150$. The green shaded regions indicate GTIs that encompass a significant flux change found by the BB algorithm. The dark grey curves show the relative exposure at 1\,GeV. The ToO campaigns for 3C279 (upper left panel) and CTA102 (upper right panel) are clearly visible as the exposure is constant over several GTIs. }
+    \caption{Sub-GTI light curves for the HOP groups of the orbital light curves which contain one bin with $\mathrm{TS} \geqslant 150$. The solid horizontal lines indicate GTIs that encompass a significant flux change found by the BB algorithm. The dark grey curves show the relative exposure at 1\,GeV. The ToO campaigns for 3C279 (upper left panel) and CTA102 (upper right panel) are clearly visible as the exposure is constant over several GTIs. }
     \label{fig:lc_minutes}
 \end{figure*}
 
 \begin{figure*}
 \centering
 \includegraphics[width = .95\linewidth]{figures/minute_lc_adaptive20.pdf}
-\caption{Light curves of single GTIs for which the BBs for the full time interval indicate a flux change within the GTI (green shaded regions in Fig.~\ref{fig:lc_minutes}) and for which a fit with a constant flux results in a fit significance of less than 0.1. The orange lines indicate BBs if only the data within the GTI is taken into account. The black dashed line is the best-fit value of the constant flux. The grey histograms show the number of counts in each bin and the dark grey lines indicate the relative source exposure as a function of time. }
+\caption{Light curves of single GTIs for which the BBs for the full time interval indicate a flux change within the GTI (solid horizontal lines in Fig.~\ref{fig:lc_minutes}) and for which a fit with a constant flux results in a fit significance of less than 0.1. The orange lines indicate BBs if only the data within the GTI is taken into account. The black dashed line is the best-fit value of the constant flux. The grey histograms show the number of counts in each bin and the dark grey lines indicate the relative source exposure as a function of time. }
 \label{fig:singel-gtis}
 \end{figure*}
 
@@ -756,7 +758,7 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & $3.2\pm1.6$ \\
 \enddata
 {
-\tablecomments{The number of trials is counted for each flare individually and given by the number of green shaded areas in each panel of Fig.~\ref{fig:lc_minutes}.}
+\tablecomments{The number of trials is counted for each flare individually and given by the number of horizontal solid lines in each panel of Fig.~\ref{fig:lc_minutes}.}
 }
 \end{deluxetable}
 
@@ -766,7 +768,7 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 
 The location of the \gray emission region in blazar jets remains unknown. 
 From the rich data set of the six FSRQs studied here, we attempt to constrain the position of the emitting region using three independent approaches. 
-First, in Sec.~\ref{sec:blrabs}, we search for absorption signatures in the LAT spectra caused by pair production of \Grays with photons of external photon fields. We use spectra during the brightest flares identified in the orbital light curves in Fig.~\ref{fig:gti} (blue and green shaded regions).
+First, in Sec.~\ref{sec:blrabs}, we search for absorption signatures in the LAT spectra caused by pair production of \Grays with photons of external photon fields. We use spectra during the brightest flares identified in the orbital light curves in Fig.~\ref{fig:gti} (dashed and solid horizontal bars).
 The derived constraints on the position are used to calculate energy dependent cooling times in Sec.~\ref{sec:tcool}, which will be compared against our results for the decay times for the whole energy range (see Sec.~\ref{sec:results-local}) and for energy dependent light curves.
 As shown by~\citet{2012ApJ...758L..15D}, if the flux decay is dominated by radiative cooling in external radiation fields, the energy dependence of the decay times can be used to distinguish inverse-Compton cooling in the radiation fields of the BLR or the dust torus.
 This provides additional information about the position of the \gray emission region.
@@ -951,7 +953,7 @@ Furthermore, if the \gray emission is produced very far away from the BLR, the e
 The BLR cooling time for one flare of CTA102 is shown for $r=r_\mathrm{lim}$ and $r = 1\,$pc as a function of $\gamma'$ and $E_\mathrm{obs,BLR}$ in Fig.~\ref{fig:tcool}  (black solid and dash-dotted lines, respectively), assuming again the average values for $\delta_\mathrm{D}\sim31$ and $\Gamma_\mathrm{L}\sim22$. 
 Klein-Nishina effects become important for $\gamma'_\mathrm{BLR} \gtrsim 2\times10^3$ or $E_\mathrm{obs,BLR}\gtrsim1\,$GeV and a clear departure from the Thomson regime in which 
 $t_\mathrm{cool}\propto(\gamma_\mathrm{BLR}')^{-1/2}$ (dashed and dotted black lines) becomes visible.
-The decay times derived from the fit of the two bright flares of CTA102 around MJD 57738 are shown is dark green squares (see the first green shaded region in the panel in the 4th row and 2nd column in Fig.~\ref{fig:gti}), where one decay time is shown as an upper limit due to its large uncertainty. 
+The decay times derived from the fit of the two bright flares of CTA102 around MJD 57738 are shown is dark green squares (see the first solid horizontal line in the panel in the 4th row and 2nd column in Fig.~\ref{fig:gti}), where one decay time is shown as an upper limit due to its large uncertainty. 
 If the decay is indeed caused by IC scattering with BLR photons, a distance of $r\sim1\,$pc is still compatible with the observed decay times. 
 Similar conclusions can be drawn for the other sources. 
 We provide the cooling times at 300\,MeV and the shortest decay times in Tab.~\ref{tab:blrabs}.
@@ -987,7 +989,7 @@ This conclusion also holds for the other sources.
 \begin{figure*}
     \centering
     \includegraphics[width = .9 \linewidth]{figures/lc_ebins_ts9.pdf}
-    \caption{\fermiLAT orbital light curves for three energy bins. The same time binning as in Fig.~\ref{fig:gti} is used. The thick colored lines indicate the BB representation. Only light curves are shown for which at least two BBs are identified for each energy bin.}
+    \caption{\fermiLAT orbital light curves for three energy bins. The same time binning as in Fig.~\ref{fig:gti} is used. The thick colored lines indicate the BB representation. Only light curves are shown for which at least two BBs are identified for each energy bin. The fluxes of the light curves of the energy bins 0.3-1\,GeV and 1-100\,GeV are shifted by $10^{-1}$ and $10^{-2}$, respectively, for better visibility. }
     \label{fig:lcebins}
 \end{figure*}
 
@@ -1074,7 +1076,7 @@ measured at times $t_{ai}$ and $t_{bj}$ we compute the local cross correlation f
 \end{equation}
 where the sum runs over the $M$ pairs for which $\tau \leqslant t_{ai} - t_{bj} < \tau + \Delta t$, for some chosen time step $\Delta t$, and $\bar{a}_\tau$ and $\bar{b}_\tau$ and $\sigma_{a\tau}$ and $\sigma_{b\tau}$ are the flux averages and standard deviations over the $M$ pairs, respectively~\citep{1999PASP..111.1347W}. 
 The LCCF is bound between $-1$ and $1$ and has much larger efficiency in recovering linear correlations between light curves compared to the discrete correlation function \citep{2014MNRAS.445..437M}.
-We also prefer this method over the $Z$-tranformed DCF used in Sec.~\ref{sec:tcool} because it is possible to assign a significance to a time lag corresponding to the maximum value of the LCCF as outlined below. 
+%We also prefer this method over the $Z$-tranformed DCF used in Sec.~\ref{sec:tcool} because it is possible to assign a significance to a time lag corresponding to the maximum value of the LCCF as outlined below. 
 For the binning of the time lags $\tau$ we choose half the maximum of the median of the time separations between consecutive data points in the two light curves.
 The minimum and maximum values of $\tau$ are chosen to be $\pm0.5$ times the length of the shortest light curve~\citep{2014MNRAS.445..428M}.
 
@@ -1164,7 +1166,7 @@ The low state of the source in recent years and the less dense sampling of the S
     \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
     \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
     \caption{LCCFs between \gray and radio light curves for the cases where a significant time lag, $p_\tau < 0.05$, is found. The vertical dotted line and shaded regions show the time lag peaks (for $\tau < 0$) and their uncertainty. 
-    The green, dark yellow, and bright yellow colored regions denote the 68\,\%, 95\,\%, and 99\,\% envelopes derived from simulated un-correlated light curve pairs. 
+    The the colored regions denote the 68\,\%, 95\,\%, and 99\,\% envelopes (from dark to light) derived from simulated un-correlated light curve pairs. 
     The grey histograms show the number of $\tau_\mathrm{peak}$ values obtained from flux randomization and random subsample selection to estimate the uncertainty on $\tau_\mathrm{peak}$.}
     \label{fig:lccf}
 \end{figure*}
