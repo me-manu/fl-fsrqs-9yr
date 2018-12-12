@@ -248,7 +248,7 @@ However, the minute-scale variability is challenging to explain in such scenario
 
 \section{Introduction} \label{sec:intro}
 
-More than half of the sources observed with the \Fermi Large Area Telescope (LAT) above 100\,MeV are active galaxies that produce particle outflows (jets) at almost the speed of light, which are closely aligned to the line of sight.\footnote{See e.g. \url{http://www.asdc.asi.it/fermi3fgl/}}
+More than half of the sources observed with the \Fermi Large Area Telescope (LAT) above 100\,MeV are active galaxies that produce particle outflows (jets) at almost the speed of light, which are closely aligned to the line of sight \citep[see, e.g., the third \Fermi source list, i.e., the 3FGL,][]{3fgl}.
 %Yet, the exact mechanism and location of \gray production inside such jets of these so-called blazars remain a controversially discussed topic in the literature~\cite{Madejski:2016oqg}.
 The broadband electromagnetic radiation observed from these so-called blazars spans decades in energy from radio frequencies up to very-high \gray energies. 
 It is often described with purely leptonic or a mixture of leptonic and hadronic emission models, involving both intrinsic and external radiation fields~\cite[e.g.,][and references therein]{Madejski:2016oqg}.
@@ -259,24 +259,25 @@ It is often described with purely leptonic or a mixture of leptonic and hadronic
 A common assumption is that the radiation is emitted by freshly accelerated   particles localized in ``plasmoids''  that move down the jet at relativistic speeds,
  leading to a strong doppler boost of the observed emission. 
 %Yet, the origin and location of such plasmoids remain unknown. 
-Yet the origin, location even the very existence of such plasmoids are unsettled.
+Yet the origin, location even the very existence of such plasmoids are unknown.
 
-Blazars also display variable emission at all observationally accessible time scales, limited only by signal-to-noise.
-Surprisingly, at \gray energies flux doubling times as short as minutes have been observed both in BL Lac-type objects and flat spectrum radio quasars (FSRQs) with ground-based Cherenkov telescopes and the \FermiLAT~\cite[e.g.,][]{2007ApJ...669..862A,pks2155hess2007,pks1222magic2011,2013ApJ...762...92A,2014Sci...346.1080A,TheFermi-LAT:2016dss,2018ApJ...854L..26S}.
-In these cases, causality arguments suggest extremely compact emission regions realized in, e.g., magnetic reconnection events or recollimation shocks~\cite[e.g.][]{Petropoulou:2016xat,Bodo:2017qqn}.
+Blazars display variability on timescales that can be as short as signal-to-noise limits allow and as long as the duration of the observations.
+Flux doubling times as short as a few minutes have been observed at \gray energies in both BL Lac-type objects (BLL) and flat spectrum radio quasars (FSRQ) using  ground-based Cherenkov telescopes and the \FermiLAT~\cite[e.g.,][]{2007ApJ...669..862A,pks2155hess2007,pks1222magic2011,2013ApJ...762...92A,2014Sci...346.1080A,TheFermi-LAT:2016dss,2018ApJ...854L..26S}.
+In these cases, causality arguments suggest extremely compact emission regions realized in, e.g., magnetic reconnection events, recollimation shocks, or magnetoluminescence~\cite[e.g.][]{Petropoulou:2016xat,Bodo:2017qqn,blandford:2017mag}.
 In particular for FSRQs, the observation of \Grays beyond 10\,GeV suggests that these compact dissipation sites are located at distances of hundreds of Schwarzschild  radii from the central super massive black hole. 
-Otherwise, the \gray emission would be strongly attenuated in the interaction with UV and optical photons that are emitted from fast rotating clouds of ionized gas of the broad line region (BLR). 
-Meeting these constraints is challenging for standard emission scenarios as extreme relativistic bulk motions of the plasma have to be invoked~\cite[e.g.,][]{TheFermi-LAT:2016dss}. 
+Otherwise, the \gray emission should be strongly attenuated through pair production on UV and optical photons that are emitted by the accretion disk and broad emission line clouds and scttered by the inter-cloud medium.
+Meeting these constraints is challenging for standard emission scenarios as extreme relativistic bulk motions of the plasma have to be invoked~\cite[e.g.,][]{TheFermi-LAT:2016dss}.  (For an alternative possibility see Sections~\ref{sec:blrabs}. and~\ref{sec:tcool})
 
 After almost one decade of continuous all-sky observations, the \FermiLAT has accumulated a large sample of flares--\gray outbursts limited in time in which the source emission can increase typically by a factor of a few--from many FSRQs.
 Our goal is to characterize flares and long-term behaviour of those FSRQs that have shown the brightest \gray flares over the course of the \Fermi mission. 
 The most extreme flaring states enable us to perform a comprehensive search for \gray variability on time scales as short as minutes in order to investigate if such short variability -- and conversely compact emission sites -- is a common phenomenon in FSRQ flares. 
-Evidence for minute-scale variability has already been discovered in LAT observations of 3C\,279~\citep{TheFermi-LAT:2016dss} and recently in CTA\,102~\citep{2018ApJ...854L..26S}, but searches in other sources have been unsuccessfully~\citep{2017Galax...5..100N}.
-The plethora of observed flares also enables us to perform a systematic study of the local temporal flare profiles, which could be connected to particle injection or particle propagation.
+Evidence for minute-scale variability has already been discovered in LAT observations of 3C\,279~\citep{TheFermi-LAT:2016dss} and recently in CTA\,102~\citep{2018ApJ...854L..26S}, but searches in other sources have been unsuccessful~\citep{2017Galax...5..100N}.
+
+The plethora of observed flares also enables us to perform a systematic study of the local temporal flare profiles, which could be diagnostic of particle injection, acceleration and, propagation.
 \citet{2013MNRAS.430.1324N} investigated the brightest \gray flares in blazar in the first 4 years of LAT data.
 The author found that, on average, flares have a slight tendency towards rise times being shorter than decay times; however, no flare showed extreme asymmetry. 
 \citet{2010ApJ...722..520A}, on the other hand, characterized the blazars in terms of their power spectral density (PSD) on longer timescales using 11 months of data.
-The authors found that the distribution of power-law slopes of the power spectra of bright blazars peak around $-1.2$ or $-1.3$, with a scatter marginally larger than the observational uncertainty.  That is to say intermediate between steep spectra (slope of $-2$, sometime called Brownian noise) and less steep (slope of $-1$, sometimes called red or flicker noise).
+The authors found that the distribution of power-law slopes of the power spectra of bright blazars peak around $-1.2$ or $-1.3$, with a scatter marginally larger than the observational uncertainty.  That is to say intermediate between steep spectra (slope of $-2$, sometime called Brownian noise) and less steep (slope of $-1$, sometimes called flicker noise).
 These analyses can be significantly extended with almost one decade of continuous \fermiLAT observations.
 
 Additionally, the high signal-to-noise spectra during flares enable us to search for spectral absorption features due to the interaction of \Grays with BLR photons.
@@ -285,24 +286,25 @@ Indeed, evidence for such absorption was reported in early  \fermiLAT observatio
 The absence of the absorption features can in turn be used to derive lower limits on the distance of the \gray emitting region to the central super-massive black hole. 
 
 This paper is organized as follows. 
-In Sec.~\ref{sec:data} we present the source selection and \FermiLAT data analysis. 
-We investigate the global light curve properties in Sec.~\ref{sec:results-global}, before characterizing the temporal properties of the brightest flares in Sec.~\ref{sec:results-local}, which we identify by using an objective method.
+In Section~\ref{sec:data} we present the source selection and \FermiLAT data analysis. 
+We investigate the global light curve properties in Section~\ref{sec:results-global}, before characterizing the temporal properties of the brightest flares in Section~\ref{sec:results-local}, which we identify by using an objective method.
 %based on Bayesian blocks (BBs)~\citep{2013ApJ...764..167S} and one-dimensional group finding algorithms based on~\citet{1998ApJ...498..137E}.
-We investigate the location of the \gray emitting region through searches for BLR absorption features in \gray spectra, a comparison between radiative cooling time scales and observed flare decay times, and a cross-correlations between long-term \gray and radio light curves in Sec.~\ref{sec:location}. 
-We summarize our findings and conclude in Sec.~\ref{sec:conclusion}.
+We investigate the location of the \gray emitting region through searches for BLR absorption features in \gray spectra, a comparison between radiative cooling time scales and observed flare decay times, and a cross-correlations between long-term \gray and radio light curves in Section~\ref{sec:location}. 
+We summarize our findings and conclusions in Section~\ref{sec:conclusion}.
 
 \section{Source selection and data analysis}
 \label{sec:data}
 
-For our analysis, we select FSRQs that have shown the brightest \gray flares as reported in the monitored source list\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/msl_lc/}}
+For our analysis, we select the FSRQs that show the brightest \gray flares as reported in the monitored source list\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/access/lat/msl_lc/}}
 with average daily fluxes $F \geqslant 10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$ within ($1\,\sigma$ statistical uncertainties) above 100\,MeV.
-This leaves us with 6 sources, listed in Tab.~\ref{tab:src-select}, together with their coordinates, redshift, and additional parameters taken from the literature such as black hole mass and luminosity of the $\mathrm{H}\beta$ line, a measure of the BLR luminosity.  
+This leaves us with 6 sources, listed in Table~\ref{tab:src-select}, together with their coordinates, redshift, and additional parameters taken from the literature such as black hole mass and luminosity of the $\mathrm{H}\beta$ line, a measure of the BLR luminosity.  
 All of the sources in this selection have at least one 
 flare that is suitable
 %With the chosen flux threshold we ensure that we have at least one flare of each source in the sample that is suitable 
 to search for intra-orbit variability and to derive high signal-to-noise spectra. 
 All of the selected FSRQs are well known \gray emitters and individual flares from these objects have been studied in great detail~\citep[e.g.,][]{2010ApJ...714L..73A,2011ApJ...733...19T,2015ApJ...808L..48P,TheFermi-LAT:2016dss,2013ApJ...766L..11S,2015ApJ...809..164D,2018ApJ...854L..26S,2011ApJ...733L..26A}. 
 As noted in the Introduction, two of the sources (3C279, CTA102) have already been shown to be variable on extremely short timescales~\citep{TheFermi-LAT:2016dss,2018ApJ...854L..26S}. 
+
 Here, we will introduce a novel objective method to identify a large set of flares in order to conduct a comprehensive search for the short variability in our source sample.  
 Furthermore, PKSB1222+216, 3C279, and PKS1510-089  are among the 7 FSRQs also detected above 100\,GeV with imaging air Cherenkov Telescopes~\citep{2011ApJ...730L...8A,2013A&A...554A.107H,2014A&A...569A..46A,2008Sci...320.1752M}. 
 
@@ -347,19 +349,21 @@ our \gray analysis. $M_\bullet$ denotes the black hole mass, $L_\mathrm{disk}$ t
 Our goal is characterize both the long term \gray behavior of the selected FSRQs as well as the brightest flares.
 To this end, we select \Grays that have been measured with the \FermiLAT between August 4, 2008, and January 30, 2018, yielding data over an interval of 114\,months, or almost 9.5\,years.
 The \FermiLAT is a pair conversion telescope designed to measure \Grays with energies between 20\,MeV to above 300\,GeV~\citep{2009ApJ...697.1071A}.
+
 We follow the standard data selection recommendations\footnote{\url{https://fermi.gsfc.nasa.gov/ssc/data/analysis/documentation/Cicerone/Cicerone_Data_Exploration/Data_preparation.html}} and  restrict ourselves to \Grays in the energy range between 100\,MeV and 316\,GeV. 
 Below 100\,MeV the effective area of the LAT quickly decreases and the point spread function increases to above $\sim 6^\circ$\footnote{See, e.g., \url{http://www.slac.stanford.edu/exp/glast/groups/canda/lat_Performance.htm}} making a point source analysis challenging. 
 Since FSRQs usually have soft \gray spectra, we do not expect significant detection of these sources above our chosen maximum energy.
+
 To mitigate contamination of \Grays originating from the Earth Limb, we further limit the sample to events that have arrived at a zenith angle less than $90^\circ$ and we excise periods of bright GRBs and solar flares that have been detected with a test statistic $\mathrm{TS} > 100$.
 The test statistic is defined as $\mathrm{TS} = -2\ln(\mathcal{L}_1 / \mathcal{L}_0)$, i.e., the log-likelihood ratio between the the maximized likelihoods $\mathcal{L}_1$ and $\mathcal{L}_0$ for the hypotheses with and without an additional source, respectively~\citep{mattox1996}.
 We use the latest \texttt{Pass 8} instrumental response functions and Monte Carlo simulations~\citep{pass8} and select \Grays that pass the \texttt{P8R2 SOURCE} event selection. 
-For each source we analyze a $10^\circ \times 10^\circ$ region of interest (ROI) centered on the position of each source as provided in the third \fermiLAT point source catalog \citep[3FGL,][]{3fgl}.
+For each source we analyze a $10^\circ \times 10^\circ$ Region Of Interest (ROI) centered on the position of each source as provided in the third \fermiLAT point source catalog \citep[3FGL,][]{3fgl}.
 We choose a spatial binning of $0.1^\circ$ per pixel and 8 energy bins per decade. 
 
 \subsection{ROI optimization}
 \label{sec:roi}
 
-Our analysis proceeds iteratively, starting from the full time range and zooming in on bright flares and shorter time scales (see Sec.~\ref{sec:zoom}).
+Our analysis proceeds iteratively, starting from the full time range and zooming in on bright flares and shorter time scales (see Section~\ref{sec:zoom}).
 In a first step, we optimize the global \gray model of each ROI using the \textit{Fermi Science Tools} version 11-05-03\footnote{\url{http://fermi.gsfc.nasa.gov/ssc/data/analysis/software}} and \textsc{fermipy}, version 0.16.0+188\footnote{\url{http://fermipy.readthedocs.io}}~\citep{fermipy}.
 The initial model consists of all \gray point sources within $15^\circ$ from the ROI center included in the 3FGL as well as the standard templates for isotropic and Galactic diffuse emission.\footnote{For the Galactic diffuse emission we use the file gll\_iem\_v06.fits and the file iso\_P8R2\_SOURCE\_V6\_v06.txt for the isotropic diffuse component, see: \url{ http://fermi.gsfc.nasa.gov/ssc/data/access/lat/BackgroundModels.html}}
 After an initial optimization, we free the spectral normalization of sources that are within $10^\circ$ from the ROI center or that are detected with $\mathrm{TS} > 50$.
@@ -367,7 +371,7 @@ The spectral shape parameters such as power-law indices, curvature, or exponenti
 We freeze all spectral source parameters for sources detected with $\mathrm{TS} < 1$ or if the number of predicted photons is less than $10^{-3}$ to the values provided in the 3FGL. 
 The normalizations of the diffuse backgrounds are left free during the fit, together with the spectral index of the Galactic diffuse background template.
 After the fit has converged successfully, 
-we relocalize the central \gray source and re-fit all spectral model parameters. The relocalized source positions are provided in Tab.~\ref{tab:src-select}.
+we relocalize the central \gray source and re-fit all spectral model parameters. The relocalized source positions are provided in Table~\ref{tab:src-select}.
 After this step, we generate a $\mathrm{TS}$ map to search for additional point sources. For each pixel in the ROI, we add a putative point source with a power-law spectrum with index $\Gamma = 2$ and calculate its $\mathrm{TS}$. If  $\sqrt{\mathrm{TS}} \geqslant 5$, we permanently add the source at the position of the highest $\mathrm{TS}$ value and re-optimize the spectral parameters for the whole ROI. This step is repeated until no further sources are found.
 
 With the best-fit model for each ROI, we compute the \gray light curves for the FSRQs with an initial binning of 7~days. 
@@ -376,7 +380,7 @@ In each light curve bin, we leave spectral parameters free during the fit for so
 \subsection{Zooming in on bright flares using an objective method to identify different activity states}
 \label{sec:zoom}
 
-The 9.5 year light curves for all considered FSRQs are shown in Fig.~\ref{fig:weekly}. If the source is detected with $\mathrm{TS} < 9$ within one time bin or the flux in one bin is equal or smaller than its statistical uncertainty $F_i \leqslant \sigma_i$, we show upper limits\footnote{We avoid 
+The 9.5 year light curves for all considered FSRQs are shown in Figure~\ref{fig:weekly}. If the source is detected with $\mathrm{TS} < 9$ within one time bin or the flux in one bin is equal or smaller than its statistical uncertainty $F_i \leqslant \sigma_i$, we show upper limits\footnote{We avoid 
 problems with incorporating upper limits by simply ignoring them, because the BB algorithm does not require evenly spaced data. At these gaps there
 are just two possibilities:
 (1) a single block spans the gap,
@@ -392,7 +396,7 @@ gap itself.}
 at the $2\,\sigma$ confidence level instead (open symbols).
 
 The average source fluxes with their 1$\,\sigma$ statistical uncertainties, $\overline{F} \pm \sigma_{\overline{F}}$, derived from the likelihood maximization over the full 9.5\,years are shown as gray bands. 
-These flux measurements and uncertainties determine the optimal step-function representations of the light curves (shown as orange lines) using the Bayesian block (BB) 
+These flux measurements and uncertainties determine the optimal step-function representations of the light curves (shown as orange lines) using the Bayesian Block (BB) 
 algorithm ~\citep[][]{2013ApJ...764..167S} maximizing the overall fitness function appropriate to \textit{point measurements}.
 From all possible partitions of the data into blocks this algorithm finds the unique one maximizing the total fitness of the resulting step-function model.
 
@@ -415,10 +419,8 @@ The two resulting monotonically decreasing sets of adjacent blocks are analogous
 In fact this approach was suggested by the 
 HOP algorithm~\citep{1998ApJ...498..137E}, which is based on a bottom-up hill climbing concept of great use in higher dimensions \citep[e.g.,][]{2011ApJ...727...48W}.
 
-A related question is 
-
 The time series segments shown in 
-Fig.~\ref{fig:weekly} as dark and light shaded  areas are the result of feeding
+Figure~\ref{fig:weekly} as dark and light shaded  areas are the result of feeding
 the block representations of the light curves to the HOP algorithm.
 The combination of BB and the HOP algorithm provides an objective way to split a light curve into groups of quiescent and flaring episodes; we will refer to one connected flare episode as a \emph{HOP group} of consecutive BBs.
 
@@ -432,18 +434,18 @@ intervals.
 Furthermore, we prefer a criterion based on peak flux rather than, for instance, integrated flare luminosity, because this approach promises the most straightforward way to find those time ranges with sufficient photon statistics to search for short timescale flux variations and exponential cut-offs due to \gray absorption. 
 % Overlapping -- why overlapping?
 The indicated adjacent time intervals are combined into one time range and then extended by one time bin on either side.
-For the identified time span, we re-optimize the spectral model of the ROI in the same way as described in Sec.~\ref{sec:roi} but without re-localizing the central FSRQ or adding new point sources. 
+For the identified time span, we re-optimize the spectral model of the ROI in the same way as described in Section~\ref{sec:roi} but without re-localizing the central FSRQ or adding new point sources. 
 The results of the best-fit spectra for the different time ranges are provided in Appendix~\ref{sec:avg-spec}.
 Subsequently, we calculate a light curve with finer binning and again select the time ranges of the highest \gray activity. We repeat this procedure twice, down to a binning equal to the Good Time Intervals (GTIs), of the \Fermi satellite, which correspond to one passage of the source through the field of view of the satellite during one $\sim$ 95 minute orbit.
-The choices of time binnings and values for $F_\mathrm{max}$ and $F_\mathrm{min}$ are summarized in Tab.~\ref{tab:zoom} together with the number of identified high \gray activity states (which might consists of several flares as indicated by the HOP groups).
+The choices of time binnings and values for $F_\mathrm{max}$ and $F_\mathrm{min}$ are summarized in Table~\ref{tab:zoom} together with the number of identified high \gray activity states (which might consists of several flares as indicated by the HOP groups).
 
 The values of the threshold fluxes $F_\mathrm{max}, F_\mathrm{min}$ is somewhat arbitrary and are a compromise between including as many flares as possible but keeping the overall number of flares manageable. Note, that the sole purpose of this exercise is to select the brightest flares for further analysis; consideration of a more
 complete statistical sample is postponed to 
 the future.
 
-The identified time ranges for the weekly light curves are plotted as colored horizontal solid lines in Fig.~\ref{fig:weekly}.
-The intermediate daily light curves are provided in Fig.~\ref{fig:daily}.
-Figure~\ref{fig:gti} shows the GTI (equivalent to orbital) light curves with exponential fits of flare profiles that we will discuss in Sec.~\ref{sec:results-local}. 
+The identified time ranges for the weekly light curves are plotted as colored horizontal solid lines in Figure~\ref{fig:weekly}.
+The intermediate daily light curves are provided in Figure~\ref{fig:daily}.
+Figure~\ref{fig:gti} shows the GTI (equivalent to orbital) light curves with exponential fits of flare profiles that we will discuss in Section~\ref{sec:results-local}. 
 The source exposure can vary significantly between two adjacent orbits, as the satellite rocks between the celestial north and south pole between orbits. 
 This explains the large error bars on some of the time bins of the GTI light curves.
 
@@ -466,26 +468,26 @@ GTI & $\overline{F}$ & $2\times\overline{F},~\mathrm{TS} \geqslant 150$\tablenot
 In a last step, we derive light curves on sub-GTI time scales. 
 The time bin size is calculated from the adaptive binning method of \citet{lott2012}, where we choose bins of constant flux uncertainty of $\sim20\,\%$. 
 In this step, we use the space craft information in time steps of 1\,s instead of 30\,s. Additionally, we compute the effective area in 5 bins of the azimuthal spacecraft coordinates since on such short time scales the exposure dependence on the azimuth should not be averaged over.\footnote{See \url{https://fermi.gsfc.nasa.gov/ssc/data/analysis/scitools/help/gtltcube.txt}}
-We discuss these light curves in Sec.~\ref{sec:sub-gti}.
+We discuss these light curves in Section~\ref{sec:sub-gti}.
 
 
 %%% Daily light curves %%%%%%%%%
 \begin{figure*}
     \centering
     \includegraphics[width = .99\linewidth]{figures/lc_daily_tsmin9.pdf}
-    \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (horizontal lines in Fig.~\ref{fig:weekly}). Symbols and lines are the same as in Fig.~\ref{fig:weekly}. 
-    As stated in Tab.~\ref{tab:zoom}, if all BB fluxes fail the criterion $F_{BB} \geqslant \mathrm{max}(10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}, 1.5 \bar{F})$, we include the HOP group with the maximum flux of the interval if that flux is above $5\times 10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. This is the case, e.g., for last two intervals of PKSB1222+216 and the first interval of 3C273 (last three panels of the top row).}
+    \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (horizontal lines in Figure~\ref{fig:weekly}). Symbols and lines are the same as in Figure~\ref{fig:weekly}. 
+    As stated in Table~\ref{tab:zoom}, if all BB fluxes fail the criterion $F_{BB} \geqslant \mathrm{max}(10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}, 1.5 \bar{F})$, we include the HOP group with the maximum flux of the interval if that flux is above $5\times 10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. This is the case, e.g., for last two intervals of PKSB1222+216 and the first interval of 3C273 (last three panels of the top row).}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Results for global light curve properties}
 \label{sec:results-global}
-We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales in Sec.~\ref{sec:results-local}.
+We first present results derived from the weekly \gray light curves spanning the full 9.5\,year time range, which we refer to as \emph{global light curve properties}, before deriving results from the local light curves on GTI and sub-GTI time scales in Section~\ref{sec:results-local}.
 
-From the weekly light curves in Fig.~\ref{fig:weekly} it is evident that the FSRQs show strong flares that exceed the average flux by a factor of a few, while the quiescent level is relatively stable. 
+From the weekly light curves in Figure~\ref{fig:weekly}, it is evident that the FSRQs show strong flares that exceed the average flux by a factor of a few, while the quiescent level is relatively stable. 
 Such behavior is typical for FSRQs~\citet{} and we 
 further quantify it by calculating the flux distribution, $dN/dF$, of the weekly fluxes for bins with $\mathrm{TS} \geqslant 9$ and $F_i \geqslant \sigma_i$. 
-The results are shown in Fig.~\ref{fig:fluxpdf}. The flux bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated under the assumption that the observed weekly fluxes, $F_i$, $i = 1,\ldots,n$, are Gaussian distributed numbers with standard deviation equal to the measurement uncertainty $\sigma_i$.\footnote{
+The results are shown in Figure~\ref{fig:fluxpdf}. The flux bins are chosen according to the algorithm of~\citet{knuth2006} and the error bars are calculated under the assumption that the observed weekly fluxes, $F_i$, $i = 1,\ldots,n$, are Gaussian-distributed numbers with standard deviation equal to the measurement uncertainty $\sigma_i$.\footnote{
 With this assumption, the uncertainty to find $x$ entries in the $j$-th flux bin of width $\Delta F_j = F_{\mathrm{hi},j} - F_{\mathrm{lo},j}$ is given by the sum of Bernoulli probabilities $p_{ij}$, $\sum_{i = 1}^n p_{ij}(1-p_{ij})$, where $p_{ij} =  \left[\mathrm{erf}\left((F_{\mathrm{hi},j} - F_i) / \sqrt{2\sigma_i^2}\right) - \mathrm{erf}\left(((F_{\mathrm{lo},j} - F_i) / \sqrt{2\sigma_i^2}\right)\right]/2$, and $\mathrm{erf}$ is the error function.
 }
 We fit the flux distribution with a smoothly broken power law (BPL) of the form 
@@ -495,13 +497,14 @@ We fit the flux distribution with a smoothly broken power law (BPL) of the form
         \label{eq:dndf}
 \end{equation}
 with the smoothing factor $s$ fixed to 3. 
-The results of a $\chi^2$ minimization are summarized in Tab.~\ref{tab:global}.
+The results of a $\chi^2$ minimization are summarized in Table~\ref{tab:global}.
 Generally, below the break flux $F_\mathrm{br}$, the flux distribution is flat, $\alpha_\mathrm{low}\sim 0$.
 Above $F_\mathrm{br}$, 
 %which indicates the maximum flux of the quiescent level and 
 which lies between $\sim2\times10^{-7}$ and $\sim2\times10^{-6}\,\mathrm{cm}^{-2}\mathrm{s}^{-1}$, $dN/dF$ declines exponentially with power-law indices $\alpha_\mathrm{high} \lesssim -2.2$, making the brightest flares rare events.
+The power-law distribution of the occurrence of flares is a natural prediction of self-organized criticality, commonly observed in solar flares and also in blazars~\citep[see, e.g.,][and references therein]{2016SSRv..198...47A}.    
 Furthermore, it is clear that the flux distribution is very different from Gaussian behavior but
-compatible with a log-normal distribution (black dashed lines in Fig.~\ref{fig:fluxpdf}). 
+compatible with a log-normal distribution (black dashed lines in Figure~\ref{fig:fluxpdf}). 
 Log-normal flux distributions are commonly observed at \gray energies for blazars~\citep[e.g.,][]{2010A&A...524A..48T,2015ApJ...810...14A,2018arXiv180504675S}
 and can be interpreted as evidence for a connection between the  
 modulations in the accretion rate and the jet activity~\citep{2009A&A...503..797G}.
@@ -512,11 +515,12 @@ modulations in the accretion rate and the jet activity~\citep{2009A&A...503..797
     \caption{\label{fig:fluxpdf} Distribution of the fluxes of the weekly 9.5 year \gray light curves. The BPL fit is shown as a black line with $1\,\sigma$ uncertainties (shaded bands). The black dashed line indicates a fit with a log-normal distribution with location and scale parameters $\mu$ and $\sigma$ as indicated in the legends.}
 \end{figure}
 
-\subsection{Determination of the quiescent background}
+\subsection{Determination of the quiescent background level}
+\label{sec:qb}
 As mentioned in the introduction, 
-there is no rigorous way to distinguish 
-fluxes in flares from those 
-in a quiescent background (hereafter QB).
+there is no rigorous way to distinguish the 
+flux in flares from the flux 
+in a {\em quiescent background} (hereafter QB).
 It is not even guaranteed that
 there is a corresponding astrophysical distinction.
 Nevertheless some progress can be made,
@@ -525,7 +529,7 @@ truly constant.
 
 The minimum flux observed over time 
 might be taken as an estimate the true QB,
-but is a crude lower limit  -- biased downward 
+but it is rather a crude lower limit  -- biased downward 
 because of the scatter due to observational errors.
 On the other hand, long overlapping tails of flares 
 could contribute an approximately constant flux level
@@ -533,7 +537,6 @@ yielding an upward bias to some QB estimates.
 For the present we assume that overlap of flare tails
 is negligible, and propose a statistical
 procedure addressing the observational error bias.
-\todo{Also mention $F_\mathrm{br}$ here}
 
 This algorithm is based on an approximate 
 separation of the distribution function of the observed
@@ -544,9 +547,9 @@ While not relying on (b) being devoid of any QB flux,
 we do assume that (a) contains almost entirely QB flux.
 In the picture outlined above, this amounts to the
 assumption that the flares are isolated (no overlap) 
-and the intervening intervals are pure QB.
-The algorithm attempts to implement this separation
-entirely based on the flux values with no regard to 
+and the intervening intervals are essentially pure QB.
+The algorithm implements this separation
+using only flux values with no regard to 
 their time sequence.  It is based on finding the
 flux interval that maximizes the symmetry of 
 the resulting distribution.
@@ -556,37 +559,52 @@ In the following pseudo code, the term distribution
 refers to the distribution of low values (a) in a putative
 flux interval defining the QB.
 \begin{enumerate}
-\item Sort the $N$ flux values in increasing order:
- %$F_{n}, n = 1, 2, \dots 
+\item Sort the $N$ flux values (with $\mathrm{TS} \geqslant 9)$ in increasing order:
+%$F_{n}, n = 1, 2, \dots 
 $F_{1} \leqslant F_{2} \leqslant \dots F_{N-1}   \leqslant F_{N} $
-\item Define a search grid of flux values, $\phi$, to find the peak of the distribution. We take flux values $m = 1,\ldots,M$ on an evenly spaced grid with $\phi_m \in [F_1 + \epsilon (\bar{F} - F_1); \bar{F}]$, 
-where $\epsilon < 1$ is a factor to avoid edge effects on the lower flux end and $\bar{F}$ is the mean flux (we expect the QB to be lower than the mean flux).
-
-\item Define two intervals  of equal length straddling  $\phi_m$: 
+\item Define a search grid of flux values $\phi_{m}$, $m = 1,\ldots,M$, 
+to serve as candidates for the peak of the distribution. We take these 
+values on an evenly spaced grid between the minimum and mean flux $\bar{F}$:
+$\phi_m \in [F_1 + \epsilon (\bar{F} - F_1); \bar{F}]$.
+By definition the QB is very unlikely to be less than the
+minimum flux or exceed the mean.
+The factor $\epsilon$ is a small number to  avoid edge effects 
+near the generally sparse lower end of the flux distribution.
+\item For each $m$ define two intervals  of equal length straddling  $\phi_m$: 
     \begin{itemize}
-    \item LOW: from $F_{1}$ to $F_{n} < \phi_m$
-    \item HIGH: from $F_{n}$ to $F_{n} + (F_{n} - F_{1}$ )
+    \item LOW: from $F_{1}$ to $\phi_m$
+    \item HIGH: from $\phi_m$ to $\phi_m + (\phi_m - F_{1})$
     \end{itemize}
 
 \item Construct fine grids of flux values spanning these two intervals
 \item Compute the cumulative distributions (CDFs) of the
 corresponding flux values 
 \item Reverse the  CDF for the HIGH interval 
-\item Normalize both CDFs to unity at the peak $F_{n}$
-\item Compute the ratio of the posterior probabilities that the CDFs come from different distributions or the same distribution using the algorithm of \citet{Wolpert1996}.
-\item Find the value of $\phi_m$ that minimizes this ratio, which measures the symmetry of the total CDF of HIGH and LOW
+\item Normalize both CDFs to unity at the peak $\phi_m$
+\item Compute the ratio of the posterior probabilities that the CDFs come from different distributions or the same distribution,  using the algorithm of \citet{Wolpert1996}.
+\item Find the value of $\phi_m$ that minimizes this ratio, which measures the asymmetry of the total CDF of HIGH and LOW
 \item Report the median flux, $F_\mathrm{QB}$, in this
 optimally symmetric distribution as the QB estimate
 \end{enumerate}
 \noindent
-While the CDFs are computed in bins,
-in the limit of infinitely finely gridded bins this is an
-unbinned CDF estimate.  In practice a modestly
-large number of small bins results that are
-effectively unbinned, with essentially no dependence
-on the binning.
-We show our estimate for the QB level in Fig.~\ref{fig:weekly} as black dashed lines and report the values in Tab.~\ref{tab:global}.
-\todo{maybe too high: contamination from flares; lower than $F_\mathrm{br}$, tested with simulations also using other metrics like KS test or least squares of CDF, found that our algorithm performed the most reliably, slightly overestimating the true QB level (try different flare types too). Can be seen as an upper limit of the QB if it is truely constant over observation time. Say that use of peak or median does not matter / does not change results much}
+%While the CDFs are computed in bins,
+In the limit of moderately finely gridded bins 
+used in Step 5 the CDF estimate is effectively
+unbinned (little or no dependence
+on the binning).
+
+We show our estimate for the QB level in Figure~\ref{fig:weekly} as black dashed lines and report the values in Table~\ref{tab:global}.
+In general these $F_\mathrm{QB}$ values match 
+the visual flux baselines extremely well. 
+In the case of 3C454.3, it is slightly higher than the minimum flux level observed for this source around MJD 55800-56200. The reason is our applied $\mathrm{TS}$ cut and a contamination of $F_\mathrm{QB}$ from the tails of the flares. 
+We have tested the latter point with simulations drawing random numbers from a uniform distribution and Cauchy distributions to emulate flares. 
+For the Cauchy distributions we randomize the height, width, and position. 
+Applying our algorithm to these simulated histograms, we find that $F_\mathrm{QB}$ slightly overestimates the true uniform background. Therefore, we conclude that $F_\mathrm{QB}$ can be seen as a firm upper limit on a truly constant QB level. 
+We also note that using the peak or mean of the distribution in Step 10, instead of the median,  only changes the results marginally. 
+We have furthermore tested different metrics instead of the algorithm of \citet{Wolpert1996}, namely the Kolmogorov-Smirnov (KS) test and the least squares between the CDFs. 
+We again find comparable results. However, the KS-test estimates underpredict the true QB level in simulations while the least squares give too high estimates (higher than the Wolpert estimate).
+We also note that the $F_\mathrm{QB}$ values are either consistent with or lower than the break flux of the BPL fit, $F_\mathrm{br}$.
+This is expected, as $F_\mathrm{QB}$ marks the median of the QB while $F_\mathrm{br}$ probably indicates the transition from the QB to the flaring states. 
 
 \subsection{Determination of the power spectral density}
 We further characterize the global \gray light curves in terms of their power spectral density (PSD),
@@ -594,7 +612,7 @@ which usually can be described with simple power laws in frequency,  $\mathrm{PS
 An analysis of the first 11~months of LAT data from 106 blazars revealed that 
 these objects have $\beta$ values between 1 and 2, the intermediate regime between flicker noise ($\beta = 1$) and Brownian motion ($\beta = 2)$~\citep{2010ApJ...722..520A}. 
 In addition to the noise behavior, 
-we will use the derived PSDs in Sec.~\ref{sec:gammaradio} to simulate \gray light curves in order to calculate the significance of a correlation between radio and \gray emission. 
+we will use the derived PSDs in Section~\ref{sec:gammaradio} to simulate \gray light curves in order to calculate the significance of a correlation between radio and \gray emission. 
 
 The best-fit PSDs are estimated from the periodograms and simulated light curves following the method described in detail in \citet{2014MNRAS.445..437M} and \citet{2013MNRAS.433..907E} and summarized briefly below.
 The observed periodograms $P(\nu)$ as a function of frequency (inverse time) $\nu$ are calculated from the absolute square of the Fourier transformation of the light curve (Eq.~3 in \citealt{2014MNRAS.445..437M}). 
@@ -610,7 +628,7 @@ The same observational gaps and interpolation as in the observed light curves ar
 The periodograms are then calculated for the simulated light curve in the same way as for the observed one.
 
 To fix the normalization of the PSD model, \citet{2014MNRAS.445..437M} suggest variance matching, i.e., they rescale the simulated flux data points with a factor $A^{-1}$, where $A^2 = \sigma_\mathrm{sim}^2 / (\sigma_\mathrm{obs}^2 - \bar{\sigma_i^2})$, with $\sigma_\mathrm{sim}^2$ ($\sigma_\mathrm{data}^2$) the variance of the simulated (observed) light curve and $\bar{\sigma_i^2}$ the variance of the observational noise.
-For the \gray light curves, we choose to follow \citet{2013MNRAS.433..907E} instead and iteratively match the probability distribution of the simulated fluxes to the observed ones, given by the $dN/dF$ distributions shown in Fig.~\ref{fig:fluxpdf}. 
+For the \gray light curves, we choose to follow \citet{2013MNRAS.433..907E} instead and iteratively match the probability distribution of the simulated fluxes to the observed ones, given by the $dN/dF$ distributions shown in Figure~\ref{fig:fluxpdf}. 
 The reason is that the algorithm of \citet{1995A&A...300..707T} produces light curves with Gaussian distributed fluxes, which is clearly not the case at \gray energies.\footnote{Furthermore, the variance matching relies on Parseval's theorem from which it follows that the light curve variance is equal to the integrated PSD. However, Parseval's theorem is only valid for square-integrable functions, i.e. $\beta \geqslant 2$ and thus not strictly applicable for smaller values of $\beta$ commonly observed at \gray energies.}
 In a final step, we add uncertainties to the light curves by randomly drawing with replacement from the observed uncertainties $\sigma_i$ and adding a Gaussian random number $\mathcal{N}(0,\sigma_i)$ to the simulated flux values.
 
@@ -619,7 +637,7 @@ The peridograms of the observed and simulated light curves, ${P}_\mathrm{obs}$ a
     \chi^2(\beta) = \sum_{\nu_\mathrm{min}}^{\nu_\mathrm{max}}\frac{(P_\mathrm{obs}(\nu) - \overline{P}_\mathrm{sim}(\nu,\beta))^2}{\Delta\overline{P}_\mathrm{sim}(\nu,\beta)^2},\label{eq:chi2psd}
 \end{equation}
 where $\overline{P}_\mathrm{sim}(\nu)$ and $\Delta\overline{P}_\mathrm{sim}(\nu)^2$ are the mean and variance of the periodograms obtained from the simulated light curves.
-The averaged periodograms of the simulated light curves and the observed ones are shown in Fig.~\ref{fig:periodograms} and the best-fit average periodogram is shown as a thick solid line. 
+The averaged periodograms of the simulated light curves and the observed ones are shown in Figure~\ref{fig:periodograms} and the best-fit average periodogram is shown as a thick solid line. 
 The quality of the the best-fit value $\hat\beta$ with corresponding minimum $\chi^2$ value $\hat\chi^2\equiv\chi^2(\hat\beta)$, is evaluated from the light curves simulated with $\beta = \hat\beta$ in the following way. We form the distributions of simulated $\chi^2$ values, $\chi^2_\mathrm{sim}$, by replacing $P_\mathrm{obs}(\nu)$ with $P_\mathrm{sim}(\nu,\beta)$ in Eq.~(\ref{eq:chi2psd}),
 \begin{equation}
     \chi^2_\mathrm{sim}(\beta,\beta') = \sum_{\nu_\mathrm{min}}^{\nu_\mathrm{max}}\frac{(P_\mathrm{sim}(\nu,\beta) - \overline{P}_\mathrm{sim}(\nu,\beta'))^2}{\Delta\overline{P}_\mathrm{sim}(\nu,\beta')^2},\label{eq:chi2psd_sim}
@@ -627,8 +645,8 @@ The quality of the the best-fit value $\hat\beta$ with corresponding minimum $\c
 and calculate the $p$-value, $p_\beta$, as the  fraction of simulations that result in $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$.\footnote{From the $10^4$ simulations we effectively derive a histogram of the $10^4$ $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta)$ values from which we then determine $p_\beta$.}
 The confidence interval for $\hat\beta$ is derived by determining the $\Delta\chi^2_\mathrm{sim}(\hat{\beta},\beta)$ value from simulations such that 95\,\% of the time the simulated (true) $\beta$ value is contained within $\Delta\chi^2$.\footnote{Put differently, the $10^4$ simulated light curves provide $10^4$ $\chi^2$ curves as functions of $\beta$ from which we calculate the value of $\Delta\chi^2$ such that the true (simulation-input) $\beta$ value is contained within that interval in 95\,\% of the times.}
 The same $\Delta\chi^2$ value is then applied to the observed $\chi^2$ curve.
-The results of our PSD analysis are summarized in Tab.~\ref{tab:global} where we also report the value of $\beta$ obtained from a linear regression in log-log space. 
-In general, the periodograms are well fit by our method, as indicated by the $p_\beta$-values and observed in Fig.~\ref{fig:periodograms}. 
+The results of our PSD analysis are summarized in Table~\ref{tab:global} where we also report the value of $\beta$ obtained from a linear regression in log-log space. 
+In general, the periodograms are well fit by our method, as indicated by the $p_\beta$-values and observed in Figure~\ref{fig:periodograms}. 
 The only exception is 3C279 where only 2 of the $10^4$ simulated light curves result in a $\chi^2_\mathrm{sim}(\hat\beta,\hat\beta) > \hat\chi^2$.
 The steep $\chi^2$ curve for this source also explains the small error bars on the reconstructed value of $\beta$.
 The reason might be a more complex underlying PSD or the specific 7 day binning we have chosen here. 
@@ -675,23 +693,23 @@ CTA102 & $-0.35^{+0.22}_{-0.18}$ & $-2.50^{+0.16}_{-0.19}$ & $0.90^{+0.38}_{-0.2
 %\subsection{Local light curve properties}
 %\label{sec:hop-fit}
 
-We proceed with deriving local properties of the \gray flares, focusing first on the light curves with one bin per GTI that are shown in Fig.~\ref{fig:gti}.
-The average best-fit spectral parameters for the entire time spans of the daily, orbital, and sub-orbital light curves (the time ranges for the sub-orbital light curves are indicated as solid horizontal bars in Fig.~\ref{fig:gti}) are summarized in Tab.~\ref{tab:avg-spec} in Appendix~\ref{sec:avg-spec}. 
+We proceed with deriving local properties of the \gray flares, focusing first on the light curves with one bin per GTI that are shown in Figure~\ref{fig:gti}.
+The average best-fit spectral parameters for the entire time spans of the daily, orbital, and sub-orbital light curves (the time ranges for the sub-orbital light curves are indicated as solid horizontal bars in Figure~\ref{fig:gti}) are summarized in Table~\ref{tab:avg-spec} in Appendix~\ref{sec:avg-spec}. 
 
 %%% GTI light curves %%%%%%%%%
 \begin{figure*}
     \centering
     \includegraphics[width = .99\linewidth]{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
-    \caption{ Light curves with one bin per GTI for the selected time ranges (solid horizontal lines in Fig.~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Sec.~\ref{sec:results-local}. Other symbols and lines are the same as in Fig.~\ref{fig:weekly} and ~\ref{fig:daily}.
-    The sub-GTI light curves are derived for the time intervals indicated as solid horizontal lines, where at least one orbital bin shows $\mathrm{TS}\geqslant 150$ (see Sec.~\ref{sec:sub-gti}). 
-    Average spectra to search for a cut-off due to \gray absorption in the BLR are derived from the time intervals indicated either as solid or dashed horizontal lines (see Sec.~\ref{sec:blrabs}).
+    \caption{ Light curves with one bin per GTI for the selected time ranges (solid horizontal lines in Figure~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Section~\ref{sec:results-local}. Other symbols and lines are the same as in Figure~\ref{fig:weekly} and ~\ref{fig:daily}.
+    The sub-GTI light curves are derived for the time intervals indicated as solid horizontal lines, where at least one orbital bin shows $\mathrm{TS}\geqslant 150$ (see Section~\ref{sec:sub-gti}). 
+    Average spectra to search for a cut-off due to \gray absorption in the BLR are derived from the time intervals indicated either as solid or dashed horizontal lines (see Section~\ref{sec:blrabs}).
     }
     \label{fig:gti}
 \end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 We again use BBs and HOP groups to identify different states in 
-the orbital light curves (orange lines and hatched regions in Fig.~\ref{fig:gti}). 
+the orbital light curves (orange lines and hatched regions in Figure~\ref{fig:gti}). 
 To assess the time profile of the flares,
 we fit each HOP group $i$ with a sum of exponential profiles, $F_{\mathrm{flare},i}$,
 using a $\chi^2$ minimization, and
@@ -704,9 +722,9 @@ using a $\chi^2$ minimization, and
 \end{eqnarray}
 where $t_{0,ij}$ are the times when the flare flux is equal to $F_{0,ij} / 2$, and $\tau_{\mathrm{rise},ij}$, $\tau_{\mathrm{decay},ij}$ are the flare rise and decay times, respectively.
 All light curve points are included that fulfill $\mathrm{TS}\geqslant9$ and $F_i \geqslant 3\sigma_i/2 $.
-The number of flare profiles per HOP group, $N_i$, is either 1 or 2 and determined during the fit using the Bayesian information criterion (BIC), defined as $\mathrm{BIC} = n_\mathrm{par}\ln(n) + \chi^2$, where $n_\mathrm{par}$ is the number of fit paramteres ($n_\mathrm{par} = 4$ for $N_i = 1$), and $n$ is the number of data points within one HOP group $i$. 
+The number of flare profiles per HOP group, $N_i$, is either 1 or 2 and determined during the fit using the Bayesian information criterion (BIC), defined as $\mathrm{BIC} = n_\mathrm{par}\ln(n) + \chi^2$, where $n_\mathrm{par}$ is the number of fit parameters ($n_\mathrm{par} = 4$ for $N_i = 1$), and $n$ is the number of data points within one HOP group $i$. 
 Two flare profiles are selected if the difference between the two BIC values is $\Delta\mathrm{BIC} = \mathrm{BIC}(N_i = 2) - \mathrm{BIC}(N_i = 1) < 0$.
-The reason for allowing $N_i > 1$ is that the flare profile in Eq.~\ref{eq:flareHOP} does not capture long-lasting plateaus of a flare (see, e.g., all flares of 3C279 or the last panel with the flare of 3C454.3 starting at 55551.65\,MJD in Fig.~\ref{fig:gti}).
+The reason for allowing $N_i > 1$ is that the flare profile in Eq.~\ref{eq:flareHOP} does not capture long-lasting plateaus of a flare (see, e.g., all flares of 3C279 or the last panel with the flare of 3C454.3 starting at 55551.65\,MJD in Figure~\ref{fig:gti}).
 
 After each HOP group is fitted individually and $N_i$ is determined, 
 we re-fit the entire light curve, which consists of $N_\mathrm{HOP}$ groups, with the function 
@@ -714,22 +732,22 @@ we re-fit the entire light curve, which consists of $N_\mathrm{HOP}$ groups, wit
     F_\mathrm{flare}(t) = \sum\limits_{i = 1}^{N_\mathrm{HOP}}F_{\mathrm{flare},i}(t) + F_\mathrm{bkg}(t),
 \end{equation}
 where $F_\mathrm{bkg}(t)$ is an order-2 polynomial to describe a slow  varying background.
-The fit results are shown as black solid lines in Fig.~\ref{fig:gti}.
-In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Fig.~\ref{fig:gti}). Given the large values of dof, the fit qualities are generally poor. This is not unexpected, as we only allow up to two flare profiles per HOP group and not arbitrary functions. Already with this choice, there are probably some spurious flares identified, see, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
+The fit results are shown as black solid lines in Figure~\ref{fig:gti}.
+In general, the $\chi^2$ values divided by the degrees of freedom (dof) are between 1 and 2 (see the legends in Figure~\ref{fig:gti}). Given the large values of dof, the fit qualities are generally poor. This is not unexpected, as we only allow up to two flare profiles per HOP group and not arbitrary functions. Already with this choice, there are probably some spurious flares identified, see, e.g., the second flare profile in the first PKS\,1510-089 flare (starting at 54908.65MJD). 
 Nevertheless, the overall light curve evolution is well captured, which allows us to describe the local flare properties from the ensembles of flare profiles. %, keeping the above caveats in mind. 
 
-%We show the distribution of rise and decay times in the histograms of Fig.~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
-We show the distribution of rise and decay times in  Fig.~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
+%We show the distribution of rise and decay times in the histograms of Figure~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
+We show the distribution of rise and decay times in  Figure~\ref{fig:times-hist} for flares with a time-integrated flux $>10^{-7}\,\mathrm{cm}^{-2}$. 
 Remarkably, all sources show values of $\tau_\mathrm{rise}$ and $\tau_\mathrm{decay}$ that are close or below the horizon crossing time scale of the central super massive black hole,
-$t_g = r_g / c$, with $r_g = 2 G M_\bullet / c^2 $ the gravitational radius, $G$ the gravitational constant, black hole mass $M_\bullet$ (taken from Tab.~\ref{tab:src-select}), and $c$ the speed of light.
-This results in values between $\sim0.5$ and $\sim2.5$ hours using the black hole masses listed in Tab.~\ref{tab:src-select}.
+$t_g = r_g / c$, with $r_g = 2 G M_\bullet / c^2 $ the gravitational radius, $G$ the gravitational constant, black hole mass $M_\bullet$ (taken from Table~\ref{tab:src-select}), and $c$ the speed of light.
+This results in values between $\sim0.5$ and $\sim2.5$ hours using the black hole masses listed in Table~\ref{tab:src-select}.
 
 \begin{figure}
     \centering
 %    \includegraphics[width = .7\linewidth]{figures/lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
     \includegraphics[width = .9\linewidth]{figures/lcfithop_results_trise_vs_tdecay_orbit_maxiter2_fsys0p00_addcomp0.pdf}
     \caption{
-    %Stacked bar graphs for  rise (top) and decay times (bottom) for the individual flares fitted in Fig.~\ref{fig:gti}. The legend gives the horizon crossing time scales $t_g$ in the observer's frame.
+    %Stacked bar graphs for  rise (top) and decay times (bottom) for the individual flares fitted in Figure~\ref{fig:gti}. The legend gives the horizon crossing time scales $t_g$ in the observer's frame.
     Distribution of rise and decay times for the flare profiles fitted to data. 
     }
     \label{fig:times-hist}
@@ -741,7 +759,7 @@ From the rise and decay times, we can calculate the flare asymmetry as
     {\tau_\mathrm{rise}+\tau_\mathrm{decay}},
 \end{equation}
 so that $A < 0$ for fast-rise-exponential-decay (FRED) type flares, as expected from an injection of energetic particles that subsequently cool through radiative processes such as inverse Compton scattering or synchrotron emission.
-The asymmetry is shown versus integrated flux, peak flux, and flare duration $T_{90}$, defined as the time around the flare peak that contains 90\,\% of the integrated flux, in Fig.~\ref{fig:asym}.
+The asymmetry is shown versus integrated flux, peak flux, and flare duration $T_{90}$, defined as the time around the flare peak that contains 90\,\% of the integrated flux, in Figure~\ref{fig:asym}.
 The peak flux for each flare of each HOP group is derived from the maximum of  Eq.~\ref{eq:flareHOP} with respect to time (suppressing indices $ij$),
 
 \begin{equation}
@@ -752,18 +770,18 @@ The error bars on the peak flux and asymmetry are derived from standard Gaussian
 \begin{figure*}
     \centering
     \includegraphics[width = .8\linewidth]{figures/lcfithop_results_asym_vs_all_orbit_maxiter2_fsys0p00_addcomp0.pdf}
-    \caption{Flare asymmetry versus integrated flux (left), peak flux (center), and flare duration $T_{90}$ (right) for the fitted flare profiles shown in Fig.~\ref{fig:gti}.}
+    \caption{Flare asymmetry versus integrated flux (left), peak flux (center), and flare duration $T_{90}$ (right) for the fitted flare profiles shown in Figure~\ref{fig:gti}.}
     \label{fig:asym}
 \end{figure*}
 
-The median of the asymmetry is found to be $-0.195$, i.e., FRED-type flares are more common than the opposite. In general, the flares show a versatile behaviour and no clear trends are seen from Fig.~\ref{fig:asym}. This is also reflected in the fact that we do not find any significant correlation between the asymmetry, integrated and peak flux, rise and decay times, as well as flare duration using Kendall's $\tau$.
+The median of the asymmetry is found to be $-0.195$, i.e., FRED-type flares are more common than the opposite. In general, the flares show a versatile behaviour and no clear trends are seen from Figure~\ref{fig:asym}. This is also reflected in the fact that we do not find any significant correlation between the asymmetry, integrated and peak flux, rise and decay times, as well as flare duration using Kendall's $\tau$.
 
-We also investigate whether subsequent flares in each panel of Fig.~\ref{fig:gti} show a trend with time in peak flux, asymmetry, or duration. 
-For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a Binomial distribution assuming an equal probability of finding negative and positive differences.
+We also investigate whether subsequent flares in each panel of Figure~\ref{fig:gti} show a trend with time in peak flux, asymmetry, or duration. 
+For consecutive flares, we calculate the difference between, e.g., the peak fluxes, and calculate the $p$-value of a binomial distribution assuming an equal probability of finding negative and positive differences.
 For 32 values of differences the $p$-values for the peak flux, asymmetry, as well as for the flare duration are close to 0.1 (14, 13, and 13 positive values for 32 trials, respectively) indicating no particular evolution of these quantities with time. 
 
 We also find complex behavior of the spectral evolution during the flares. Evidence for a  ``harder-when-brighter'' trend is found for some sources and flares, which is however not significant. 
-We therefore cannot draw any firm conclusions from the spectral evolution, which we show for reference in Fig.~\ref{fig:specvar} in  Appendix~\ref{sec:specvar}. 
+We therefore cannot draw any firm conclusions from the spectral evolution, which we show for reference in Figure~\ref{fig:specvar} in  Appendix~\ref{sec:specvar}. 
 
 
 
@@ -771,31 +789,31 @@ We therefore cannot draw any firm conclusions from the spectral evolution, which
 \label{sec:sub-gti}
 We search for sub-orbital variability in a subset of orbital light curves, namely in those where at least one orbital bin is detected with $\mathrm{TS} \geqslant 150$. 
 In this way we ensure high photon statistics and reduce the number of trials when searching for minute scale variability (for comparison, the orbital light curve bin for which \citet{TheFermi-LAT:2016dss} measured minute scale variability in 3C279 is detected in our analysis with $\mathrm{TS} \sim 400$). 
-The selected time regions are indicated with solid horizontal lines regions in Fig.~\ref{fig:gti}, whereas the dashed lines show the time intervals selected with the criteria in Tab.~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
+The selected time regions are indicated with solid horizontal lines regions in Figure~\ref{fig:gti}, whereas the dashed lines show the time intervals selected with the criteria in Table~\ref{tab:zoom} that do not pass the additional $\mathrm{TS}$ cut.
 
-The resulting light curves, binned such that the uncertainty in each bin is of the order of $\sim20\,\%$ \citep[using the adaptive binning introduced by][]{lott2012}, are shown in Fig.~\ref{fig:lc_minutes}. 
-In order to make an objective selection of GTIs that we test against the hypothesis of a constant flux, we consider only those where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Fig.~\ref{fig:lc_minutes}).
+The resulting light curves, binned such that the uncertainty in each bin is of the order of $\sim20\,\%$ \citep[using the adaptive binning introduced by][]{lott2012}, are shown in Figure~\ref{fig:lc_minutes}. 
+In order to make an objective selection of GTIs that we test against the hypothesis of a constant flux, we consider only those where the BBs indicate a significant flux change within the GTI (GTIs marked in green in Figure~\ref{fig:lc_minutes}).
 Naively, one could expect that a BB change within one GTI would correspond to a significance of 95\,\% for a non-constant flux, since this is the threshold we have selected in the BB algorithm~\citep{2013ApJ...764..167S}. However, the BB algorithm also takes data before and after the particular GTI into account and only provides qualitative evidence for minute-scale variability. 
 Therefore, we test each bin selected in this way against the hypothesis of constant flux, using a simple $\chi^2$ test. 
 The best-fit constant flux is given by $\hat{F} = (\sum (F_i / \sigma_i^2))(\sum F_i^{-2})^{-1}$. 
-For the GTIs where the constant fit results in a pre-trial $p$-value of less than 0.1, we show the sub-GTI light curves in Fig.~\ref{fig:singel-gtis} and report the pre- and post-trial fit probabilities in Tab.~\ref{tab:minute}.
+For the GTIs where the constant fit results in a pre-trial $p$-value of less than 0.1, we show the sub-GTI light curves in Figure~\ref{fig:singel-gtis} and report the pre- and post-trial fit probabilities in Table~\ref{tab:minute}.
 We count each tested GTI as one trial. 
 We also provide the minimum values for the variability times for pairs of fluxes $F_i$ and $F_j$ measured at $t_i$ and $t_j$, respectively, given by~\citet{1999ApJ...527..719Z},
 \begin{equation}
 t_{\mathrm{var},ij} = \frac{F_i + F_j}{2}\left|\frac{t_i - t_j}{F_i - F_j}\right|.
 \end{equation}
-The pre-trial $p$-values for rejecting the constant-flux hypothesis are all around to $2\,\sigma$. 
+The pre-trial $p$-values for rejecting the constant-flux hypothesis are all around $2\,\sigma$. 
 The trial correction leaves only one GTI of 3C279 and two GTIs for CTA102 close to or above a $2\,\sigma$ evidence for a variable flux. 
-However, inspecting the light curve the second GTI of CTA102 (starting at MJD\,57758.86, see Fig.~\ref{fig:singel-gtis}), the high $\chi^2$ value might be the result of our chosen binning; the first bin actually spans a long time range for which the exposure is mostly zero.  
+However, inspecting the light curve the second GTI of CTA102 (starting at MJD\,57758.86, see Figure~\ref{fig:singel-gtis}), the high $\chi^2$ value might be the result of our chosen binning; the first bin actually spans a long time range for which the exposure is mostly zero.  
 For the other two GTIs the suggested variability times scales are between 3 and 4\,minutes.
 
 In comparison to previous results for 3C279 and CTA102, our method results in lower significance detections of minute-scale variability.
-In comparison to~\citet{2018ApJ...854L..26S}, we also find evidence for minutes scale variability in different GTIs. 
+In comparison to~\citet{2018ApJ...854L..26S}, we also find evidence for minute scale variability in different GTIs. 
 This is due to trial correction but probably also due to differences in the analysis.
 For example, we use a finer binning for the exposure in the azimuthal direction to take this dependence for such short observations into account.
 The change in exposure is, however, below 10\,\%.
 More importantly, we use a different binning within one GTI, which can also change the significance. 
-Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale variability for 3C454.3 and PKS1510-089 and stronger evidence for 3C279 and CTA102.
+Taking the $\chi^2$ test and the BBs together, we conclcude that we find evidence that minute-scale variability is common phenomenon during bright FSRQ flares. %we find weak evidence for minute-scale variability for 3C454.3 and PKS1510-089 and stronger evidence for 3C279 and CTA102.
 \begin{figure*}
     \centering
     \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
@@ -806,7 +824,7 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 \begin{figure*}
 \centering
 \includegraphics[width = .95\linewidth]{figures/minute_lc_adaptive20.pdf}
-\caption{Light curves of single GTIs for which the BBs for the full time interval indicate a flux change within the GTI (solid horizontal lines in Fig.~\ref{fig:lc_minutes}) and for which a fit with a constant flux results in a fit significance of less than 0.1. The orange lines indicate BBs if only the data within the GTI is taken into account. The black dashed line is the best-fit value of the constant flux. The grey histograms show the number of counts in each bin and the dark grey lines indicate the relative source exposure as a function of time. }
+\caption{Light curves of single GTIs for which the BBs for the full time interval indicate a flux change within the GTI (solid horizontal lines in Figure~\ref{fig:lc_minutes}) and for which a fit with a constant flux results in a fit significance of less than 0.1. The orange lines indicate BBs if only the data within the GTI is taken into account. The black dashed line is the best-fit value of the constant flux. The grey histograms show the number of counts in each bin and the dark grey lines indicate the relative source exposure as a function of time. }
 \label{fig:singel-gtis}
 \end{figure*}
 
@@ -838,7 +856,7 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 55520.25 & 25.83 & 1.96 & 0.048 (1.98$\sigma$) & 0.216 (1.24$\sigma$) & $3.2\pm1.6$ \\
 \enddata
 {
-\tablecomments{The number of trials is counted for each flare individually and given by the number of horizontal solid lines in each panel of Fig.~\ref{fig:lc_minutes}.}
+\tablecomments{The number of trials is counted for each flare individually and given by the number of horizontal solid lines in each panel of Figure~\ref{fig:lc_minutes}.}
 }
 \end{deluxetable}
 
@@ -848,32 +866,33 @@ Taken $\chi^2$ test and BBs together, we find weak evidence for minute-scale var
 
 The location of the \gray emission region in blazar jets remains unknown. 
 From the rich data set of the six FSRQs studied here, we attempt to constrain the position of the emitting region using three independent approaches. 
-First, in Sec.~\ref{sec:blrabs}, we search for absorption signatures in the LAT spectra caused by pair production of \Grays with photons of external photon fields. We use spectra during the brightest flares identified in the orbital light curves in Fig.~\ref{fig:gti} (dashed and solid horizontal bars).
-The derived constraints on the position are used to calculate energy dependent cooling times in Sec.~\ref{sec:tcool}, which will be compared against our results for the decay times for the whole energy range (see Sec.~\ref{sec:results-local}) and for energy dependent light curves.
+First, in Section~\ref{sec:blrabs}, we search for absorption signatures in the LAT spectra caused by pair production of \Grays with photons of external photon fields. We use spectra during the brightest flares identified in the orbital light curves in Figure~\ref{fig:gti} (dashed and solid horizontal bars).
+The derived constraints on the position are used to calculate energy dependent cooling times in Section~\ref{sec:tcool}, which will be compared against our results for the decay times for the whole energy range (see Section~\ref{sec:results-local}) and for energy dependent light curves.
 As shown by~\citet{2012ApJ...758L..15D}, if the flux decay is dominated by radiative cooling in external radiation fields, the energy dependence of the decay times can be used to distinguish inverse-Compton cooling in the radiation fields of the BLR or the dust torus.
 This provides additional information about the position of the \gray emission region.
-In Sec.~\ref{sec:gammaradio}, we search for time lags between \gray and radio emission. 
+In Section~\ref{sec:gammaradio}, we search for time lags between \gray and radio emission. 
 In the scenario where the non-thermal emission is triggered by, e.g., shocks propagating downstream through the jet, a time lag can be translated into the spatial separation between the radio and \gray emitting regions~\citep{2014MNRAS.445..428M}. 
 With information about the location of the radio core, the position of the \gray emitting region can be constrained~\citep[e.g.,][]{2014MNRAS.441.1899F}. 
 
 \subsection{Results from spectral fits to \gray data}
 \label{sec:blrabs}
+\subsubsection{\gray attenuation}
 The attenuation due to pair production on a radiation field of soft photons should manifest itself as a cut-off feature in the \gray spectrum. 
 The cut-off energy depends on the distance of the \gray emitting region to the central black hole, $r$, and the photon density of the considered photon field.
-For FSRQs, photon densities of external radiation fields of the accretion disk, the BLR, and the extended dust torus usually dominate the one of internal synchrotron emission~\citep[see,e.g.,][]{2012ApJ...758L..15D}.
+For FSRQs, photon densities of external radiation fields of the accretion disk, the BLR, and the extended dust torus usually dominate those of internal synchrotron emission~\citep[see,e.g.,][]{2012ApJ...758L..15D}.
 The most relevant external photon field for the \gray energies which can be probed with \FermiLAT is the BLR. 
 Pair production on photons from the dust torus or the accretion disk only becomes important at energies beyond 1\,TeV, even when the \Grays are produced close to the central black hole~\citep{finke2016}.
 
-We therefore search for BLR absorption features by fitting the observed \gray spectra during the brightest flares with functions the form 
+We can search for BLR absorption features by fitting the observed \gray spectra during the brightest flares with functions of the form 
 \begin{eqnarray}
     f(E,\vec{\pi},r,z) &=& f_\mathrm{int}(E,\vec{\pi}) \times \nonumber \\ &{}& \exp\left[-\left(\tau_{\gamma\gamma}^\mathrm{BLR}(E,r) +\tau_{\gamma\gamma}^\mathrm{EBL}(E,z) \right)  \right],
 \end{eqnarray} 
-where $f_\mathrm{int}(E, \vec{\pi})$ describes the intrinsic spectrum at observed \gray energy $E$ emitted by the source, which depends on spectral parameters, $\vec{\pi}$, and $\tau_{\gamma\gamma}^\mathrm{BLR / EBL}$ is the optical depth due to interactions of \Grays with photons of the BLR and extragalactic baclground light (EBL), respectively. 
+where $f_\mathrm{int}(E, \vec{\pi})$ describes the intrinsic spectrum at observed \gray energy $E$ emitted by the source, which depends on spectral parameters, $\vec{\pi}$, and $\tau_{\gamma\gamma}^\mathrm{BLR / EBL}$ is the optical depth due to interactions of \Grays with photons of the BLR and extragalactic background light (EBL), respectively. 
 For the EBL optical depth, which depends on $E$ and the source redshift, $z$, we use the EBL model of \citet{2011MNRAS.410.2556D}.
 The BLR optical depth is described by the stratified BLR model introduced by \citet{finke2016}, who models the BLR either as a collection of shells or rings perpendicular to the jet axis, in order to emulate a flattened BLR. 
 Each shell or ring is assumed to have infinitesimal thickness and to emit a monochromatic UV or optical emission line. 
 The radii $R_\mathrm{li}$ of the shells and rings as well as the line luminosities $L_\mathrm{li} = \xi_\mathrm{li}L_\mathrm{disk}$ are taken from templates of average spectra obtained in reverberation mapping campaigns and provide values relative to the radius and luminosity of the H$\beta$ line~\citep[see][for further details]{finke2016}.
-With the H$\beta$ luminosities listed in Tab.~\ref{tab:src-select}, we fix the absolute luminosities (or conversely $\xi_{\mathrm{H}\beta}$) and radii of all lines included in the model.  
+With the H$\beta$ luminosities listed in Table~\ref{tab:src-select}, we fix the absolute luminosities (or conversely $\xi_{\mathrm{H}\beta}$) and radii of all lines included in the model.  
 Together with the masses of the super-massive black holes, we can then calculate $\tau_{\gamma\gamma}^\mathrm{BLR}$ for both geometries as a function of $r$ and observed \gray energy $E$.
 In the BLR model, the absorption is dominated by pair production with Ly$\alpha$ photons at rest-frame energy of $\epsilon_{\mathrm{Ly}\alpha}\sim10.2\,$eV emitted at radii between $\sim 8\times10^{16}$ and $2\times10^{17}$\,cm. 
 In the ring geometry, the corresponding energy density, which is assumed to be isotropic in the stationary frame of the galaxy, becomes~\citep{finke2016}
@@ -887,13 +906,13 @@ The chosen BLR model gives values broadly consistent with typical values within 
 
 Typically, FSRQ spectra show intrinsic curvature, even below energies at which BLR absorption becomes important (see, e.g., the 3FGL). Therefore we chose a log-parabola for the intrinsic spectral function and also test a power law with super-exponential cut-off (see Eqs.~\ref{eq:avg-spec-lp} and \ref{eq:avg-spec-plexp} for the definition of the models). 
 In the fit, we only include energy bins above 1\,GeV, as we expect the BLR cut-off at energies $\gtrsim 10\,$GeV. In this way, we avoid that the best fit is determined mainly by the high photon statistics at lower energies.
-Additionally, we select narrow time intervals around the brightest flares (see Sec.~\ref{sec:zoom} and Fig.~\ref{fig:gti}).
+Additionally, we select narrow time intervals around the brightest flares (see Section~\ref{sec:zoom} and Figure~\ref{fig:gti}).
 This is a compromise between sufficient photon statistics to probe energies above 10\,GeV and avoiding the mixing of different activity states with potentially different spectral states. 
-From Fig.~\ref{fig:specvar} we see that for the time bins with the highest fluxes spectral variability is only marginally present, which should render our results robust against potential variations of the intrinsic spectra. 
+From Figure~\ref{fig:specvar} we see that for the time bins with the highest fluxes spectral variability is only marginally present, which should render our results robust against potential variations of the intrinsic spectra. 
 Also, in the fit we only include energy bins detected with $\mathrm{TS} > 0$ and skip flares where the absorption is below 80\,\% in the highest energy bin with $\mathrm{TS} > 0$ and for the smallest BLR distance tested ($r = 10^{-2}R_{\mathrm{Ly}\alpha})$. 
 This excludes all flaring periods from 3C273, for which we cannot obtain any limits from the \gray spectra.
 
-We derive the best-fit values for the spectral parameters $\vec{\pi}$ and the distance $r$ with a likelihood maximization of the bin-by-bin likelihood curves, which we extract with \textsc{fermipy}\footnote{The bin-by-bin likelihoods are derived by fixing the spectral shape in each bin to a power law and mapping the likelihood as a function of the normalization. In the process, the spectral parameters of the neighbouring point sources and diffuse backgrounds are fixed to their broad band best-fit values.} and that are shown as gray shaded bands in the panels of Fig.~\ref{fig:seds}. 
+We derive the best-fit values for the spectral parameters $\vec{\pi}$ and the distance $r$ with a likelihood maximization of the bin-by-bin likelihood curves, which we extract with \textsc{fermipy}\footnote{The bin-by-bin likelihoods are derived by fixing the spectral shape in each bin to a power law and mapping the likelihood as a function of the normalization. In the process, the spectral parameters of the neighbouring point sources and diffuse backgrounds are fixed to their broad band best-fit values.} and that are shown as gray shaded bands in the panels of Figure~\ref{fig:seds}. 
 The flux points in the figure coincide with the maximum likelihood. 
 Also shown are the best-fit spectra and BLR attenuation for different values of $r$ (colored curves). 
 %We only include energy bins and their likelihoods if the bin-by-bin fit converged and if the source is detected with $\mathrm{TS} > 0$.\footnote{We do not have to limit ourselves to bins with even larger $\mathrm{TS}$, since our bin-by-bin likelihood approach takes full Poisson statistics into account. \todo{formulate a bit clerarer.}}
@@ -919,18 +938,18 @@ Also shown are the best-fit spectra and BLR attenuation for different values of 
     \label{fig:seds}
 \end{figure*}
 
-For both tested BLR geometries, the best-fit value of $r$ is always close to or coincides with the maximum tested value, $r = 10R_{\mathrm{Ly}\alpha}$, and hence no significant absorption is found (dashed black lines in Fig.~\ref{fig:seds}). Consequently,  we use \textsc{Minos} to derive the profile likelihood as a function of $r$ from which we determine the 95\,\% lower limit on $r$, $r_\mathrm{lim}$ (dash-dotted black lines). 
-The limit values are reported for each flare in Fig.~\ref{fig:blr_limits} and  summarized in Tab.~\ref{tab:blrabs} for the ring BLR geometry and log-parabola spectrum.
+For both tested BLR geometries, the best-fit value of $r$ is always close to or coincides with the maximum tested value, $r = 10R_{\mathrm{Ly}\alpha}$, and hence no significant absorption is found (dashed black lines in Figure~\ref{fig:seds}). Consequently,  we use \textsc{Minos} to derive the profile likelihood as a function of $r$ from which we determine the 95\,\% lower limit on $r$, $r_\mathrm{lim}$ (dash-dotted black lines). 
+The limit values are reported for each flare in Figure~\ref{fig:blr_limits} and  summarized in Table~\ref{tab:blrabs} for the ring BLR geometry and log-parabola spectrum.
 Assuming instead a power law with super-exponential cut-off yields consistent results. 
 For the BLR shell geometry the lower limits are a factor of $\sim2$-$3$ higher because this geometry predicts stronger absorption~\citep{finke2016}. The ring geometry is therefore the conservative choice. 
 
-As can be seen from Tab.~\ref{tab:blrabs} and Fig.~\ref{fig:blr_limits} the limits are of the order of $r_\mathrm{lim}\sim10^{17}$cm which translates to a distance close to or even beyond the Ly$\alpha$ emitting ring and consequently the BLR itself. In terms of gravitational radii, the emission regions are located at distances of at least $\sim10^3r_g$. 
+As can be seen from Table~\ref{tab:blrabs} and Figure~\ref{fig:blr_limits} the limits are of the order of $r_\mathrm{lim}\sim10^{17}$cm which translates to a distance close to or even beyond the Ly$\alpha$ emitting ring and consequently the BLR itself. In terms of gravitational radii, the emission regions are located at distances of at least $\sim10^3r_g$. 
 Table~\ref{tab:blrabs} also reports the energy of the highest energy photon (HEP) associated with the FSRQ with at least $99\,\%$ probability. For all but one source, this energy is larger than the energy where the optical depth due to absorption in the BLR exceeds $\tau_{\gamma\gamma}^\mathrm{BLR} > 1$ (assuming $r = r_\mathrm{lim}$).
 Our limits generally agree with the results of \citet{2018MNRAS.477.4749C}, who could limit the maximum value of $\tau_{\gamma\gamma}^\mathrm{BLR}$ to be around $\sim 1$ for 3C454.3 and PKSB1222+216 and $\sim 0.2$ for CTA102. 
 
-The limits sensitively depend on the detection of the source at energies as high as possible. To ensure that the detections are not spuriuos, we also report the detection significance and the number of detected \Grays (associated with the source with a probability $>85\,\%$) for each energy bin below and above the flux points in Fig.~\ref{fig:seds}, respectively. The highest energy bins only contain a handful of source photons (1-4), which underlines the necessity to use the full Poisson likelihood information. 
+The limits sensitively depend on the detection of the source at energies as high as possible. To ensure that the detections are not spuriuos, we also report the detection significance and the number of detected \Grays (associated with the source with a probability $>85\,\%$) for each energy bin below and above the flux points in Figure~\ref{fig:seds}, respectively. The highest energy bins only contain a handful of source photons (1-4), which underlines the necessity to use the full Poisson likelihood information. 
 Nevertheless, the source detections in these energy bins correspond to significances $\sim \sqrt{\mathrm{TS}}$ $\gtrsim 4\,\sigma$.
-The reason is that in the considered energy interval and short time spans (cf. Tab.~\ref{tab:blrabs}) the number of expected background events is small. 
+The reason is that in the considered energy interval and short time spans (cf. Table~\ref{tab:blrabs}) the number of expected background events is small. 
 
 \begin{figure}
     \centering
@@ -975,34 +994,44 @@ The reason is that in the considered energy interval and short time spans (cf. T
 55516.55 & 8.93 & 3.19 & 1.36 & 1598 & 41.19 & 28.73& 4.2 & 16.8 & $2.6\pm1.0$ \\
 \enddata
 {
-\tablecomments{Highest energy photons are given for source probabilities $> 0.99$. The decay times are given for the flare component with highest peak flux as determined in the fit to the orbital light curves in Sec.~\ref{sec:results-local}.
+\tablecomments{Highest energy photons are given for source probabilities $> 0.99$. The decay times are given for the flare component with highest peak flux as determined in the fit to the orbital light curves in Section~\ref{sec:results-local}.
 For the cooling times, an observed \gray energy of $10^{8.5}\,\mathrm{eV} \approx 316\,$MeV is assumed. }
 }
 \end{deluxetable*}
 
-We also compare the limits from fits to \gray spectra to considerations from variability arguments in Fig.~\ref{fig:blr_limits}.
+We also compare the limits from fits to \gray spectra to considerations from variability arguments in Figure~\ref{fig:blr_limits}.
 If the emission region $R'_\mathrm{blob}$ (the prime denotes the co-moving frame) is causally connected during the flare, the shortest variability time $t_\mathrm{var}$ sets a lower limit on its size \citep[e.g.,][]{2008MNRAS.384L..19B}:
 \begin{equation}
-    R'_\mathrm{blob} \leqslant \frac{ct_\mathrm{var}\delta_\mathrm{D}}{1+z},  
+    R'_\mathrm{blob} \leqslant \frac{ct_\mathrm{var}\delta_\mathrm{D}}{1+z},
+    \label{eq:rblob}
 \end{equation}
 where $\delta_\mathrm{D} = \Gamma^{-1}_\mathrm{L}(1 + \beta\cos\theta_\mathrm{obs})^{-1}$ is the Doppler boost factor with the bulk Lorentz factor of the flow, $\Gamma_\mathrm{L}$, $\beta = \sqrt{1 - \Gamma_\mathrm{L}^{-2}}$ the associated velocity, and $\theta_\mathrm{obs} $ is the angle between the line of sight and the jet axis.
 Under the assumption of a conical jet with opening angle $\theta_\mathrm{j} \sim \Gamma^{-1}_\mathrm{L}$, we obtain an upper limit on the distance to the black hole, $r \sim R'_\mathrm{blob}\Gamma_\mathrm{L} \equiv r_\mathrm{j}$.
-The values are plotted in Fig.~\ref{fig:blr_limits} for the minimum of the rise and decay times of the brightest flares found in Fig.~\ref{fig:gti}.
-The average values for $\delta_\mathrm{D}$ and $\Gamma_\mathrm{L}$ obtained from Very Long Baseline Array monitoring observations are used \citep[see also Tab.~\ref{tab:src-select}]{2017ApJ...846...98J}  and the total  uncertainty is obtained by summing the uncertainties on $\delta_\mathrm{D}$, $\Gamma_\mathrm{L}$, and the fit uncertainty of $t_\mathrm{var}$ in quadrature.
+The values are plotted in Figure~\ref{fig:blr_limits} for the minimum of the rise and decay times of the brightest flares found in Figure~\ref{fig:gti}.
+The average values for $\delta_\mathrm{D}$ and $\Gamma_\mathrm{L}$ obtained from Very Long Baseline Array monitoring observations are used \citep[see also Table~\ref{tab:src-select}]{2017ApJ...846...98J}  and the total  uncertainty is obtained by summing the uncertainties on $\delta_\mathrm{D}$, $\Gamma_\mathrm{L}$, and the fit uncertainty of $t_\mathrm{var}$ in quadrature.
 In general, we find that $r_\mathrm{lim} \gtrsim r_\mathrm{j}$ indicating that the emission regions are at larger distances to the black hole than predicted from the conical jet scenario.  
 
 In our BLR model, we use a simplified BLR geometry and do not include the hydrogen or HeII recombination continua or emission lines of the HeII Ly series~\citep[as done in, e.g.,][]{2010ApJ...717L.118P,2014ApJ...794....8S}. 
-Comparing the optical depths of our model to results of the sophisticated modeling of~\citet[see in particular their Fig.~11]{2017MNRAS.464..152A}, who describe the BLR as a collection of ionized gas clouds irradiated by the accretion disk, we find that our values of $\tau_{\gamma\gamma}^\mathrm{BLR}$ reach unity at energies a factor of $\sim1.5$ higher, but around 100\,GeV the optical depth in the two models is similar. 
+Comparing the optical depths of our model to results of the sophisticated modeling of~\citet[see in particular their Figure~11]{2017MNRAS.464..152A}, who describe the BLR as a collection of ionized gas clouds irradiated by the accretion disk, we find that our values of $\tau_{\gamma\gamma}^\mathrm{BLR}$ reach unity at energies a factor of $\sim1.5$ higher, but around 100\,GeV the optical depth in the two models is similar. 
 Also, the BLR model of \citet{finke2016} re-produces the trend observed in the sophisticated model that the absorption sets in at higher energies and is overall weaker for larger values of $r$. 
 As we do not observe significant cut-offs in the spectra, we therefore conclude that the ring geometry adopted here provides a conservative limit on $r$. 
 
-Furthermore, evidence exists that the the luminosity of BLR emission lines is variable in 3C454.3, PKS1510-089, and PKSB1222+216~\citep{2013ApJ...763L..36L,2015ApJ...804....7I} and correlates with the \gray emission~\citep{2013ApJ...763L..36L,2015IAUS..313...43L}, which could indicate that \Grays are produced through inverse Compton scattering with BLR photons (see also Sec.~\ref{sec:tcool}).  
+Furthermore, evidence exists that the the luminosity of BLR emission lines is variable in 3C454.3, PKS1510-089, and PKSB1222+216~\citep{2013ApJ...763L..36L,2015ApJ...804....7I} and correlates with the \gray emission~\citep{2013ApJ...763L..36L,2015IAUS..313...43L}, which could indicate that \Grays are produced through inverse Compton scattering with BLR photons (see also Section~\ref{sec:tcool}).  
 Additionally, \citet{2013ApJ...763L..36L} find that the BLR brightening coincides with the passage of a superluminal jet component through the radio core, which could indicate that BLR clouds are located at larger distances, $\gtrsim 1\,$pc, then assumed here.
 A brighter BLR emission during \gray flares and BLR material located at larger distances would mean stronger \gray attenuation, which would shift our limits to even larger distances. 
 
+\subsubsection{Jet-shielding by a plasma sheath}
+\label{sec:plasma-sheath}
+
+In view of the severity of these constraints, it is worth considering radical alternatives to the standard model of FSRQ \gray emission. The first possibility is that the inner jet is actually shielded from external soft photons. One way in which this can happen is if the broad line-emitting clouds derive from the accretion disk and are propelled to radii $\sim0.1-1\,{\rm pc}$ by the centrifugal action of magnetic field lines attached to the accretion disk \citep{emmering:1992mac,1994ApJ...434..446K,bottorf:1997dyn}. The magnetic field channels the cool gas along outward trajectories with speeds $\sim0.03c$ including some rotation.  Individual gas clouds can be confined transversely by magnetic pressure but will cool as they expand. 
+
+Generic BLR models have filling factors $\sim10^{-5}-10^{-4}$ and covering factors $\sim0.1$. Now, suppose that some of these clouds derive from the inner disk and are attached to the toroidal field lines that are thought to collimate the jet. They will be illuminated from the outside and their thermal state will be a balance between photoionization heating and expansion and radiative loss. In order for a \gray of energy $E_\gamma$ to escape from the inner jet we must have efficient shielding out to the $\gamma$-sphere  \citep{1995ApJ...441...79B} defined by the unshielded photons. If this outflow can remain cool enough, a column density $\Sigma\gtrsim\Sigma_{\rm shield}\sim5\times10^{-3}E_{X\,\rm keV}^{2.5}\,{\rm g\,cm}^{-2}$, for $0.014\lesssim E_{X\,\rm keV}\lesssim10$ suffices to shield the jet from photons of energy $E_{X\,\rm keV}$. It is unlikely that this sheath can be neutral enough to shield the UV down to the Lyman continuum close to the hole. Prominent line photons, notably Ly$\alpha$, should also be shielded. We can express $\Sigma_{\rm shield}$ in terms of $E_\gamma$ at threshold for pair production, $\Sigma_{\rm shield}\sim2\times10^{-4}E_{\gamma\,\rm GeV}^{-2.5}\,{\rm g\,cm}^{-2}$ for $0.03\lesssim E_{\gamma\,{\rm GeV}}\lesssim20$ and for sufficiently large jet radius. 
+
+Next, suppose that the cylindrical radius of the sheath at the $\gamma$-sphere is $10^{15}s_{\gamma{\rm sphere}\,15}\,{\rm cm}$, (typically $\sim0.1$ of the jet radius). The discharge associated with the shielding gas is then $\dot M_{\rm sheath}\sim10^{-5}s_{\gamma{\rm sphere}\,15}E_{\gamma\,\rm GeV}^{-2.5}\,{\rm M}_\odot\,{\rm yr}^{-1}$, which is quite modest for the energies of interest. An observer situated on the jet axis should be able to observe $\gamma$-rays from very close to the black hole, at radii much smaller than that of the $\gamma$-sphere, where their observed variability timescales can be as short as minutes after correcting for relativistic time travel effects. Of course, there may be some opacity due to synchrotron photons emitted at smaller jet radii and beamed along the jet but, again this need not be severe. Note that photons with energy below the Lyman continuum, including optical and infrared photons, should permeate the jet at all radii and so this model implies that there should not be rapid \gray variability with $E_{\gamma}\gtrsim30/(1+z)\,{\rm GeV}$ from FSRQ. The rapid variability seen  at TeV energy in some BLL arises because these sources like a strong UVX continuum and the hole masses are smaller.
+
 \subsection{Considerations from radiative cooling}
 \label{sec:tcool}
-
+\subsubsection{Broad emission line radiation}
 With the limits on $r$ it is possible to derive constraints on the energy density of external photon fields in the co-moving frame, which could be responsible for the \gray emission due to inverse-Compton (IC) scattering with relativistic electrons in the emission region. 
 Because the cooling time depends on the energy density and in turn on $r$, a comparison between the predicted IC cooling times with the observed decay times can provide further information on where the \Grays are emitted.
 We first focus on the BLR photon field but the discussion also applies for IC scattering with photons of the dust torus, which we will discuss at the end of this section.
@@ -1030,15 +1059,15 @@ In what follows, we approximate the electron Lorentz factor with~\citep[e.g.,][]
 where $E_\mathrm{obs,BLR}$ is the observed \gray energy of IC scattered BLR photons. 
 From Eqs.~\ref{eq:u-blr}, \ref{eq:tcool-thomson}, and \ref{eq:gammaprime} it becomes clear that the cooling time scales as $t_\mathrm{cool, BLR}\propto r^2 \Gamma^{-2}$, i.e., the cooling becomes less efficient for large distances. 
 Furthermore, if the \gray emission is produced very far away from the BLR, the external photons will appear as a point source illuminating the emission region from behind, so that $u'_\mathrm{BLR} = (1/4)\Gamma^{-2} u_\mathrm{BLR}$,~\citep{1994ApJS...90..945D} leading to an additional decrease of the cooling time. 
-The BLR cooling time for one flare of CTA102 is shown for $r=r_\mathrm{lim}$ and $r = 1\,$pc as a function of $\gamma'$ and $E_\mathrm{obs,BLR}$ in Fig.~\ref{fig:tcool}  (black solid and dash-dotted lines, respectively), assuming again the average values for $\delta_\mathrm{D}\sim31$ and $\Gamma_\mathrm{L}\sim22$. 
+The BLR cooling time for one flare of CTA102 is shown for $r=r_\mathrm{lim}$ and $r = 1\,$pc as a function of $\gamma'$ and $E_\mathrm{obs,BLR}$ in Figure~\ref{fig:tcool}  (black solid and dash-dotted lines, respectively), assuming again the average values for $\delta_\mathrm{D}\sim31$ and $\Gamma_\mathrm{L}\sim22$. 
 Klein-Nishina effects become important for $\gamma'_\mathrm{BLR} \gtrsim 2\times10^3$ or $E_\mathrm{obs,BLR}\gtrsim1\,$GeV and a clear departure from the Thomson regime in which 
 $t_\mathrm{cool}\propto(\gamma_\mathrm{BLR}')^{-1/2}$ (dashed and dotted black lines) becomes visible.
-The decay times derived from the fit of the two bright flares of CTA102 around MJD 57738 are shown is dark green squares (see the first solid horizontal line in the panel in the 4th row and 2nd column in Fig.~\ref{fig:gti}), where one decay time is shown as an upper limit due to its large uncertainty. 
+The decay times derived from the fit of the two bright flares of CTA102 around MJD 57738 are shown is dark green squares (see the first solid horizontal line in the panel in the 4th row and 2nd column in Figure~\ref{fig:gti}), where one decay time is shown as an upper limit due to its large uncertainty. 
 If the decay is indeed caused by IC scattering with BLR photons, a distance of $r\sim1\,$pc is still compatible with the observed decay times. 
 Similar conclusions can be drawn for the other sources. 
-We provide the cooling times at 300\,MeV and the shortest decay times in Tab.~\ref{tab:blrabs}.
+We provide the cooling times at 300\,MeV and the shortest decay times in Table~\ref{tab:blrabs}.
 
-Figure~\ref{fig:tcool} also shows the variability time $t_\mathrm{var}$ derived for the sub-orbital period in Sec.~\ref{sec:sub-gti}, which is, however, in the rising part of the flare (cf. Fig.~\ref{fig:lc_minutes}). If equally short decay times were observed, this would suggest a distance $r \sim r_\mathrm{lim}$. 
+Figure~\ref{fig:tcool} also shows the variability time $t_\mathrm{var}$ derived for the sub-orbital period in Section~\ref{sec:sub-gti}, which is, however, in the rising part of the flare (cf. Figure~\ref{fig:lc_minutes}). If equally short decay times were observed, this would suggest a distance $r \sim r_\mathrm{lim}$. 
 
 \begin{figure}
     \centering
@@ -1052,15 +1081,15 @@ Figure~\ref{fig:tcool} also shows the variability time $t_\mathrm{var}$ derived 
 As noted by \citet{2012ApJ...758L..15D}, the energy dependence of the cooling times could  further reveal the dominant photon field responsible for IC scattering: while Klein-Nishina effects become important already at 1\,GeV for scattering with BLR photons, the Thomson regime should be valid to higher energies for IC scattering with photons of the dusty torus (dt). 
 Following again~\citet{finke2016}, we assume that the torus also has a ring geometry and emits monochromatic photons with energy $\epsilon_\mathrm{dt} = 2.7 k_B T_\mathrm{dt}$ with $k_B$ the Boltzmann constant and $T_\mathrm{dt} = 1000\,$K. 
 The sublimation radius of the dust torus, $R_\mathrm{dt} = 3.5\times10^{18}\,\mathrm{cm}(L_\mathrm{disk}/10^{45}\,\mathrm{erg}\,\mathrm{s}^{-1})^{1/2}(T_\mathrm{dt}/10^3\,\mathrm{K})^{-2.6}$ is used as the ring radius. 
-Making the appropriate substitutions in Eqs.~\ref{eq:u-blr}, \ref{eq:tcool}-\ref{eq:gammaprime}, we plot the cooling time $t_\mathrm{cool,dt}$ for $r = r_\mathrm{lim}$ as a grey line in Fig.~\ref{fig:tcool} (note the additional $x$-axis since $E_\mathrm{obs, BLR} \neq E_\mathrm{obs,dt}$). 
-Indeed, Klein-Nishina effects only become relevant at $E_\mathrm{obs,dt} \gtrsim 10^2\,$GeV or $\gamma' \gtrsim 10^5$. The cooling times at $E_\mathrm{obs,dt} = 316\,$MeV are also provided in Tab.~\ref{tab:blrabs}.
+Making the appropriate substitutions in Eqs.~\ref{eq:u-blr}, \ref{eq:tcool}-\ref{eq:gammaprime}, we plot the cooling time $t_\mathrm{cool,dt}$ for $r = r_\mathrm{lim}$ as a grey line in Figure~\ref{fig:tcool} (note the additional $x$-axis since $E_\mathrm{obs, BLR} \neq E_\mathrm{obs,dt}$). 
+Indeed, Klein-Nishina effects only become relevant at $E_\mathrm{obs,dt} \gtrsim 10^2\,$GeV or $\gamma' \gtrsim 10^5$. The cooling times at $E_\mathrm{obs,dt} = 316\,$MeV are also provided in Table~\ref{tab:blrabs}.
 
 To further investigate the energy dependence of the decay times, we split the energy range of our analysis into three energy bins, 
  from 100\,MeV-300\,MeV, 300\,MeV-1\,GeV, and 1\,GeV-100\,GeV and recompute the orbital light curves.
 The energy bins are chosen as a compromise between number of bins and sufficient photon statistics in each bin. 
-The light curves for which at least 2 BBs are identified in each energy bin are shown in Fig.~\ref{fig:lcebins}.
+The light curves for which at least 2 BBs are identified in each energy bin are shown in Figure~\ref{fig:lcebins}.
 We repeat the fits of the exponential profiles to the energy dependent light curves but allow only one flare profile per HOP group. 
-The resulting decay times are also plotted in Fig.~\ref{fig:tcool} (light green squares). Only for the 300\,MeV-1\,GeV energy bin the double peak of the flare is resolved and in general the fit qualities are rather poor with $\chi^2$ per degree of freedom between 1.67 and 2.26.
+The resulting decay times are also plotted in Figure~\ref{fig:tcool} (light green squares). Only for the 300\,MeV-1\,GeV energy bin the double peak of the flare is resolved and in general the fit qualities are rather poor with $\chi^2$ per degree of freedom between 1.67 and 2.26.
 The steep $\chi^2$ curves also explain the rather small error bars on $\tau_\mathrm{decay}$. 
 From the fit values we cannot draw a conclusion whether the decay times evolve with $(E_\mathrm{obs})^{-1/2}$ as expected in the Thomson regime.
 Due to the lack of high photon statistics at energies beyond 10\,GeV where the differences in cooling times between the dust torus and BLR become more pronounced, we are not able to use the method suggested by \citet{2012ApJ...758L..15D} to determine the photon field dominating the IC scattering. 
@@ -1069,30 +1098,52 @@ This conclusion also holds for the other sources.
 \begin{figure*}
     \centering
     \includegraphics[width = .9 \linewidth]{figures/lc_ebins_ts9.pdf}
-    \caption{\fermiLAT orbital light curves for three energy bins. The same time binning as in Fig.~\ref{fig:gti} is used. The thick colored lines indicate the BB representation. Only light curves are shown for which at least two BBs are identified for each energy bin. The fluxes of the light curves of the energy bins 0.3-1\,GeV and 1-100\,GeV are shifted by $10^{-1}$ and $10^{-2}$, respectively, for better visibility. }
+    \caption{\fermiLAT orbital light curves for three energy bins. The same time binning as in Figure~\ref{fig:gti} is used. The thick colored lines indicate the BB representation. Only light curves are shown for which at least two BBs are identified for each energy bin. The fluxes of the light curves of the energy bins 0.3-1\,GeV and 1-100\,GeV are shifted by $10^{-1}$ and $10^{-2}$, respectively, for better visibility. }
     \label{fig:lcebins}
 \end{figure*}
 
 Interestingly, the BBs for the energy dependent light curves of the flares of 3C279, PKS1510-089, and the last flare of CTA102 seem to show time lags between the energy bands, with the high-energy emission leading the low-energy \Grays.
 For the 3C279 flare around MJD 57188, \citet{2015ApJ...808L..48P} could not find any time lags between the energy bins 0.1-1\,GeV and above 1\,GeV using the $Z$-transformed discrete correlation function \citep[DCF;][]{1997ASSL..218..163A,2013arXiv1302.1508A}.
-Using the same methodology, we show the DCFs for our energy dependent light curves with at least 2 BBs per energy bin in Fig.~\ref{fig:zdcf}.
+Using the same methodology, we show the DCFs for our energy dependent light curves with at least 2 BBs per energy bin in Figure~\ref{fig:zdcf}.
 We mark the time lags $\tau$ with horizontal lines at the maximum DCF values if $\mathrm{max}(\mathrm{DCF}) > 2 \sqrt{\mathrm{Var}(\mathrm{DCF})}$.
 In contrast to \citet{2015ApJ...808L..48P}, we find evidence that the emission above 1\,GeV leads the emission at lower energies with $\sim 0.1$ days. 
 However, from the fits to the light curves, the decay time at higher energies is actually longer ($0.45\pm0.16$ days above 1\,GeV versus $0.22 \pm 0.03$ between 0.1 and 0.3\,GeV). 
 Therefore, the lag might not be associated with cooling but rather with a changing particle injection. 
-From the spectral variation (Fig.~\ref{fig:specvar}) it seems that the time bin before the peak of the flare has a harder spectrum, however, the uncertainties are too large to draw firm conclusions.
+From the spectral variation (Figure~\ref{fig:specvar}) it seems that the time bin before the peak of the flare has a harder spectrum, however, the uncertainties are too large to draw firm conclusions.
 For the CTA102 flare around MJD 57758 we also find that the high energy emission is leading, whereas for the flare at MJD 57749 the picture is reversed. 
 For 3C454.3 the DCF also indicates that the low-energy emission is leading the high-energy emission, again suggesting that these lags are connected to the injection of particles rather than radiative cooling.
+
+\subsubsection{Synchrotron \Grays}
+\label{sec:gammasync}
+
+A second alternative to the standard model is that the \gray emission mechanism is electron synchrotron radiation \citep{TheFermi-LAT:2016dss}, not inverse Compton scattering as usually supposed \citep[e.g.,][]{Madejski:2016oqg}.
+Electron synchrotron radiation is mostly dismissed because there is a $\sim70\,{\rm MeV}$ radiation reaction limit on the \gray energy in the comoving frame \citep[e.g.,][]{1975ctf..book.....L,blandford:2017mag}. However, if there is sufficient plasma entrainment beyond the outer light cylinder of the black hole magnetosphere, the dominant, positively-charged particles in the jet will be protons even after allowing for some additional pair production. Large, electric field components, along the magnetic field, may be created through a dynamical untangling of large magnetic flux ropes at relativistic speed --- magnetoluminescence --- and, when combined with charge starvation, can lead to a conversion of electromagnetic energy to relativistic particles and \Grays at relativistic speed across much larger volumes than can be processed by magnetic reconnection. 
+
+Under these circumstances, half of the electromagnetic energy that is dissipated should go into the protons, which can be accelerated to much higher energy than the electrons. For an electromagnetic jet of power $L_{\rm jet}=10^{45}L_{\rm jet\,45}\,{\rm erg\,s}^{-1}$ bulk Lorentz factor $\Gamma_{\rm L}=10\Gamma_{\rm L1}$ and width $s=10^{15}s_{15}\,{\rm cm}\sim r/\Gamma_{\rm L}$, the comoving magnetic field strength is $B'\sim30L_{\rm jet\,45}^{1/2}s_{15}^{-1}\Gamma_{\rm L1}^{-1}\,{\rm G}$, the comoving accelerating electric field strength could be as large as $E'_{\rm max}\sim1L_{\rm jet\,45}^{1/2}s_{15}^{-1}\Gamma_{\rm L1}^{-1}\,{\rm MV\,m}^{-1}$ and the total potential difference across the jet could be as large as $V_{\rm max}\sim100\,L_{\rm jet\,45}^{1/2}\,{\rm EV}$. 
+
+Proton acceleration is likely to be limited by the Bethe-Heitler process where a photon of energy $E''_\gamma>1\,{\rm MeV}$ in the proton rest frame creates an electron-positron pair with a cross section that rises slowly from $\sigma_{\rm BH}\sim1\,{\rm mb}$ at $E_\gamma''\sim5\,{\rm MeV}$ to $\sim 10\,{\rm mb}$ at $E_\gamma''\sim1\,{\rm GeV}$ \citep[e.g.,][]{2009herb.book.....D}. Pions will be created at higher energy when $E''_{\gamma}\gtrsim150\,{\rm MeV}$ and could be responsible for VHE neutrino emission but need not concern us here. 
+
+If we focus on the $\sim3\,{\rm min}$ flare in 3C279 with %$r_g\sim1.5\times10^{14}\,{\rm cm}$, 
+$r_g\sim5.6\times10^{13}\,{\rm cm}$, 
+$L_{\rm jet\,45}\sim1$, and assume that $\Gamma_{\rm L}\sim10$, then the constraint of Equation~\ref{eq:rblob} suggests that the size of the emitting region associated with the flare is $R'_{\rm blob}\sim10^{14}\,{\rm cm}$. There is a second constraint in that the electromagnetic energy contained within the blob should be large enough to account for the amplitude of the flare. This suggests that $r\sim10^{16}\,{\rm cm}$, $s_{15}\sim1$ and a fraction $\sim0.01$ of the jet area is involved with this flare. 
+
+Next, suppose that the inner jet is effectively shielded blueward of the Lyman continuum, and so the highest energy external photons in the jet originating from the accretion disk, with energy $E_{\rm UV}\sim10\,{\rm eV}$, will have a number density $n_{\rm UV}\sim10^{12}\,{\rm cm}^{-3}$ (assuming a distance where the photon density is the logarithmic mean between $10^9\,\mathrm{cm}^{-3}$ at $R_\mathrm{Ly\alpha}$ and the photon density of a black body with $T = 3\times10^4\,$K which gives $n\sim10^{15}\,\mathrm{cm}^{-3}$) and energy density $\sim10\,{\rm erg\,cm}^{-3}$, roughly a tenth the magnetic energy density. These photons will have energies $E_\gamma''\sim\Gamma_{\rm L}\gamma_p'E_{\rm UV}\sim100\,{\rm MeV}$, where $\gamma_p'\sim10^6$ is the proton Lorentz factor, in the comoving frame. Pairs will then be created at a rate $R'\sim\Gamma_{\rm L}n_{UV}\sigma_{\rm BH}\sim10^{-11}\,{\rm m}^{-1}$ in the comoving frame and the associated pairs will have energies $E_e'\sim \gamma_P'E_\gamma''\sim100\,{\rm TeV}$. The proton energy loss rate rate in the comoving frame is then $E_e'R'\sim1\,{\rm keV}\,{\rm m}^{-1}\propto\Gamma_L^2\gamma_P'^2$. The electric field needed to balance this loss is only $\sim10^{-3}$ of $E_{\rm max}'$. The proton acceleration/radiation lengths are then $\sim10^{14}\,{\rm cm}\sim R_{\rm blob}'$ and the protons can be maintained at $\sim\,{\rm PeV}$ energies for the duration of the flare.
+
+The pairs will rapidly cool by synchrotron emission (inverse Compton scattering is strongly Klein-Nishina suppressed), radiating \Grays with comoving energy $\sim (E_e'/m_ec^2)^2 B' \sim 1\,{\rm GeV}$ and AGN frame energies boosted by a factor $\sim\Gamma_{\rm L}$ to energies $E_\gamma\lesssim10\,{\rm GeV}$. These \Grays are just below the threshold energy for pair production ($E_\gamma\sim25\,{\rm GeV}$) and should be visible when the line of sight is fully contained by the absorbing sheath. \Grays emitted below the jet $\gamma$-sphere will create more pairs which will emit lower energy \gray photons which should escape unimpeded. The overall process is electromagnetic and should be very efficient, unlike with photo-pion production where there will be neutrino and neutron losses. 
+
+Electrons will also be directly and rapidly accelerated by the electric field to energies $\sim300\,{\rm GeV}$ until they are limited through radiating synchrotron \Grays of energy $\sim0.5\,{\rm MeV}$ in the AGN reference frame. These should escape unimpeded, with comparable power to the GeV \Grays and could be detectable. (Inverse Compton scattering is also Klein Nishina-suppressed but could significant.) In order to dissipate the energy at relativistic speed, the current density must be $\sim3\,\mu{\rm A\,m}^{-2}$ and the associated proton pressure would have to be $\sim100\,{\rm dyne\,cm}^{-2}$, comparable with the magnetic pressure at the height of the flare.
+
+The  case of 3C279 is extreme and may require specialized, not generic, conditions including especially the necessary efficacy of the shielding at photon energies above the Lyman continuum. However, even in this case, it seems that the surprisingly rapid variation observed can be explained making simple, though not mandatory, assumptions. Modeling the larger sample of variable FSRQ described here introduces many more possibilities. In particular, the presumption that the emission originates in a single ``zone'', while appropriate for an extreme flare is surely quite wrong when modeling a more slowly varying \gray spectrum. Most of the emission is likely to originate over a range of larger jet radii with lower radiation density. The details will be largely dictated by the interaction of the jet with the surrounding outflow and the dynamics of the jet electromagnetic field.
+
+A fuller account of the processes involved will be presented elsewhere.
 
 \begin{figure*}
     \centering
     \includegraphics[width = .9 \linewidth]{figures/zdcf_ebins.pdf}
-    \caption{Results for the DCF analysis for the light curves in Fig.~\ref{fig:lcebins}. In order to detect time lags for single flares, the three flares of CTA102 starting at MJD 57733 are separated using the HOP groups. For time lags $\tau < 0$ the high-energy light curve leads the low-energy one. The DCFs between the energy bins (0.1-300\,MeV,1-100\,GeV) and (0.3-0.3\,GeV,1-100\,GeV) are shifted by $\pm 1$ for better visibility. 
+    \caption{Results for the DCF analysis for the light curves in Figure~\ref{fig:lcebins}. In order to detect time lags for single flares, the three flares of CTA102 starting at MJD 57733 are separated using the HOP groups. For time lags $\tau < 0$ the high-energy light curve leads the low-energy one. The DCFs between the energy bins (0.1-300\,MeV,1-100\,GeV) and (0.3-0.3\,GeV,1-100\,GeV) are shifted by $\pm 1$ for better visibility. 
     Horizontal lines mark the maximum of the DCFs if $\mathrm{max}(\mathrm{DCF}) > 2 \sqrt{\mathrm{Var}(\mathrm{DCF})}$.}
     \label{fig:zdcf}
 \end{figure*}
-
-
 
 \subsection{Results from radio-\gray correlation analysis}
 \label{sec:gammaradio}
@@ -1122,6 +1173,7 @@ where $k_r$ depends on the electron energy spectrum and the magnetic field in th
 where $d_\mathrm{L}$ is the luminosity distance and $\Delta r_\mathrm{mas}$ is the offset between the radio cores in milliarcseconds at frequencies $\nu$ and $\nu_0$. 
 The offest is related to the time lag between two radio light curves $\tau_{\mathrm{peak},r\nu,r\nu_0}$ through 
 $\Delta r_\mathrm{mas} = \mu \tau_{\mathrm{peak},r\nu r\nu_0}$, where $\mu$ is the jet proper motion. 
+
 The proper motion along with the core position at 15\,GHz have been determined from
 MOJAVE blazar monitoring program along using very large baseline interferometry \citep[VLBI][]{2012A&A...545A.113P,2016AJ....152...12L}.
 The following distances $d_\mathrm{core,~15GHz}$ were determined  under the assumption that $k_r = 1$: for PKSB1222+216 $d_\mathrm{core,~15GHz}= 23.41\,$pc; for 3C279 $d_\mathrm{core,~15GHz}<7.88$\,pc; for PKS1510-089 $d_\mathrm{core,~15GHz} = 17.71\,$pc; for 
@@ -1134,7 +1186,7 @@ In order to arrive at an estimate for $d_\gamma$ the only remaining task is to p
 
 We search for time lags between the \fermiLAT light curves and radio light curves obtained with the Owens Valley Radio Observatory (OVRO) at 15\,GHz, the Atacama Large submillimeter/millimeter Array (ALMA) between 84 and 116\,GHz (Band 3, 3.6\,mm-2.6\,mm), and the Submillimeter Array (SMA) at 230\,GHz (1.3\,mm). 
 All of the studied FSRQs are included in an ongoing blazar monitoring program at OVRO~\citep{2011ApJS..194...29R} and SMA~\citep{2007ASPC..375..234G}, and also serve as calibrators for SMA and ALMA~\citep{2018MNRAS.478.1512B} at mm wavelengths.\footnote{Data from the observatories are available at \url{http://www.astro.caltech.edu/ovroblazars}, \url{https://almascience.eso.org/alma-data/calibrator-catalogue}, and \url{http://sma1.sma.hawaii.edu/callist/callist.html}.}
-We show all radio and \gray light curves in Fig.~\ref{fig:lc-radio}.
+We show all radio and \gray light curves in Figure~\ref{fig:lc-radio}.
 It is evident that the OVRO light curves show variations on longer time scales and less flicker noise behavior. 
 For 3C454.3 there appears to be a correlation between the radio and \gray flux at least for the giant flare in 2010 (around MJD\,55500). 
 Due to scarce and uneven sampling, we do not use the ALMA and SMA light curves of PKSB1222+216 and PKS1510-089.
@@ -1156,12 +1208,12 @@ measured at times $t_{ai}$ and $t_{bj}$ we compute the local cross correlation f
 \end{equation}
 where the sum runs over the $M$ pairs for which $\tau \leqslant t_{ai} - t_{bj} < \tau + \Delta t$, for some chosen time step $\Delta t$, and $\bar{a}_\tau$ and $\bar{b}_\tau$ and $\sigma_{a\tau}$ and $\sigma_{b\tau}$ are the flux averages and standard deviations over the $M$ pairs, respectively~\citep{1999PASP..111.1347W}. 
 The LCCF is bound between $-1$ and $1$ and has much larger efficiency in recovering linear correlations between light curves compared to the discrete correlation function \citep{2014MNRAS.445..437M}.
-%We also prefer this method over the $Z$-tranformed DCF used in Sec.~\ref{sec:tcool} because it is possible to assign a significance to a time lag corresponding to the maximum value of the LCCF as outlined below. 
+%We also prefer this method over the $Z$-tranformed DCF used in Section~\ref{sec:tcool} because it is possible to assign a significance to a time lag corresponding to the maximum value of the LCCF as outlined below. 
 For the binning of the time lags $\tau$ we choose half the maximum of the median of the time separations between consecutive data points in the two light curves.
 The minimum and maximum values of $\tau$ are chosen to be $\pm0.5$ times the length of the shortest light curve~\citep{2014MNRAS.445..428M}.
 
 We determine the significance of a peak in the LCCF by cross correlating pairs of simulated light curves. 
-For the \gray light curves, the simulation proceeds in the same way as described in Sec.~\ref{sec:results-global}, where we use the best-fit values $\hat{\beta}$ for the assumed PSDs.
+For the \gray light curves, the simulation proceeds in the same way as described in Section~\ref{sec:results-global}, where we use the best-fit values $\hat{\beta}$ for the assumed PSDs.
 For the radio light curves, we proceed in a similar way. 
 First, we determine the best-fit PSDs similar to the \gray light curves. 
 In order to achieve a good fit between the observed and simulated PSDs we change the methodology used for the \gray light curves in the following ways:
@@ -1179,8 +1231,8 @@ In this way, we loose sensitivity to the highest frequencies but end up with int
 We do not average the interpolated flux points as in the \gray case since radio observations are usually short in duration and report flux densities instead of integrated fluxes. 
 The periodograms of the individual light curve segments are finally log averaged following \citet{1993MNRAS.261..612P}.
 
-We report the best-fit slopes of the assumed power-law PSDs $\hat{\beta}$, their confidence interval, and the $p_\beta$-value of the fits in Tab.~\ref{tab:lccf}.
-The confidence interval and $p_\beta$-value are determined in the same way as described in Sec.~\ref{sec:results-global}.
+We report the best-fit slopes of the assumed power-law PSDs $\hat{\beta}$, their confidence interval, and the $p_\beta$-value of the fits in Table~\ref{tab:lccf}.
+The confidence interval and $p_\beta$-value are determined in the same way as described in Section~\ref{sec:results-global}.
 All fits show a high fit quality. 
 For the SMA and OVRO light curves for 3C454.3, as well as for the 3C273 light curve obtained with ALMA, we are only able to provide upper bounds on $\beta$.
 In general we confirm the trend that the OVRO light curves show a softer PSD $\hat{\beta} \gtrsim 2$ for all sources. 
@@ -1225,10 +1277,10 @@ CTA102 & $1.94^{+0.42}_{-1.33}$ & 0.45 & $-216.0^{+209.0}_{-11.0}$ & 0.0092 & $5
 }
 \end{deluxetable*}
 
-We show the observed LCCF between \gray and radio light curves in Fig.~\ref{fig:lccf} for the cases where we find a significant peak in the LCCF. This is the case for 3C273 (OVRO and SMA), CTA102 (ALMA), and 3C454.3 (all radio and mm light curves correlate with the \gray light curve).
+We show the observed LCCF between \gray and radio light curves in Figure~\ref{fig:lccf} for the cases where we find a significant peak in the LCCF. This is the case for 3C273 (OVRO and SMA), CTA102 (ALMA), and 3C454.3 (all radio and mm light curves correlate with the \gray light curve).
 The correlation between the SMA and \gray light curve of 3C454.3 is the most significant with $p_\tau = 2\times10^{-4}$ ($3.72\sigma$). 
-The peak and the uncertainties are marked by a dotted line and shaded region in Fig.~\ref{fig:lccf}.
-They are also summarized together with the $p_\tau$ values in Tab.~\ref{tab:lccf}.
+The peak and the uncertainties are marked by a dotted line and shaded region in Figure~\ref{fig:lccf}.
+They are also summarized together with the $p_\tau$ values in Table~\ref{tab:lccf}.
 In the table, we only consider peaks with $\tau < 0$ (\gray light curve leads the radio light curve), however, 
 for 3C273 and 3C454.3 peaks with $\tau > 0$ are also visible. 
 For 3C454.3 these peaks occur at large values of $\tau$ that might be due to the several small flares observed at \gray energies. Since the overlap between the light curves is smaller for larger values of $|\tau|$ we deem these peaks less credible. 
@@ -1264,8 +1316,8 @@ We also find significant correlation between the \gray light curve of 3C273 and 
 For the 15\,GHz OVRO light curve $d_{\gamma,r}$ is found between 0.8 and 19\,pc whereas for 230\,GHz the distance falls between $-0.7$ and 4.7\,pc and is consistent with zero. 
 
 In order to determine the core positions at $\sim100$\,GHz (ALMA) and $230\,$GHz core (SMA) we carry out a cross-correlation between the radio light curves to derive $\tau_{\mathrm{peak},15\mathrm{GHz},r\nu}$.
-The results are reported in Tab.~\ref{tab:lccf-radio}.
-Using Eqs.~\ref{eq:core-shift1} and \ref{eq:core-shift2} we arrive at the new core position, which we also show in Tab.~\ref{tab:lccf-radio}, where we use the average values of the measured jet proper motion~\citep[see Table 4 in][]{2016AJ....152...12L}, the observation angle $\theta_\mathrm{obs}$ reported in \citet{2017ApJ...846...98J},
+The results are reported in Table~\ref{tab:lccf-radio}.
+Using Eqs.~\ref{eq:core-shift1} and \ref{eq:core-shift2} we arrive at the new core position, which we also show in Table~\ref{tab:lccf-radio}, where we use the average values of the measured jet proper motion~\citep[see Table 4 in][]{2016AJ....152...12L}, the observation angle $\theta_\mathrm{obs}$ reported in \citet{2017ApJ...846...98J},
 and values $k_r$ found in the dedicated analyses discussed above. 
 For 3C273 and 3C454.3 we find that our core positions are consistent with values calculated from the $d_\mathrm{core}\propto\nu^{-1/k_r}$ relation obtained by \citet{2013ARep...57...34V} and \citet{2014MNRAS.437.3396K}, respctively. 
 This is a non-trivial result since we have combined our time lags with jet proper motions from MOJAVE and jet properties from VLBA observations. 
@@ -1314,38 +1366,40 @@ CTA102 & --- & --- & --- \\
 \label{sec:conclusion}
 
 We have carried out a comprehensive temporal and spectral analysis of  \gray data of 6 FSRQs that have exhibited the brightest \gray flares within 9.5 years of \fermiLAT observations.
-In order to identify flaring episodes in an objective way, we have introduced a novel combination of Bayesian blocks (BBs)~\citep{2013ApJ...764..167S} and a hill-climbing algorithm inspired by the HOP group finding algorithm~\citep{1998ApJ...498..137E}, see Sec.~\ref{sec:zoom}.
+In order to identify flaring episodes in an objective way, we have introduced a novel combination of Bayesian blocks (BBs)~\citep{2013ApJ...764..167S} and a hill-climbing algorithm inspired by the HOP group finding algorithm~\citep{1998ApJ...498..137E}, see Section~\ref{sec:zoom}.
 We have derived daily, orbital, and sub-orbital light curves for the brightest \gray flares identified in this way.
 
-From the weekly-binned full 9.5\,year light curves, we are able to determine global temporal properties (Sec.~\ref{sec:results-global}) such as the flux distributions and power spectral densities (PSDs). 
+From the weekly-binned full 9.5\,year light curves, we are able to determine global temporal properties (Section~\ref{sec:results-global}) such as the flux distributions and power spectral densities (PSDs). 
 The former are well described with broken power laws or log-normal distributions, while the latter, derived following \citet{2014MNRAS.445..437M}, indicate that the light curves show power-law type PSDs with indices $\beta\sim 1$ indicating flicker noise.
+We also developed a novel objective algorithm to determine the flux level of the quiescent background (see Section~\ref{sec:qb}).
 
-We use the light curves with one flux bin per orbit to derive local temporal flare properties by fitting the light curves with exponential  profiles (Sec.~\ref{sec:results-local}).
+We use the light curves with one flux bin per orbit to derive local temporal flare properties by fitting the light curves with exponential  profiles (Section~\ref{sec:results-local}).
 The obtained rise and decay times show that rapid variability at time scales of the order of the horizon crossing time scale, which range from $\sim 0.5$ to $\sim 2$ \,hours for the considered black hole masses, are a common feature of all sources.
 In general, we find a large variety of flares showing both fast-rise and exponential decay (FRED) behavior and the opposite. 
 No clear trend between flare asymmetry and other flare parameters such as peak flux, integrated flux, or flare duration is found. 
 No apparent evolution of these quantities with time is observed either. 
 This variety of flare profiles could be explained in the scheme of magnetic reconnection with different orientations of the reconnection layers leading to a variety of Doppler factors of the injected plasmoids~\citep[e.g.,][]{2016MNRAS.462.3325P,2018MNRAS.tmp.2522C}. 
 With our novel approach of identifying flares, it will be possible in the future to build large statistical samples of flares (not only selected by their peak flux but also, e.g., by their integrated flux) whose properties could be compared in more detail to predictions of the reconnection scenario.
-Small and fast plasmoids injected closely to the line of sight could also explain minute-scale variability~\citep{2016MNRAS.462.3325P} for which we find evidence at the 2\,$\sigma$ significance level (post-trial) in suborbital light curves of at least two sources, 3C279 and CTA102 (Tab.~\ref{tab:minute}). 
+Small and fast plasmoids injected closely to the line of sight could also explain minute-scale variability~\citep{2016MNRAS.462.3325P} for which we find evidence at the 2\,$\sigma$ significance level (post-trial) in suborbital light curves of at least two sources, 3C279 and CTA102 (Table~\ref{tab:minute}). 
 For 3C454.3 and PKS1510-089, the BBs also indicate variability on such short time scales, however, a fit with a constant flux to light curves of these orbits cannot be rejected beyond the $2\,\sigma$ (post-trial) level.
 Other possible explanations of such short variability include an energy-dependent kinetic beaming of particles during reconnection~\citep{2012ApJ...754L..33C}, radiative cooling of a plasma accelerated by re-collimation shocks~\citep{Bodo:2017qqn}, or synchrotron radiation by electrons accelerated to energies beyond $\gamma' \gtrsim 10^6$~\citep{TheFermi-LAT:2016dss}, a scenario motivated by the \gray flares of the Crab nebula~\citep{2011Sci...331..739A} and also discussed for the flare of PKSB1222+216~\citep{2012MNRAS.425.2519N}.
+We have proposed two alternative scenarios in which the \Grays are shielded from low energy photons by a plasma sheath (Section \ref{sec:plasma-sheath}) and \Grays produced by synchrotron emission of electron-positron pairs created by the interaction of protons with low energy photons (Section \ref{sec:gammasync}). Our discussion is of qualitative nature only and a full treatment will be presented elsewhere. 
 
 We have also investigated the location of the \gray emitting region  through three approaches: searches for a spectral cut-off, a comparison of decay times with predictions of radiative cooling times, and a correlation between \gray and radio light curves. 
-Using the BLR model of \citet{finke2016}, we find no significant spectral cut-off due to the interaction of \Grays with BLR photons, which places the \gray emission region outside or on the edge of the BLR, $r \gtrsim R_{\mathrm{Ly}\alpha}$ or $\gtrsim 10^3r_g$ (see Tab.~\ref{tab:blrabs}). 
+Using the BLR model of \citet{finke2016}, we find no significant spectral cut-off due to the interaction of \Grays with BLR photons, which places the \gray emission region outside or on the edge of the BLR, $r \gtrsim R_{\mathrm{Ly}\alpha}$ or $\gtrsim 10^3r_g$ (see Table~\ref{tab:blrabs}). 
 These lower limits are conservative in the sense that more sophisticated models of the BLR~\citep[e.g.,][]{2017MNRAS.464..152A}, which include continuum emission and a more realistic geometry, predict even larger optical depths than the model used here.
 We also do not account for a possible brightening of the BLR emission during \gray flares as found by \citet{2013ApJ...763L..36L}.
 The observed spectra over different time periods are provided for completeness in Appendix~\ref{sec:avg-spec}.
 
 The observed decay times of the brightest flares are compatible with radiative cooling times predicted from inverse Compton (IC) scattering of electrons with BLR photons for distances of the \gray emitting regions up to $r\sim 1\,$pc. 
 IC scattering with photons of the dust torus yields cooling times of the order of hours for values of $r$ up to the sublimation radius of $\sim 3\,$pc. 
-This is only compatible with a subset of the analyzed flares, see Tab.~\ref{tab:blrabs}.
+This is only compatible with a subset of the analyzed flares, see Table~\ref{tab:blrabs}.
 In order to reconcile cooling times with minute-scale variability, the emission region would have to be close to the obtained lower limits. 
 At the same time, the value of $r$ needs to be compatible with the amount of observed \gray emission. The IC emission scales as $\delta_\mathrm{D}^3 / x^2$, where $x^2 = R_\mathrm{li}^2 + r^2$ \citep[see, e.g., Eq. 87 in][]{finke2016}. 
 A future comparison of the distance derived from IC emission predicted from multi-wavelength modeling and cooling times could provide further insight into this issue.
 
 In principle, the energy dependence of the observed decay times can be used to distinguish cooling with BLR and dust-torus photons, as proposed by~\citet{2012ApJ...758L..15D}. 
-At high electron energies, cooling with BLR photons occurs in the Klein-Nishina regime whereas cooling with dust-torus photons occurs in the Thompson regime (see Fig.~\ref{fig:tcool}).
+At high electron energies, cooling with BLR photons occurs in the Klein-Nishina regime whereas cooling with dust-torus photons occurs in the Thompson regime (see Figure~\ref{fig:tcool}).
 However, the fit of exponential flare profiles to light curves in different energy bands yields inconclusive results since the photon statistics are not sufficient to distinguish between the two scenarios.
 
 We find correlations significant beyond the 2.1\,$\sigma$ level between the \gray light curves and radio light curves for 3C273 (correlations found with OVRO and SMA light curves), CTA102 (with ALMA), and 3C454.3 (with OVRA, ALMA, and SMA). 
@@ -1361,7 +1415,7 @@ If the distances are even larger, the radiative cooling with BLR photons becomes
 Such large distances are at odds with the evidence with minute-scale variability, which we, however, only observe at $\sim2\,\sigma$ post trial significance in the rising parts of the flares. 
 Densely sampled light curves at other wavelenghts could provide further insight if this short variability is indeed present and possibly connected to the injection of relativistic particles.
 As noted by~\citet{2018MNRAS.477.4749C}, the fact that we do not find significant absorption provides furthermore promising prospects to detect these sources with future observations with the Cherenkov Telescope Array (CTA). 
-The improved point source sensitivity of CTA together with its energy range between 20\,GeV and 300\,TeV~\citep{2017arXiv170907997C} could lead to the detection of spectral absorption features during FSRQ flares due to the interaction of \Grays with infrared photons from the dust torus which should become important at $~\sim$TeV energies~\citep[see, e.g., Fig. 14 in][]{finke2016}.
+The improved point source sensitivity of CTA together with its energy range between 20\,GeV and 300\,TeV~\citep{2017arXiv170907997C} could lead to the detection of spectral absorption features during FSRQ flares due to the interaction of \Grays with infrared photons from the dust torus which should become important at $~\sim$TeV energies~\citep[see, e.g., Figure 14 in][]{finke2016}.
 CTA observations could further effectively probe the shortest variability time scales at very-high \gray energies.
 
 \begin{acknowledgments}
@@ -1392,7 +1446,7 @@ This research has made use of data from the OVRO 40-m monitoring program~\citep{
 
 \section{Average spectra for different time intervals}
 \label{sec:avg-spec}
-In Tab.~\ref{tab:avg-spec} we present the average observed best-fit spectra for the analyzed FSRQs for different time ranges. 
+In Table~\ref{tab:avg-spec} we present the average observed best-fit spectra for the analyzed FSRQs for different time ranges. 
 The same spectral shapes as in the 3FGL are assumed which are either a log-parabola or a power law with super-exponential cut-off, which are given by
 \begin{eqnarray}
     \frac{\mathrm{d}N_\mathrm{LP}}{\mathrm{d}E} = N_0 \left(\frac{E}{E_0}\right)^{-(\Gamma + \kappa\ln(E / E_0))}, \label{eq:avg-spec-lp}\\
@@ -1404,7 +1458,7 @@ The same spectral shapes as in the 3FGL are assumed which are either a log-parab
 \tablewidth{0pt}
 \tablecaption{ \label{tab:avg-spec}Average spectral parameters for the complete time ranges over which the light curves are derived.}
 \tablehead{\colhead{$t_0$} & \colhead{$\Delta t$}  & \colhead{$F(E \geqslant0.1\,\mathrm{GeV})$} & \colhead{$N_0$} & \colhead{$\Gamma$} & \colhead{$\kappa$} & \colhead{$E_\mathrm{cut}$} & \colhead{$\Gamma_2$} & \colhead{$E_0$} \\
-\colhead{MJD} & \colhead{days} & \colhead{$[10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}]$} & \colhead{$[10^{-9}\,\mathrm{MeV}{-1}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}]$} & & & \colhead{[GeV]} & & \colhead{[GeV]}} 
+\colhead{MJD} & \colhead{days} & \colhead{$[10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}]$} & \colhead{$[10^{-9}\,\mathrm{MeV}^{-1}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}]$} & & & \colhead{[GeV]} & & \colhead{[GeV]}} 
 \startdata
 \hline
 \multicolumn{9}{c}{\textit{Daily light curves}}\\
@@ -1531,14 +1585,14 @@ The same spectral shapes as in the 3FGL are assumed which are either a log-parab
 \hline
 \enddata
 {
-\tablecomments{The light curves for the respective time intervals are shown in Figs.~\ref{fig:daily}, \ref{fig:gti}, and, for the cases where at least one orbital bin is detected with $\mathrm{TS}\geqslant150$, in Fig.~\ref{fig:lc_minutes}.
+\tablecomments{The light curves for the respective time intervals are shown in Figs.~\ref{fig:daily}, \ref{fig:gti}, and, for the cases where at least one orbital bin is detected with $\mathrm{TS}\geqslant150$, in Figure~\ref{fig:lc_minutes}.
 If uncertainties are $nan$, the parameters have been fixed during the fit to achieve convergence.}
 }
 \end{deluxetable}
 
 \section{Spectral evolution of orbital light curves}
 \label{sec:specvar}
-The spectral evolution of the orbital light curves for each source is shown in Fig.~\ref{fig:specvar}. In each time bin, a power-law spectrum with index $\Gamma$ and integrated flux $F$ is assumed. 
+The spectral evolution of the orbital light curves for each source is shown in Figure~\ref{fig:specvar}. In each time bin, a power-law spectrum with index $\Gamma$ and integrated flux $F$ is assumed. 
 
 \begin{figure*}
     \centering
