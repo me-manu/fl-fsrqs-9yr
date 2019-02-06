@@ -1,7 +1,7 @@
 \documentclass[twocolumn,linenumbers]{aastex62}
 %\documentclass{aastex62}
 \usepackage{xspace}
-
+\graphicspath{{figures/}{./}}
 %% The default is a single spaced, 10 point font, single spaced article.
 %% There are 5 other style options available via an optional argument. They
 %% can be envoked like this:
@@ -412,7 +412,7 @@ Several strong flares exceeding the average flux level are easily identified fro
 %%% Full light curve %%%
 \begin{figure*}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/lc_weekly_tsmin9.pdf}
+    \includegraphics[width = .9\linewidth]{lc_weekly_tsmin9.pdf}
     \caption{\gray light curves with weekly binning for the considered FSRQs. Open symbols denote upper limits at the $2\,\sigma$ confidence level. The thin solid lines show the BBs and the shaded regions represent the identified HOP groups. The thick horizontal lines denote the time intervals identified as bright flares for which we derive light curves with finer binning.
     The grey shaded band denotes the average flux with $1\,\sigma$ statistical uncertainties and the black dashed line shows the estimate of the quiescent background (QB) introduced in Section~\ref{sec:qb}.}
     \label{fig:weekly}
@@ -484,7 +484,7 @@ We discuss these light curves in Section~\ref{sec:sub-gti}.
 %%% Daily light curves %%%%%%%%%
 \begin{figure*}
     \centering
-    \includegraphics[width = .99\linewidth]{figures/lc_daily_tsmin9.pdf}
+    \includegraphics[width = .99\linewidth]{lc_daily_tsmin9.pdf}
     \caption{\label{fig:daily} Light curves with daily binning for the selected time ranges (horizontal lines in Figure~\ref{fig:weekly}). Symbols and lines are the same as in Figure~\ref{fig:weekly}. 
     As stated in Table~\ref{tab:zoom}, if all BB fluxes fail the criterion $F_{BB} \geqslant \mathrm{max}(10^{-5}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}, 1.5 \bar{F})$, we include the HOP group with the maximum flux of the interval if that flux is above $5\times 10^{-6}\,\mathrm{cm}^{-2}\,\mathrm{s}^{-1}$. This is the case, e.g., for last two intervals of PKSB1222+216 and the first interval of 3C273 (last three panels of the top row).}
 \end{figure*}
@@ -521,7 +521,7 @@ modulations in the accretion rate and the jet activity~\citep{2009A&A...503..797
 
 
 \begin{figure}
-    \includegraphics[width = .99\linewidth]{figures/fluxdist_weekly_tsmin9.pdf}
+    \includegraphics[width = .99\linewidth]{fluxdist_weekly_tsmin9.pdf}
     \caption{\label{fig:fluxpdf} Distribution of the fluxes of the weekly 9.5 year \gray light curves. The BPL fit is shown as a black line with $1\,\sigma$ uncertainties (shaded bands). The black dashed line indicates a fit with a log-normal distribution with location and scale parameters $\mu$ and $\sigma$ as indicated in the legends.}
 \end{figure}
 
@@ -670,12 +670,12 @@ This could indicate that the emission in the \gray band and at optical wavelengt
 
 \begin{figure*}
     \centering
-    \includegraphics[width = 0.4\linewidth]{figures/periodogram_fermi_PKSB1222+216_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \includegraphics[width = 0.4\linewidth]{figures/periodogram_fermi_3C273_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \includegraphics[width = 0.4\linewidth]{figures/periodogram_fermi_3C279_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \includegraphics[width = 0.4\linewidth]{figures/periodogram_fermi_PKS1510-089_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \includegraphics[width = 0.4\linewidth]{figures/periodogram_fermi_CTA102_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
-    \includegraphics[width = 0.4\linewidth]{figures/periodogram_fermi_3C454p3_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \includegraphics[width = 0.4\linewidth]{periodogram_fermi_PKSB1222+216_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \includegraphics[width = 0.4\linewidth]{periodogram_fermi_3C273_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \includegraphics[width = 0.4\linewidth]{periodogram_fermi_3C279_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \includegraphics[width = 0.4\linewidth]{periodogram_fermi_PKS1510-089_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \includegraphics[width = 0.4\linewidth]{periodogram_fermi_CTA102_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
+    \includegraphics[width = 0.4\linewidth]{periodogram_fermi_3C454p3_Nsim_100Next_100Sim_addunc_data_rescale_EM13_usegap_1_PSD_window_none_detrend_none_norm_var_20.pdf}
     \caption{Periodograms of the observed (markers) and simulated light curves (colored lines). The simulated periodograms follow power-law PSDs between $\beta = 0$ (purple line) to $\beta = 3$ (red line) in steps of $\Delta\beta = 0.05$. The bottom panels show the residuals with respect to the best fit which is indicated in the legend and as a thick solid line in the upper panels.}
     \label{fig:periodograms}
 \end{figure*}
@@ -717,7 +717,7 @@ The average best-fit spectral parameters for the entire time spans of the daily,
 %%% GTI light curves %%%%%%%%%
 \begin{figure*}
     \centering
-    \includegraphics[width = .99\linewidth]{figures/lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
+    \includegraphics[width = .99\linewidth]{lcfithop_orbit_all_maxiter2_fsys0p00_addcomp0_comb.pdf}
     \caption{ Light curves with one bin per GTI for the selected time ranges (solid horizontal lines in Figure~\ref{fig:daily}). Solid black and dashed lines show fits to the light curve with exponential flare profiles discussed in Section~\ref{sec:results-local}. Other symbols and lines are the same as in Figure~\ref{fig:weekly} and ~\ref{fig:daily}.
     The sub-GTI light curves are derived for the time intervals indicated as solid horizontal lines, where at least one orbital bin shows $\mathrm{TS}\geqslant 150$ (see Section~\ref{sec:sub-gti}). 
     Average spectra to search for a cut-off due to \gray absorption in the BLR are derived from the time intervals indicated either as solid or dashed horizontal lines (see Section~\ref{sec:blrabs}).
@@ -764,8 +764,8 @@ This results in values between $\sim0.5$ and $\sim2.5$ hours using the black hol
 
 \begin{figure}
     \centering
-%    \includegraphics[width = .7\linewidth]{figures/lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
-    \includegraphics[width = .9\linewidth]{figures/lcfithop_results_trise_vs_tdecay_orbit_maxiter2_fsys0p00_addcomp0.pdf}
+%    \includegraphics[width = .7\linewidth]{lcfithop_results_tdtrhist_maxiter2_fsys0p00_addcomp0_orbit.pdf}
+    \includegraphics[width = .9\linewidth]{lcfithop_results_trise_vs_tdecay_orbit_maxiter2_fsys0p00_addcomp0.pdf}
     \caption{
     %Stacked bar graphs for  rise (top) and decay times (bottom) for the individual flares fitted in Figure~\ref{fig:gti}. The legend gives the horizon crossing time scales $t_g$ in the observer's frame.
     Distribution of rise and decay times for the flare profiles fitted to data. 
@@ -789,7 +789,7 @@ The error bars on the peak flux and asymmetry are derived from standard Gaussian
 
 \begin{figure*}
     \centering
-    \includegraphics[width = .8\linewidth]{figures/lcfithop_results_asym_vs_all_orbit_maxiter2_fsys0p00_addcomp0.pdf}
+    \includegraphics[width = .8\linewidth]{lcfithop_results_asym_vs_all_orbit_maxiter2_fsys0p00_addcomp0.pdf}
     \caption{Flare asymmetry versus integrated flux (left), peak flux (center), and flare duration $T_{90}$ (right) for the fitted flare profiles shown in Figure~\ref{fig:gti}.}
     \label{fig:asym}
 \end{figure*}
@@ -809,7 +809,7 @@ in Figure~\ref{fig:specvar}.
 
 \begin{figure*}
     \centering
-    \includegraphics[width = .9 \linewidth]{figures/lc_specvar_flare_int.pdf}
+    \includegraphics[width = .9 \linewidth]{lc_specvar_flare_int.pdf}
     \caption{Spectral evolution of the flux $F$ and power-law index $\Gamma$ during the brightest flares on orbital time scales. Light colors refer to earlier times, dark colors to later times.}
     \label{fig:specvar}
 \end{figure*}
@@ -847,14 +847,14 @@ More importantly, we use a different binning within one GTI, which can also chan
 Taking the $\chi^2$ test and the BBs together, we conclcude that we find evidence that minute-scale variability is common phenomenon during bright FSRQ flares. %we find weak evidence for minute-scale variability for 3C454.3 and PKS1510-089 and stronger evidence for 3C279 and CTA102.
 \begin{figure*}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/lc_minute_3min.pdf}
+    \includegraphics[width = .9\linewidth]{lc_minute_3min.pdf}
     \caption{Sub-GTI light curves for the HOP groups of the orbital light curves which contain one bin with $\mathrm{TS} \geqslant 150$. The solid horizontal lines indicate GTIs that encompass a significant flux change found by the BB algorithm. The dark grey curves show the relative exposure at 1\,GeV. The ToO campaigns for 3C279 (upper left panel) and CTA102 (upper right panel) are clearly visible as the exposure is constant over several GTIs. }
     \label{fig:lc_minutes}
 \end{figure*}
 
 \begin{figure*}
 \centering
-\includegraphics[width = .95\linewidth]{figures/minute_lc_adaptive20.pdf}
+\includegraphics[width = .95\linewidth]{minute_lc_adaptive20.pdf}
 \caption{Light curves of single GTIs for which the BBs for the full time interval indicate a flux change within the GTI (solid horizontal lines in Figure~\ref{fig:lc_minutes}) and for which a fit with a constant flux results in a fit significance of less than 0.1. The colored thin lines indicate BBs if only the data within the GTI is taken into account. The black dashed line is the best-fit value of the constant flux. The colored histograms show the number of counts in each bin and the thin dark grey curves indicate the relative source exposure as a function of time. }
 \label{fig:singel-gtis}
 \end{figure*}
@@ -954,16 +954,16 @@ Also shown are the best-fit spectra and BLR attenuation for different values of 
 \begin{figure*}
     \centering
     \begin{tabular}{ccc}
-    \includegraphics[width=0.32\linewidth]{figures/sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf} &
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t001_LogParabola_3min_ring_emin1000.pdf} & 
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C279_t003_LogParabola_3min_ring_emin1000.pdf}\\
-    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t005_LogParabola_3min_ring_emin1000.pdf} &
-    \includegraphics[width=0.32\linewidth]{figures/sed_PKS1510-089_t006_LogParabola_3min_ring_emin1000.pdf} & 
-    \includegraphics[width=0.32\linewidth]{figures/sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}\\
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf} & 
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf} & 
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}\\
-    \includegraphics[width=0.32\linewidth]{figures/sed_CTA102_t001_LogParabola_3min_ring_emin1000.pdf}
+    \includegraphics[width=0.32\linewidth]{sed_PKSB1222+216_t001_LogParabola_3min_ring_emin1000.pdf} &
+    \includegraphics[width=0.32\linewidth]{sed_3C279_t001_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{sed_3C279_t003_LogParabola_3min_ring_emin1000.pdf}\\
+    \includegraphics[width=0.32\linewidth]{sed_PKS1510-089_t005_LogParabola_3min_ring_emin1000.pdf} &
+    \includegraphics[width=0.32\linewidth]{sed_PKS1510-089_t006_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{sed_3C454p3_t001_LogParabola_3min_ring_emin1000.pdf}\\
+    \includegraphics[width=0.32\linewidth]{sed_CTA102_t002_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{sed_CTA102_t003_LogParabola_3min_ring_emin1000.pdf} & 
+    \includegraphics[width=0.32\linewidth]{sed_CTA102_t004_LogParabola_3min_ring_emin1000.pdf}\\
+    \includegraphics[width=0.32\linewidth]{sed_CTA102_t001_LogParabola_3min_ring_emin1000.pdf}
     \end{tabular}
 
     \caption{Log-parabola fits above 1\,GeV to bright \gray flares detected at energies that correspond to a attenuation in the BLR of at least 20\,\% (for $r = 10^{-2}R_{\mathrm{Ly}\alpha}$). The attenuation due to the interactions with BLR photons (assuming the ring geometry) is shown as colored lines. The best fit (95\,\% lower limit on $r$) is shown as a black dashed (dash-dotted) line. 
@@ -986,7 +986,7 @@ The reason is that in the considered energy interval and short time spans (cf. T
 
 \begin{figure}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/limits.pdf}
+    \includegraphics[width = .9\linewidth]{limits.pdf}
     \caption{Lower limits on the distance $r$ of the \gray emitting region to the central black hole. Limits from fits to \gray spectra are shown as diamonds, values derived from variability considerations are shown as bullets. }
     \label{fig:blr_limits}
 \end{figure}
@@ -1112,7 +1112,7 @@ Figure~\ref{fig:tcool} also shows the variability time $t_\mathrm{var}$ derived 
 
 \begin{figure}
     \centering
-    \includegraphics[width = .9\linewidth]{figures/tcool_CTA102_t001_LogParabola_ring.pdf}
+    \includegraphics[width = .9\linewidth]{tcool_CTA102_t001_LogParabola_ring.pdf}
     \caption{Cooling times for IC scattering with BLR photons and photons from the dust torus for one flaring episode of CTA102. Also shown are observed decay times for the full energy range, energy dependent light curves, and sub-orbital light curves.
     Note that the observed decay times are plotted with respect to IC scattering with BLR photons. For scattering with photons from the dust torus, the points need to be shifted to higher values of $\gamma'$ to match $E_\mathrm{obs,dt}$ (see second $x$-axis on the top of the figure).}
     \label{fig:tcool}
@@ -1139,7 +1139,7 @@ This conclusion also holds for the other sources.
 
 \begin{figure*}
     \centering
-    \includegraphics[width = .9 \linewidth]{figures/lc_ebins_ts9.pdf}
+    \includegraphics[width = .9 \linewidth]{lc_ebins_ts9.pdf}
     \caption{\fermiLAT orbital light curves for three energy bins. The same time binning as in Figure~\ref{fig:gti} is used. The thick colored lines indicate the BB representation. Only light curves are shown for which at least two BBs are identified for each energy bin. The fluxes of the light curves of the energy bins 0.3-1\,GeV and 1-100\,GeV are shifted by $10^{-1}$ and $10^{-2}$, respectively, for better visibility. }
     \label{fig:lcebins}
 \end{figure*}
@@ -1181,7 +1181,7 @@ A fuller account of the processes involved will be presented elsewhere.
 
 \begin{figure*}
     \centering
-    \includegraphics[width = .9 \linewidth]{figures/zdcf_ebins.pdf}
+    \includegraphics[width = .9 \linewidth]{zdcf_ebins.pdf}
     \caption{Results for the DCF analysis for the light curves in Figure~\ref{fig:lcebins}. In order to detect time lags for single flares, the three flares of CTA102 starting at MJD 57733 are separated using the HOP groups. For time lags $\tau < 0$ the high-energy light curve leads the low-energy one. The DCFs between the energy bins (0.1-300\,MeV,1-100\,GeV) and (0.3-0.3\,GeV,1-100\,GeV) are shifted by $\pm 1$ for better visibility. 
     Vertical lines mark the maximum of the DCFs if $\mathrm{max}(\mathrm{DCF}) > 2 \sqrt{\mathrm{Var}(\mathrm{DCF})}$.}
     \label{fig:zdcf}
@@ -1236,7 +1236,7 @@ We further do not include the SMA light curve of CTA102 in the following analysi
 
 \begin{figure*}
     \centering
-    \includegraphics[width = .8\linewidth]{figures/lc_gamma_radio_tsmin9.pdf}
+    \includegraphics[width = .8\linewidth]{lc_gamma_radio_tsmin9.pdf}
     \caption{Radio and \gray light curves normalized to the respective maximum flux.}
     \label{fig:lc-radio}
 \end{figure*}
@@ -1333,12 +1333,12 @@ The low state of the source in recent years and the less dense sampling of the S
 
 \begin{figure*}
     \centering
-    \includegraphics[width = .32\linewidth]{figures/lccf_3C273_nsim5000_fermi_EM13gaps-data_ovro_MM14gaps-none_lccf.pdf}
-    \includegraphics[width = .32\linewidth]{figures/lccf_3C273_nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
-    \includegraphics[width = .32\linewidth]{figures/lccf_CTA102_nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
-    \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_ovro_MM14gaps-none_lccf.pdf}
-    \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
-    \includegraphics[width = .32\linewidth]{figures/lccf_3C454p3_nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .32\linewidth]{lccf_3C273_nsim5000_fermi_EM13gaps-data_ovro_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .32\linewidth]{lccf_3C273_nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .32\linewidth]{lccf_CTA102_nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .32\linewidth]{lccf_3C454p3_nsim5000_fermi_EM13gaps-data_ovro_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .32\linewidth]{lccf_3C454p3_nsim5000_fermi_EM13gaps-data_alma-band3_MM14gaps-none_lccf.pdf}
+    \includegraphics[width = .32\linewidth]{lccf_3C454p3_nsim5000_fermi_EM13gaps-data_sma-1p3mm_MM14gaps-none_lccf.pdf}
     \caption{LCCFs between \gray and radio light curves for the cases where a significant time lag, $p_\tau < 0.05$, is found. The vertical dotted line and shaded regions show the time lag peaks (for $\tau < 0$) and their uncertainty. 
     The the colored regions denote the 68\,\%, 95\,\%, and 99\,\% envelopes (from dark to light) derived from simulated un-correlated light curve pairs. 
     The grey histograms show the number of $\tau_\mathrm{peak}$ values obtained from flux randomization and random subsample selection to estimate the uncertainty on $\tau_\mathrm{peak}$.}
@@ -1644,7 +1644,7 @@ If uncertainties are $nan$, the parameters have been fixed during the fit to ach
 
 %\begin{figure*}
 %    \centering
-%    \includegraphics[width = .9 \linewidth]{figures/lc_specvar_flare_int.pdf}
+%    \includegraphics[width = .9 \linewidth]{lc_specvar_flare_int.pdf}
 %    \caption{Spectral variations of the brightest flares on orbital time scales. Light colors refer to earlier times, dark colors to later times.}
 %    \label{fig:specvar}
 %\end{figure*}
